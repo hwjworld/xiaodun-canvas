@@ -1,0 +1,23 @@
+{{#if hasSubCheckboxes }}
+<a href="#" id="carrot-{{cid}}" data-type="{{type}}" data-state="closed" class="checkbox-carrot"><i class="icon-forward"></i></a>
+
+  <label class="checkbox">
+    <input type="checkbox" name="{{property}}" value="1" id="checkbox-{{cid}}"/>
+    <i class="{{iconClass}}"></i>
+    <span data-bind="title" class="checkbox-title">{{title}}</span>
+
+    {{#if count}}
+    <span data-bind="count">({{count}})</span>
+    {{/if}}
+  </label>
+
+  <ul role="group" data-state="closed" style="display: none">
+    <li data-content="sublevelCheckboxes">
+  </ul>
+{{else}}
+  <label class="checkbox no-carrot">
+    <input type="checkbox" name="{{property}}" value="1" id="checkbox-{{cid}}" />
+    {{#if isTopLevel}}<i class="{{iconClass}}"></i>{{/if}}
+    <span data-bind="title" class="checkbox-title">{{title}}</span>
+  </label>
+{{/if}}
