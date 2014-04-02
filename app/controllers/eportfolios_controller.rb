@@ -106,7 +106,7 @@ class EportfoliosController < ApplicationController
     if authorized_action(@portfolio, @current_user, :delete)
       respond_to do |format|
         if @portfolio.destroy
-          flash[:notice] = t('notices.deleted', "此事件已删除")
+          flash[:notice] = t('notices.deleted', "This group has been deleted")
           format.html { redirect_to user_profile_url(@current_user) }
           format.json { render :json => @portfolio }
         else

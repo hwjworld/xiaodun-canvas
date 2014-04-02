@@ -148,7 +148,7 @@
   <br>
   <select name="course[default_view]" id="edit_course_home_content_select">
     <option value="feed" <%= 'selected' if @context.default_view == 'feed' %>><%= t('draft_state.options.recent_activity_dashboard', %{Recent Activity Dashboard}) %></option>
-    <option value="wiki" <%= 'selected' if @context.default_view == 'wiki' %>><%= t('draft_state.options.custom_page') %></option>
+    <option value="wiki" <%= 'selected' if @context.default_view == 'wiki' %>><%= t('draft_state.options.custom_page',%{Pages Front Page }) %></option>
     <option value="modules" <%= 'selected' if @context.default_view == 'modules' %>><%= t('draft_state.options.modules', %{Course Modules}) %></option>
     <option value="assignments" <%= 'selected' if @context.default_view == 'assignments' %>><%= t('draft_state.options.assignments', %{Assignments List}) %></option>
     <option value="syllabus" <%= 'selected' if @context.default_view == 'syllabus' %>><%= t('draft_state.options.syllabus', %{Syllabus}) %></option>

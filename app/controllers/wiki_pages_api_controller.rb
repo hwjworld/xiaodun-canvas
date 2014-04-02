@@ -394,7 +394,7 @@ class WikiPagesApiController < ApplicationController
         process_front_page
         render :json => wiki_page_json(@page, @current_user, session)
       else
-        @page.errors.add(:front_page, t(:cannot_delete_front_page, '您无法删除首页。'))
+        @page.errors.add(:front_page, t(:cannot_delete_front_page, 'You cannot delete the front page.'))
         render :json => @page.errors, :status => :bad_request
       end
     end
@@ -599,7 +599,7 @@ class WikiPagesApiController < ApplicationController
       @page.errors.add(:title, t(:cannot_update_title, 'You are not allowed to update the title of this wiki page')) if rejected_fields.include?(:title)
       @page.errors.add(:hide_from_students, t(:cannot_update_hide_from_students, 'You are not allowed to update the hidden from students flag of this wiki page')) if rejected_fields.include?(:hide_from_students)
       @page.errors.add(:editing_roles, t(:cannot_update_editing_roles, 'You are not allowed to update the editing roles of this wiki page')) if rejected_fields.include?(:editing_roles)
-      @page.errors.add(:front_page, t(:cannot_update_front_page, '不允许您更改维基首页')) if rejected_fields.include?(:front_page)
+      @page.errors.add(:front_page, t(:cannot_update_front_page, 'You are not allowed to change the wiki front page')) if rejected_fields.include?(:front_page)
 
       return :unauthorized
     end
@@ -612,10 +612,10 @@ class WikiPagesApiController < ApplicationController
       valid_front_page = false if new_front_page && new_workflow_state != 'active'
       if new_front_page && new_workflow_state != 'active'
         valid_front_page = false
-        error_message = t(:cannot_have_unpublished_front_page, '不能取消发布首页')
+        error_message = t(:cannot_have_unpublished_front_page, 'The front page cannot be unpublished')
         @page.errors.add(:front_page, error_message) if change_front_page
         if hide_from_students_provided
-          @page.errors.add(:hide_from_students, t(:cannot_have_hidden_front_page, '首页无法隐藏'))
+          @page.errors.add(:hide_from_students, t(:cannot_have_hidden_front_page, 'The front page cannot be hidded'))
         elsif workflow_state
           @page.errors.add(:published, error_message)
         end

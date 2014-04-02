@@ -52,7 +52,7 @@ define([
           $box.removeClass('for_inline_content')
             .find(".disable_enhancement").hide().end()
             .find(".auto_show").hide().end()
-            .find(".insert_button").text("Insert Link").end()
+            .find(".insert_button").text("插入链接").end()
             .find(".disable_inline_content").attr('checked', false).end()
             .find(".auto_show_inline_content").attr('checked', false);
           if($box.length == 0) {
@@ -89,7 +89,7 @@ define([
               }
               $box.find("#instructure_link_prompt_form").after($services);
             });
-            $box.append("<p><em>This will make the selected text a link, or insert a new link if nothing is selected.</em></p> <label for='instructure_link_prompt_form_input'>Paste or type a url or wiki page in the box below:</label><form id='instructure_link_prompt_form' class='form-inline'><input type='text' id='instructure_link_prompt_form_input' class='prompt' class='btn' value='http://'/> <button type='submit' class='insert_button btn'>Insert Link</button></form>")
+            $box.append("<p><em>如果什么都没被选中，将会使选中的文本链接或添加一个新的链接</em></p> <label for='instructure_link_prompt_form_input'>粘贴或输入一个url或wiki页面在下面的框中:</label><form id='instructure_link_prompt_form' class='form-inline'><input type='text' id='instructure_link_prompt_form_input' class='prompt' class='btn' value='http://'/> <button type='submit' class='insert_button btn'>插入链接</button></form>")
                 .append("<div class='actions'></div><div class='clear'></div>")
                 .append("<div class='disable_enhancement' style='display: none;'><input type='checkbox' class='disable_inline_content' id='disable_inline_content'/><label for='disable_inline_content'> Disable inline previews for this link</label></div>")
                 .append("<div class='auto_show' style='display: none;'><input type='checkbox' class='auto_show_inline_content' id='auto_show_inline_content'/><label for='auto_show_inline_content'> Auto-open the inline preview for this link</label></div>");
@@ -245,14 +245,14 @@ define([
           $box.dialog({
             width: 425,
             height: "auto",
-            title: "Link to Website URL",
+            title: "链接到网站的地址",
             open: function() {
               $(this).find(".prompt").focus().select();
             }
           });
         });
         ed.addButton('instructure_links', {
-          title: 'Link to URL',
+          title: '链接网址',
           cmd: 'instructureLinks',
           image: url + '/img/button.gif'
         });

@@ -151,7 +151,7 @@ class WikiPagesController < ApplicationController
       else #they dont have permissions to destroy this page
         respond_to do |format|
           format.html { 
-            flash[:error] = t('errors.cannot_delete_front_page', '不能删除首页')
+            flash[:error] = t('errors.cannot_delete_front_page', 'You cannot delete the front page.')
             redirect_to(named_context_url(@context, :context_wiki_pages_url))
           }
         end
