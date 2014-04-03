@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a9dbcc7-db09-4076-9dfd-8c353b778e3b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/tinymce/jscripts/tiny_mce/plugins/instructure_equation/editor_plugin.js" afterPath="$PROJECT_DIR$/public/javascripts/tinymce/jscripts/tiny_mce/plugins/instructure_equation/editor_plugin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/tinymce/jscripts/tiny_mce/plugins/instructure_image/editor_plugin.js" afterPath="$PROJECT_DIR$/public/javascripts/tinymce/jscripts/tiny_mce/plugins/instructure_image/editor_plugin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/tinymce/jscripts/tiny_mce/plugins/instructure_links/editor_plugin.js" afterPath="$PROJECT_DIR$/public/javascripts/tinymce/jscripts/tiny_mce/plugins/instructure_links/editor_plugin.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/tinymce/jscripts/tiny_mce/langs/en.js" afterPath="$PROJECT_DIR$/public/javascripts/tinymce/jscripts/tiny_mce/langs/en.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/tinymce/jscripts/tiny_mce/themes/advanced/langs/en.js" afterPath="$PROJECT_DIR$/public/javascripts/tinymce/jscripts/tiny_mce/themes/advanced/langs/en.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/tinymce/jscripts/tiny_mce/plugins/table/langs/en_dlg.js" afterPath="$PROJECT_DIR$/public/javascripts/tinymce/jscripts/tiny_mce/plugins/table/langs/en_dlg.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.generators" afterPath="$PROJECT_DIR$/.idea/.generators" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/canvas.iml" afterPath="$PROJECT_DIR$/.idea/canvas.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="canvas.iws" />
@@ -32,32 +28,28 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="en_dlg.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/tinymce/jscripts/tiny_mce/plugins/table/langs/en_dlg.js">
+      <file leaf-file-name="zh.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/locales/zh.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="52" selection-start="116" selection-end="116" vertical-scroll-proportion="0.0" vertical-offset="28" max-vertical-offset="224">
+            <state line="13162" column="19" selection-start="418584" selection-end="418589" vertical-scroll-proportion="-5.7352943" vertical-offset="368341" max-vertical-offset="397684">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editor_plugin.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/tinymce/jscripts/tiny_mce/plugins/instructure_links/editor_plugin.js">
+      <file leaf-file-name="status_date.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/compiled/ember/quizzes/shared/status_date.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="46" selection-start="2182" selection-end="2182" vertical-scroll-proportion="0.32035595" vertical-offset="1224" max-vertical-offset="10864">
-              <folding>
-                <marker date="1396261798595" expanded="false" signature="2586:2622" placeholder="..." />
-                <marker date="1396261798595" expanded="false" signature="4556:4570" placeholder="..." />
-                <marker date="1396261798595" expanded="false" signature="4801:4815" placeholder="..." />
-              </folding>
+            <state line="15" column="47" selection-start="540" selection-end="540" vertical-scroll-proportion="0.664557" vertical-offset="0" max-vertical-offset="2492">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="en.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/javascripts/tinymce/jscripts/tiny_mce/langs/en.js">
+      <file leaf-file-name="WikiPageRevisions.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/javascripts/jst/wiki/WikiPageRevisions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="598" selection-start="659" selection-end="659" vertical-scroll-proportion="0.0" vertical-offset="28" max-vertical-offset="224">
+            <state line="35" column="192" selection-start="1908" selection-end="1908" vertical-scroll-proportion="0.0" vertical-offset="776" max-vertical-offset="1512">
               <folding />
             </state>
           </provider>
@@ -76,15 +68,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/public/javascripts/context_modules.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/compiled/ember/quizzes/controllers/quiz_controller.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/compiled/views/quizzes/QuizItemView.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/compiled/models/DueDateList.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/compiled/editor/EditorToggle.js" />
-        <option value="$PROJECT_DIR$/app/views/quizzes/new.html.erb" />
-        <option value="$PROJECT_DIR$/public/javascripts/quizzes.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/question_bank.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/question_banks.js" />
         <option value="$PROJECT_DIR$/public/javascripts/calendar.js" />
         <option value="$PROJECT_DIR$/public/javascripts/profile.js" />
         <option value="$PROJECT_DIR$/public/javascripts/jst/conversations/noMessage.js" />
@@ -127,14 +110,23 @@
         <option value="$PROJECT_DIR$/public/javascripts/tinymce/jscripts/tiny_mce/langs/en.js" />
         <option value="$PROJECT_DIR$/public/javascripts/tinymce/jscripts/tiny_mce/plugins/table/langs/en_dlg.js" />
         <option value="$PROJECT_DIR$/public/javascripts/tinymce/jscripts/tiny_mce/plugins/instructure_links/editor_plugin.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/jst/wiki/WikiPageEdit.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/jst/wiki/WikiPage.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/jst/wiki/WikiPageRevisions.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/jst/assignments/IndexView.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/jst/assignments/AssignmentSettings.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/jst/AssignmentGroupWeightsDialog.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/jst/assignments/CreateGroup.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/compiled/ember/quizzes/components/ic_dates_available_component.js" />
+        <option value="$PROJECT_DIR$/public/javascripts/compiled/ember/quizzes/shared/status_date.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="64" />
-    <option name="y" value="-4" />
-    <option name="width" value="1792" />
-    <option name="height" value="1039" />
+    <option name="x" value="65" />
+    <option name="y" value="24" />
+    <option name="width" value="1790" />
+    <option name="height" value="1010" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -163,7 +155,6 @@
     </navigator>
     <panes>
       <pane id="RailsProjectView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -196,230 +187,9 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="canvas" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="canvas" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="canvas" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="canvas" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tinymce" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="canvas" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="canvas" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tinymce" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jscripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tiny_mce" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="canvas" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="canvas" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tinymce" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jscripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tiny_mce" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="canvas" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="canvas" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tinymce" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jscripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tiny_mce" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="table" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="canvas" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="canvas" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tinymce" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jscripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tiny_mce" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="table" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="langs" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="canvas" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="canvas" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tinymce" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="jscripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tiny_mce" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="plugins" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="instructure_links" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -594,15 +364,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-4" width="1792" height="1039" extended-state="6" />
-    <editor active="false" />
+    <frame x="65" y="24" width="1790" height="1010" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2975558" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22649083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18520643" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -610,11 +381,11 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31610942" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32943678" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -636,91 +407,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/javascripts/question_bank.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="363" column="84" selection-start="16596" selection-end="16596" vertical-scroll-proportion="0.76296294" vertical-offset="9443" max-vertical-offset="10948" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/quizzes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="220" column="94" selection-start="9111" selection-end="9111" vertical-scroll-proportion="0.46243387" vertical-offset="5723" max-vertical-offset="96936" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/jst/conversations/MessageFormDialog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="114" column="238" selection-start="5694" selection-end="5694" vertical-scroll-proportion="0.7111111" vertical-offset="2520" max-vertical-offset="7784" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/jst/conversations/noMessage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="203" selection-start="2290" selection-end="2290" vertical-scroll-proportion="0.91851854" vertical-offset="420" max-vertical-offset="1960" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/compiled/widget/ContextSearch.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="71" selection-start="902" selection-end="902" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5236" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/compiled/conversations/ConversationsList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="145" column="52" selection-start="5393" selection-end="5393" vertical-scroll-proportion="0.0" vertical-offset="672" max-vertical-offset="8596" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/jst/conversations/MessageForm.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="227" column="192" selection-start="14317" selection-end="14317" vertical-scroll-proportion="0.0" vertical-offset="5635" max-vertical-offset="7280" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/compiled/views/conversations/CourseSelectionView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="66" selection-start="1654" selection-end="1654" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="5460" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/compiled/views/conversations/SearchableSubmenuView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="49" selection-start="1489" selection-end="1489" vertical-scroll-proportion="0.0" vertical-offset="252" max-vertical-offset="3192" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/jst/conversations/composeButtonBar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="198" selection-start="1519" selection-end="1519" vertical-scroll-proportion="0.35555556" vertical-offset="168" max-vertical-offset="1260" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/compiled/views/conversations/MessageFormDialog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="47" selection-start="4075" selection-end="4075" vertical-scroll-proportion="0.8296296" vertical-offset="1344" max-vertical-offset="16296" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/compiled/views/conversations/MessageItemView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="85" selection-start="1809" selection-end="1809" vertical-scroll-proportion="0.56296295" vertical-offset="672" max-vertical-offset="3724" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/compiled/conversations/audienceList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="56" selection-start="1216" selection-end="1216" vertical-scroll-proportion="0.7407407" vertical-offset="336" max-vertical-offset="1540" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/compiled/bundles/conversations_new.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="40" column="66" selection-start="2731" selection-end="2731" vertical-scroll-proportion="0.47407407" vertical-offset="672" max-vertical-offset="12236" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/compiled/conversations/Inbox.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="862" column="56" selection-start="34205" selection-end="34205" vertical-scroll-proportion="0.2962963" vertical-offset="23856" max-vertical-offset="27636" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/jst/conversations/messageItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="165" selection-start="7550" selection-end="7550" vertical-scroll-proportion="0.8888889" vertical-offset="2268" max-vertical-offset="4564" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/compiled/conversations/ConversationsPane.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="65" selection-start="874" selection-end="874" vertical-scroll-proportion="0.0" vertical-offset="84" max-vertical-offset="3612" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/jst/conversations/conversationItem.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="238" column="173" selection-start="19552" selection-end="19552" vertical-scroll-proportion="0.0" vertical-offset="6139" max-vertical-offset="7084" />
@@ -764,11 +450,6 @@
     <entry file="file://$PROJECT_DIR$/app/views/assignments/_syllabus_content.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="48" column="38" selection-start="2681" selection-end="2681" vertical-scroll-proportion="0.52592593" vertical-offset="847" max-vertical-offset="1876" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/locales/zh.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5848" column="19" selection-start="180268" selection-end="180275" vertical-scroll-proportion="0.0" vertical-offset="163713" max-vertical-offset="397684" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/compiled/views/outcomes/OutcomesDirectoryView.js">
@@ -892,12 +573,178 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/tinymce/jscripts/tiny_mce/plugins/instructure_links/editor_plugin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="46" selection-start="2182" selection-end="2182" vertical-scroll-proportion="0.32035595" vertical-offset="1224" max-vertical-offset="10864">
+        <state line="58" column="56" selection-start="2425" selection-end="2425" vertical-scroll-proportion="0.0" vertical-offset="1224" max-vertical-offset="10864">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/courses/show.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="3696" max-vertical-offset="7392">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/wiki_pages_controller.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="74" selection-start="509" selection-end="509" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7616">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/translations/wiki.wiki_page_edit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="2035" selection-start="2186" selection-end="2186" vertical-scroll-proportion="0.09240924" vertical-offset="0" max-vertical-offset="606">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/wiki.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="48" selection-start="818" selection-end="821" vertical-scroll-proportion="73.0" vertical-offset="3098" max-vertical-offset="4228">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/find.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/favicon.ico">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/jst/wiki/WikiPageEdit.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="171" column="4" selection-start="11040" selection-end="11041" vertical-scroll-proportion="0.5468208" vertical-offset="4315" max-vertical-offset="5180">
           <folding>
-            <marker date="1396261798595" expanded="false" signature="2586:2622" placeholder="..." />
-            <marker date="1396261798595" expanded="false" signature="4556:4570" placeholder="..." />
-            <marker date="1396261798595" expanded="false" signature="4801:4815" placeholder="..." />
+            <marker date="1396489343591" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1396489343591" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1396489343591" expanded="false" signature="-1:-1" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="105" selection-start="5031" selection-end="5032" vertical-scroll-proportion="2.7838151" vertical-offset="252" max-vertical-offset="7000">
+          <folding>
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395277818061" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/jst/DiscussionTopics/EditView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="316" column="33" selection-start="20084" selection-end="20089" vertical-scroll-proportion="0.33333334" vertical-offset="8653" max-vertical-offset="10668">
+          <folding>
+            <marker date="1395912876517" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395912876517" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395912876517" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395912876517" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1395912876517" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/jst/assignments/IndexView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="170" selection-start="1790" selection-end="1790" vertical-scroll-proportion="1.2444445" vertical-offset="0" max-vertical-offset="3164">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/jst/wiki/WikiPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="169" column="194" selection-start="8798" selection-end="8798" vertical-scroll-proportion="0.13846155" vertical-offset="4651" max-vertical-offset="10948">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/jst/assignments/AssignmentSettings.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="248" selection-start="1620" selection-end="1625" vertical-scroll-proportion="0.33333334" vertical-offset="281" max-vertical-offset="1344">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/jst/wiki/WikiPageRevisions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="35" column="192" selection-start="1908" selection-end="1908" vertical-scroll-proportion="0.0" vertical-offset="776" max-vertical-offset="1512">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/jst/AssignmentGroupWeightsDialog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="178" selection-start="2923" selection-end="2923" vertical-scroll-proportion="0.6833603" vertical-offset="501" max-vertical-offset="1400">
+          <folding>
+            <marker date="1396496636652" expanded="false" signature="-1:-1" placeholder="..." />
+            <marker date="1396496636652" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/jst/assignments/CreateGroup.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="138" selection-start="5455" selection-end="5455" vertical-scroll-proportion="0.0" vertical-offset="1894" max-vertical-offset="4060">
+          <folding>
+            <marker date="1396496899532" expanded="false" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/compiled/ember/quizzes/components/ic_dates_available_component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="25" selection-start="759" selection-end="759" vertical-scroll-proportion="-0.9968355" vertical-offset="1162" max-vertical-offset="1988">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/locales/zh.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13162" column="19" selection-start="418584" selection-end="418589" vertical-scroll-proportion="-5.7352943" vertical-offset="368341" max-vertical-offset="397684">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/javascripts/compiled/ember/quizzes/shared/status_date.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="47" selection-start="540" selection-end="540" vertical-scroll-proportion="0.664557" vertical-offset="0" max-vertical-offset="2492">
+          <folding />
         </state>
       </provider>
     </entry>
