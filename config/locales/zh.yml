@@ -235,7 +235,7 @@ zh:
         is_valid_login_response: "Canvas 将响应视作有效"
         logged_in_user_id: "登录用户 ID"
         login_response_validation_error: 验证错误
-        login_to_canvas_success: "用户成功登录到 Canvas"
+        login_to_canvas_success: "用户成功登录到 人人教人人学"
         logout_request_id: "退出请求 ID"
         logout_to_idp_url: "LogoutRequest 编码 URL"
         logout_to_idp_xml: "已向 IdP 发送 LogoutRequest XML"
@@ -10752,7 +10752,7 @@ zh:
       password: 密码
       sending: 正在发送...
     new: 
-      page_title: "登录到 Canvas"
+      page_title: "登录到 人人教人人学"
     notices: 
       mfa_complete: 多重身份验证已配置
     oauth2_auth: 
