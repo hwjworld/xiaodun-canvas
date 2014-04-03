@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a9dbcc7-db09-4076-9dfd-8c353b778e3b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/canvas/header_canvas_logo.png" afterPath="$PROJECT_DIR$/public/images/canvas/header_canvas_logo.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/images/canvas/header_canvas_logo@2x.png" afterPath="$PROJECT_DIR$/public/images/canvas/header_canvas_logo@2x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/zh.yml" afterPath="$PROJECT_DIR$/config/locales/zh.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/shared/_login.html.erb" afterPath="$PROJECT_DIR$/app/views/shared/_login.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/generated/en.yml" afterPath="$PROJECT_DIR$/config/locales/generated/en.yml" />
     </list>
     <ignored path="canvas.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,10 +26,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="zh.yml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="zh.yml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/locales/zh.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7568" column="79" selection-start="233546" selection-end="233549" vertical-scroll-proportion="0.33333334" vertical-offset="211709" max-vertical-offset="397684">
+            <state line="12664" column="24" selection-start="403698" selection-end="403714" vertical-scroll-proportion="-6.1764708" vertical-offset="354382" max-vertical-offset="397684">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_login.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/shared/_login.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="41" column="86" selection-start="2928" selection-end="2928" vertical-scroll-proportion="1.2601537" vertical-offset="0" max-vertical-offset="2324">
               <folding />
             </state>
           </provider>
@@ -39,7 +47,7 @@
       <file leaf-file-name="en.yml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/locales/generated/en.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7557" column="35" selection-start="351226" selection-end="351226" vertical-scroll-proportion="0.0" vertical-offset="211390" max-vertical-offset="399336">
+            <state line="10866" column="4" selection-start="515906" selection-end="515910" vertical-scroll-proportion="-5.352941" vertical-offset="304066" max-vertical-offset="399336">
               <folding />
             </state>
           </provider>
@@ -85,7 +93,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/public/javascripts/jst/conversations/noMessage.js" />
         <option value="$PROJECT_DIR$/public/javascripts/jst/conversations/MessageFormDialog.js" />
         <option value="$PROJECT_DIR$/public/javascripts/compiled/widget/ContextSearch.js" />
         <option value="$PROJECT_DIR$/public/javascripts/compiled/conversations/ConversationsList.js" />
@@ -134,16 +141,17 @@
         <option value="$PROJECT_DIR$/public/javascripts/jst/assignments/CreateGroup.js" />
         <option value="$PROJECT_DIR$/public/javascripts/compiled/ember/quizzes/components/ic_dates_available_component.js" />
         <option value="$PROJECT_DIR$/public/javascripts/compiled/ember/quizzes/shared/status_date.js" />
-        <option value="$PROJECT_DIR$/config/locales/generated/en.yml" />
         <option value="$PROJECT_DIR$/config/locales/zh.yml" />
+        <option value="$PROJECT_DIR$/config/locales/generated/en.yml" />
+        <option value="$PROJECT_DIR$/app/views/shared/_login.html.erb" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="65" />
     <option name="y" value="24" />
-    <option name="width" value="1790" />
-    <option name="height" value="1010" />
+    <option name="width" value="1855" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -381,16 +389,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1790" height="1010" extended-state="6" />
+    <frame x="65" y="24" width="1855" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32928064" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2975558" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28368795" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18520643" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17855169" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -424,11 +432,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/javascripts/jst/assignments/DueDateOverride.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1568" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/quizzes/_display_question.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="504" max-vertical-offset="10892" />
@@ -757,14 +760,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/config/locales/generated/en.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7557" column="35" selection-start="351226" selection-end="351226" vertical-scroll-proportion="0.0" vertical-offset="211390" max-vertical-offset="399336">
+        <state line="10866" column="4" selection-start="515906" selection-end="515910" vertical-scroll-proportion="-5.352941" vertical-offset="304066" max-vertical-offset="399336">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/locales/zh.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7568" column="79" selection-start="233546" selection-end="233549" vertical-scroll-proportion="0.33333334" vertical-offset="211709" max-vertical-offset="397684">
+        <state line="12664" column="24" selection-start="403698" selection-end="403714" vertical-scroll-proportion="-6.1764708" vertical-offset="354382" max-vertical-offset="397684">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/shared/_login.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="86" selection-start="2928" selection-end="2928" vertical-scroll-proportion="1.2601537" vertical-offset="0" max-vertical-offset="2324">
           <folding />
         </state>
       </provider>
