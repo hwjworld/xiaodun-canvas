@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a9dbcc7-db09-4076-9dfd-8c353b778e3b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.generators" afterPath="$PROJECT_DIR$/.idea/.generators" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/canvas.iml" afterPath="$PROJECT_DIR$/.idea/canvas.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/generated/en.yml" afterPath="$PROJECT_DIR$/config/locales/generated/en.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/locales/zh.yml" afterPath="$PROJECT_DIR$/config/locales/zh.yml" />
     </list>
     <ignored path="canvas.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,16 +29,34 @@
       <file leaf-file-name="zh.yml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/locales/zh.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13162" column="19" selection-start="418584" selection-end="418589" vertical-scroll-proportion="-5.7352943" vertical-offset="368341" max-vertical-offset="397684">
+            <state line="7512" column="25" selection-start="231819" selection-end="231829" vertical-scroll-proportion="-8.470589" vertical-offset="210048" max-vertical-offset="397684">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="status_date.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="en.yml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/config/locales/generated/en.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7557" column="35" selection-start="351226" selection-end="351226" vertical-scroll-proportion="0.33279485" vertical-offset="211390" max-vertical-offset="399336">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="status_date.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/javascripts/compiled/ember/quizzes/shared/status_date.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="47" selection-start="540" selection-end="540" vertical-scroll-proportion="0.664557" vertical-offset="0" max-vertical-offset="2492">
+            <state line="15" column="47" selection-start="540" selection-end="540" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2492">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="en-AU.yml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/locales/en-AU.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6708" column="6" selection-start="310855" selection-end="310871" vertical-scroll-proportion="-8.470589" vertical-offset="187536" max-vertical-offset="366996">
               <folding />
             </state>
           </provider>
@@ -68,8 +84,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/public/javascripts/calendar.js" />
-        <option value="$PROJECT_DIR$/public/javascripts/profile.js" />
         <option value="$PROJECT_DIR$/public/javascripts/jst/conversations/noMessage.js" />
         <option value="$PROJECT_DIR$/public/javascripts/jst/conversations/MessageFormDialog.js" />
         <option value="$PROJECT_DIR$/public/javascripts/compiled/widget/ContextSearch.js" />
@@ -119,6 +133,8 @@
         <option value="$PROJECT_DIR$/public/javascripts/jst/assignments/CreateGroup.js" />
         <option value="$PROJECT_DIR$/public/javascripts/compiled/ember/quizzes/components/ic_dates_available_component.js" />
         <option value="$PROJECT_DIR$/public/javascripts/compiled/ember/quizzes/shared/status_date.js" />
+        <option value="$PROJECT_DIR$/config/locales/zh.yml" />
+        <option value="$PROJECT_DIR$/config/locales/generated/en.yml" />
       </list>
     </option>
   </component>
@@ -407,16 +423,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/javascripts/jst/conversations/conversationItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="238" column="173" selection-start="19552" selection-end="19552" vertical-scroll-proportion="0.0" vertical-offset="6139" max-vertical-offset="7084" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/quizzes/new.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="351" column="143" selection-start="19134" selection-end="19134" vertical-scroll-proportion="0.0" vertical-offset="3612" max-vertical-offset="14084" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/jst/assignments/DueDateOverride.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="420" max-vertical-offset="1568" />
@@ -734,16 +740,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/locales/zh.yml">
+    <entry file="file://$PROJECT_DIR$/public/javascripts/compiled/ember/quizzes/shared/status_date.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13162" column="19" selection-start="418584" selection-end="418589" vertical-scroll-proportion="-5.7352943" vertical-offset="368341" max-vertical-offset="397684">
+        <state line="15" column="47" selection-start="540" selection-end="540" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2492">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/javascripts/compiled/ember/quizzes/shared/status_date.js">
+    <entry file="file://$PROJECT_DIR$/config/locales/en-AU.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="47" selection-start="540" selection-end="540" vertical-scroll-proportion="0.664557" vertical-offset="0" max-vertical-offset="2492">
+        <state line="6708" column="6" selection-start="310855" selection-end="310871" vertical-scroll-proportion="-8.470589" vertical-offset="187536" max-vertical-offset="366996">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/locales/zh.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7512" column="25" selection-start="231819" selection-end="231829" vertical-scroll-proportion="-8.470589" vertical-offset="210048" max-vertical-offset="397684">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/locales/generated/en.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7557" column="35" selection-start="351226" selection-end="351226" vertical-scroll-proportion="0.33279485" vertical-offset="211390" max-vertical-offset="399336">
           <folding />
         </state>
       </provider>

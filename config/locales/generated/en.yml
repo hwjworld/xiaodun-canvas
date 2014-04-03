@@ -7555,7 +7555,7 @@ en:
       view_all_enrollments: "View all courses"
       view_all_groups: "View all groups"
     mobile_auth: 
-      log_in_to_canvas: "Log In To Canvas"
+      log_in_to_canvas: "登录到 人人教人人学"
   learning_outcome: 
     no_comment: "No Comment"
     no_context_found: "The external Learning Outcome couldn't be found for \"%{title}\", creating a copy."

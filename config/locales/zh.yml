@@ -7504,13 +7504,13 @@ zh:
         reset_explanation: "重置该测试学生将清除其所有历史记录，%{line_break}允许您作为全新学生查看课程。"
         warning_title: 您当前已登录到学生视图
     head: 
-      default_page_title: "Canvas LMS"
+      default_page_title: "人人教人人学 LMS"
     menu: 
       view_all_accounts: 查看所有帐户
       view_all_enrollments: 查看所有课程
       view_all_groups: 查看所有小组
     mobile_auth: 
-      log_in_to_canvas: "登录到 Canvas"
+      log_in_to_canvas: "登录到 人人教人人学"
   learning_outcome: 
     no_comment: 无评论
     no_context_found: "无法找到“%{title}”的外部学习成果，创建一个副本。"
