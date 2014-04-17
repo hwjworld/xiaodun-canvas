@@ -10746,7 +10746,7 @@ zh:
       back_to_login: 返回登录
       buttons: 
         request_password: 请求密码
-      dont_know_password: 我不知道我的密码
+      dont_know_password: 忘记密码?
       login: 登录
       login_handle: "输入您的 %{login_handle_name}，我们将向您发送更改密码的链接。"
       password: 密码
@@ -12665,7 +12665,7 @@ zh:
         request_password: 请求密码
       coenrollment_banner: "*Canvas 用户的父级?* **单击此处以获得帐户**"
       default_login_message: 在您的机构登录
-      dont_know_password: 我不知道我的密码
+      dont_know_password: 忘记了密码?
       labels: 
         password: 密码
         remember_me: 保持登录状态

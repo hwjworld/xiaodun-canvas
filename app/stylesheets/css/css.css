@@ -1,0 +1,60 @@
+@charset "utf-8";
+/* CSS Document */
+body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0;}
+body,button,input,select,textarea{font:13px/1.6 Verdana, 微软雅黑, Helvetica, sans-serif;}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+address,cite,dfn,em,var{font-style:normal;}
+code,kbd,pre,samp{font-family:courier new,courier,monospace;}
+small{font-size:13px;}
+ul,ol{list-style:none;}
+a:link,a:visited{color:#666666;text-decoration:none;}
+a:hover,a:active{color:#ffae00;text-decoration:underline;}
+sup{vertical-align:text-top;}
+sub{vertical-align:text-bottom;}
+legend{color:#000;}
+fieldset,img{border:0;}
+button,input,select,textarea{font-size:100%;}
+table{border-collapse:collapse;border-spacing:0;}
+
+.layout:after{content:'\20';display:block;height:0;clear:both;}
+.layout{*zoom:1;}
+.clear{clear:both;}
+html{zoom:expression(function(ele){ele.style.zoom="1";document.execCommand("BackgroundImageCache",false,true);}(this));}
+body{color:#666666;}
+/*login*/
+.login{ width:100%; background:#ffae00 url(/img/login_04.png) left top no-repeat;}
+.login-bg{ width:640px; height:1136px; margin: auto;}
+.login-title{ margin: 0 auto;  padding-top:250px;  height:86px; width:349px; text-align:center; background:url(/img/login_02.png) right bottom no-repeat;}
+.login-logo{margin: 0 auto; width:313px; height:87px; padding-top:80px;}
+.email{ margin: 0 auto; width:456px; height:80px;position:relative; padding-top:60px;}
+.email-ico{ position:absolute; width:42px; height:32px; left:20px;; bottom:24px; background:url(/img/login_11.png) left bottom no-repeat; }
+#email{width:376px; height:80px; border:none; background:url(/img/login_03.png) left bottom no-repeat; padding-left:80px;}
+.password{ margin: 0 auto; width:456px; height:80px; position:relative; padding-top:20px;}
+.password-ico{ position:absolute; width:36px; height:42px; background:url(/img/login_15.png) left bottom no-repeat; left:25px; bottom:19px;}
+#password{ width:376px; height:80px; border:none; background:url(/img/login_03.png) left bottom no-repeat; padding-left:80px;}
+input{color:#fff; font-size:24px;}
+.status{ margin:auto; width:456px; padding:20px 0; color:#fff; font-size:18px; font-weight:bold;}
+.status span{float:left; width:26px; height:26px; background:url(/img/login_05.png); cursor:pointer; margin-right:10px;}
+.login-button{ margin:auto; width:456px; height:80px; border:none; background:url(/img/login_06.png) 0 0 no-repeat; cursor:pointer; color:#fff; font-size:24px; font-weight:bold; text-align:center; line-height:80px;}
+.login-button:hover{ margin:auto; width:456px; height:80px;border:none; background:url(/img/login_06.png) 0 -80px no-repeat;}
+.forgot-password{ margin: 0 auto; width:456px; padding-top:20px; text-align:right;}
+.forgot-password a:link,.forgot-password a:visited{ color:#fff; text-decoration:none; cursor:pointer; font-size:18px;}
+.forgot-password a:hover,.forgot-password a:active{ color:#f60; text-decoration:underline; cursor:pointer; font-size:18px;}
+/*my-courses*/
+.my-courses{width:100%; background:#FFF; position:relative; height:1136px;}
+.personal-information{ width:100%; position:absolute; left:0; top:140px;}
+.personal-information-wrap{ margin: 0 auto; width:640px;text-align:center; color:#fff; font-weight:bold; font-size:20px;}
+.matter-prompt{width:100%; height:392px; background:#ffae00 url(/img/my-courses11.jpg) left top repeat-x;}
+.matter-prompt-wrap{width:100%; padding-top:300px;}
+.matter-prompt h4{padding-left:3%; color:#fff; font-size:20px; line-height:40px; font-weight:bold;}
+.matter-prompt h5{padding-left:3%; color:#fff; font-size:13px; font-weight:bold;}
+.module-title{ width:100%; height:100px; background:#f7f7f7; border-bottom: 1px solid #eaeaea; font-size:18px;}
+.module1{float:left; width:32%; height:100px; border-right: 1px solid #fff; text-align:center;}
+.module2{ float:left; width:32%; height:100px; border-right: 1px solid #fff; text-align:center;}
+.module3{ float:right; width:34%; height:100px; text-align:center;}
+.module-title h3{ font-size:24px; font-weight:bold; padding-top:20px; color:#000;}
+.content{ width:100%; background:#fff;}
+.content ul{ margin: 0 auto; width:95%;}
+.content li{ padding:30px 0 30px 10px; border-bottom: 1px solid #eaeaea; font-size:18px; color:#36393b;}
+.content li span{ float:right; width:17px; height:20px; background:url(/img/my-courses_03.gif) 0 0 no-repeat; cursor:pointer;}
+.content li span:hover{ float:right; width:17px; height:20px; background:url(/img/my-courses_03.gif) 0 -20px no-repeat;}
