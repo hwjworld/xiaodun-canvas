@@ -5,22 +5,25 @@
 # # then in cache_store.yml specify cache_store: redis_store without any servers
 # # listed, which will tell Canvas to use this same server list.
 #
-# production:
-#   servers:
+ production:
+   servers:
+   - localhost
+#   - redis://172.30.3.2:6379
+#    - 114.255.110.150
 #   # list of redis servers to use in the ring
-#   - redis://redis01
+#   - redis://172.30.3.2:6379
 #   - redis://redis02
 
 
-development:
-  servers:
-  - localhost
+#development:
+#  servers:
+#  - localhost
 
-test:
+#test:
   # only tests that are exercising the integration with redis require redis to run.
-  servers:
-    - redis://localhost
+#  servers:
+#    - redis://localhost
   # warning: the redis database will get cleared before each test, so if you
   # use this server for anything else, make sure to set aside a database id for
   # these tests to use.
-  database: 1
+#  database: 1

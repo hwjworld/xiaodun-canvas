@@ -13,7 +13,7 @@ $(document).ready(function() {
       ready();
     } else {
       var $loading = $("<div/>");
-      $loading.text(I18n.t('loading', "正在加载..."));
+      $loading.text(I18n.t('loading', "Loading..."));
       $("body").append($loading);
       $loading.dialog({
         width: 400,

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest identifier="VISH_VIRTUAL_EXCURSION_TmpSCORM_42" version="1.0" xsi:schemaLocation="http://www.imsglobal.org/xsd/imscp_v1p1.xsd http://www.adlnet.org/xsd/adlcp_v1p3.xsd http://www.adlnet.org/xsd/adlnav_v1p3.xsd http://www.adlnet.org/xsd/adlseq_v1p3.xsd http://www.imsglobal.org/xsd/imsss_v1p0.xsd http://ltsc.ieee.org/xsd/LOM/lom.xsd" xmlns:adlcp="http://www.adlnet.org/xsd/adlcp_v1p3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.imsglobal.org/xsd/imscp_v1p1" xmlns:imsss="http://www.imsglobal.org/xsd/imsss" xmlns:lom="http://ltsc.ieee.org/xsd/LOM/lom.xsd">
+  <metadata>
+    <schema>ADL SCORM</schema>
+    <schemaversion>CAM 1.3</schemaversion>
+    <lom>
+      <general>
+        <identifier>
+          <catalog>VISH</catalog>
+          <entry>VISH_VIRTUAL_EXCURSION_TmpSCORM_42</entry>
+        </identifier>
+        <title>
+          <string language="none">雨下得有多大</string>
+        </title>
+        <language>none</language>
+        <description>
+          <string language="none">苏教版小学科学三年级下册《雨下得有多大》PPT课件</string>
+        </description>
+        <keyword>
+          <string language="none">雨下得有多大</string>
+        </keyword>
+        <keyword>
+          <string language="none">PPT</string>
+        </keyword>
+        <keyword>
+          <string language="none">苏教版</string>
+        </keyword>
+        <structure>
+          <source>LOMv1.0</source>
+          <value>hierarchical</value>
+        </structure>
+        <aggregationLevel>
+          <source>LOMv1.0</source>
+          <value>3</value>
+        </aggregationLevel>
+      </general>
+      <lifeCycle>
+        <version>
+          <string language="en">1.0</string>
+        </version>
+        <status>
+          <source>LOMv1.0</source>
+          <value>final</value>
+        </status>
+        <contribute>
+          <role>
+            <source>LOMv1.0</source>
+            <value>author</value>
+          </role>
+          <entity>BEGIN:VCARD
+
+ VERSION:3.0 
+
+ N:Andy
+
+ FN:Andy
+
+ END:VCARD</entity>
+          <date>
+            <dateTime>2014-04-18</dateTime>
+          </date>
+        </contribute>
+      </lifeCycle>
+      <technical>
+        <format>text/html</format>
+        <location>http://vishub.org/</location>
+        <requirement>
+          <orComposite>
+            <type>
+              <source>LOMv1.0</source>
+              <value>browser</value>
+            </type>
+            <name>
+              <source>LOMv1.0</source>
+              <value>any</value>
+            </name>
+          </orComposite>
+        </requirement>
+        <otherPlatformRequirements>
+          <string language="en">HTML5-compliant web browser</string>
+        </otherPlatformRequirements>
+      </technical>
+      <educational>
+        <interactivityType>
+          <source>LOMv1.0</source>
+          <value>mixed</value>
+        </interactivityType>
+        <learningResourceType>
+          <source>LOMv1.0</source>
+          <value>presentation</value>
+        </learningResourceType>
+        <interactivityLevel>
+          <source>LOMv1.0</source>
+          <value>very high</value>
+        </interactivityLevel>
+        <intendedEndUserRole>
+          <source>LOMv1.0</source>
+          <value>learner</value>
+        </intendedEndUserRole>
+        <typicalAgeRange>
+          <string language="en">4 - 20</string>
+        </typicalAgeRange>
+        <typicalLearningTime>
+          <duration>PT9M0S</duration>
+        </typicalLearningTime>
+        <language>none</language>
+      </educational>
+    </lom>
+  </metadata>
+  <organizations default="ViSH" structure="hierarchical">
+    <organization identifier="ViSH">
+      <title>Virtual Science Hub</title>
+      <metadata>
+        <schema>ADL SCORM</schema>
+        <schemaversion>CAM 1.3</schemaversion>
+        <lom>
+          <general>
+            <identifier>ViSH</identifier>
+            <title>
+              <langstring>Virtual Science Hub</langstring>
+            </title>
+            <description>
+              <langstring>Virtual Science Hub. http://vishub.org.</langstring>
+            </description>
+          </general>
+        </lom>
+      </metadata>
+      <item identifier="VIRTUAL_EXCURSION_TmpSCORM_42" identifierref="VIRTUAL_EXCURSION_TmpSCORM_42_RESOURCE">
+        <title>雨下得有多大</title>
+      </item>
+    </organization>
+  </organizations>
+  <resources>
+    <resource identifier="VIRTUAL_EXCURSION_TmpSCORM_42_RESOURCE" type="webcontent" href="excursion.html" adlcp:scormtype="sco">
+      <file href="excursion.html"/>
+    </resource>
+  </resources>
+</manifest>

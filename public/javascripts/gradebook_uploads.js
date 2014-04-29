@@ -35,7 +35,7 @@ define([
             columns: [
               {
                 id:"student",
-                name:I18n.t('student', "学生"),
+                name:I18n.t('student', "Student"),
                 field:"student",
                 width:250,
                 cssClass:"cell-title",
@@ -187,7 +187,7 @@ define([
           $(this).find("select").each(function(){
             if( !$(this).val() ) {
               returnFalse = true;
-              $(this).errorBox(I18n.t('errors.select_an_option', "请选择选项"));
+              $(this).errorBox(I18n.t('errors.select_an_option', "Please select an option"));
               return false;
             }
           });

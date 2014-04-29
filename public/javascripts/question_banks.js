@@ -39,7 +39,7 @@ $(document).ready(function() {
     event.preventDefault();
     $(this).parents(".question_bank").confirmDelete({
       url: $(this).attr('href'),
-      message: I18n.t("delete_question_bank_prompt", "是否确定要删除此题库?"),
+      message: I18n.t("delete_question_bank_prompt", "Are you sure you want to delete this bank of questions?"),
       success: function() {
         $(this).slideUp(function() {
           $(this).remove();

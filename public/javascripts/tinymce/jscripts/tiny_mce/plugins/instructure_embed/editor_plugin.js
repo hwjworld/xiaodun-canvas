@@ -33,15 +33,15 @@ define([
   var initted = false;
 
   var TRANSLATIONS = {
-    click_to_embed: I18n.t('click_to_embed', '单击以嵌入图片'),
-    instructions: INST.htmlEscape(I18n.t('instructions', "粘贴或键入您想嵌入的图像的 URL:")),
+    click_to_embed: I18n.t('click_to_embed', 'Click to embed the image'),
+    instructions: INST.htmlEscape(I18n.t('instructions', "Paste or type the URL of the image you'd like to embed:")),
     url: INST.htmlEscape(I18n.t('url', 'URL:')),
-    alt_text: INST.htmlEscape(I18n.t('alt_text', 'Alt 文本:')),
-    search_flickr: I18n.t('search_flickr', '搜索 flickr 知识共享'),
-    loading: I18n.t('loading', '正在加载...'),
-    embed_external: I18n.t('embed_external', '插入外部图片'),
-    embed_image: INST.htmlEscape(I18n.t('embed_image', '嵌入图片')),
-    image_not_found: I18n.t('image_not_found', '未找到图像，请尝试新的 URL')
+    alt_text: INST.htmlEscape(I18n.t('alt_text', 'Alternate Text:')),
+    search_flickr: I18n.t('search_flickr', 'Search flickr creative commons'),
+    loading: I18n.t('loading', 'Loading...'),
+    embed_external: I18n.t('embed_external', 'Embed External Image'),
+    embed_image: INST.htmlEscape(I18n.t('embed_image', 'Embed Image')),
+    image_not_found: I18n.t('image_not_found', 'Image not found, please try a new URL')
   };
 
   function initShared () {

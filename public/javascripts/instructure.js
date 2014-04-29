@@ -217,22 +217,22 @@ define([
       var switched_roles_message = null;
       switch ($(this).data('role')) {
         case 'TeacherEnrollment':
-          switched_roles_message = I18n.t('switched_roles_message.teacher', "您已临时切换此课程的身份，现在以教师的身份查看课程。您可以从课程主页恢复您的身份和权限。");
+          switched_roles_message = I18n.t('switched_roles_message.teacher', "You have switched roles temporarily for this course, and are now viewing the course as a teacher.  You can restore your role and permissions from the course home page.");
           break;
         case 'StudentEnrollment':
-          switched_roles_message = I18n.t('switched_roles_message.student', "您已临时切换此课程的身份，现在以学生的身份查看课程。您可以从课程主页恢复您的身份和权限。");
+          switched_roles_message = I18n.t('switched_roles_message.student', "You have switched roles temporarily for this course, and are now viewing the course as a student.  You can restore your role and permissions from the course home page.");
           break;
         case 'TaEnrollment':
-          switched_roles_message = I18n.t('switched_roles_message.ta', "您已临时切换此课程的身份，现在以助教的身份查看课程。您可以从课程主页恢复您的身份和权限。");
+          switched_roles_message = I18n.t('switched_roles_message.ta', "You have switched roles temporarily for this course, and are now viewing the course as a TA.  You can restore your role and permissions from the course home page.");
           break;
         case 'ObserverEnrollment':
-          switched_roles_message = I18n.t('switched_roles_message.observer', "您已临时切换此课程的身份，现在以观察员的身份查看课程。您可以从课程主页恢复您的身份和权限。");
+          switched_roles_message = I18n.t('switched_roles_message.observer', "You have switched roles temporarily for this course, and are now viewing the course as an observer.  You can restore your role and permissions from the course home page.");
           break;
         case 'DesignerEnrollment':
-          switched_roles_message = I18n.t('switched_roles_message.designer', "您已临时切换此课程的身份，现在以观察员的身份查看课程。您可以从课程主页恢复您的身份和权限。");
+          switched_roles_message = I18n.t('switched_roles_message.designer', "You have switched roles temporarily for this course, and are now viewing the course as a designer.  You can restore your role and permissions from the course home page.");
           break;
         default:
-          switched_roles_message = I18n.t('switched_roles_message.student', "您已临时切换此课程的身份，现在以学生的身份查看课程。您可以从课程主页恢复您的身份和权限。");
+          switched_roles_message = I18n.t('switched_roles_message.student', "You have switched roles temporarily for this course, and are now viewing the course as a student.  You can restore your role and permissions from the course home page.");
       };
       $img.attr('src', '/images/warning.png')
         .attr('title', switched_roles_message)
@@ -257,7 +257,7 @@ define([
       event.preventDefault();
       var $dialog = $("#custom_search_results_dialog");
       $dialog.dialog({
-        title: I18n.t('titles.search_for_open_resources', "搜索开放资源"),
+        title: I18n.t('titles.search_for_open_resources', "Search for Open Resources"),
         width: 600,
         height: 400
       });
@@ -274,7 +274,7 @@ define([
         $dialog = $("<div/>");
         $dialog.attr('id', 'equella_preview_dialog').hide();
         $dialog.html("<h2/><iframe style='background: url(/images/ajax-loader-medium-444.gif) no-repeat left top; width: 800px; height: 350px; border: 0;' src='about:blank' borderstyle='0'/><div style='text-align: right;'><a href='#' class='original_link external external_link' target='_blank'>" + htmlEscape(I18n.t('links.view_equella_content_in_new_window', "view the content in a new window")) + "</a>");
-        $dialog.find("h2").text($(this).attr('title') || $(this).text() || I18n.t('titles.equella_content_preview', "Equella 内容预览"));
+        $dialog.find("h2").text($(this).attr('title') || $(this).text() || I18n.t('titles.equella_content_preview', "Equella Content Preview"));
         var $iframe = $dialog.find("iframe");
         setTimeout(function() {
           $iframe.css('background', '#fff');
@@ -284,7 +284,7 @@ define([
           autoOpen: false,
           width: 'auto',
           resizable: false,
-          title: I18n.t('titles.equella_content_preview', "Equella 内容预览"),
+          title: I18n.t('titles.equella_content_preview', "Equella Content Preview"),
           close: function() {
             $dialog.find("iframe").attr('src', 'about:blank');
           }
@@ -360,16 +360,16 @@ define([
             .addClass('external')
             .html('<span>' + $(this).html() + '</span>')
             .attr('target', '_blank')
-            .attr('aria-label', htmlEscape(I18n.t('titles.external_link', '链接到外部网站。')))
-            .append('<span class="ui-icon ui-icon-extlink ui-icon-inline" title="' + htmlEscape(I18n.t('titles.external_link', '链接到外部网站。')) + '"/>');
+            .attr('aria-label', htmlEscape(I18n.t('titles.external_link', 'Links to an external site.')))
+            .append('<span class="ui-icon ui-icon-extlink ui-icon-inline" title="' + htmlEscape(I18n.t('titles.external_link', 'Links to an external site.')) + '"/>');
         }).end()
           .find("a.instructure_file_link").each(function() {
               var $link = $(this),
                   $span = $("<span class='instructure_file_link_holder link_holder'/>");
               $link.removeClass('instructure_file_link').before($span).appendTo($span);
               if($link.attr('target') != '_blank') {
-            $span.append("<a href='" + $link.attr('href') + "' target='_blank' title='" + htmlEscape(I18n.t('titles.view_in_new_window', "在新窗口中查看")) +
-                "' style='padding-left: 5px;'><img src='/images/popout.png' alt='" + htmlEscape(I18n.t('titles.view_in_new_window', "在新窗口中查看")) + "'/></a>");
+            $span.append("<a href='" + $link.attr('href') + "' target='_blank' title='" + htmlEscape(I18n.t('titles.view_in_new_window', "View in a new window")) +
+                "' style='padding-left: 5px;'><img src='/images/popout.png' alt='" + htmlEscape(I18n.t('titles.view_in_new_window', "View in a new window")) + "'/></a>");
           }
         });
       if ($.filePreviewsEnabled()) {
@@ -377,8 +377,8 @@ define([
           var $link = $(this);
           if ( $.trim($link.text()) ) {
             var $span = $("<span class='instructure_scribd_file_holder link_holder'/>"),
-                        $scribd_link = $("<a class='scribd_file_preview_link' aria-hidden='true' tabindex='-1' href='" + $link.attr('href') + "' title='" + htmlEscape(I18n.t('titles.preview_document', "预览文档")) +
-                            "' style='padding-left: 5px;'><img src='/images/preview.png' alt='" + htmlEscape(I18n.t('titles.preview_document', "预览文档")) + "'/></a>");
+                        $scribd_link = $("<a class='scribd_file_preview_link' aria-hidden='true' tabindex='-1' href='" + $link.attr('href') + "' title='" + htmlEscape(I18n.t('titles.preview_document', "Preview the document")) +
+                            "' style='padding-left: 5px;'><img src='/images/preview.png' alt='" + htmlEscape(I18n.t('titles.preview_document', "Preview the document")) + "'/></a>");
                     $link.removeClass('instructure_scribd_file').before($span).appendTo($span);
                     $span.append($scribd_link);
                     if($link.hasClass('auto_open')) {
@@ -461,7 +461,7 @@ define([
     } else {
       $("a.scribd_file_preview_link").live('click', function(event) {
         event.preventDefault();
-        alert(I18n.t('alerts.file_previews_disabled', '此 Canvas 网站已禁用文件预览'));
+        alert(I18n.t('alerts.file_previews_disabled', 'File previews have been disabled for this Canvas site'));
       });
     }
 
@@ -573,7 +573,7 @@ define([
     $(".communication_sub_message .add_conversation_message_form").formSubmit({
       beforeSubmit: function(data) {
         $(this).find("button").attr('disabled', true);
-        $(this).find(".submit_button").text(I18n.t('status.posting_message', "正在发布消息..."));
+        $(this).find(".submit_button").text(I18n.t('status.posting_message', "Posting Message..."));
         $(this).loadingImage();
       },
       success: function(data) {
@@ -617,7 +617,7 @@ define([
     $(".communication_sub_message .add_sub_message_form").formSubmit({
       beforeSubmit: function(data) {
         $(this).find("button").attr('disabled', true);
-        $(this).find(".submit_button").text(I18n.t('status.posting_message', "正在发布消息..."));
+        $(this).find(".submit_button").text(I18n.t('status.posting_message', "Posting Message..."));
         $(this).loadingImage();
       },
       success: function(data) {
@@ -663,7 +663,7 @@ define([
       error: function(data) {
         $(this).loadingImage('remove');
         $(this).find("button").attr('disabled', false);
-        $(this).find(".submit_button").text(I18n.t('errors.posting_message_failed', "发布失败，请重试"));
+        $(this).find(".submit_button").text(I18n.t('errors.posting_message_failed', "Post Failed, Try Again"));
         $(this).formErrors(data);
       }
     });
@@ -730,7 +730,7 @@ define([
       this.find("form.message_form").formSubmit({
         beforeSubmit: function(data) {
           $("button").attr('disabled', true);
-          $("button.submit_button").text(I18n.t('status.posting_message', "正在发布消息..."));
+          $("button.submit_button").text(I18n.t('status.posting_message', "Posting Message..."));
         },
         success: function(data) {
           $("button").attr('disabled', false);
@@ -773,7 +773,7 @@ define([
         },
         error: function(data) {
           $("button").attr('disabled', false);
-          $("button.submit_button").text(I18n.t('errors.posting_message_failed', "发布失败，请重试"));
+          $("button.submit_button").text(I18n.t('errors.posting_message_failed', "Post Failed, Try Again"));
           $(this).formErrors(data);
         }
       });
@@ -826,17 +826,17 @@ define([
           if(diff < (24 * 3600 * 1000)) {
             if(diff < (3600 * 1000)) {
               if(diff < (60 * 1000)) {
-                dateString = I18n.t('#time.less_than_a_minute_ago', "不到一分钟前");
+                dateString = I18n.t('#time.less_than_a_minute_ago', "less than a minute ago");
               } else {
                 var minutes = parseInt(diff / (60 * 1000), 10);
                 dateString = I18n.t('#time.count_minutes_ago',
-                    {one: "1 minute ago", other: "%{count} 分钟前"},
+                    {one: "1 minute ago", other: "%{count} minutes ago"},
                     {count: minutes});
               }
             } else {
               var hours = parseInt(diff / (3600 * 1000), 10);
               dateString = I18n.t('#time.count_hours_ago',
-                  {one: "1 hour ago", other: "%{count} 小时前"},
+                  {one: "1 hour ago", other: "%{count} hours ago"},
                   {count: hours});
             }
           }
@@ -871,8 +871,8 @@ define([
                   tag.title += " (" + I18n.t("draft", "Draft") + ")"
                 }
                 tag.text = (label == 'previous' ?
-                  I18n.t('buttons.previous_module', "上个单元") :
-                  I18n.t('buttons.next_module', "下个单元"));
+                  I18n.t('buttons.previous_module', "Previous Module") :
+                  I18n.t('buttons.next_module', "Next Module"));
                 $link.addClass('module_button');
               }
               $link.fillTemplateData({ data: tag });
@@ -995,8 +995,8 @@ define([
       }
       if($(this).hasClass('grading')) {
         options = {}
-        options['<span class="ui-icon ui-icon-trash">&nbsp;</span> ' + htmlEscape(I18n.t('ignore_forever', '总是忽略'))] = function() { remove(url + "?permanent=1"); };
-        options['<span class="ui-icon ui-icon-star">&nbsp;</span> ' + htmlEscape(I18n.t('ignore_until_new_submission', '在出现新提交文件之前忽略'))] = function() { remove(url); };
+        options['<span class="ui-icon ui-icon-trash">&nbsp;</span> ' + htmlEscape(I18n.t('ignore_forever', 'Ignore Forever'))] = function() { remove(url + "?permanent=1"); };
+        options['<span class="ui-icon ui-icon-star">&nbsp;</span> ' + htmlEscape(I18n.t('ignore_until_new_submission', 'Ignore Until New Submission'))] = function() { remove(url); };
         $(this).dropdownList({ options: options });
       } else {
         remove(url + "?permanent=1");
@@ -1014,7 +1014,7 @@ define([
           .children("span.ui-icon-extlink").remove().end()
           .html('<span>' + $(this).html() + '</span>')
           .attr('target', '_blank')
-          .append('<span class="ui-icon ui-icon-extlink ui-icon-inline" title="' + htmlEscape(I18n.t('titles.external_link', '链接到外部网站。')) + '"/>');
+          .append('<span class="ui-icon ui-icon-extlink ui-icon-inline" title="' + htmlEscape(I18n.t('titles.external_link', 'Links to an external site.')) + '"/>');
       });
     }, 2000);
   });

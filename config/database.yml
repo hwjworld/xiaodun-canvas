@@ -30,7 +30,7 @@ production:
   database: canvas_production
   host: localhost
   username: canvas
-  password: your_password
+  password: canvas
   timeout: 5000
   queue:
     adapter: postgresql
@@ -38,5 +38,5 @@ production:
     database: canvas_queue_production
     host: localhost
     username: canvas
-    password: your_password
+    password: canvas
     timeout: 5000

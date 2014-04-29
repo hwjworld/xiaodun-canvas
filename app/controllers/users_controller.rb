@@ -117,6 +117,10 @@ class UsersController < ApplicationController
     :create_user_service, :merge, :user_dashboard, :masquerade]
   before_filter :require_self_registration, :only => [:new, :create]
 
+  def mobile_dashboard 
+
+  end
+
   def grades
     @user = User.find_by_id(params[:user_id]) if params[:user_id].present?
     @user ||= @current_user

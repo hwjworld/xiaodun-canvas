@@ -618,7 +618,7 @@ define([
         beforeSubmit: function(data) {
           $sidebar_upload_file_form.find(".uploading").slideDown();
           $sidebar_upload_file_form.attr('action', $sidebar_upload_file_form.find(".json_upload_url").attr('href'));
-          $(this).find("button").attr('disabled', true).text(I18n.t('buttons.uploading', "正在上传..."));
+          $(this).find("button").attr('disabled', true).text(I18n.t('buttons.uploading', "Uploading..."));
         },
         success: function(data) {
           $(this).find("button").attr('disabled', false).text("Upload");
@@ -630,7 +630,7 @@ define([
           });
         },
         error: function(data) {
-          $(this).find("button").attr('disabled', false).text(I18n.t('errors.upload_failed', "上传失败，请重试"));
+          $(this).find("button").attr('disabled', false).text(I18n.t('errors.upload_failed', "Upload Failed, please try again"));
           $sidebar_upload_file_form.find(".uploading").slideUp();
         }
       });

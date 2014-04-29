@@ -326,7 +326,7 @@ define([
       $form.find(".rubric_custom_rating").attr('checked', data.free_form_criterion_comments == "true").triggerHandler('change');
       $form.find(".totalling_rubric_checkbox").attr('checked', data.hide_score_total == "true").triggerHandler('change');
       var createText = I18n.t('buttons.create_rubric', "Create Rubric");
-      var updateText = I18n.t('buttons.update_rubric', "更新题目");
+      var updateText = I18n.t('buttons.update_rubric', "Update Rubric");
       $form.find(".save_button").text($rubric.attr('id') == 'rubric_new' ? createText : updateText);
       $form.attr('method', 'PUT').attr('action', url);
       rubricEditing.sizeRatings();
@@ -504,7 +504,7 @@ define([
     // cant use delegate because events bound to a .delegate wont get triggered when you do .triggerHandler('click') because it wont bubble up.
     $(".rubric .delete_rubric_link").bind('click', function(event, callback) {
       event.preventDefault();
-      var message = I18n.t('prompts.confirm_delete', "你确定要删除这个题目吗?");
+      var message = I18n.t('prompts.confirm_delete', "Are you sure you want to delete this rubric?");
       if(callback && callback.confirmationMessage) {
         message = callback.confirmationMessage;
       }

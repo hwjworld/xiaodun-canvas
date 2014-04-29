@@ -3,7 +3,7 @@
 <% js_bundle :collaborations %>
 
 <% content_for :right_side do %>
-  <div class="rs-margin-all">
+  <div style="display: none;" class="rs-margin-all">
     <p><%= mt :description_rs, <<-HEREDOC, :google_url => "http://docs.google.com", :etherpad_url => "http://www.etherpad.org"
 Free online web tools like [Google Docs](%{google_url}) and [EtherPad](%{etherpad_url})
 are an excellent place for students to work on group projects or papers, take shared notes, etc.

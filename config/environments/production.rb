@@ -20,7 +20,6 @@ environment_configuration(defined?(config) && config) do |config|
   # initialize cache store. has to eval, not just require, so that it has
   # access to config.
   eval(File.new(File.dirname(__FILE__) + "/cache_store.rb").read)
-
   # eval <env>-local.rb if it exists
   Dir[File.dirname(__FILE__) + "/" + File.basename(__FILE__, ".rb") + "-*.rb"].each { |localfile| eval(File.new(localfile).read) }
 

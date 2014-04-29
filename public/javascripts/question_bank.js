@@ -127,7 +127,7 @@ define([
         event.preventDefault();
         $(this).parents(".question_bank").confirmDelete({
           url: $(this).attr('href'),
-          message: I18n.t('delete_are_you_sure', "是否确定要删除此题库?"),
+          message: I18n.t('delete_are_you_sure', "Are you sure you want to delete this bank of questions?"),
           success: function() {
             location.href = $(".assessment_question_banks_url").attr('href');
           }
@@ -219,9 +219,9 @@ define([
           $questions: $('#move_question_dialog .questions')
         },
         messages: {
-          move_copy_questions: I18n.t('title.move_copy_questions', "移动/复制问题"),
-          move_questions: I18n.t('move_questions', '移动问题'),
-          multiple_questions: I18n.t('multiple_questions', '多个问题')
+          move_copy_questions: I18n.t('title.move_copy_questions', "Move/Copy Questions"),
+          move_questions: I18n.t('move_questions', 'Move Questions'),
+          multiple_questions: I18n.t('multiple_questions', 'Multiple Questions')
         },
         page: 1,
         addEvents: function(){
@@ -280,7 +280,7 @@ define([
         $dialog.find(".question_text").show().end()
           .find(".questions").hide();
         $dialog.find(".copy_option").show();
-        $dialog.find(".submit_button").text(I18n.t('title.move_copy_questions', "移动/复制问题"));
+        $dialog.find(".submit_button").text(I18n.t('title.move_copy_questions', "Move/Copy Questions"));
         $dialog.find(".multiple_questions").val("0");
         if(!$dialog.hasClass('loaded')) {
           loadBanks($dialog);
@@ -294,7 +294,7 @@ define([
         $dialog.data('question', $(this).parents(".question_holder"));
         $dialog.dialog({
           width: 600,
-          title: I18n.t('title.move_copy_questions', "移动/复制问题")
+          title: I18n.t('title.move_copy_questions', "Move/Copy Questions")
         });
       });
       $("#move_question_dialog .submit_button").click(function() {
@@ -304,9 +304,9 @@ define([
         var move = data.copy != '1';
         var submitText = null;
         if(move){
-          submitText = I18n.t("buttons.submit_moving", { one: "问题移动中...", other: "多个问题移动中..."}, {count: multiple_questions ? 2 : 1})
+          submitText = I18n.t("buttons.submit_moving", { one: "Moving Question...", other: "Moving Questions..."}, {count: multiple_questions ? 2 : 1})
         } else {
-          submitText = I18n.t("buttons.submit_copying", { one: "问题复制中...", other: "多个问题复制中..."}, {count: multiple_questions ? 2 : 1})
+          submitText = I18n.t("buttons.submit_copying", { one: "Copying Question...", other: "Copying Questions..."}, {count: multiple_questions ? 2 : 1})
         }
         $dialog.find("button").attr('disabled', true);
         $dialog.find(".submit_button").text(submitText);
@@ -341,9 +341,9 @@ define([
             $dialog.find("button").attr('disabled', false);
             var failedText = null;
             if(move){
-              failedText = I18n.t("buttons.submit_moving_failed", { one: "移动问题失败,请重新尝试", other: "移动多个问题失败,请重新尝试"}, {count: multiple_questions ? 2 : 1})
+              failedText = I18n.t("buttons.submit_moving_failed", { one: "Moving Question Failed, please try again", other: "Moving Questions Failed, please try again"}, {count: multiple_questions ? 2 : 1})
             } else {
-              failedText = I18n.t("buttons.submit_copying_failed", { one: "复制问题失败,请重新尝试", other: "复制多个问题失败,请重新尝试"}, {count: multiple_questions ? 2 : 1})
+              failedText = I18n.t("buttons.submit_copying_failed", { one: "Copying Question Failed, please try again", other: "Copying Questions Failed, please try again"}, {count: multiple_questions ? 2 : 1})
             }
             $dialog.find(".submit_button").text(failedText);
           });
@@ -359,9 +359,9 @@ define([
             $dialog.find("button").attr('disabled', false);
             var submitAgainText = null;
             if(move){
-              submitAgainText = I18n.t("buttons.submit_retry_moving", "移动问题失败,请重新尝试...")
+              submitAgainText = I18n.t("buttons.submit_retry_moving", "Moving Question Failed, please try again...")
             } else {
-              submitAgainText = I18n.t("buttons.submit_retry_copying", "复制问题失败,请重新尝试...")
+              submitAgainText = I18n.t("buttons.submit_retry_copying", "Copying Question Failed, please try again...")
             }
             $dialog.find(".submit_button").text(submitAgainText);
           });

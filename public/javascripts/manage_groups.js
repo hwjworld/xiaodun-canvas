@@ -108,7 +108,7 @@ define([
 
       $.ajaxJSON(url, "GET", null, function(data) {
         $group.data("page_loaded", page);
-        $group.find(".user_count").text(I18n.t('category.student', '学生', {count: data['total_entries']}));
+        $group.find(".user_count").text(I18n.t('category.student', 'student', {count: data['total_entries']}));
         $group.find(".user_count_hidden").text(data['total_entries'] - data['users'].length);
         $group.find(".group_user_count").show();
         $group.find(".student").remove();
@@ -209,7 +209,7 @@ define([
         } else if (data.errors && data.errors.group_id) {
           message = data.errors.group_id[0].message;
         } else {
-          message = I18n.t('errors.unknown', '发生意外错误。');
+          message = I18n.t('errors.unknown', 'An unexpected error occurred.');
         }
         $.flashError(message);
       });
@@ -251,12 +251,12 @@ define([
       $category.find(".group").each(function() {
         var $this = $(this);
         var userCount = $this.find(".student_list .student").length + parseInt($this.find(".user_count_hidden").text());
-        $this.find(".user_count").text(I18n.t('category.student', '学生', {count: userCount}));
+        $this.find(".user_count").text(I18n.t('category.student', 'student', {count: userCount}));
         $this.find(".student_links").showIf(userCount > 0);
       });
 
       var groupCount = $category.find(".group:not(.group_blank)").length;
-      $category.find(".group_count").text(I18n.t('group', '小组', {count: groupCount}));
+      $category.find(".group_count").text(I18n.t('group', 'Group', {count: groupCount}));
 
       $category.find(".group").each(function() {
         $(this).find(".expand_collapse_links").showIf($(this).find(".student_list li").length > 0);
@@ -379,7 +379,7 @@ define([
       $group.find(".student_list").empty();
       $group.removeClass('group_blank');
       $group.find(".load-more").hide();
-      $group.find(".name").text(I18n.t('group_name', "小组名称"));
+      $group.find(".name").text(I18n.t('group_name', "Group Name"));
       $category.find(".clearer").before($group.show());
       $group.find(".edit_group_link").click();
     });
@@ -462,12 +462,12 @@ define([
             }
           });
           if(found) {
-            return I18n.t('errors.category_in_use', "\"%{category_name}\" 已在使用", {category_name: val});
+            return I18n.t('errors.category_in_use', "\"%{category_name}\" is already in use", {category_name: val});
           }
         },
         'group_limit': function(val, data) {
           if (parseInt(val) <= 1) {
-            return I18n.t('errors.group_limit', '小组限制必须为空或大于 1')
+            return I18n.t('errors.group_limit', 'Group limit must be blank or greater than 1')
           }
           return false;
         }
@@ -478,7 +478,7 @@ define([
         var tab_link = $($('#category_list .category')[tab_index]).find('a');
         $category.data('tab_link', tab_link);
         $(this).find("button").attr('disabled', true);
-        $(this).find(".submit_button").text(I18n.t('status.updating', "更新中..."));
+        $(this).find(".submit_button").text(I18n.t('status.updating', "Updating..."));
         $(this).loadingImage();
         return $category;
       },
@@ -491,7 +491,7 @@ define([
       error: function(data) {
         $(this).loadingImage('remove');
         $(this).find("button").attr('disabled', false);
-        $(this).find(".submit_button").text(I18n.t('errors.update_failed', "更新失败，请重试"));
+        $(this).find(".submit_button").text(I18n.t('errors.update_failed', "Update Failed, Try Again"));
         $(this).formErrors(data);
       }
     });
@@ -533,7 +533,7 @@ define([
       var url = $.replaceTags($(this).attr('href'), "category_id", $category.data('category_id'))
       $category.confirmDelete({
         url: url,
-        message: I18n.t('confirm.remove_category', "是否确定要删除此小组集?"),
+        message: I18n.t('confirm.remove_category', "Are you sure you want to remove this set of groups?"),
         success: function() {
           categories_remaining = $("#category_list li").length;
           $("#group_tabs").tabs('remove', index);
@@ -636,12 +636,12 @@ define([
             }
           });
           if(found) {
-            return I18n.t('errors.category_in_use', "\"%{category_name}\" 已在使用", {category_name: val});
+            return I18n.t('errors.category_in_use', "\"%{category_name}\" is already in use", {category_name: val});
           }
         },
         'category[group_limit]': function(val, data) {
           if (parseInt(val) <= 1) {
-            return I18n.t('errors.group_limit', '小组限制必须为空或大于 1')
+            return I18n.t('errors.group_limit', 'Group limit must be blank or greater than 1')
           }
           return false;
         }
@@ -650,7 +650,7 @@ define([
         $(this).loadingImage();
         $(this).data('category_name', data['category[name]']);
         $(this).find("button").attr('disabled', true);
-        $(this).find(".submit_button").text(I18n.t('status.creating_groups', "正在创建类别..."));
+        $(this).find(".submit_button").text(I18n.t('status.creating_groups', "Creating Category..."));
       },
       success: function(data) {
         $(this).loadingImage('remove');
@@ -663,13 +663,13 @@ define([
         }
         $(this).data('callbacks', [])
         $(this).find("button").attr('disabled', false);
-        $(this).find(".submit_button").text(I18n.t('button.create_category', "创建类别"));
+        $(this).find(".submit_button").text(I18n.t('button.create_category', "Create Category"));
         $(this).dialog('close');
       },
       error: function(data) {
         $(this).loadingImage('remove');
         $(this).find("button").attr('disabled', false);
-        $(this).find(".submit_button").text(I18n.t('errors.creating_category_failed', "类别创建失败，请重试"));
+        $(this).find(".submit_button").text(I18n.t('errors.creating_category_failed', "Category Creation Failed, Try Again"));
         $(this).formErrors(data);
       }
     });
@@ -702,7 +702,7 @@ define([
     $(".delete_group_link").click(function(event) {
       event.preventDefault();
       $(this).parents(".group").confirmDelete({
-        message: I18n.t('confirm.delete_group', "是否确定要删除此小组?"),
+        message: I18n.t('confirm.delete_group', "Are you sure you want to delete this group?"),
         url: $(this).attr('href'),
         success: function() {
           var $blank_category = $(this).parents(".group_category").find(".group_blank");
@@ -727,14 +727,14 @@ define([
       event.preventDefault();
 
       // confirm before proceeding
-      var result = confirm(I18n.t('confirm.assign_students', "这会将所有未分配的学生尽可能均匀地随机分配到现有的学习小组"));
+      var result = confirm(I18n.t('confirm.assign_students', "This will randomly assign all unassigned students as evenly as possible among the existing student groups"));
       if (!result) { return; }
 
       // indicate 'working' in visual state
       var $category = $(this).parents(".group_category");
       var $unassigned = $category.find(".group_blank");
       $unassigned.find(".assign_students_link").hide();
-      $unassigned.find(".loading_members").text(I18n.t('status.assigning_students', "正在分配学生..."));
+      $unassigned.find(".loading_members").text(I18n.t('status.assigning_students', "Assigning Students..."));
       $unassigned.find(".loading_members").show();
 
       // perform ajax request to do the assignment server side
@@ -746,7 +746,7 @@ define([
           $unassigned.find(".assign_students_link").show();
           $unassigned.find(".loading_members").hide();
           $(window).triggerHandler('resize');
-          $.flashError(I18n.t('notices.no_students_assigned', "未分配到组的学生。"));
+          $.flashError(I18n.t('notices.no_students_assigned', "Nothing to do."));
           return;
         }
         var user_template = $(".user_template");
@@ -771,7 +771,7 @@ define([
         $unassigned.find(".assign_students_link").show();
         $unassigned.find(".loading_members").hide();
         $(window).triggerHandler('resize');
-        $.flashMessage(I18n.t('notices.students_assigned', "已分配到学习小组的学生。"));
+        $.flashMessage(I18n.t('notices.students_assigned', "Students assigned to groups."));
       }, function(data) {
         // reset visual state
         $unassigned.find(".assign_students_link").show();
@@ -782,7 +782,7 @@ define([
     $(".self_signup_help_link").click(function(event) {
       event.preventDefault();
       $("#self_signup_help_dialog").dialog({
-        title: I18n.t('titles.self_signup_help', "自行注册小组"),
+        title: I18n.t('titles.self_signup_help', "Self Sign-Up Groups"),
         width: 400
       });
     });
@@ -866,7 +866,7 @@ define([
         var dialog = new MessageStudentsDialog({
           context: categoryName,
           recipientGroups: [
-            {name: I18n.t('students_who_have_not_joined_a_group', '未加入学习小组的学生'), recipients: students}
+            {name: I18n.t('students_who_have_not_joined_a_group', 'Students who have not joined a group'), recipients: students}
           ]});
         dialog.open();
       });

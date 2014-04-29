@@ -1,5 +1,5 @@
-source 'https://rubygems.org/'
-
+#source 'https://rubygems.org/'
+source 'http://ruby.taobao.org/'
 # this has to use 1.8.7 hash syntax to not raise a parser exception on 1.8.7
 if RUBY_VERSION == "2.0.0"
   warn "Ruby 2.0 support is untested"

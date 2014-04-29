@@ -737,7 +737,7 @@ define([
     }
     if ($editEvent.data('dialog')) $editEvent.dialog('close');
     $box.find(".description").css("max-height", Math.max($(window).height() - 200, 150));
-    var title = type_name == "Event" ? I18n.t('event_details', "事件详细信息") : I18n.t('assignment_details', "作业详细信息");
+    var title = type_name == "Event" ? I18n.t('event_details', "Event Details") : I18n.t('assignment_details', "Assignment Details");
     $box.dialog({
       title: title,
       width: (data.description.length > 2000 ? Math.max($(window).width() - 300, 450) : 450),
@@ -866,9 +866,9 @@ define([
     selectDateForEvent($day.parents(".calendar_day_holder"));
     var title;
     if (isNew) {
-      title = type_name == "Event" ? I18n.t('titles.add_new_event', "新建事件") : I18n.t('titles.add_new_assignment', "新建任务");
+      title = type_name == "Event" ? I18n.t('titles.add_new_event', "Add New Event") : I18n.t('titles.add_new_assignment', "Add New Assignment");
     } else {
-      title = type_name == "Event" ? I18n.t('titles.edit_event', "编辑事件") : I18n.t('titles.edit_assignment', "编辑任务");
+      title = type_name == "Event" ? I18n.t('titles.edit_event', "Edit Event") : I18n.t('titles.edit_assignment', "Edit Assignment");
     }
     $box.dialog({
       title: title,
@@ -1601,9 +1601,9 @@ define([
     var $box = $("#event_details");
     var data = $.extend({}, $event.data('event_data'));
     var context = data.context_type.toLowerCase() + "_" + data.context_id;
-    var message = I18n.t('prompts.delete_event', "您确定要删除这个事件吗?");
+    var message = I18n.t('prompts.delete_event', "Are you sure you want to delete this event?");
     if(data.event_type == 'assignment') {
-      message = I18n.t('prompts.delete_assignment', "您确定要删除这个任务吗?");
+      message = I18n.t('prompts.delete_assignment', "Are you sure you want to delete this assignment?");
     }
     var url = $("." + context + "_event_url").attr('href');
     if(data.event_type == "assignment") {

@@ -257,12 +257,12 @@ define([
           $form.attr('action', $form.find(".add_context_module_url").attr('href'));
           $form.find(".completion_entry").hide();
           $form.attr('method', 'POST');
-          $form.find(".submit_button").text(I18n.t('buttons.add', "添加单元"));
+          $form.find(".submit_button").text(I18n.t('buttons.add', "Add Module"));
         } else {
           $form.attr('action', $module.find(".edit_module_link").attr('href'));
           $form.find(".completion_entry").show();
           $form.attr('method', 'PUT');
-          $form.find(".submit_button").text(I18n.t('buttons.update', "更新"));
+          $form.find(".submit_button").text(I18n.t('buttons.update', "Update Module"));
         }
         $form.find("#unlock_module_at").prop('checked', data.unlock_at);
         $form.find("#require_sequential_progress").attr('checked', data.require_sequential_progress == "true" || data.require_sequential_progress == "1");
@@ -309,7 +309,7 @@ define([
           close: function() {
             modules.hideEditModule(true);
           }
-        }).fixDialogButtons().dialog('option', {title: (isNew ? I18n.t('titles.add', "创建单元") : I18n.t('titles.edit', "编辑")), width: (isNew ? 'auto' : 600)}).dialog('open'); //show();
+        }).fixDialogButtons().dialog('option', {title: (isNew ? I18n.t('titles.add', "Add Module") : I18n.t('titles.edit', "Edit Module Settings")), width: (isNew ? 'auto' : 600)}).dialog('open'); //show();
         $module.removeClass('dont_remove');
         $form.find(":text:visible:first").focus().select();
       },
@@ -380,7 +380,7 @@ define([
 
           // data.id could come back as undefined, so calling $option.val(data.id) would return an "", which is not chainable, so $option.val(data.id).text... would die.
           $option.attr('role', 'option')
-                 .text("导读, " + data.name)
+                 .text("the module, " + data.name)
                  .addClass('context_module_' + data.id)
                  .addClass('context_module_option');
 
@@ -713,7 +713,7 @@ define([
       event.preventDefault();
       $(this).parents(".context_module").confirmDelete({
         url: $(this).attr('href'),
-        message: I18n.t('confirm.delete', "您确定要删除此单元吗?"),
+        message: I18n.t('confirm.delete', "Are you sure you want to delete this module?"),
         success: function(data) {
           var id = data.context_module.id;
           $(".context_module .prerequisites .criterion").each(function() {
@@ -755,7 +755,7 @@ define([
       $("#edit_item_form").attr('action', $(this).attr('href'));
       $("#edit_item_form").fillFormData(data, {object_name: 'content_tag'});
       $("#edit_item_form").dialog({
-        title: I18n.t('titles.edit_item', "编辑")
+        title: I18n.t('titles.edit_item', "Edit Item Details")
       }).fixDialogButtons();
     });
     $("#edit_item_form .cancel_button").click(function(event) {
@@ -785,7 +785,7 @@ define([
       event.preventDefault();
       $(this).parents(".context_module_item").confirmDelete({
         url: $(this).attr('href'),
-        message: I18n.t('confirm.delete_item', '你确定要从单元中删除这个项目吗?'),
+        message: I18n.t('confirm.delete_item', 'Are you sure you want to remove this item from the module?'),
         success: function(data) {
           $(this).slideUp(function() {
             $(this).remove();
@@ -827,9 +827,9 @@ define([
       if(INST && INST.selectContentDialog) {
         var module = $(this).parents(".context_module").find(".header").getTemplateData({textValues: ['name', 'id']});
         var options = {for_modules: true};
-        options.select_button_text = I18n.t('buttons.add_item', "添加项目");
+        options.select_button_text = I18n.t('buttons.add_item', "Add Item");
         options.holder_name = module.name;
-        options.dialog_title = I18n.t('titles.add_item', "添加项目到 %{module}", {'module': module.name});
+        options.dialog_title = I18n.t('titles.add_item', "Add Item to %{module}", {'module': module.name});
         options.submit = function(item_data) {
           var $module = $("#context_module_" + module.id);
           var $item = modules.addItemToModule($module, item_data);
@@ -956,7 +956,8 @@ define([
       moduleId: data.context_module_id,
       courseId: data.context_id,
       published: data.published,
-      publishable: data.publishable
+      publishable: data.publishable,
+      unpublishable: data.unpublishable
     };
     initPublishButton($item.find('.publish-icon'), publishData);
   }
@@ -1185,7 +1186,7 @@ define([
         var $row = $("#student_progression_dialog .module_" + moduleData.id);
         
         moduleData.progress = $studentWithProgressions.find(".progression_" + moduleData.id + ":first").getTemplateData({textValues: ['workflow_state']}).workflow_state;
-        moduleData.progress = moduleData.progress || "没有信息";
+        moduleData.progress = moduleData.progress || "no information";
         var type = "nothing";
         if(moduleData.progress == "unlocked") {
           type = "in_progress";
@@ -1257,7 +1258,7 @@ define([
         var $student = $dialog.find(".student.blank:first").clone(true).removeClass('blank');
         var $studentWithProgressions = $(this);
         var data = $studentWithProgressions.getTemplateData({textValues: ['name', 'id', 'current_module']});
-        data.current_module = data.current_module || I18n.t('none_in_progress', "无进展");
+        data.current_module = data.current_module || I18n.t('none_in_progress', "none in progress");
         $student.find("a").attr('href', '#' + data.id);
         $student.fillTemplateData({data: data});
         $student_list.append($student.show())
@@ -1290,7 +1291,7 @@ define([
       $("#progression_list .student").each(function() { //.progressions .progression_" + data.id).each(function() {
         var $progression = $(this).find(".progressions .progression_" + data.id);
         var progressionData = $progression.getTemplateData({textValues: ['context_module_id', 'workflow_state']});
-        progressionData.workflow_state = progressionData.workflow_state || "锁定";
+        progressionData.workflow_state = progressionData.workflow_state || "locked";
         progressionData.name = $(this).getTemplateData({textValues: ['name']}).name;
         $dialog.find("." + progressionData.workflow_state + "_list").show()
           .find("ul").show().append($("<li />").text(progressionData.name));

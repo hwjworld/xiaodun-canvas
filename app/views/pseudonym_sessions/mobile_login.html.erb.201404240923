@@ -1,0 +1,61 @@
+<title>登录到 人人教人人学</title>
+<link href="/stylesheets/css/css.css" rel="stylesheet" type="text/css" />
+<% hide_self_reg_banner ||= false %>
+<% extend Api::V1::Account %>
+<% js_bundle :login %>
+<% login_handle_name = @domain_root_account.login_handle_name rescue AccountAuthorizationConfig.default_login_handle_name %>
+<body>
+<!--index begin-->
+<div>
+    <div>
+    <h1></h1>
+    <% if @is_delegated %>
+      <div>
+        <% if flash[:delegated_message] %>
+          <div>
+            <div><%= flash[:delegated_message] %></div>
+          </div>
+        <% end %>
+        <%
+           login_message = t('default_login_message', "Log in at your institution")
+           if @domain_root_account && @domain_root_account.display_name
+             login_message = t('login_at_account', "Log in at %{school_name}", :school_name => @domain_root_account.display_name)
+           end
+        %>
+      </div>
+    <% else %>
+      <%= form_for :pseudonym_session, :url => mobile_path(:nonldap => (@domain_root_account && !@domain_root_account.ldap_authentication?).presence), :html => {:id => "login_form"} do |f| %>
+        <% if @domain_root_account && @domain_root_account.self_registration? && !hide_self_reg_banner %>
+            <% if @domain_root_account.self_registration_type == 'observer' %>
+              <% js_env :ACCOUNT => account_json(@domain_root_account, nil, session, ['registration_settings']),
+                        :PASSWORD_POLICY => @domain_root_account.password_policy %>
+              <%= link_to t("coenrollment_banner", "*Parent of a Canvas User?* **Click Here For an Account**", :wrapper => {'*' => '<i>\1</i>', '**' => '<b>\1</b>'}), '#', :id => 'coenrollment_link', :class => 'register_banner' %>
+            <% else %>
+              <%= link_to t("register_for_canvas", "*Need a Canvas Account?* **Click Here, It's Free!**", :wrapper => {'*' => '<i>\1</i>', '**' => '<b>\1</b>'}),  Setting.get("registration_link", "/register_from_website"), :id => 'register_link', :class => 'not_external register_banner' %>
+            <% end %>
+        <% end %>
+        <% login_inner_dialog = yield :login_inner_dialog %>
+        <%= login_inner_dialog if login_inner_dialog && !login_inner_dialog.strip.empty? %>
+        <input type="hidden" name="redirect_to_ssl" value="1"/>
+      <div class="login">
+	    <div class="login-bg">
+          <div class="login-title"></div>
+              <div class="login-logo"><img src="/img/login_09.png" /></div>
+			  <div class="m10"></div>
+              <div class="email"><div class="email-ico"></div><%= f.text_field :unique_id, :id => "email",  :src => "/img/login_11.png" %></div>
+              <div class="password"><div class="password-ico"></div><%= f.password_field :password, :id => "password",  :value => "......", :src => "/img/login_15.png" %></div>
+              <div class="status">
+                <% unless session_timeout_enabled %>
+                <%= f.check_box :remember_me, :checked => session[:used_remember_me_token] %>
+                保持登录状态
+                <% end %>
+              </div>
+              <div><button type="submit" class="login-button">登&nbsp;&nbsp;录</button></div>
+          </div>
+       </div>
+      <% end %>
+   <% end %>
+  </div>
+</div>
+<%= # for plugin use
+  render "shared/login_trailer" %>

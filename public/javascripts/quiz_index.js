@@ -32,7 +32,7 @@ $(document).ready(function() {
     event.preventDefault();
     $(this).parents(".quiz").confirmDelete({
       url: $(this).attr('href'),
-      message: I18n.t('confirms.delete_quiz', "您确定要删除这个测试?"),
+      message: I18n.t('confirms.delete_quiz', "Are you sure you want to delete this quiz?"),
       error: function(data) {
         $(this).formErrors(data);
       }

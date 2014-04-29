@@ -28,11 +28,11 @@ development:
   # defaults will not read incoming mail from any source
   run_periodically: true
   pop3:
-    server: "pop.exmail.qq.com"
+    server: "pop.163.com"
     port: 995
     ssl: true
-    username: "canvas@diandiyun.org"
-    password: "dd62984588"
+    username: "dev_admin@163.com"
+    password: "1qaz2wsx"
 
 test:
   directory: 
@@ -41,11 +41,11 @@ test:
 production:
   run_periodically: true
   pop3:
-    server: "pop.exmail.qq.com"
+    server: "pop.163.com"
     port: 995
     ssl: true
-    username: "canvas@diandiyun.org"
-    password: "dd62984588"
+    username: "dev_admin@163.com"
+    password: "1qaz2wsx"
 
 # To configure multiple pop3/imap accounts, configure a pop3/imap/directory
 # section with default values and add an accounts section that contains an
@@ -55,16 +55,16 @@ production:
 multiple_inboxes:
   run_periodically: true
   imap:
-    server: "smtp.exmail.qq.com"
-    port: 465
+    server: "imap.163.com"
+    port: 993
     ssl: true
     filter: ALL
     accounts:
-    - username: "user1@example.com"
-      password: "pass1"
+    - username: "dev_test01@163.com"
+      password: "qwe123"
 
-    - username: "user2@example.com"
-      password: "pass2"
+    - username: "dev_test02@163.com"
+      password: "qwe123"
 
-    - username: "user3@example.com"
-      password: "pass3"
+    - username: "dev_test03@163.com"
+      password: "qwe123"

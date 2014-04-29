@@ -1,0 +1,239 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="stylesheets/libs/joyride-1.0.5.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/libs/jquery.fancybox-1.3.4.css"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/libs/jquery-ui-1.9.2.custom.css">
+    <link rel="stylesheet" type="text/css" href="stylesheets/all/vishViewer.css">
+	<script type="text/javascript" src="javascripts/vishViewer.min.js"></script>
+</head>
+
+<body onload="start()" style="display: none" class="loaded" id="presentation_iframe">
+
+		<!-- Copy HTML from here -->
+
+	<section class="slides layout-regular template-default"></section>
+	<button id="back_arrow" class="vish_arrow" style="display:none" tabindex="2"></button>
+	<button id="forward_arrow" class="vish_arrow" style="display:none" tabindex="2"></button>
+
+	<div id="viewbar" style="display:none">
+		<a href="#" target="_blank"><div id="embedWatermark" class="watermark" style="display:none"></div></a>
+		<button id="page-fullscreen" class="fullscreen" type="submit" style="border: none; background-color: transparent; display: none;" tabindex="2"></button>
+		<button id="page-switcher-start" class="page-switcher" tabindex="2"></button>	    
+		<div id="slide-counter-div" style="">
+			<input id="slide-counter-input" type="text" name="goToSlide" maxlength="2" value="1"><span id="slide-counter-span"></span>
+		</div>
+		<button id="page-switcher-end" class="page-switcher" tabindex="2" ></button>
+		<!-- Force browser to preload viewbar icons -->
+		<img src="images/vicons/arrows.png" style="display:none"/>
+		<img src="images/vicons/fullscreen.png" style="display:none"/>
+		<img src="images/cursor/right-pointer.png" style="display:none"/>
+		<img src="images/cursor/left-pointer.png" style="display:none"/>
+		<!-- <img src="images/vicons/watermark.png" style="display:none"/> -->
+	</div>
+
+	<!-- Force browser to preload more ViSH Viewer icons -->
+	<img src="images/vicons/helptutorial_circle_hover.png" style="display:none"/>
+	<img src="images/vicons/helptutorial_circle_hover_tp.png" style="display:none"/>
+	<img src="images/vicons/ve_close_hover.png" style="display:none"/>
+
+	<div id="selectSlidesBar" style="display:none">
+		<img id='help_addslides_selection' src='images/vicons/helptutorial_circle_blank.png'/>
+		<div class="selectSlidesButtons1">
+			<button id="ssbAll" class="selectSlidesButton">
+				<table class="selectSlidesTable">
+					<tr>
+						<td><img class="selectSlidesimgbutton" src="images/quiz/checkbox_checked.png"/></td>
+						<td><span i18n-key="i.SelectAll">Select All</span></td>
+					</tr>
+				</table>
+			</button>
+			<button id="ssbuAll" class="selectSlidesButton">
+				<table class="selectSlidesTable">
+					<tr>
+						<td><img class="selectSlidesimgbutton" src="images/quiz/checkbox_wrong.png"/></td>
+						<td><span i18n-key="i.UnselectAll">Unselect All</span></td>
+					</tr>
+				</table>
+			</button>
+		</div>
+		<div class="selectSlidesButtons3">
+			<div class="selectSlidesSelection">
+				<p id="ssbsp" class="selected_n_slides addslidetrans"></p>
+				<img id="SelectedSlidesToAdd"/>
+			</div>
+			<div class="selectSlidesButtonWrapper">
+				<button i18n-key="i.AddSlides" id="ssbdone" class="viewer_button">Add Slides</button>
+			</div>
+		</div>
+		<div class="selectSlidesButtons2">
+			<button id="ssbaccept" class="buttoncenter selectSlidesButton">
+				<table class="selectSlidesTable">
+					<tr>
+						<td><img class="selectSlidesimgbutton" src="images/quiz/checkbox_wrong.png"/></td>
+						<td><span i18n-key="i.UnselectSlide">Unselect Slide</span></td>
+					</tr>
+				</table>
+			</button>
+		</div>
+	</div>
+
+	<div style="display:none" id="viewerpreview"><span i18n-key="i.Preview">Preview</span></div>
+	<button id="closeButton" style="display:none" ><img id="closeButtonImg" src="images/vicons/back_icon.png"/></button>
+
+	<!-- Hidden link to open fancybox to display recommendations in the end -->
+	<a id="fancyRec" href="#fancy_recommendations" style="display: none;"></a>
+
+	<!-- Recommendations fancybox -->
+	<div style='display:none'>
+		<div id='fancy_recommendations'>
+			<div class="rec-first-row">
+				<span class="textrec1" i18n-key="i.evaluateTitle">Want to contribute evaluating the excursion?</span>
+				<button id='evaluate_excursion' submit='disable' class='recbutton' i18n-key="i.Evaluate">Evaluate</button>
+			</div>
+			<div class="rec-second-row">
+				<span class="textrec1" i18n-key="i.recommendationsTitle">Recommended excursions:</span>
+				<div class="rec-grid"></div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Quizzes -->
+
+	<!-- Hidden link to open fancybox when start a quiz session inside a slide  -->
+	<a id="addQuizSessionFancybox" href="#start_quiz_fancybox" style="display: none;"></a>
+	
+	<!-- Quiz session fancybox -->
+	<div style='display:none'>
+		<div id="start_quiz_fancybox" class="outer_box_viewer">
+			<div class="fancy_viewer_tabs" id="images_fancy_tabs_id">     
+				<ul>
+					<li><a i18n-key="i.LiveQuiz" href="#" id="tab_quiz_session" onclick="VISH.Quiz.loadTab('tab_quiz_session'); return false;" class="fancy_viewer_tab tabbable">Live Quiz</a></li>
+					<li><a i18n-key="i.QuizResults" href="#" id="tab_quiz_stats" onclick="VISH.Quiz.loadTab('tab_quiz_stats'); return false;"class="fancy_viewer_tab">Results</a></li>
+				</ul>
+				<img class='help_in_fancybox_viewer' id='tab_quiz_session_help' src='images/vicons/helptutorial_circle_blank.png'/>
+				<img class='help_in_fancybox_viewer' id='tab_quiz_stats_help' src='images/vicons/helptutorial_circle_blank.png'/>
+			</div>
+			<div id='tab_quiz_session_content' class="tab_quiz_session_content fancy_viewer_tab_content">
+				<a target="_blank" id='tab_quiz_session_url_link'></a>
+				<div class="quizSharebuttons">
+					<a target="_blank" href="#" id='tab_quiz_session_share_twitter'><img src='images/vicons/social/twitter.png' class='socialButton'/></a>
+					<a target="_blank" href="#" id='tab_quiz_session_share_facebook'><img src='images/vicons/social/facebook.svg' class='socialButton'/></a>
+					<a target="_blank" href="#" id='tab_quiz_session_share_gPlus'><img src='images/vicons/social/gplus.svg' class='socialButton'/></a>
+				</div>
+				<div class="quizQr"></div>
+				<input i18n-key="i.QuizStop" class='quizButton button quizStopButton' value='Stop'/>
+			</div>
+			<div id='tab_quiz_stats_content' class="fancy_viewer_tab_content">
+				<canvas id="quiz_chart" width="400" height="400"></canvas>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- NOTIFICATIONS -->
+
+	<!-- Hidden link to open notification template -->
+	<a id="link_to_notification_template" href="#notification_template_cloned"></a>
+
+	<!-- NOTIFICATION TEMPLATE -->
+	<div id="notification_template_wrapper" style='display:none'></div>
+
+
+	<!-- WALKTHROUGH HELP SECTION -->
+
+	<!-- Help for Live Quizzes -->
+	<ol id="quiz_session_help" class="joyRideTipContent">
+		<li data-id="tab_quiz_session_content" class="tut_full_viewer tut_without_arrow" data-options="tipLocation:none;" data-text="Finish" i18n-key="i.Finish">
+			<h2 i18n-key="i.walkQuizzes_1">Live Quizzes</h2>
+			<p i18n-key="i.walkQuizzes_2">
+				Live Quizzes allows you to launch quizzes and polls in real time to get instant feedback.
+			</p>
+			<p i18n-key="i.walkQuizzes_3">
+				 To launch a 'Live Quiz' you have to access to a presentation and click on the 'Launch' button placed at the bottom of the quiz you want to use. Take into account that the 'Launch' button is not present when you are previewing a presentation with the editor. When you launch a live quiz, a 'quiz session' is created on the ViSH platform, which will store all the quiz results and stats. Once a 'quiz session' is created, you will be able to access it (and therefore to view the results and stats) on the ViSH Platform at any time.
+			</p>
+			<p>
+				<span i18n-key="i.walkQuizzes_4">After you launch a live quiz using the 'Launch' button placed at the bottom of the quiz, a new screen will pop up ('live quiz screen') displaying several elements</span>:
+			</p>
+			<ul>
+				<li>
+					<p><span i18n-key="i.walkQuizzes_5a">A hyperlink to the live quiz, for instance</span>: 'http://vishub.org/qs/1234'. <span i18n-key="i.walkQuizzes_5b">This hyperlink is use to answer the quiz. Anyone accessing this internet address will be able to answer the live quiz. Therefore you can share your live quiz through this hyperlink, for example sending it by email or pasting it in a forum.</span></p>
+				</li>
+				<li>
+					<p i18n-key="i.walkQuizzes_6">
+						Some logos of popular social networks (Twitter, Facebook, Google+, ...). You can share the hyperlink of the live quiz on any of these social networks by clicking on the corresponding logo.
+					</p>
+				</li>
+				<li>
+					<p i18n-key="i.walkQuizzes_7">
+						A QR code for mobile devices. Any device can automatically get the live quiz hyperlink by scanning this QR code.
+					</p>
+				</li>
+				<li>
+					<p i18n-key="i.walkQuizzes_8">
+						A 'Results' tab placed at the top, that allows you to view in real time the quiz results. Depending on the type of the quiz, the representation of the results will vary (pie chart, graph bar, etc.).
+					</p>
+				</li>
+			</ul>
+			<p i18n-key="i.walkQuizzes_9">
+				If you want to 'close' the live quiz you should click on the 'Stop' button placed at the bottom right. After you close a live quiz no more answers will be allowed and stored. You can also close a live quiz from the ViSH platform at any time. When you close a live quiz, you can optionally specify a name to facilitate its later searching on the ViSH.
+			</p>
+
+			<p i18n-key="i.walkQuizzes_10">
+				If you exit from the live quiz screen, you can come back at any time by clicking on the 'Options' button placed at the bottom of the quiz. Notice that if a quiz has been launched, the 'Launch' button is replaced by a 'Options' button. Once you close the live quiz, the 'Launch' button will appear again. Finally, bear in mind that you can not launch more than one live quiz at the same time.
+			</p>
+		</li>
+
+	</ol>
+
+	<!-- Help selecting slides from a previewed presentation -->
+	<ol id="addslides_help" class="joyRideTipContent">
+		<li data-id="viewbar" data-text="Close" i18n-key="i.Close" class="tut_width800_center addslidestut tut_without_arrow" data-options="tipLocation:none">
+			<h2 i18n-key="i.walkSelectSlides_1">Adding external slides to your presentation</h2>
+			<p i18n-key="i.walkSelectSlides_2">Here you can see a preview of the presentation that you have decided to import. You can insert all the slides of the presentation or select the ones that you want to insert.</p>
+			<p i18n-key="i.walkSelectSlides_3">Taking into account that all slides are selected by default, if you want to insert the whole presentation you just have to click on the 'Add Slides' button placed at the bottom right.</p>
+			<p><span i18n-key="i.walkSelectSlides_4">If you want to select specific slides to import, the following instructions will help you</span>:</p>
+			<p class="tut_withouttopspace"><span i18n-key="i.walkSelectSlides_5a">Use the arrows</span> <img srctoload="images/tutorial/tut_arrow.png"/> <span i18n-key="i.walkSelectSlides_5b">placed at the bottom to navigate between the slides of the presentation.</span></p>
+			<p class="tut_withouttopspace"><span i18n-key="i.walkSelectSlides_6a">Selected slides have a green border</span> <img srctoload="images/tutorial/tut_selectedSlideBoxGreen.png"/> <span i18n-key="i.walkSelectSlides_6b">while unselected slides have a red border</span> <img srctoload="images/tutorial/tut_selectedSlideBoxRed.png"/>.</p>
+			<p class="tut_withmediumbottomspace" i18n-key="i.walkSelectSlides_7">To select or unselect the current slide you are viewing, click on the 'Select/Unselect Slide' button placed at the bottom center.</p>
+			<img class="addslidestut_button" i18n-key="i.img.tut_selects" srctoload="images/tutorial/tut_selects.png"/> <img class="addslidestut_button" i18n-key="i.img.tut_unselects" srctoload="images/tutorial/tut_unselects.png"/>
+			<p class="tut_withmediumbottomspace" i18n-key="i.walkSelectSlides_8">Moreover, you can use the following buttons to select or unselect all the slides at once.</p>
+			<img class="addslidestut_button" i18n-key="i.img.tut_selectAll" srctoload="images/tutorial/tut_selectall.png"/> <img class="addslidestut_button" i18n-key="i.img.tut_unselectAll" srctoload="images/tutorial/tut_unselectall.png"/>
+			<p i18n-key="i.walkSelectSlides_9">Finally, to insert the selected slides you have to click on the 'Add slides' button placed at the bottom right. Notice that the quantity of slides that you are going to insert is indicated at the left of this button.  </p>
+			<p class="tut_space">&nbsp;</p>
+		</li>
+	</ol>
+
+	<div id='qr_overlay' style="display:none"></div>
+
+	<!-- Copy HTML until here -->
+
+
+	<script>
+		options = {};
+
+		var configuration = {};
+		configuration["ImagesPath"] = "images/";
+		configuration["StylesheetsPath"] = "stylesheets/";
+		configuration["mode"] = "vish";
+		options["configuration"] = configuration;
+
+		options["developping"] = false;
+		options["scorm"] = true;
+
+		//URL to access to the Recommendation API
+		options["recommendationsAPI"] = {
+			rootURL: "http://guoshi.com/" + "excursions/last_slide.json"
+		};
+
+				options["watermarkURL"] = "http://guoshi.com/";
+			
+			var presentation = {"VEVersion":"0.8.7","type":"presentation","title":"\u96e8\u4e0b\u5f97\u6709\u591a\u5927","description":"\u82cf\u6559\u7248\u5c0f\u5b66\u79d1\u5b66\u4e09\u5e74\u7ea7\u4e0b\u518c\u300a\u96e8\u4e0b\u5f97\u6709\u591a\u5927\u300bPPT\u8bfe\u4ef6","avatar":"http://vishub.org/assets/logos/original/excursion-30.png","author":{"name":"Andy","vishMetadata":{"id":"4423"}},"tags":["\u96e8\u4e0b\u5f97\u6709\u591a\u5927","PPT","\u82cf\u6559\u7248"],"theme":"theme8","animation":"animation11","language":"independent","age_range":"4 - 20","vishMetadata":{"draft":"true"},"slides":[{"id":"article1","type":"standard","template":"t1","elements":[{"id":"article1_zone1","type":"text","areaid":"left","body":"<p style=\"text-align:left;\">\n\t&nbsp;</p>\n<p style=\"text-align:left;\">\n\t&nbsp;</p>\n<p style=\"text-align:left;\">\n\t&nbsp;</p>\n<p style=\"text-align:left;\">\n\t&nbsp;</p>\n<p style=\"text-align:left;\">\n\t&nbsp;</p>\n<p style=\"text-align: center;\">\n\t<span style=\"color:#0000cd;\"><strong><span autocolor=\"true\"><span style=\"font-size:36px;\"><span style=\"font-size:48px;\">\u96e8\u4e0b\u5f97\u6709\u591a\u5927</span></span></span><span autocolor=\"true\"><span style=\"font-size:36px;\">&shy;</span></span></strong></span></p>\n"},{"id":"article1_zone2","type":"text","areaid":"header","body":"<p style=\"text-align: center;\">\n\t<span autocolor=\"true\" style=\"color:#000\"><span style=\"font-size:18px;\"><span style=\"font-size:22px;\">\u5c0f\u5b66\u79d1\u5b66\u8bfe\u7a0b\u8bfe\u4ef6</span>&shy;</span></span></p>\n"},{"id":"article1_zone3","areaid":"subheader"}]},{"id":"article4","type":"standard","template":"t3","elements":[{"id":"article4_zone1","type":"text","areaid":"header","body":"<p style=\"text-align: center;\">\n\t<span style=\"font-size:36px;\"><span autocolor=\"true\" style=\"color:#000\"><span style=\"color: rgb(34, 34, 34);\">\u6211\u4eec\u8981\u600e\u6837\u624d\u80fd\u79d1\u5b66\u7684\u8ba4\u8bc6\u96e8\u4e0b\u7684\u5927\u5c0f</span></span></span></p>\n<p style=\"text-align:left;\">\n\t<span autocolor=\"true\" style=\"color:#000\"><span style=\"font-size:18px;\">&shy;</span></span></p>\n"},{"id":"article4_zone2","type":"image","areaid":"left","body":"http://vishub.org/pictures/3799.png","style":"position: relative; width:100%; height:48.504273504273506%; top:18.58974358974359%; left:1.392757660167131%;"}]},{"id":"article5","type":"standard","template":"t5","elements":[{"id":"article5_zone1","type":"text","areaid":"header","body":"<p style=\"text-align: center;\">\n\t<span style=\"font-size:36px;\">\u964d\u6c34\u662f\u5929\u6c14\u7684\u4e00\u4e2a\u91cd\u8981\u7279\u5f81</span></p>\n<p style=\"text-align:left;\">\n\t<span autocolor=\"true\" style=\"color:#000\"><span style=\"font-size:18px;\">&shy;</span></span></p>\n"},{"id":"article5_zone2","type":"text","areaid":"left","body":"<p style=\"text-align:left;\">\n\t<span autocolor=\"true\" style=\"color:#000\"><span style=\"font-size:36px;\">\u964d\u6c34&shy;\u5f62\u5f0f\uff1a</span></span></p>\n<p style=\"text-align:left;\">\n\t<span autocolor=\"true\" style=\"color:#000\"><span style=\"font-size:36px;\">&nbsp; &nbsp;\u96e8</span></span></p>\n<p style=\"text-align:left;\">\n\t<span autocolor=\"true\" style=\"color:#000\"><span style=\"font-size:36px;\">&nbsp; &nbsp;\u96ea</span></span></p>\n<p style=\"text-align:left;\">\n\t<span autocolor=\"true\" style=\"color:#000\"><span style=\"font-size:36px;\">&nbsp; &nbsp;\u51b0\u96f9</span></span></p>\n<p style=\"text-align:left;\">\n\t&nbsp;</p>\n<p>\n\t&nbsp;</p>\n<p>\n\t&nbsp;</p>\n<p>\n\t<strong><span style=\"color:#ff0000;\"><span style=\"font-size:26px;\">\u96e8\u91cf\u5668\uff1a\u6d4b\u91cf\u964d\u6c34\u91cf\u7684\u4eea\u5668</span></span></strong></p>\n"},{"id":"article5_zone3","type":"image","areaid":"right","body":"http://vishub.org/pictures/3800.png","style":"position: relative; width:100%; height:96.61733615221988%; top:0%; left:0%;"}]},{"id":"article7","type":"standard","template":"t5","elements":[{"id":"article7_zone1","type":"text","areaid":"header","body":"<p style=\"text-align: center;\">\n\t<span style=\"font-size:36px;\"><span autocolor=\"true\" style=\"color:#000\"><span style=\"color: rgb(34, 34, 34);\">\u96e8\u91cf\u5668\u539f\u7406</span></span></span></p>\n<p style=\"text-align:left;\">\n\t<span autocolor=\"true\" style=\"color:#000\"><span style=\"font-size:18px;\">&shy;</span></span></p>\n"},{"id":"article7_zone2","type":"image","areaid":"left","body":"http://vishub.org/pictures/3801.png","style":"position: relative; width:100%; height:67.23044397463002%; top:15.010570824524313%; left:0.5797101449275363%;"},{"id":"article7_zone3","type":"image","areaid":"right","body":"http://vishub.org/pictures/3802.png","style":"position: relative; width:66.66666666666667%; height:100%; top:0.42283298097251587%; left:17.10144927536232%;"}]},{"id":"article8","type":"standard","template":"t5","elements":[{"id":"article8_zone1","type":"text","areaid":"header","body":"<p style=\"text-align: center;\">\n\t<span style=\"font-size:36px;\"><span autocolor=\"true\" style=\"color:#000\"><span style=\"color: rgb(34, 34, 34);\">\u51e0\u79cd\u7b80\u6613\u96e8\u91cf\u5668</span></span></span></p>\n<p style=\"text-align:left;\">\n\t<span autocolor=\"true\" style=\"color:#000\"><span style=\"font-size:18px;\">&shy;</span></span></p>\n"},{"id":"article8_zone2","type":"image","areaid":"left","body":"http://vishub.org/pictures/3803.jpeg","style":"position: relative; width:100%; height:44.82029598308668%; top:21.987315010570825%; left:0%;"},{"id":"article8_zone3","type":"image","areaid":"right","body":"http://vishub.org/pictures/3804.jpeg","style":"position: relative; width:100%; height:83.9323467230444%; top:5.2854122621564485%; left:0%;"}]},{"id":"article10","type":"standard","template":"t14","elements":[{"id":"article10_zone1","type":"text","areaid":"circle1","body":"<p style=\"text-align:center;\">\n\t&nbsp;</p>\n<p style=\"text-align:center;\">\n\t&nbsp;</p>\n<p style=\"text-align:center;\">\n\t<span style=\"font-size:36px;\"><span style=\"color:#0000ff;\"><span autocolor=\"true\"><strong>\u6b65\u9aa4</strong></span></span><span autocolor=\"true\" style=\"color:#000\">&shy;</span></span></p>\n"},{"id":"article10_zone2","type":"text","areaid":"right1","body":"<p style=\"text-align:left;\">\n\t<span style=\"font-size:24px;\"><span autocolor=\"true\" style=\"color:#000\">1\u3001\u627e\u4e00\u4e2a&shy;</span>\u76f4\u7b52\u900f\u660e\u676f\uff08\u6216\u996e\u6599\u74f6\uff09\uff0c\u9ad815\u5398\u7c73\u4ee5\u4e0a\u3002</span></p>\n<div>\n\t<span style=\"font-size:24px;\">2\u3001\u7528\u5c3a\u5b50\u5728\u7eb8\u6761\u4e0a\u753b\u597d\u523b\u5ea6\uff0c\u5355\u4f4d\u6beb\u7c73\u3002</span></div>\n<div>\n\t<span style=\"font-size:24px;\">3\u3001\u5c06\u7eb8\u6761\u7ad6\u76f4\u7c98\u5230\u676f\u5916\u9762\uff0c\u4f7f\u7eb8\u67610\u523b\u5ea6\u7ebf\u548c\u676f\u5185\u5e95\u90e8\u5bf9\u9f50\u3002</span></div>\n"},{"id":"article10_zone3","type":"text","areaid":"circle2","body":"<p style=\"text-align: center;\">\n\t&nbsp;</p>\n<p style=\"text-align: center;\">\n\t&nbsp;</p>\n<p style=\"text-align: center;\">\n\t<span style=\"color:#ff8c00;\"><strong><span style=\"font-size:36px;\">\u601d\u8003</span></strong></span></p>\n"},{"id":"article10_zone4","type":"text","areaid":"right2","body":"<p style=\"text-align:left;\">\n\t<span style=\"font-size:24px;\">\u96e8\u91cf\u5668\u7684\u53e3\u5f84\u5927\u5c0f\u662f\u5426\u5bf9\u6d4b\u91cf\u6709\u5f71\u54cd\uff1f</span></p>\n<p style=\"text-align:left;\">\n\t<span autocolor=\"true\" style=\"color:#000\"><span style=\"font-size:24px;\"><span style=\"color: rgb(34, 34, 34);\">\u7528\u5927\u5c0f\u4e0d\u540c\u7684\u96e8\u91cf\u5668\u6d4b\u91cf\u964d\u6c34\u53ef\u4ee5\u5417\uff1f</span></span></span></p>\n<p style=\"text-align:left;\">\n\t<span autocolor=\"true\" style=\"color:#000\"><span style=\"font-size:26px;\">&shy;</span></span></p>\n"},{"id":"article10_zone5","type":"text","areaid":"circle3","body":"<p style=\"text-align:center;\">\n\t&nbsp;</p>\n<p style=\"text-align:center;\">\n\t&nbsp;</p>\n<p style=\"text-align:center;\">\n\t<strong><span style=\"color:#008000;\"><span style=\"font-size:36px;\"><span autocolor=\"true\">\u53c2\u8003&shy;</span></span></span></strong></p>\n"},{"id":"article10_zone6","type":"text","areaid":"right3","body":"<p style=\"text-align:left;\">\n\t<span style=\"font-size:26px;\">\u6d4b\u91cf\u964d\u6c34\u91cf\u4e0e\u4f7f\u7528\u7684\u96e8\u91cf\u5668\u7684\u7c97\u7ec6\u3001\u5927\u5c0f\u6ca1\u6709\u5173\u7cfb\uff0c\u770b\u7684\u662f\u96e8\u6c34\u5728\u96e8\u91cf\u5668\u4e2d\u7684\u9ad8\u5ea6\u3002</span></p>\n<p style=\"text-align:left;\">\n\t<span style=\"font-size:26px;\"><span autocolor=\"true\" style=\"color:#000\"><span style=\"color: rgb(34, 34, 34);\">\u7b80\u6613\u96e8\u91cf\u5668\u4e2d\u6ca1\u523b\u5ea6\u90e8\u5206\u53ef\u5148\u5012\u8fdb\u4e00\u4e9b\u6c34\u3002</span></span></span></p>\n<p style=\"text-align:left;\">\n\t<span autocolor=\"true\" style=\"color:#000\"><span style=\"font-size:26px;\">&shy;</span></span></p>\n"}]},{"id":"article11","type":"standard","template":"t4","elements":[{"id":"article11_zone1","type":"text","areaid":"header","body":"<p style=\"text-align: center;\">\n\t<span style=\"font-size:36px;\"><span autocolor=\"true\" style=\"color:#000\">&shy;</span>\u6211\u4eec\u6765\u6d4b\u91cf</span></p>\n"},{"id":"article11_zone2","type":"text","areaid":"left","body":"<div>\n\t&nbsp;</div>\n<div>\n\t<span style=\"font-size:36px;\">1\u3001\u7528\u55b7\u6c34\u58f6\u6a21\u62df\u964d\u6c34\uff0c\u8bb0\u5f55\u597d\u65f6\u95f4\u3002</span></div>\n<div>\n\t&nbsp;</div>\n<div>\n\t<span style=\"font-size:36px;\">2\u3001\u628a\u96e8\u91cf\u5668\u6539\u5728\u6c34\u5e73\u684c\u9762\uff0c\u8bfb\u51fa\u523b\u5ea6\u3002</span></div>\n<div>\n\t&nbsp;</div>\n<p style=\"text-align:left;\">\n\t<span style=\"font-size:36px;\"><span autocolor=\"true\" style=\"color:#000\"><span style=\"color: rgb(34, 34, 34);\">3\u3001\u6362\u7b97\u621024\u5c0f\u65f6\uff0c\u6838\u5bf9\u96e8\u91cf\u7b49\u7ea7\u3002</span></span></span></p>\n<p style=\"text-align:left;\">\n\t<span autocolor=\"true\" style=\"color:#000\"><span style=\"font-size:36px;\">&shy;</span></span></p>\n"},{"id":"article11_zone3","type":"image","areaid":"right","body":"http://vishub.org/pictures/3805.png","style":"position: relative; width:66.15598885793872%; height:100%; top:-1.5748031496062993%; left:16.852367688022284%;"}]},{"id":"article12","type":"standard","template":"t3","elements":[{"id":"article12_zone1","type":"text","areaid":"header","body":"<p style=\"text-align: center;\">\n\t<span style=\"font-size:36px;\"><span autocolor=\"true\" style=\"color:#000\">&shy;</span>\u6211\u4eec\u7684\u964d\u6c34\u91cf\u67f1\u72b6\u56fe</span></p>\n"},{"id":"article12_zone2","type":"image","areaid":"left","body":"http://vishub.org/pictures/3806.png","style":"position: relative; width:81.05849582172702%; height:100%; top:0%; left:9.470752089136491%;"}]},{"id":"article13","type":"standard","template":"t3","elements":[{"id":"article13_zone1","type":"text","areaid":"header","body":"<p style=\"text-align: center;\">\n\t<span autocolor=\"true\" style=\"color:#000\"><span style=\"font-size:18px;\"><span style=\"font-size:36px;\">\u62d3\u5c55\u77e5\u8bc6</span>&shy;</span></span></p>\n"},{"id":"article13_zone2","type":"text","areaid":"left","body":"<p>\n\t&nbsp;</p>\n<p>\n\t<span style=\"font-size:28px;\">1.\u5229\u7528\u5927\u5c0f\u4e0d\u540c\u53e3\u5f84\u7684\u5bb9\u5668\u641c\u96c6\u96e8\u6c34\u65f6\uff0c\u5e94\u653e\u5728\u5e73\u5766\u7a7a\u65f7\u7684\u5730\u4e0a\uff1b\u4e3a\u89c2\u6d4b\u65b9\u4fbf\u4f7f\u7528\u900f\u660e\u5bb9\u5668\uff0c\u5c06\u53ef\u76f4\u63a5\u4ee5\u5c3a\u6d4b\u91cf\u6c34\u7684\u9ad8\u5ea6\u3002</span></p>\n<p>\n\t&nbsp;</p>\n<div>\n\t<span style=\"font-size:28px;\">2.\u6d4b\u91cf\u96e8\u91cf\u65f6\u5e94\u8bb0\u4e0b\u6d4b\u91cf\u65f6\u95f4\uff0c\u624d\u80fd\u6bd4\u8f83\u96e8\u52bf\u5927\u5c0f\u3002</span></div>\n<div>\n\t&nbsp;</div>\n<div>\n\t<span style=\"font-size:28px;\">3.\u5229\u7528\u7b80\u6613\u96e8\u91cf\u8ba1\u53ef\u4ee5\u6d4b\u91cf\u96e8\u91cf\u3002\u96e8\u91cf\u8ba1\u7684\u4f4d\u7f6e\u5e76\u4e0d\u4f1a\u5f71\u54cd\u6536\u96c6\u5230\u7684\u96e8\u6c34\u9ad8\u5ea6\uff0c\u4f46\u8981\u6ce8\u610f\u653e\u7f6e\u7684\u4f4d\u7f6e\u662f\u5426\u4f1a\u6709\u6c34\u6ef4\u6cfc\u6e85\uff0c\u6216\u662f\u6709\u5c4b\u6a90\u6ef4\u6c34\u7684\u60c5\u5f62\u800c\u5f71\u54cd\u6d4b\u91cf\u7684\u51c6\u786e\u6027\u3002</span></div>\n<p style=\"text-align:left;\">\n\t<span autocolor=\"true\" style=\"color:#000\"><span style=\"font-size:36px;\">&shy;</span></span></p>\n"}]}]};
+
+		function start(){
+			VISH.Viewer.init(options , presentation);
+		}
+	</script>
+
+</body>
+</html>

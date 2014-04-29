@@ -5,7 +5,7 @@
 require 'net/smtp'
 
 config = {
-  :domain => "exmail.qq.com",
+  :domain => "www.163.com",
   :delivery_method => :smtp,
 }.merge((Setting.from_config("outgoing_mail") || {}).symbolize_keys)
 

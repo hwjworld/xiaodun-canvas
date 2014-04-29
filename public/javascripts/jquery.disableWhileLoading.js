@@ -59,7 +59,7 @@ define([
                      ( $(this).is('.ui-button-text') && $(this).closest('.ui-button').data('textWhileLoading') ) ||
                      // if nothing was passed in as the text value or if they pass an array for opts.buttons,
                      // just use a default loading... text.
-                     I18n.t('loading', '正在加载...');
+                     I18n.t('loading', 'Loading...');
             });
           });
         }, 13);

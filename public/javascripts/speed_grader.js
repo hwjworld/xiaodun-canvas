@@ -128,8 +128,8 @@ define([
       snapshotCache = {},
       sectionToShow,
       header,
-      studentLabel = I18n.t("student", "学生"),
-      groupLabel = I18n.t("group", "小组"),
+      studentLabel = I18n.t("student", "Student"),
+      groupLabel = I18n.t("group", "Group"),
       gradeeLabel = studentLabel,
       utils;
 
@@ -186,7 +186,7 @@ define([
       if (tempArray.length) {
         jsonData.studentsWithSubmissions = tempArray;
       } else {
-        alert(I18n.t('alerts.no_students_in_section', "在该班级中找不到任何学生，请返回以显示所有班级。"));
+        alert(I18n.t('alerts.no_students_in_section', "Could not find any students in that section, falling back to showing all sections."));
         userSettings.contextRemove('grading_show_only_section');
         window.location.reload();
       }
@@ -249,7 +249,7 @@ define([
     var raw = submissionStateName(student.submission);
     var formatted = raw.replace("_", " ");
     if (raw === "resubmitted") {
-      formatted = I18n.t('graded_then_resubmitted', "计分后重新提交的时间 (%{when})", {'when': $.parseFromISO(student.submission.submitted_at).datetime_formatted});
+      formatted = I18n.t('graded_then_resubmitted', "graded, then resubmitted (%{when})", {'when': $.parseFromISO(student.submission.submitted_at).datetime_formatted});
     }
     return {raw: raw, formatted: formatted};
   }
@@ -262,7 +262,7 @@ define([
           className = classNameBasedOnStudent(s);
 
       if(hideStudentNames) {
-        name = I18n.t('nth_student', "学生 %{n}", {'n': idx + 1});
+        name = I18n.t('nth_student', "Student %{n}", {'n': idx + 1});
       }
 
       return '<option value="' + s.id + '" class="' + className.raw + '">' + name + ' ---- ' + className.formatted +'</option>';
@@ -386,12 +386,12 @@ define([
       this.elements.mute.modal.dialog({
         autoOpen: false,
         buttons: [{
-          text: I18n.t('cancel_button', '取消'),
+          text: I18n.t('cancel_button', 'Cancel'),
           click: $.proxy(function(){
             this.elements.mute.modal.dialog('close');
           }, this)
         },{
-          text: I18n.t('mute_assignment', '屏蔽作业'),
+          text: I18n.t('mute_assignment', 'Mute Assignment'),
           'class': 'btn-primary',
           click: $.proxy(function(){
             this.toggleMute();
@@ -446,7 +446,7 @@ define([
 
     toggleMute: function(){
       this.muted = !this.muted;
-      var label = this.muted ? I18n.t('unmute_assignment', '取消屏蔽作业') : I18n.t('mute_assignment', '取消屏蔽作业'),
+      var label = this.muted ? I18n.t('unmute_assignment', 'Unmute Assignment') : I18n.t('mute_assignment', 'Mute Assignment'),
           action = this.muted ? 'mute' : 'unmute',
           actions = {
         /* Mute action */
@@ -512,7 +512,7 @@ define([
       $(".speech_recognition_link").click(function() {
           $('<input style="font-size: 30px;" speech x-webkit-speech />')
             .dialog({
-              title: I18n.t('titles.click_to_record', "单击麦克风录制您的评论"),
+              title: I18n.t('titles.click_to_record', "Click the mic to record your comments"),
               open: function(){
                 $(this).width(100);
               }
@@ -799,7 +799,7 @@ define([
         return ret;
       })();
     if (hasPendingQuizSubmissions) {
-      return I18n.t('confirms.unsaved_changes', "|- 以下学生的测验提交文件中有未保存的更改:  %{users}是否仍要继续?", {'users': userNamesWithPendingQuizSubmission.join('\n ')});
+      return I18n.t('confirms.unsaved_changes', "The following students have unsaved changes to their quiz submissions: \n\n %{users}\nContinue anyway?", {'users': userNamesWithPendingQuizSubmission.join('\n ')});
     }
   };
 
@@ -908,16 +908,16 @@ define([
       mergeStudentsAndSubmission();
       if (jsonData.GROUP_GRADING_MODE && !jsonData.studentsWithSubmissions.length) {
         if (window.history.length === 1) {
-          alert(I18n.t('alerts.no_students_in_groups_close', "很抱歉，此次提交的作业无法在快速评分器中计分，因为没有分配的用户。请将用户分配到此小组集，然后重试。单击'确定'返回此窗口。"))
+          alert(I18n.t('alerts.no_students_in_groups_close', "Sorry, submissions for this assignment cannot be graded in Speedgrader because there are no assigned users. Please assign users to this group set and try again. Click 'OK' to close this window."))
           window.close();
         }
         else {
-          alert(I18n.t('alerts.no_students_in_groups_back', "很抱歉，此次提交的作业无法在快速评分器中计分，因为没有分配的用户。请将用户分配到此小组集，然后重试。单击'确定'返回。"))
+          alert(I18n.t('alerts.no_students_in_groups_back', "Sorry, submissions for this assignment cannot be graded in Speedgrader because there are no assigned users. Please assign users to this group set and try again. Click 'OK' to go back."))
           window.history.back();
         }
       }
       else if (!jsonData.studentsWithSubmissions.length) {
-        alert(I18n.t('alerts.no_active_students', "对不起，课程中没有活动学生或可评分的学生。"))
+        alert(I18n.t('alerts.no_active_students', "Sorry, there are either no active students in the course or none are gradable by you."))
         window.history.back();
       } else {
         $("#speed_grader_loading").hide();
@@ -1053,13 +1053,13 @@ define([
         $turnitinScoreContainer.html(turnitinScoreTemplate({
           state: (turnitinAsset.state || 'no') + '_score',
           reportUrl: $.replaceTags($assignment_submission_turnitin_report_url.attr('href'), { user_id: submission.user_id, asset_string: assetString }),
-          tooltip: I18n.t('turnitin.tooltip.score', 'Turnitin 的相似性分数 - 查看详细报告'),
+          tooltip: I18n.t('turnitin.tooltip.score', 'Turnitin Similarity Score - See detailed report'),
           score: turnitinAsset.similarity_score + '%'
         }));
       } else if (turnitinAsset.status) {
         // status == 'error' or status == 'pending'
-        var pendingTooltip = I18n.t('turnitin.tooltip.pending', 'Turnitin 的相似性分数 - 提交内容待处理'),
-            errorTooltip = I18n.t('turnitin.tooltip.error', 'Turnitin 的相似性分数 - 查看提交内容错误的详细信息');
+        var pendingTooltip = I18n.t('turnitin.tooltip.pending', 'Turnitin Similarity Score - Submission pending'),
+            errorTooltip = I18n.t('turnitin.tooltip.error', 'Turnitin Similarity Score - See submission error details');
         $turnitinSimilarityScore = $(turnitinScoreTemplate({
           state: 'submission_' + turnitinAsset.status,
           reportUrl: '#',
@@ -1073,9 +1073,9 @@ define([
         });
 
         var defaultInfoMessage = I18n.t('turnitin.info_message',
-                                        'Turnitin 正在处理文件，请晚些时候再来查看得分。'),
+                                        'This file is still being processed by turnitin. Please check back later to see the score'),
             defaultErrorMessage = I18n.t('turnitin.error_message',
-                                         '提交至 Turnitin 的过程中发生了错误。请在联系技术支持之前先重试。');
+                                         'There was an error submitting to turnitin. Please try resubmitting the file before contacting support');
         var $turnitinInfo = $(turnitinInfoTemplate({
           assetString: assetString,
           message: (turnitinAsset.status == 'error' ? (turnitinAsset.public_error_message || defaultErrorMessage) : defaultInfoMessage),
@@ -1088,7 +1088,7 @@ define([
           $turnitinInfo.find('.turnitin_resubmit_button').click(function(event) {
             event.preventDefault();
             $(this).attr('disabled', true)
-              .text(I18n.t('turnitin.resubmitting', '正在重新提交...'));
+              .text(I18n.t('turnitin.resubmitting', 'Resubmitting...'));
 
             $.ajaxJSON(resubmitUrl, "POST", {}, function() {
               window.location.reload();
@@ -1220,9 +1220,9 @@ define([
 
           innerHTML += "<option " + (late ? "class='late'" : "") + " value='" + value + "' " +
                         (o == submissionToSelect ? "selected='selected'" : "") + ">" +
-                        (submittedAt ? submittedAt.datetime_formatted : I18n.t('no_submission_time', '无提交时间')) +
-                        (late ? " " + I18n.t('loud_late', "延迟") : "") +
-                        (s.grade && (s.grade_matches_current_submission || s.show_grade_in_dropdown) ? " (" + I18n.t('grade', "评分: %{grade}", {'grade': s.grade}) + ')' : "") +
+                        (submittedAt ? submittedAt.datetime_formatted : I18n.t('no_submission_time', 'no submission time')) +
+                        (late ? " " + I18n.t('loud_late', "LATE") : "") +
+                        (s.grade && (s.grade_matches_current_submission || s.show_grade_in_dropdown) ? " (" + I18n.t('grade', "grade: %{grade}", {'grade': s.grade}) + ')' : "") +
                        "</option>";
 
         });
@@ -1254,7 +1254,7 @@ define([
 
     updateStatsInHeader: function(){
       $x_of_x_students.html(
-        I18n.t('gradee_index_of_total', '%{gradee} %{x} / %{y}', {
+        I18n.t('gradee_index_of_total', '%{gradee} %{x} of %{y}', {
           gradee: gradeeLabel,
           x: EG.currentIndex() + 1,
           y: jsonData.context.students.length
@@ -1290,7 +1290,7 @@ define([
         $average_score_wrapper.hide();
       }
       $grded_so_far.html(
-        I18n.t('portion_graded', '%{x} / %{y} 已计分', {
+        I18n.t('portion_graded', '%{x} / %{y} Graded', {
           x: scores.length,
           y: jsonData.context.students.length
         })
@@ -1407,7 +1407,7 @@ define([
         // show a new option if there is not an assessment by me
         // or, if I can :manage_course, there is not an assessment already with assessment_type = 'grading'
         if( !assessmentsByMe.length || (ENV.RUBRIC_ASSESSMENT.assessment_type == 'grading' && !gradingAssessments.length) ) {
-          $rubric_assessments_select.append('<option value="new">' + I18n.t('new_assessment', '[新测验]') + '</option>');
+          $rubric_assessments_select.append('<option value="new">' + I18n.t('new_assessment', '[New Assessment]') + '</option>');
         }
 
         //select the assessment that meets these rules:
@@ -1454,7 +1454,7 @@ define([
           $comment.find(".delete_comment_link").click(function(event) {
             $(this).parents(".comment").confirmDelete({
               url: "/submission_comments/" + comment.id,
-              message: I18n.t('confirms.delete_comment', "是否确定要删除此评论?"),
+              message: I18n.t('confirms.delete_comment', "Are you sure you want to delete this comment?"),
               success: function(data) {
                 $(this).slideUp(function() {
                   $(this).remove();
@@ -1496,7 +1496,7 @@ define([
           disableGroupCommentCheckbox();
         }
 
-        $add_a_comment_submit_button.text(I18n.t('buttons.submit_comment', "提交评论"));
+        $add_a_comment_submit_button.text(I18n.t('buttons.submit_comment', "Submit Comment"));
     },
 
     handleCommentFormSubmit: function(){
@@ -1537,7 +1537,7 @@ define([
 
       $("#comment_attachments").empty();
       $add_a_comment.find(":input").prop("disabled", true);
-      $add_a_comment_submit_button.text(I18n.t('buttons.submitting', "正在提交..."));
+      $add_a_comment_submit_button.text(I18n.t('buttons.submitting', "Submitting..."));
       hideMediaRecorderContainer();
     },
 

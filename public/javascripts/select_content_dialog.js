@@ -266,7 +266,7 @@ $(document).ready(function() {
     if($(this).val() == 'context_external_tool') {
       var $select = $("#context_external_tools_select");
       if(!$select.hasClass('loaded')) {
-        $select.find(".message").text("正在加载...");
+        $select.find(".message").text("Loading...");
         var url = $("#select_context_content_dialog .external_tools_url").attr('href');
         $.ajaxJSON(url, 'GET', {}, function(data) {
           $select.find(".message").remove();

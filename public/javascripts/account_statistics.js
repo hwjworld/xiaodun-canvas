@@ -30,26 +30,26 @@ define([
       var name = $(this).attr('data-name');
       var url = $.replaceTags($(".over_time_url").attr('href'), 'attribute', $(this).attr('data-key'));
       var $link = $(this);
-      $link.text(I18n.t('loading_text', "正在加载..."));
+      $link.text(I18n.t('loading_text', "loading..."));
       $.ajaxJSON(url, 'GET', {}, function(data) {
-        $link.text(I18n.t('over_time_link', "超时"));
+        $link.text(I18n.t('over_time_link', "over time"));
         $("#over_time_dialog .csv_url").attr('href', url + '.csv');
         populateDialog(data, name);
       }, function(data) {
-        $link.text(I18n.t('loading_error', "错误"));
+        $link.text(I18n.t('loading_error', "error"));
       });
     });
     function populateDialog(data_points, axis) {
       $("#over_time_dialog").dialog({
         width: 630,
         height: 330,
-        title: I18n.t('title_data_point_over_time', "%{data_point} 超时", {data_point: axis})
+        title: I18n.t('title_data_point_over_time', "%{data_point} Over Time", {data_point: axis})
       });
 
       // google dependencies declared in views/acccounts/statistics since google.load uses document.write :(
       var data = new google.visualization.DataTable();
-      data.addColumn('date', I18n.t('heading_date', '日期'));
-      data.addColumn('number', axis || I18n.t('heading_value', "值"));
+      data.addColumn('date', I18n.t('heading_date', 'Date'));
+      data.addColumn('number', axis || I18n.t('heading_value', "Value"));
       data.addColumn('string', 'title1');
       data.addColumn('string', 'text1');
       

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-  <title>Canvas Page Error</title>
+  <title>人人教人人学</title>
   <style>
     body {
       margin: 0;
@@ -65,26 +65,26 @@
 </head>
 <body>
   <form class="centered-div" id="submit_error_form" action="/errors" method="POST">
-    <h1 class="centered-div-content">Oops! It Looks Like Something Broke</h1>
+    <h1 class="centered-div-content">您要找的页面找不到！</h1>
     <div class="centered-div-content">
-      <p>Please let us know how you got here so we can fix it as soon as possible:</p>
+      <p>请告诉我们您是怎么操作遇到这个页面的：</p>
       <input id="error_category" name="error[category]" type="hidden" value="500" />
       <input id="error_url" name="error[url]" type="hidden" value="the value of this field should be changed by javascript on dom ready." />
       <textarea autofocus name="error[comments]" style="width: 100%; min-height: 100px"></textarea>
-      Your email address: <input id="error_email" name="error[email]" style="width: 100%" />
-      <p>
+      您的邮件地址: <input id="error_email" name="error[email]" style="width: 100%" />
+      <!--p>
         If you need more assistance, go to our
         <a href="http://help.instructure.com">support website</a> or
         <a href="mailto:support@instructure.com?subject=Feedback from Canvas page error">send us an email</a>.
-      </p>
+      </p-->
       <div class="button-container">
-        <button type="submit" class="btn">Send Comments</button>
+        <button type="submit" class="btn">发送</button>
       </div>
     </div>
   </form>
-  <div class="sticky-footer">
+  <!--div class="sticky-footer">
     <a href="http://www.instructure.com"><img alt="Powered By Instructure" src="/images/footer-logo.png?1274476615" /></a>
-  </div>
+  </div-->
   <script>
     document.getElementById('error_url').value = window.location;
   </script>

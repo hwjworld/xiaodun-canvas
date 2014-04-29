@@ -103,12 +103,12 @@ define([
       } catch(e) {}
       $.ajaxJSON(location.protocol + '//' + location.host + "/simple_response.json?rnd=" + Math.round(Math.random() * 9999999), 'GET', {}, function() {
         if(json_data && json_data.status == 'AUT') {
-          ajaxErrorFlash(I18n.t('errors.timeout', "您的请求有问题，可能是非活动时间太长所致。请重新加载页面，然后重试。"), request);
+          ajaxErrorFlash(I18n.t('errors.timeout', "There was a problem with your request, possibly due to a long period of inactivity.  Please reload the page and try again."), request);
         } else {
-          ajaxErrorFlash(I18n.t('errors.unhandled', "噢！上一个请求未解决。"), request);
+          ajaxErrorFlash(I18n.t('errors.unhandled', "Oops! The last request didn't work out."), request);
         }
       }, function() {
-        ajaxErrorFlash(I18n.t('errors.connection_lost', "到 %{host} 的连接丢失。请确保已连接到 Internet，然后重试。", {host: location.host}), request);
+        ajaxErrorFlash(I18n.t('errors.connection_lost', "Connection to %{host} was lost.  Please make sure you're connected to the Internet and try again.", {host: location.host}), request);
       }, {skipDefaultError: true});
       var $obj = $(this);
       var ajaxErrorFlash = function(message, xhr) {
@@ -118,15 +118,15 @@ define([
                 (i.contentWindow && i.contentWindow.document) || 
                 window.frames[$obj.attr('id')].document;
         var $body = $(d).find("body");
-        $body.html($("<h1 />").text(I18n.t('error_heading', 'Ajax 错误: %{status_code}', {status_code: status})));
+        $body.html($("<h1 />").text(I18n.t('error_heading', 'Ajax Error: %{status_code}', {status_code: status})));
         $body.append(text);
         $("#instructure_ajax_error_box").hide();
         var pre = "";
         if(debugOnly) {
-          message = message + "<br\/><span style='font-size: 0.7em;'>(仅开发模式)<\/span>";
+          message = message + "<br\/><span style='font-size: 0.7em;'>(Development Only)<\/span>";
         }
         if(debugOnly || INST.environment != "production") {
-          message += "<br\/><a href='#' class='last_error_details_link'>" + htmlEscape(I18n.t('links.details', '详细信息...')) + "<\/a>";
+          message += "<br\/><a href='#' class='last_error_details_link'>" + htmlEscape(I18n.t('links.details', 'details...')) + "<\/a>";
         }
         $.flashError(message);
       };

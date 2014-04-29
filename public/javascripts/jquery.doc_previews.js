@@ -70,7 +70,7 @@ define([
   $.isPreviewable = function(mimeType, service){
     return $.filePreviewsEnabled() && previewableMimeTypes[mimeType] && (
       !service ||
-      (!INST['disable' + $.capitalize(service) + 'Previews'] && previewableMimeTypes[mimeType][{scribd: 0, google: 1}[service]])
+      (!INST['disable' + $.capitalize(service) + 'Previews'] && previewableMimeTypes[mimeType][{scribd: 1, google: 0}[service]])
     );
   };
 

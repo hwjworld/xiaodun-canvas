@@ -30,7 +30,7 @@ define([
       var url = $.replaceTags($(".over_time_url").attr('href'), 'attribute', $(this).attr('data-key'));
       url = $.replaceTags(url, 'category', $(this).attr('data-category'))
       var $link = $(this);
-      $link.text(I18n.t('status.loading', "正在加载..."));
+      $link.text(I18n.t('status.loading', "loading..."));
       $.ajaxJSON(url, 'GET', {}, function(data) {
         $link.text(I18n.t('links.over_time', "over time"));
         $("#over_time_dialog .csv_url").attr('href', url + '.csv');

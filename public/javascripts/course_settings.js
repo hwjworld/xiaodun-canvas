@@ -86,10 +86,10 @@ define([
         return;
       }
       if (GradePublishing.status == 'published') {
-        if (!confirm(I18n.t('confirm.re_publish_grades', "是否确定要重新发布这些评分到学生信息系统?")))
+        if (!confirm(I18n.t('confirm.re_publish_grades', "Are you sure you want to republish these grades to the student information system?")))
           return;
       } else {
-        if (!confirm(I18n.t('confirm.publish_grades', "是否确定要发布这些评分到学生信息系统?如果所有评分都已确定，应只执行此操作。")))
+        if (!confirm(I18n.t('confirm.publish_grades', "Are you sure you want to publish these grades to the student information system? You should only do this if all your grades have been finalized.")))
           return;
       }
       var $publish_to_sis_form = $("#publish_to_sis_form");
@@ -98,12 +98,12 @@ define([
       var successful_statuses = { "published": 1, "publishing": 1, "pending": 1 };
       var error = function(data, xhr, status, error) {
         GradePublishing.status = "unknown";
-        $.flashError(I18n.t('errors.publish_grades', "在尝试发布评分到学生信息系统时出错。请稍后重试。"));
+        $.flashError(I18n.t('errors.publish_grades', "Something went wrong when trying to publish grades to the student information system. Please try again later."));
         GradePublishing.update({});
       };
       $.ajaxJSON($publish_to_sis_form.attr('action'), 'POST', $publish_to_sis_form.getFormData(), function(data) {
         if (!data.hasOwnProperty("sis_publish_overall_status") || !successful_statuses.hasOwnProperty(data["sis_publish_overall_status"])) {
-          error(null, null, I18n.t('errors.invalid_sis_status', "无效的 SIS 发布状态"), null);
+          error(null, null, I18n.t('errors.invalid_sis_status', "Invalid SIS publish status"), null);
           return;
         }
         GradePublishing.status = data.sis_publish_overall_status;
@@ -127,14 +127,14 @@ define([
     $add_section_form.formSubmit({
       required: ['course_section[name]'],
       beforeSubmit: function(data) {
-        $add_section_form.find("button").attr('disabled', true).text(I18n.t('buttons.adding_section', "正在添加班级..."));
+        $add_section_form.find("button").attr('disabled', true).text(I18n.t('buttons.adding_section', "Adding Section..."));
       },
       success: function(data) {
         var section = data.course_section,
             $section = $(".section_blank:first").clone(true).attr('class', 'section'),
             $option = $("<option/>");
 
-        $add_section_form.find("button").attr('disabled', false).text(I18n.t('buttons.add_section', "添加班级"));
+        $add_section_form.find("button").attr('disabled', false).text(I18n.t('buttons.add_section', "Add Section"));
         $section.fillTemplateData({
           data: section,
           hrefValues: ['id']
@@ -377,7 +377,7 @@ define([
     $(".course_form_more_options_link").click(function(event) {
       event.preventDefault();
       var $moreOptions = $(".course_form_more_options");
-      var optionText = $moreOptions.is(':visible') ? I18n.t('links.more_options', '更多可选功能') : I18n.t('links.less_options', '更少可选功能');
+      var optionText = $moreOptions.is(':visible') ? I18n.t('links.more_options', 'more options') : I18n.t('links.fewer_options', 'fewer options');
       $(this).text(optionText);
       $moreOptions.slideToggle();
     });
@@ -451,7 +451,7 @@ define([
     $(".reset_course_content_button").click(function(event) {
       event.preventDefault();
       $("#reset_course_content_dialog").dialog({
-        title: I18n.t('titles.reset_course_content_dialog_help', "重置课程内容"),
+        title: I18n.t('titles.reset_course_content_dialog_help', "Reset Course Content"),
         width: 500
       });
 

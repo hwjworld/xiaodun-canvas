@@ -39,18 +39,18 @@ zh:
   accont: 
     feedback_pricing_sub: 为您的机构获取号码
   account: 
-    ask_canvas_network: "询问 Canvas 网络社区"
+    ask_canvas_network: "询问果实网网络社区"
     default_account_name: 默认帐户
     default_site_administrator_account_name: 网站管理员
     default_term_name: 默认学期
     errors: 
       invalid_discovery_url: "发现 URL 无效\n"
     feedback_coach: 询问社区
-    feedback_coach_sub: "从 Canvas 专家处获得帮助"
+    feedback_coach_sub: "从 果实网 专家处获得帮助"
     feedback_feature_request: 请求功能
-    feedback_feature_request_canvas_net: "在 Canvas 网络中请求功能"
-    feedback_feature_request_sub: "有改进 Canvas 的想法？"
-    feedback_pricing: "Canvas 定价信息"
+    feedback_feature_request_果实网_net: "在 果实网 网络中请求功能"
+    feedback_feature_request_sub: "有改进 果实网 的想法？"
+    feedback_pricing: "果实网 定价信息"
     manually_created_courses: 手动创建的课程
     root_account_cant_have_sis_id: 无法对根帐户设置学号
     sis_id_in_use: "学号 \"%{sis_id}\" 已在使用中"
@@ -99,13 +99,13 @@ zh:
       canvas_login_tip: |-
           如果您配置的设置导致您无法登录，可以在登录 URL 末尾添加
           *%{url1}*。这会让您
-          使用一般的 Canvas 登录步骤进行登录。对于此帐户，URL 为 %{url2}
+          使用一般的 果实网 登录步骤进行登录。对于此帐户，URL 为 %{url2}
       choose_auth_type_option: 选择一个身份认证服务
       current_settings_title: 当前集成
       delete_auth_confirmation: 是否确定?如果删除，用户可能无法登录。
       delete_auth_link: 删除身份验证
       edit_auth_link: 编辑详细信息
-      ip_address_list_description: "如果使用的身份验证服务要求 Canvas 服务器与您的服务器直接连接，例如 LDAP，则需确保您的服务器可以接受来自以下 IP 地址的连接:"
+      ip_address_list_description: "如果使用的身份验证服务要求 果实网 服务器与您的服务器直接连接，例如 LDAP，则需确保您的服务器可以接受来自以下 IP 地址的连接:"
       no_auth_type_description: 此帐户目前未与身份提供商集成。
       page_title: 身份验证设置
       profile_page_link_example: "例如，下面是您的配置文件页面: [%{friendlyname}](%{url})"
@@ -116,7 +116,7 @@ zh:
     ldap_settings: 
       add_secondary_ldap_server_link: "添加第二 LDAP 服务器"
       auth_type_label: 类型
-      change_password_url_help: "留空则采用默认的 Canvas 行为"
+      change_password_url_help: "留空则采用默认的 果实网 行为"
       change_password_url_not_specified: 未指定
       labels: 
         change_password_url: "忘记密码 URL"
@@ -129,7 +129,7 @@ zh:
     ldap_settings_fields: 
       auth_filter_description: "使用 *%{placeholder}* 作为用户所提供的用户名的占位符。ÀýÈç: *(sAMAccountName=%{placeholder})*"
       auth_password_description: 留空则继续使用当前密码。
-      identifer_format_description: "LDAP 属性用于查看 Canvas 登录。保留为空可使用用户提供的用户名。"
+      identifer_format_description: "LDAP 属性用于查看 果实网 登录。保留为空可使用用户提供的用户名。"
       labels: 
         auth_base: 库
         auth_filter: 过滤
@@ -152,14 +152,14 @@ zh:
       ldap_test_login_button: 测试登录
       test_ldap_bind_help_body: "LDAP 服务器拒绝了绑定尝试。要考虑:"
       test_ldap_bind_help_fixes_1: "验证提供的过滤器字符串（例如 '(sAMAccountName={{login}})'）。"
-      test_ldap_bind_help_fixes_2: "用户名是否需要更多范围信息?（例如 'cn=Canvas,ou=people,dc=example,dc=com'）。"
-      test_ldap_bind_help_header: "Canvas 无法绑定（登录）到您的 LDAP 服务器"
+      test_ldap_bind_help_fixes_2: "用户名是否需要更多范围信息?（例如 'cn=guoshi,ou=people,dc=example,dc=com'）。"
+      test_ldap_bind_help_header: "果实网 无法绑定（登录）到您的 LDAP 服务器"
       test_ldap_bind_label: "正在测试 LDAP 绑定..."
       test_ldap_connection_help_body: "连接超时或被拒绝。要考虑:"
-      test_ldap_connection_help_fixes_1: "Canvas 正在连接到 %{ips}"
+      test_ldap_connection_help_fixes_1: "果实网 正在连接到 %{ips}"
       test_ldap_connection_help_fixes_2: "这只是连接测试。SSL 证书未验证。"
-      test_ldap_connection_help_fixes_3: "请检查防火墙设置。是否所有 Canvas IP 地址都可以访问您的服务器?"
-      test_ldap_connection_help_header: "Canvas 无法连接到您的 LDAP 服务器"
+      test_ldap_connection_help_fixes_3: "请检查防火墙设置。是否所有 果实网 IP 地址都可以访问您的服务器?"
+      test_ldap_connection_help_header: "果实网 无法连接到您的 LDAP 服务器"
       test_ldap_connection_label: 正在测试连接...
       test_ldap_dialog_close: 关闭
       test_ldap_dialog_page_title: "正在测试 LDAP 配置"
@@ -170,11 +170,11 @@ zh:
       test_ldap_search_help_fixes_1: "验证提供的过滤器字符串（例如 '(sAMAccountName={{login}})'）。"
       test_ldap_search_help_fixes_2: "验证提供的搜索库（例如 'ou=people,dc=example,dc=com'）。"
       test_ldap_search_help_fixes_3: "验证 LDAP 中对提供的搜索库具有搜索权限的用户对象。"
-      test_ldap_search_help_header: "Canvas 无法搜索 LDAP 实例"
+      test_ldap_search_help_header: "果实网 无法搜索 LDAP 实例"
       test_ldap_search_label: "正在测试 LDAP 搜索..."
     ldap_timeout_error: 
       last_ldap_timeout_failure: 上次超时失效
-      ldap_timeout_failure_help2: "如果 Canvas 与 LDAP 服务器通信超时太多次，那么它就会封锁接下来尝试登陆使用 LDAP 服务器 %{time} 分钟。"
+      ldap_timeout_failure_help2: "如果 果实网 与 LDAP 服务器通信超时太多次，那么它就会封锁接下来尝试登陆使用 LDAP 服务器 %{time} 分钟。"
     login_required: 必须提供
     no_auth_mixing: 无法混用身份验证类型
     no_changing_auth_types: 无法更改授权配置类型，请删除，然后创建新的配置。
@@ -189,7 +189,7 @@ zh:
       certificate_fingerprint: 证书指纹
       change_password_url: 更改密码链接
       discovery_url: "发现 URL:"
-      discovery_url_description: "如果设置了发现 URL，当需要对用户进行身份验证时，Canvas 会将所有用户转到该 URL。之后该页面需要帮助用户了解去哪里才能登录。如果没有配置发现 URL，则将使用第一个 SAML 配置尝试对用户进行身份验证。"
+      discovery_url_description: "如果设置了发现 URL，当需要对用户进行身份验证时，果实网 会将所有用户转到该 URL。之后该页面需要帮助用户了解去哪里才能登录。如果没有配置发现 URL，则将使用第一个 SAML 配置尝试对用户进行身份验证。"
       identifier_format: 标识符格式
       idp_entity_id: "IdP 实体 ID"
       labels: 
@@ -221,7 +221,7 @@ zh:
       auth_request_to_idp: "已向 IdP 发送 AuthnRequest"
       auth_response_from_idp: "来自 IdP 的 AuthnResponse"
       labels: 
-        canvas_login_fail_message: "Canvas 登录失败消息"
+        canvas_login_fail_message: "果实网 登录失败消息"
         fingerprint_from_idp: "IdP 认证指纹"
         idp_in_response_to: "IdP inResponseTo"
         idp_login_destination: "IdP LoginResponse 目标"
@@ -232,7 +232,7 @@ zh:
         idp_response_encoded: "IdP LoginResponse 编码"
         idp_response_xml_decrypted: "IdP LoginResponse 解密"
         idp_response_xml_encrypted: "IdP LoginResponse 加密"
-        is_valid_login_response: "Canvas 将响应视作有效"
+        is_valid_login_response: "果实网 将响应视作有效"
         logged_in_user_id: "登录用户 ID"
         login_response_validation_error: 验证错误
         login_to_canvas_success: "用户成功登录到 人人教人人学"
@@ -362,7 +362,7 @@ zh:
         sent_at: 发送时间
         to: 至
       comm_messages_content_pane: 
-        search_info2: "要查看发送给 Canvas 用户的所有通知，请选择用户和日期范围进行搜索。"
+        search_info2: "要查看发送给 果实网 用户的所有通知，请选择用户和日期范围进行搜索。"
         view_notifications: 查看通知
       comm_messages_search_overview: 
         messages_viewed: "从 *%{start_date}*到 *%{end_date}*发送给 *%{user}* 的通知。"
@@ -677,7 +677,7 @@ zh:
       account_reports: 
         sis_export: 
           description: 
-            text: "本报告将导出设置 Canvas 各个类别所涉及的全部所需信息。"
+            text: "本报告将导出设置 果实网 各个类别所涉及的全部所需信息。"
     quiz_data_csv_description: 
       account_reports: 
         ace: 
@@ -738,7 +738,7 @@ zh:
             field: "班级 ID"
     settings: 
       about_google_docs: |-
-          为了让用户更方便，而不强制他们下载诸如 Word 文档、PDF、Excel 电子表格等内容以及打开办公文档（此外还需要在其计算机上安装这些程序），在整个 Canvas 的许多区域，用户可以内联预览文档。
+          为了让用户更方便，而不强制他们下载诸如 Word 文档、PDF、Excel 电子表格等内容以及打开办公文档（此外还需要在其计算机上安装这些程序），在整个 果实网 的许多区域，用户可以内联预览文档。
           
           如果已为此帐户启用 Scribd，将会尝试用其显示预览。但由于 Scribd 使用 flash 显示文档，而许多用户（例如使用 iPad/iPhone 的用户）没有安装 Flash Player，因此无法预览。在启用 Google Docs Previews 后，若浏览器未启用 Flash，或者 Scribd 未启用，将会使用 Google Docs 提供的预览功能。使用此服务需遵守 Google 的浏览器 [使用条款](%{terms_url})
       about_google_docs_tooltip: "关于 Google Docs Previews"
@@ -771,7 +771,7 @@ zh:
         add_users: 看起来不错，添加这些用户
         continue: 继续...
         modify_users: 返回编辑用户列表
-      confirm_global_announcement: "此通告将向 *所有* Canvas 用户显示。请确认您要创建该通告。"
+      confirm_global_announcement: "此通告将向 *所有* 果实网 用户显示。请确认您要创建该通告。"
       confirm_turnitin_settings_link: "确认 Turnitin 设置"
       course_roles: "课程角色:"
       create_courses_description: （帐户管理员可随时创建课程）
@@ -780,7 +780,7 @@ zh:
       default_language_description: 这将覆盖所有浏览器/操作系统语言设置。首选的语言仍可在课程/用户级设置。
       delete: 删除
       delete_announcement_tooltip: 删除此条公告
-      email_notification_from_description: "此设置允许管理员对从 Canvas 的此帐户发送的所有通知加上标签“发件人”。"
+      email_notification_from_description: "此设置允许管理员对从 果实网 的此帐户发送的所有通知加上标签“发件人”。"
       email_notification_from_settings: 电子邮件通知“发件人”设置
       enabled_web_serices_title: 已启用网络服务
       equall_endpoint_help: "这是指向 equella 服务的 URL。它看起来可能像 \"%{sample_url}\"。"
@@ -810,7 +810,7 @@ zh:
         allow_invitation_previews: 邀请预览
         allow_sending_scores_in_emails: 学生可以选择通过电子邮件通知接收分数
         allow_sis_import: "SIS 导入"
-        canvas_authentication: "Canvas 身份验证"
+        canvas_authentication: "果实网 身份验证"
         default_language: 默认语言
         default_time_zone: 默认时区
         domain: "域:"
@@ -838,7 +838,7 @@ zh:
         no_enrollments_can_create_courses: 未注册用户
         open_registration: 开放注册
         outgoing_email_default_name_option_custom: 自定义“发件人”姓名
-        outgoing_email_default_name_option_default: "默认 Canvas 设置"
+        outgoing_email_default_name_option_default: "默认 果实网 设置"
         prevent_course_renaming_by_teachers: 不要让教师重命名其课程
         restrict_quiz_questions: 限制学生在课程结束日期后查看测验题
         restrict_student_future_view: 限制学生在开始日期之前查看课程
@@ -875,14 +875,14 @@ zh:
       no_enrollment_roles: 取消注册的用户
       no_language_preference: "未设置（默认使用 %{language}）"
       notifications: 
-        custom_name_description: "如果选中，此设置将替代 Canvas 通知中发送的所有其它品牌标识。"
+        custom_name_description: "如果选中，此设置将替代 果实网 通知中发送的所有其它品牌标识。"
         email_date: 日期
         email_reply_to: 回复
         email_to: 收件人
         example: "示例:"
         external_services: 发送到外部服务的通知
         external_services_label: 在“通知首选项”页上显示一次弹出式警告。
-        external_services_warning: "注意：某些通知可能包含机密信息。如果选择使用您的机构提供的地址之外的电子邮件接收通知，可能会导致将敏感的 Canvas 课程和小组信息发送到机构系统外部。"
+        external_services_warning: "注意：某些通知可能包含机密信息。如果选择使用您的机构提供的地址之外的电子邮件接收通知，可能会导致将敏感的 果实网 课程和小组信息发送到机构系统外部。"
         external_services_warning_label: "弹出式消息内容:"
         from: 发件人
         sample_subject: 评分已更改：请查看调查，测试课程
@@ -925,7 +925,7 @@ zh:
       tab_quotas: 配额
       tab_reports: 报告
       tab_settings: 设置
-      transifex_message: "加入 [Canvas 翻译社区](%{transifex_url})"
+      transifex_message: "加入 [果实网 翻译社区](%{transifex_url})"
       turnitin_comments_help: "这些评论在提交 Turnitin 启用的作业时显示给学生"
       turnitin_pledge_help: 学生必须勾选相关框以确认他们同意此保证
       turnitin_settings_title: "Turnitin 设置"
@@ -1102,7 +1102,7 @@ zh:
           login: 
             check_box: 是否包括从未登录的用户？
           parameters: 
-            note: "此报告不反映 Canvas 中的上次活动，而是反映用户上次登录的时间。"
+            note: "此报告不反映 果实网 中的上次活动，而是反映用户上次登录的时间。"
     student_submissions_csv_description: 
       account_reports: 
         vilas: 
@@ -1371,11 +1371,11 @@ zh:
       page_disabled_for_group: 该页面已对此小组禁用
     warnings: 
       details: 
-        suspended: "此机构的 Canvas 帐户已被挂起。只有帐户管理员才能登录以更正任何问题。"
+        suspended: "此机构的 果实网 帐户已被挂起。只有帐户管理员才能登录以更正任何问题。"
       please_log_in: 为安全起见，请输入您的密码方可继续
       titles: 
         suspended: 机构已挂起
-      unsupported_browser: "您的浏览器不符合 Canvas 的最低要求。请访问 *Canvas 指南* 了解受支持浏览器的完整列表。"
+      unsupported_browser: "您的浏览器不符合 果实网 的最低要求。请访问 *果实网 指南* 了解受支持浏览器的完整列表。"
     wiki_front_page_default_content_course: 欢迎使用新课程维基！
     wiki_front_page_default_content_group: 欢迎使用新小组维基！
   appointment_group: 
@@ -2045,16 +2045,16 @@ zh:
           website: "网站 URL"
       loading_tools: 正在加载工具...
       messages: 
-        google_docs_auth_required: "必须授权 Canvas 访问您的 Google Docs 帐户，然后才可直接从 Google Docs 提交作业:"
+        google_docs_auth_required: "必须授权 果实网 访问您的 Google Docs 帐户，然后才可直接从 Google Docs 提交作业:"
         media_recording_ready: 可以提交!单击"提交作业"按钮以完成。
-        media_recordings_disabled: "没有为此 Canvas 网站启用媒体记录，您无法提交这些类型的作业。请联系教师更改此作业的设置，或者要求系统管理员启用媒体记录。"
+        media_recordings_disabled: "没有为此 果实网 网站启用媒体记录，您无法提交这些类型的作业。请联系教师更改此作业的设置，或者要求系统管理员启用媒体记录。"
         submitting: 正在提交...
         uploading: "检索要为此作业提交的 Google Doc 副本。这可能需要一段时间，具体取决于文件大小..."
       no_files: 无文件
       no_submission: 未选择提交项
       submission_url: 提交项：
       titles: 
-        media_recordings_disabled: "没有为此 Canvas 网站启用媒体录制"
+        media_recordings_disabled: "没有为此 果实网 网站启用媒体录制"
       upload_or_choose_file: 上传文件，或选择您已上传的文件。
     syllabus: 
       page_title: "%{course} 的大纲"
@@ -2189,9 +2189,9 @@ zh:
     export_failed: "从 Blackboard 导出 bb_lcid 为 %{id} 的课程时出现错误"
     export_failed_no_id: 导出课程时出现错误
     export_failed_not_found: "在 Blackboard 中通过用户 %{user_name} 找不到 bb_lcid 为 %{id} 的课程"
-    export_failed_with_id: "将 bb_lcid 为 %{id} 的课程导入 Canvas 时出现错误"
+    export_failed_with_id: "将 bb_lcid 为 %{id} 的课程导入 果实网 时出现错误"
     no_course_found: "找不到 %{id_type} 为 %{id} 的任何课程"
-    no_course_id_given: "对于 bb_lcid %{id}，未识别任何 Canvas 课程"
+    no_course_id_given: "对于 bb_lcid %{id}，未识别任何 果实网 课程"
     no_credentials_found: "对于用户名 %{user_name}，找不到任何凭证"
     no_credentials_given: "对于课程 %{course_identifier}，未给定任何用户名"
     no_lcid_found: "没有为行指定 bb_lcid"
@@ -2201,7 +2201,7 @@ zh:
       exporting: "正在从 Blackboard 导出"
       failed: 已失败
       finished: 已完成
-      importing: "正在导入 Canvas"
+      importing: "正在导入 果实网"
       migration_cancelled_on: "于 %{date}取消"
       migration_failed_on: "于 %{date}失败"
       migration_finished_on: "于 %{date}完成"
@@ -2211,7 +2211,7 @@ zh:
       see_results: 查看结果
       show_warnings: 显示警告
       waiting_to_export: "正在等待从 Blackboard 导出"
-      waiting_to_import: "正在等待导入 Canvas"
+      waiting_to_import: "正在等待导入 果实网"
     index: 
       available_courses: 可用课程
       bulk_description: "这些是预期在 CSV 中出现的标题："
@@ -2219,8 +2219,8 @@ zh:
         add_credentials: 添加凭证
         migrate_courses: 迁移课程
       column_name: 列名
-      course_id_description: "要导入的课程的 Canvas ID。"
-      credential_description: "该工具将帮助您从 Blackboard Vista/CE 系统同时迁移多门课程。为您的 Blackboard 系统添加一组凭证，然后将 Canvas 课程标识符添加到提供的 CSV 模板中，以迁移您的课程。"
+      course_id_description: "要导入的课程的 果实网 ID。"
+      credential_description: "该工具将帮助您从 Blackboard Vista/CE 系统同时迁移多门课程。为您的 Blackboard 系统添加一组凭证，然后将 果实网 课程标识符添加到提供的 CSV 模板中，以迁移您的课程。"
       csv_description: "可以添加任何其它的列，但这些列将被忽略。这里是用户名为“greg”的帐户中 3 门课程的简单 CSV 的一个示例："
       csv_template: "CSV 模板"
       current_migration_batch: 当前迁移批次
@@ -2238,7 +2238,7 @@ zh:
       previous_migration_batches: 上一个迁移批次
       school: 学校
       school_not_supported: "请让您的管理员联系 Instructure 以帮助您的学校获得支持。"
-      sis_id_description: "要导入的 Canvas 课程的学号。"
+      sis_id_description: "要导入的 果实网 课程的学号。"
       upload_migration_csv: "上传迁移 CSV"
       user_name: 用户名
       user_name_description: "让教师/设计者访问该行中课程的用户的用户名。该名称必须符合以上列出的 Blackboard 登录凭证中的用户名之一。"
@@ -2599,7 +2599,7 @@ zh:
     ics_description_course: "课程 %{course_name} 的日历事件"
     ics_description_group: "小组 %{group_name} 的日历事件"
     ics_description_user: "用户 %{user_name} 的日历事件"
-    ics_title: "%{course_or_group_name} 日历 (Canvas)"
+    ics_title: "%{course_or_group_name} 日历 (果实网)"
   calendars: 
     assignment_details: 作业详细信息
     calendar: 
@@ -2743,10 +2743,10 @@ zh:
         invalid_url: "URL 无效"
         login_expiration_minimum: "会话过期必须为 20 分钟或更长时间"
         need_integer: 请为播放列表缓存输入一个整数
-  canvas_cartridge_description: "这可以将 canvas 导出转换为要导入的中间 json 格式"
-  canvas_cartridge_display: "Canvas Common Cartridge"
-  canvas_cartridge_file_description: "Canvas 课程导出包"
-  canvas_cartridge_name: "Canvas Cartridge 导入器"
+  canvas_cartridge_description: "这可以将 果实网 导出转换为要导入的中间 json 格式"
+  canvas_cartridge_display: "果实网 Common Cartridge"
+  canvas_cartridge_file_description: "果实网 课程导出包"
+  canvas_cartridge_name: "果实网 Cartridge 导入器"
   canvas_revision_unknown: 未知
   cc: 
     by: "CC Attribution"
@@ -2797,14 +2797,14 @@ zh:
       cannot_load_collaboration: 无法加载协作
       create_failed: 协作创建失败
       no_name: 请输入此协作的名称。
-      not_enabled: "协作尚未为此 Canvas 网站启用"
+      not_enabled: "协作尚未为此 果实网 网站启用"
       title_too_long: "请将 %{maxLength} 个或更少字符用于名称。对于其它内容，请使用描述。"
       update_failed: 协作更新失败
     forms: 
       buttons: 
         delete_from_canvas: |-
             只删除  
-            从 Canvas
+            从 果实网
         delete_from_google_docs: |-
             同时删除自  
             Google Docs
@@ -2821,7 +2821,7 @@ zh:
         description: 说明
         document_name: "文档名称:"
       messages: 
-        delete_google_doc_as_well: "此协作将存储为 Google Doc。您是仅将其从 Canvas 删除，还是同时将其从 Google Docs 删除?"
+        delete_google_doc_as_well: "此协作将存储为 Google Doc。您是仅将其从 果实网 删除，还是同时将其从 Google Docs 删除?"
       titles: 
         new: 开始新协作
     index: 
@@ -2855,7 +2855,7 @@ zh:
       delete: 删除协作？
   collection_items: 
     new: 
-      pin_to_canvas_network: "固定到 Canvas 网络"
+      pin_to_canvas_network: "固定到 果实网 网络"
       saved_successfully: 已成功保存
   comm_messages: 
     from_beginning: 开始
@@ -2865,7 +2865,7 @@ zh:
   common_cartridge_file_description: "Common Cartridge 1.0/1.1/1.2 包"
   common_cartridge_name: "Common Cartridge 导入器"
   communication_channel: 
-    body: "您的 Canvas 验证码为 %{verification_code}"
+    body: "您的 果实网 验证码为 %{verification_code}"
     default_facebook_account: "Facebook 帐户"
     default_twitter_handle: "Twitter 处理"
   communication_channels: 
@@ -2875,7 +2875,7 @@ zh:
         back: 返回
         continue: 继续
         create_account: 创建我的帐户
-        have_account: "我有 Canvas 帐户"
+        have_account: "我有 果实网 帐户"
         login_as: "登录为 %{invited_user}"
         merge: 合并
         new_account: 新帐户
@@ -2886,7 +2886,7 @@ zh:
         ? "yes"
         : 是
       details: 
-        account_needed: "您已获邀请参加 **%{course}**。要接受此请求，您需要 Canvas 帐户。单击下面的链接创建 Canvas 帐户。"
+        account_needed: "您已获邀请参加 **%{course}**。要接受此请求，您需要 果实网 帐户。单击下面的链接创建 果实网 帐户。"
         add_email: 是否要将此电子邮件地址添加到您当前的帐户?
         choose_login: 选择要登录的位置。
         logged_in_other_user: "**%{email}** 是一个新帐户，而您目前登录为 **%{user}**。"
@@ -2932,7 +2932,7 @@ zh:
           ⏎
           您无法将其重新打开。
       delete: 是否确定要删除此会议?
-    disabled_error: "网络会议尚未为此 Canvas 网站启用"
+    disabled_error: "网络会议尚未为此 果实网 网站启用"
     edit_conference_form: 
       advanced_settings: 管理高级设置...
       conference_type: 类型
@@ -2984,7 +2984,7 @@ zh:
         finished: "已完成 %{date_and_time} (%{duration})"
         new: 尚未开始
         started: "开始于 %{time}"
-    type_disabled_error: "此类会议不再为此 Canvas 网站启用"
+    type_disabled_error: "此类会议不再为此 果实网 网站启用"
   content_exports: 
     buttons: 
       process: 处理数据
@@ -3024,7 +3024,7 @@ zh:
       buttons: 
         cancel: 取消
         skip: 跳过此步骤
-      description: "可以将压缩的文件集上传至您的课程，我们将为您全部解压缩。这是一种将文件从其它系统移到 Canvas 的简便方式。"
+      description: "可以将压缩的文件集上传至您的课程，我们将为您全部解压缩。这是一种将文件从其它系统移到 果实网 的简便方式。"
       page_title: 导入文件
     messages: 
       copying: "正在复制... 可能需要几分钟"
@@ -3320,7 +3320,7 @@ zh:
         recent_messages: 最近的消息
       help: 
         list_services: 您未启用已注册服务的列表。启用此列表可让课程和小组的同伴成员在课外更轻松地与您链接。
-        services: "您没有将用户配置文件链接到任何外部服务。您可以将 Canvas 帐户链接到 Facebook 和 Twitter 等服务。这更便于课程和小组同伴成员在课外与您链接。"
+        services: "您没有将用户配置文件链接到任何外部服务。您可以将 果实网 帐户链接到 Facebook 和 Twitter 等服务。这更便于课程和小组同伴成员在课外与您链接。"
       labels: 
         public_list_services: 让课程/小组同伴成员查看我已将哪些服务链接到配置文件
         user_privileges: 权限
@@ -3352,9 +3352,9 @@ zh:
         registered_services: 注册的服务
         service_types: 服务类型
       help: 
-        no_services: "您没有将用户配置文件链接到任何外部服务。您可以将 Canvas 帐户链接到 Facebook 和 Twitter 等服务。"
-        services_private: "您未启用已注册服务的列表。启用此列表可让课程和小组同伴成员查看您已将哪些服务链接至您的 Canvas 帐户。"
-        user_services: "如果其它成员选择，他们可让您查看他们已将哪些外部服务链接至其 Canvas 帐户。这样更便于协调组项目以及链接课堂外部。"
+        no_services: "您没有将用户配置文件链接到任何外部服务。您可以将 果实网 帐户链接到 Facebook 和 Twitter 等服务。"
+        services_private: "您未启用已注册服务的列表。启用此列表可让课程和小组同伴成员查看您已将哪些服务链接至您的 果实网 帐户。"
+        user_services: "如果其它成员选择，他们可让您查看他们已将哪些外部服务链接至其 果实网 帐户。这样更便于协调组项目以及链接课堂外部。"
       labels: 
         allow_view_services: 让课程/小组同伴成员查看我已将哪些服务链接到配置文件
       links: 
@@ -4053,7 +4053,7 @@ zh:
     more_participants: "+%{total} 更多"
     no_message: 
       batch_selected: 选择多个会话
-      beta_description: "您使用的是测试版的 Canvas 收件箱"
+      beta_description: "您使用的是测试版的 果实网 收件箱"
       beta_version: 测试版
       no_conversations_selected: 未选择会话
     no_recipients_choose_another_group: 该小组中没有收件人。请另选一个小组。
@@ -4091,7 +4091,7 @@ zh:
   conversations_intro: 
     slide1: 
       paragraph1: 请查看收件箱!
-      paragraph2: "会话 - Canvas 的新消息系统 - 已经发布!"
+      paragraph2: "会话 - 果实网 的新消息系统 - 已经发布!"
       paragraph3: 使用会话向一名同学发送私人信息，或者使用会话与小组中的所有人交谈。
       paragraph4: "准备好要做个简短的介绍了? 那就单击向右箭头开始吧。"
     slide2: 
@@ -4176,10 +4176,10 @@ zh:
       only_teachers: 仅教师
       teachers_students: 教师和学生
   course_copy_argument_error: 复制课程需要源课程。
-  course_copy_description: "用于复制 Canvas 课程的迁移插件"
+  course_copy_description: "用于复制 果实网 课程的迁移插件"
   course_copy_display: 课程副本
-  course_copy_file_description: "复制 Canvas 课程"
-  course_copy_name: "复制 Canvas 课程"
+  course_copy_file_description: "复制 果实网 课程"
+  course_copy_name: "复制 果实网 课程"
   course_copy_no_course_error: 源课程未找到。
   course_copy_not_allowed_error: 不允许您复制源课程。
   course_exports: 
@@ -4188,7 +4188,7 @@ zh:
       assignment_groups: 无法导出作业小组
       assignment_is_locked: "由于作业 \"%{title}\" 已经被锁定，所以无法复制。"
       assignments: 无法导出某些作业
-      canvas_meta: "无法导出 Canvas 特定元数据"
+      canvas_meta: "无法导出 果实网 特定元数据"
       course_export: 运行课程导出时出错。
       course_settings: 无法导出课程设置
       events: 无法导出日历事件
@@ -4351,7 +4351,7 @@ zh:
               好，您的课程已经设置完毕...接下来该干什么呢?在您发布课程之前，可能需要检查课程，确保您了解基本框架。逐步检查左侧的列表，确保您的课程可以使用。
               
               *本课程在发布之前只有教师可以查看*
-          saved: "完成！您已正式创建课程 %{course}。该课程在发布之前只有您本人才能查看 – 但在发布之前，您应该认真查看左侧的列表，以熟悉 Canvas 的使用方法并确保您做好了授课准备。"
+          saved: "完成！您已正式创建课程 %{course}。该课程在发布之前只有您本人才能查看 – 但在发布之前，您应该认真查看左侧的列表，以熟悉 果实网 的使用方法并确保您做好了授课准备。"
         created: 
           not_saved: |-
               本课程已创建，但未被领受。在一周内未被领受的课程将被删除。在此期间，请勾选左侧的列表，确保您已经做好准备。
@@ -4360,21 +4360,21 @@ zh:
               
               请**登录**或***注册***以领受本课程。
           saved: |-
-              完成！您已正式创建课程 %{course}。该课程在发布之前只有您本人才能查看 – 但在发布之前，您应该认真查看左侧的列表，以熟悉 Canvas 的使用方法并确保您做好了授课准备。
+              完成！您已正式创建课程 %{course}。该课程在发布之前只有您本人才能查看 – 但在发布之前，您应该认真查看左侧的列表，以熟悉 果实网 的使用方法并确保您做好了授课准备。
               
               如果您暂时需要离开，只需保存*此链接*以便在有效满之前返回此处。
               
               请**登录**或***注册***以领受本课程。
-        files: "\"文件\"选项卡是用来分享讲义的区域，例如文档、学习帮助等 – 学生需要下载的任何文件。在 Canvas 中，上传和组织文件是轻而易举的事情。我们会告诉您如何操作。"
+        files: "\"文件\"选项卡是用来分享讲义的区域，例如文档、学习帮助等 – 学生需要下载的任何文件。在 果实网 中，上传和组织文件是轻而易举的事情。我们会告诉您如何操作。"
         home: "此页面是用户访问本课程时看到的页面。您可以设置它显示活动流、课程单元列表、大纲或自己编写的自定义页面。默认显示为课程活动流。要自定义此显示，只需单击 %{change_layout}。"
-        import: "如果您曾使用其它课程管理系统，您可能需要将其中的材料转移到 Canvas 中。我们可以引导您轻松将内容迁移到 Canvas。"
+        import: "如果您曾使用其它课程管理系统，您可能需要将其中的材料转移到 果实网 中。我们可以引导您轻松将内容迁移到 果实网。"
         navigation: 默认情况下会启用课程的所有相关链接。对于没有内容的部分，学生将无法看到其链接。例如，如果您尚未创建任何测验，学生将无法看到测验链接。对于您不希望学生访问的课程部分，您可以归类并明确禁用这些链接。
         publish: 
           form: |-
               全部完成了吗?可以发布您的课程了！单击下面的按钮，正式发布课程！
               
               发布课程时会向所有课程用户发送电子邮件邀请，以便他们能够注册并开始学习该课程。
-          not_registered: "本课程已被领受并准备就绪，但需要完成注册过程后才能发布。您应该收到了来自 Canvas 的电子邮件，其中包含完成该过程的链接。确保检查您的垃圾邮件箱。"
+          not_registered: "本课程已被领受并准备就绪，但需要完成注册过程后才能发布。您应该收到了来自 果实网 的电子邮件，其中包含完成该过程的链接。确保检查您的垃圾邮件箱。"
         students: 您肯定对学生感兴趣。试想，没有学生参与的课程有什么趣味呢?
         tas: 您可能要指定一些助教帮助您教授课程。助教可以帮助您批改学生作业、引导讨论以及更新截止时间和作业详细信息。
       headings: 
@@ -4424,10 +4424,10 @@ zh:
       path_syntax: 小写字母、数字和短划线
       portal_path_syntax: 小写字母、数字、短划线和斜线（例如，哈佛/化学）
       private: 隐藏
-      public: "在 canvas.net 上列出"
+      public: "在 果实网.net 上列出"
       save_changes: 保存更改
       self_paced: 自定进度
-      unlisted: "在 canvas.net 上未列出（可通过 url 访问）"
+      unlisted: "在 果实网.net 上未列出（可通过 url 访问）"
       when_to_set_tentative_start: "例如“2013 年秋季”，如果课程没有确切的开始日期"
     enrollment_reminders: 
       buttons: 
@@ -4561,7 +4561,7 @@ zh:
         pending_acceptance_explanation: 此用户尚未接受课程邀请
         pending_acceptance_of_invitation: 待处理
       roster_users: 
-        canvas_user_id: "Canvas 用户 ID"
+        canvas_user_id: "果实网 用户 ID"
         login_name_or_sis_id: 登录名或学号
         name: 姓名
         no_people_found: 找不到人员
@@ -4678,7 +4678,7 @@ zh:
         tools: 应用程序
       titles: 
         edit_navigation: 编辑课程导航
-      transifex_message: "加入 [Canvas 翻译社区](%{transifex_url})"
+      transifex_message: "加入 [果实网 翻译社区](%{transifex_url})"
       turnitin: "这些评论在提交 Turnitin 启用的任务时显示给学生"
       view_grading_scheme: 查看评分方案
       wiki_editing_roles: 默认情况下可创建、重命名和编辑课程维基页面
@@ -5116,7 +5116,7 @@ zh:
       provost: 教务长
       ready: 准备好了！
       school_admin: 学校管理者
-      sign_up_to_canvas: "注册试用 Canvas"
+      sign_up_to_canvas: "注册试用 果实网"
       specify_lms: "请指定您当前的 LMS 或选择“无”"
       specify_size: 请指定您组织的规模
       student: 学生
@@ -5438,7 +5438,7 @@ zh:
     unsubscribed: 取消订阅
     unsubscribed_hint: 您未订阅此主题。单击可订阅。
   draft_state_description: |-
-      此测试版功能重新设计了 Canvas 的许多部分，
+      此测试版功能重新设计了 果实网 的许多部分，
       内容可以在学生不可见的的新的未发布状态下
       存在并且不包括在评分计算中。注意: 禁用此功能
       可能会在教师视图中删除新创建的或编辑的内容。
@@ -5515,7 +5515,7 @@ zh:
       formatting: 格式，按下即可选择
       rte_help: "富文本区域，按 ALT F10 显示工具栏。按 ALT 0 显示帮助。"
   email: 
-    default_from_name: "Instructure Canvas"
+    default_from_name: "Instructure 果实网"
   enrollment: 
     default_course_name: 课程
     default_email: 无电子邮件
@@ -5736,7 +5736,7 @@ zh:
       write_only_comments: 此页的评论为私人可见。您可以发表评论，但只有学习档案的所有者能够看到它们。
     show_me: 给我看看
     static_page: 
-      created_with_canvas: "使用 Canvas 创建"
+      created_with_canvas: "使用 果实网 创建"
       headers: 
         page_comments: 页面评论
       links: 
@@ -5935,8 +5935,8 @@ zh:
       add_new_tool: 添加新应用程序
       all: 全部
       app_headder: 外部应用程序
-      external_tools_note: "应用程序是向 Canvas 添加新功能的简单方式。这些功能可添加到帐户中的各个课程或所有课程。配置完毕后，您可以通过课程模块与其链接，并为测验工具创建作业。"
-      external_tools_references: "单击*此处*查看适用于 Canvas 的某些 LTI 工具。您还可以在**此处**查看有关 LTI 工具的 Canvas 社区主题"
+      external_tools_note: "应用程序是向果实网添加新功能的简单方式。这些功能可添加到帐户中的各个课程或所有课程。配置完毕后，您可以通过课程模块与其链接，并为测验工具创建作业。"
+      external_tools_references: "单击*此处*查看适用于 果实网 的某些 LTI 工具。您还可以在**此处**查看有关LTI工具的果实网社区主题"
       installed: 已安装
       not_installed: 未安装
       search_filter: 按姓名过滤
@@ -5960,27 +5960,27 @@ zh:
     user_navigation_configured: 用户导航已配置
   facebook: 
     authorization_required: 只有经授权的用户才能访问该页面。
-    authorization_success: "授权成功！Canvas 和 Facebook 现在是盟友。"
+    authorization_success: "授权成功！果实网 和 Facebook 现在是盟友。"
     deleted: 已删除
     index: 
       all_set: 已设置完毕！
-      bookmark_notice: "您可以从 Facebook 主页查看 Canvas 新通知的数量（如果您制作了此应用程序的书签）。"
-      canvas_messages: "Canvas 消息"
-      configure_notification_preferences_notice: "在*配置您的通知首选项*之后，就可以在此处看到通知，从而知道您的 Canvas 帐户中发生的事情。"
-      installation_about: "要安装 Canvas Facebook 应用程序，请转至 Canvas 中的配置文件页面，然后单击 Facebook 按钮将您的帐户连接到 Facebook。"
+      bookmark_notice: "您可以从 Facebook 主页查看 果实网 新通知的数量（如果您制作了此应用程序的书签）。"
+      canvas_messages: "果实网 消息"
+      configure_notification_preferences_notice: "在*配置您的通知首选项*之后，就可以在此处看到通知，从而知道您的 果实网 帐户中发生的事情。"
+      installation_about: "要安装 果实网 Facebook 应用程序，请转至 果实网 中的配置文件页面，然后单击 Facebook 按钮将您的帐户连接到 Facebook。"
       learn_more: "更多信息请参阅 instructure.com"
       more_information: "更多信息请参阅 %{domain_list}"
-      no_messages_notice: "当课程中发生事情时，您将在此处看到通知，从而知道您的 Canvas 帐户中发生的事情。"
-      notification_about: "Canvas Facebook 应用程序旨在方便您访问课程中的互动信息。您可以设置为当您的作业被计分、截止时间更改等事件时向您发送通知。您的私人数据在 Canvas 中仍然保持私密性。"
+      no_messages_notice: "当课程中发生事情时，您将在此处看到通知，从而知道您的 果实网 帐户中发生的事情。"
+      notification_about: "果实网 Facebook 应用程序旨在方便您访问课程中的互动信息。您可以设置为当您的作业被计分、截止时间更改等事件时向您发送通知。您的私人数据在 果实网 中仍然保持私密性。"
       notification_settings: 通知设置
-      notifications_notice: "下面您可以看到来自 Canvas 的最近通知列表。您可以从 Facebook 主页查看 Canvas 新通知的数量（如果您制作了此应用程序的书签）。"
+      notifications_notice: "下面您可以看到来自 果实网 的最近通知列表。您可以从 Facebook 主页查看 果实网 新通知的数量（如果您制作了此应用程序的书签）。"
       welcome: "欢迎回来，%{name}！"
       welcome_message: "欢迎使用 Instructure 免费提供的新款在线学习软件。这款软件旨在帮助您更好地利用网络提高学习。我们的界面简洁、清爽且开放，我们充分利用您和您的学生已在使用的工具（例如 Facebook）提供更开放、更协作的学习体验。我们将它融合成一个强大、开放的软件包，而不仅仅一款跟踪作业的软件。它鼓励互动并促进学习。"
-      welcome_title: "欢迎使用 Instructure Canvas"
+      welcome_title: "欢迎使用 Instructure 果实网"
     index_disabled: 
-      disabled_notice: "此 Canvas 网站未配置为与 Facebook 通信。"
+      disabled_notice: "此 果实网 网站未配置为与 Facebook 通信。"
       get_help: "请登录 support.instructure.com 获取帮助"
-      instructure_canvas: "Instructure Canvas"
+      instructure_canvas: "Instructure 果实网"
     invalid_signature: "无效的 Facebook 签名"
     message: 
       hide: 隐藏
@@ -6001,9 +6001,9 @@ zh:
       weekly: 每周
     settings: 
       back_to_messages: 返回到消息
-      link_needed: "在配置 Canvas Facebook 应用程序之前需要将其链接到您的 Canvas 登录。请单击 \"欢迎\" 了解更多信息。"
-      notifications_config_notice: "来自 Canvas 的通知可自动发送到您的 Facebook 帐户。下面您会看到可发送的通知类型。您可以在此处或 Canvas 中随时更改您的通知首选项。"
-      settings_title: "Canvas 通知设置"
+      link_needed: "在配置 果实网 Facebook 应用程序之前需要将其链接到您的 果实网 登录。请单击 \"欢迎\" 了解更多信息。"
+      notifications_config_notice: "来自 果实网 的通知可自动发送到您的 Facebook 帐户。下面您会看到可发送的通知类型。您可以在此处或 果实网 中随时更改您的通知首选项。"
+      settings_title: "果实网 通知设置"
       updating_preferences: 正在更新首选项...
   feature_flags: 
     feature_flag: 
@@ -6025,7 +6025,7 @@ zh:
     draft_state: 草稿状态
     draft_state_account_disable_warning: |-
         关闭此功能将影响现有的课程。有关禁用此功能的帮助，请联系
-        您的 Canvas Success 经理。
+        您的 果实网 Success 经理。
     draft_state_course_disable_warning: |-
         关闭此功能将发布课程中所有现有对象。请在继续之前确保
         所有草稿内容可以发布，并且对课程中的所有用户可用。
@@ -7298,9 +7298,9 @@ zh:
     message_will_be_sent_to_all_the_teachers_tas_in_the_course: 消息将发送给课程中所有的老师/助教。
     please_select_one: 请选择一个...
     report_problem: 报告问题
-    report_problem_sub: "如果 Canvas 出现意外情况，请通知我们"
-    search_the_canvas_guides: "搜索 Canvas 指南"
-    see_if_your_issue_is_addressed_in_the_canvas_guides: "看看能否在 *Canvas 指南*中找到您的问题答案。"
+    report_problem_sub: "如果 果实网 出现意外情况，请通知我们"
+    search_the_canvas_guides: "搜索 果实网 指南"
+    see_if_your_issue_is_addressed_in_the_canvas_guides: "看看能否在 *果实网 指南*中找到您的问题答案。"
     send_message: 发送邮件
     sending: 正在发送...
     somethings_broken_but_i_can_work_around_it_for_now: 有些内容已损坏，不过现在我可以自己解决了
@@ -7345,10 +7345,10 @@ zh:
     styleguide: 
       manage: 管理
   instructions: 
-    authorize_google_docs: "需要授权 Canvas 访问您的 Google Docs 帐户之后才能协作处理文档:"
+    authorize_google_docs: "需要授权 果实网 访问您的 Google Docs 帐户之后才能协作处理文档:"
   instructure: 
     alerts: 
-      file_previews_disabled: "此 Canvas 网站已禁用文件预览"
+      file_previews_disabled: "此 果实网 网站已禁用文件预览"
     browsers: 
       unrecognized: 无法识别的浏览器
     buttons: 
@@ -7474,7 +7474,7 @@ zh:
     lock_module_until: 锁定单元至指定日期
   layouts: 
     application: 
-      instructure_description: "Instructure 是开源学习管理系统 Canvas 的制造商"
+      instructure_description: "Instructure 是开源学习管理系统 果实网 的制造商"
       keyboard_navigation: 
         close: 按逗号关闭此对话
       links: 
@@ -7521,7 +7521,7 @@ zh:
   lib: 
     angel: 
       failed_import_link: 导入链接失败
-      failed_import_link_body: "此链接参考了一项 Angel 功能，通过 Canvas 无法链接该功能或者该功能在导出范围之外。"
+      failed_import_link_body: "此链接参考了一项 Angel 功能，通过 果实网 无法链接该功能或者该功能在导出范围之外。"
     api: 
       attachments: 
         only_one_folder: "无法设置文件夹的路径和 ID"
@@ -7566,17 +7566,17 @@ zh:
     incoming_message_processor: 
       failure_message: 
         body: |-
-            标题为“%{subject}”的邮件无法送达。该邮件被发送到一个未知的邮箱地址。如果您尝试通过 Canvas 联系某人，可以尝试登录到您的帐户并使用"收件箱"工具向其发送邮件。
+            标题为“%{subject}”的邮件无法送达。该邮件被发送到一个未知的邮箱地址。如果您尝试通过 果实网 联系某人，可以尝试登录到您的帐户并使用"收件箱"工具向其发送邮件。
             
             谢谢！
-            Canvas 支持部门
+            果实网 支持部门
         subject: "邮件回复失败: %{subject}"
       locked_topic: 
         body: |-
-            标题为“%{subject}”的邮件无法送达，因为讨论主题已被锁定。如果您尝试通过 Canvas 联系某人，可以尝试登录您的帐户，使用“收件箱”工具向其发送邮件。⏎ 
+            标题为“%{subject}”的邮件无法送达，因为讨论主题已被锁定。如果您尝试通过 果实网 联系某人，可以尝试登录您的帐户，使用“收件箱”工具向其发送邮件。⏎
             
                       谢谢！
-                      Canvas 支持部门
+                      果实网 支持部门
         subject: "邮件回复失败: %{subject}"
     progress_runner: 
       completed_message: 
@@ -7639,7 +7639,7 @@ zh:
       relationships: 关系
   media_comments: 
     alerts: 
-      kaltura_disabled: "此 Canvas 网站已禁用 Kaltura"
+      kaltura_disabled: "此 果实网 网站已禁用 Kaltura"
     buttons: 
       submit: 提交媒体文件
     cancel: 取消
@@ -7678,7 +7678,7 @@ zh:
     managed_accounts: 管理的帐户
     my_courses: 我的课程
   message: 
-    default_subject: "Canvas 警报"
+    default_subject: "果实网 警报"
   message_students: 
     buttons: 
       send_message: 发送邮件
@@ -7711,39 +7711,39 @@ zh:
           click_to_finish_registration: 单击此处完成注册过程
           email: 电子邮件
           name: 姓名
-          subject: "Canvas 帐户管理员邀请"
-          url_info_label: "您需要先在 Canvas 上注册，然后才能以帐户管理员的身份参加。"
+          subject: "果实网 帐户管理员邀请"
+          url_info_label: "您需要先在 果实网 上注册，然后才能以帐户管理员的身份参加。"
           username: 用户名
         name_info: "姓名: %{name}"
-        subject: "Canvas 帐户管理员邀请"
+        subject: "果实网 帐户管理员邀请"
         url_info: |-
-            您将需要向 Canvas 注册，然后才能作为帐户管理员参与。您可在此处完成注册过程:
+            您将需要向 果实网 注册，然后才能作为帐户管理员参与。您可在此处完成注册过程:
             %{url}
         username_info: "用户名: %{username}"
     added_to_conversation: 
       email: 
-        body: "%{user_name} 仅将您添加到 Canvas 中的会话。要查看会话，单击下面的链接:"
+        body: "%{user_name} 仅将您添加到 果实网 中的会话。要查看会话，单击下面的链接:"
         html: 
-          body: "%{user_name} 仅将您添加到 Canvas 中的会话。"
+          body: "%{user_name} 仅将您添加到 果实网 中的会话。"
           link_text: 查看会话
-          subject: "%{user_name} 仅将您添加到 Canvas 中的会话。"
+          subject: "%{user_name} 仅将您添加到 果实网 中的会话。"
           unknown_user: 未知用户
-        subject: "%{user_name} 仅将您添加到 Canvas 中的会话。"
+        subject: "%{user_name} 仅将您添加到 果实网 中的会话。"
         unknown_user: 未知用户
       facebook: 
-        body: "%{user_name} 仅将您添加到 Canvas 中的会话。"
+        body: "%{user_name} 仅将您添加到 果实网 中的会话。"
         link_text: 查看会话
         unknown_user: 未知用户
       sms: 
-        body: "%{user_name} 仅将您添加到 Canvas 中的会话。"
+        body: "%{user_name} 仅将您添加到 果实网 中的会话。"
         more_info: "更多信息请访问 %{url}"
         unknown_user: 未知用户
       summary: 
-        body: "%{user_name} 仅将您添加到 Canvas 中的会话。"
-        subject: "%{user_name} 仅将您添加到 Canvas 中的会话。"
+        body: "%{user_name} 仅将您添加到 果实网 中的会话。"
+        subject: "%{user_name} 仅将您添加到 果实网 中的会话。"
         unknown_user: 未知用户
       twitter: 
-        tweet: "Canvas 警报 - 通过 %{user_name} 添加到会话。"
+        tweet: "果实网 警报 - 通过 %{user_name} 添加到会话。"
         unknown_user: 未知用户
     alert: 
       email: 
@@ -7862,7 +7862,7 @@ zh:
         message: "%{user} 已取消他/她的 \"%{appointment_name}\" 预订。"
         more_info: "更多信息请访问 %{url}"
       twitter: 
-        message: "Canvas 警报 - %{user} 已取消他/她的 \"%{appointment_name}\" 预订。"
+        message: "果实网 警报 - %{user} 已取消他/她的 \"%{appointment_name}\" 预订。"
     appointment_deleted_for_user: 
       email: 
         html: 
@@ -7905,7 +7905,7 @@ zh:
         message: "您的 \"%{appointment_name}\" 时段已取消。"
         more_info: "更多信息请访问 %{url}"
       twitter: 
-        message: "Canvas 警报 - 您的 \"%{appointment_name}\" 时段已取消。"
+        message: "果实网 警报 - 您的 \"%{appointment_name}\" 时段已取消。"
     appointment_group_deleted: 
       email: 
         html: 
@@ -7937,7 +7937,7 @@ zh:
         message: "针对 \"%{appointment_name}\" 的所有约会已取消。"
         more_info: "更多信息请访问 %{url}"
       twitter: 
-        message: "Canvas 警报 - 针对 \"%{appointment_name}\" 的所有约会已取消。"
+        message: "果实网 警报 - 针对 \"%{appointment_name}\" 的所有约会已取消。"
     appointment_group_published: 
       email: 
         group_signup: "小组 (%{group_category})"
@@ -7980,7 +7980,7 @@ zh:
         message: "针对 \"%{appointment_name}\" 的时段现在可用于注册 (%{dates})。"
         subject: "约会 \"%{appointment_name}\" 可用于注册 (%{course})"
       twitter: 
-        message: "Canvas 警报 - 针对 \"%{appointment_name}\" 的注册已开启。"
+        message: "果实网 警报 - 针对 \"%{appointment_name}\" 的注册已开启。"
     appointment_group_updated: 
       email: 
         group_signup: "小组 (%{group_category})"
@@ -8022,7 +8022,7 @@ zh:
         message: "时段已添加到 \"%{appointment_name}\"，可用于注册 (%{dates})。"
         subject: "约会 \"%{appointment_name}\" 已更新 (%{course})"
       twitter: 
-        message: "Canvas 警报 - 新的时段可用于 \"%{appointment_name}\"。"
+        message: "果实网 警报 - 新的时段可用于 \"%{appointment_name}\"。"
     appointment_reserved_by_user: 
       email: 
         html: 
@@ -8062,7 +8062,7 @@ zh:
         message: "%{user} 已注册 \"%{appointment_name}\"。"
         more_info: "更多信息请访问 %{url}"
       twitter: 
-        message: "Canvas 警报 - %{user} 已注册 \"%{appointment_name}\"。"
+        message: "果实网 警报 - %{user} 已注册 \"%{appointment_name}\"。"
     appointment_reserved_for_user: 
       email: 
         html: 
@@ -8105,7 +8105,7 @@ zh:
         message: "%{user} 已为您注册了 \"%{appointment_name}\" (%{date_and_time})。"
         subject: "已为您注册了 \"%{appointment_name}\" (%{course})"
       twitter: 
-        message: "Canvas 警报 - 已为您注册了 \"%{appointment_name}\"。"
+        message: "果实网 警报 - 已为您注册了 \"%{appointment_name}\"。"
     assignment_changed: 
       email: 
         body: |-
@@ -8128,7 +8128,7 @@ zh:
       summary: 
         subject: "作业已更改:%{title}，%{course}"
       twitter: 
-        assignment_change: "Canvas 警报 - 更改:%{assignment_name}，%{course_name}"
+        assignment_change: "果实网 警报 - 更改:%{assignment_name}，%{course_name}"
     assignment_created: 
       email: 
         assignment_created: "作业已创建 - %{assignment_name}，%{course_name}"
@@ -8162,7 +8162,7 @@ zh:
         multiple_due_dates: "截止时间: 多个日期"
         no_due_date: "截止时间: 无截止时间"
       twitter: 
-        assignment_change: "Canvas 警报 - 更改:%{assignment_name}，%{course_name}"
+        assignment_change: "果实网 警报 - 更改:%{assignment_name}，%{course_name}"
         due_at: "截止时间: %{assignment_due_date_time}"
         multiple_due_dates: "截止时间: 多个日期"
         no_due_date: "截止时间: 无截止时间"
@@ -8190,7 +8190,7 @@ zh:
         due_at: "截止时间: %{assignment_due_date_time}"
         no_due_date: "截止时间: 无截止时间"
       twitter: 
-        assignment_change: "Canvas 警报 - 日期更改:%{assignment_name}，%{course_name}"
+        assignment_change: "果实网 警报 - 日期更改:%{assignment_name}，%{course_name}"
         due_at: "截止时间: %{assignment_due_date_time}"
         no_due_date: "截止时间: 无截止时间"
     assignment_due_date_override_changed: 
@@ -8217,7 +8217,7 @@ zh:
         due_at: "截止时间: %{assignment_due_date_time}"
         no_due_date: "截止时间: 无截止时间"
       twitter: 
-        assignment_change: "Canvas 警报 - 日期更改: %{assignment_name}，%{course_name} (%{override})"
+        assignment_change: "果实网 警报 - 日期更改: %{assignment_name}，%{course_name} (%{override})"
         due_at: "截止时间: %{assignment_due_date_time}"
         no_due_date: "截止时间: 无截止时间"
     assignment_graded: 
@@ -8239,7 +8239,7 @@ zh:
         assignment_graded: "作业已计分:%{assignment_name}，%{course_name}"
         the_assignment_is_graded: "作业 %{assignment_name} 已计分。"
       twitter: 
-        assignment_graded: "Canvas 警报 - 已计分:%{assignment_name}，%{course_name}"
+        assignment_graded: "果实网 警报 - 已计分:%{assignment_name}，%{course_name}"
     assignment_locked: 此作业当前锁定。
     assignment_locked_at: "此作业锁定于 %{at}。"
     assignment_locked_module: "此作业是单元 *%{module}* 的一部分，尚未解锁。"
@@ -8264,7 +8264,7 @@ zh:
         turned_in_at: "提交日期: %{submission_date}"
         user_resubmitted: "重新提交文件:%{user_name}，%{assignment_name}"
       twitter: 
-        user_resubmitted: "Canvas 警报 - 重新提交文件:%{user_name}，%{assignment_name}"
+        user_resubmitted: "果实网 警报 - 重新提交文件:%{user_name}，%{assignment_name}"
     assignment_submitted: 
       email: 
         html: 
@@ -8285,7 +8285,7 @@ zh:
         turned_in_at: "提交日期: %{submission_date}"
         user_submitted: "提交文件:%{user_name}，%{assignment_name}"
       twitter: 
-        user_submitted: "Canvas 警报 - 提交文件:%{user_name}，%{assignment_name}"
+        user_submitted: "果实网 警报 - 提交文件:%{user_name}，%{assignment_name}"
     assignment_submitted_late: 
       email: 
         html: 
@@ -8306,7 +8306,7 @@ zh:
         turned_in_at: "提交日期: %{submission_date}"
         user_submitted: "最近作业:%{user_name}，%{assignment_name}"
       twitter: 
-        user_submitted: "Canvas 警报 - 最近提交的作业: %{user_name}，%{assignment_name}"
+        user_submitted: "果实网 警报 - 最近提交的作业: %{user_name}，%{assignment_name}"
     assignment_unmuted: 
       email: 
         body: |-
@@ -8375,7 +8375,7 @@ zh:
             在 %{service} 中创建并通过您的电子邮件地址 %{email} 邀请您。
         subject: "协作邀请: %{course_or_group}"
       twitter: 
-        body: "Canvas 警报 - 协作邀请:%{document}，%{course_or_group}"
+        body: "果实网 警报 - 协作邀请:%{document}，%{course_or_group}"
     confirm_email_communication_channel: 
       email: 
         body: "电子邮件地址 %{email} 已在 %{website} 为用户 %{user} 注册。"
@@ -8383,21 +8383,21 @@ zh:
         html: 
           body: "电子邮件地址 %{email} 已在 %{website} 为用户 %{user} 注册。"
           details: 单击此处确认该注册
-          subject: "确认电子邮件:Canvas"
-        subject: "确认电子邮件:Canvas"
+          subject: "确认电子邮件:果实网"
+        subject: "确认电子邮件:果实网"
     confirm_registration: 
       email: 
-        body: "感谢您注册 Canvas！此电子邮件用于确认用户 %{user} 在 %{website} 注册的新帐户。"
+        body: "感谢您注册 果实网！此电子邮件用于确认用户 %{user} 在 %{website} 注册的新帐户。"
         details: "要完成注册过程，请访问以下 url:"
         html: 
-          body: "感谢您注册 Canvas！此电子邮件的目的是确认用户 %{user} 正在 %{website} 上注册一个新帐户。"
+          body: "感谢您注册 果实网！此电子邮件的目的是确认用户 %{user} 正在 %{website} 上注册一个新帐户。"
           details: 单击此处完成注册过程
-          subject: "确认注册:Canvas"
-        subject: "确认注册:Canvas"
+          subject: "确认注册:果实网"
+        subject: "确认注册:果实网"
     confirm_sms_communication_channel: 
       sms: 
         body: |-
-            通过代码确认 Canvas 注册:
+            通过代码确认 果实网 注册:
             
             %{confirmation_code}
             
@@ -8429,38 +8429,38 @@ zh:
       email: 
         attached_files: "附件文件:"
         audio_comment: "此邮件包括媒体评论。要收听或回复，单击下面的链接:"
-        body: "%{user_name} 刚刚在 Canvas 中向您发送了一封邮件:"
+        body: "%{user_name} 刚刚在 果实网 中向您发送了一封邮件:"
         html: 
           attached_files: "附件文件:"
           audio_comment: "此邮件包括媒体评论。要收听或回复，单击下面的链接:"
-          body: "%{user_name} 刚刚在 Canvas 中向您发送了一封邮件:"
+          body: "%{user_name} 刚刚在 果实网 中向您发送了一封邮件:"
           download: 下载
           reply_message: "要回复此邮件，单击下面的链接:"
-          subject: "%{user_name} 刚刚在 Canvas 中向您发送了一封邮件。"
+          subject: "%{user_name} 刚刚在 果实网 中向您发送了一封邮件。"
           unknown_user: 未知用户
         reply_message: "要回复此邮件，单击下面的链接:"
-        subject: "%{user_name} 刚刚在 Canvas 中向您发送了一封邮件。"
+        subject: "%{user_name} 刚刚在 果实网 中向您发送了一封邮件。"
         unknown_user: 未知用户
       facebook: 
-        body: "%{user_name} 刚刚在 Canvas 中向您发送了一封邮件。"
+        body: "%{user_name} 刚刚在 果实网 中向您发送了一封邮件。"
         link_text: 查看邮件
         unknown_user: 未知用户
       sms: 
-        body: "%{user_name} 刚刚在 Canvas 中向您发送了一封邮件:"
+        body: "%{user_name} 刚刚在 果实网 中向您发送了一封邮件:"
         more_info: "更多信息请访问 %{url}"
         unknown_user: 未知用户
       summary: 
-        body: "%{user_name} 刚刚在 Canvas 中向您发送了一封邮件:"
-        subject: "%{user_name} 刚刚在 Canvas 中向您发送了一封邮件。"
+        body: "%{user_name} 刚刚在 果实网 中向您发送了一封邮件:"
+        subject: "%{user_name} 刚刚在 果实网 中向您发送了一封邮件。"
         unknown_user: 未知用户
       twitter: 
-        tweet: "Canvas 警报 - 来自 %{user_name} 的邮件。"
+        tweet: "果实网 警报 - 来自 %{user_name} 的邮件。"
     course_already_started: 
       email: 
         body: |-
             %{user} 您好!
             
-            您在 Canvas 网络上的课程 %{course} 已于几天前开课，但我们注意到您尚未登录。我们发送此邮件只是想最后一次提醒您，以免您忘了该课程。
+            您在 果实网 网络上的课程 %{course} 已于几天前开课，但我们注意到您尚未登录。我们发送此邮件只是想最后一次提醒您，以免您忘了该课程。
             
             若要登录，请转到 %{site} 并输入您的用户名和密码。如果您尚未设置密码，则可以在此处设置一个：%{password_url}。
             
@@ -8468,57 +8468,57 @@ zh:
             
             我们希望很快与您见面！
             
-            Canvas 网络
+            果实网 网络
         course_already_started: 您的课程已开课
     course_required_materials: 
       email: 
         body: |-
             %{user} 您好，
             
-            好消息！您在 Canvas 网络上注册的课程 %{course} 很快就要开课。
+            好消息！您在 果实网 网络上注册的课程 %{course} 很快就要开课。
             
-            为了帮助您确保在课程学习中获得最佳效果，您应当查看导师列出的任何特殊说明或课程材料。您可以在 Canvas 网络的课程详细信息页面上查找这些内容，或只需单击下面的链接。
+            为了帮助您确保在课程学习中获得最佳效果，您应当查看导师列出的任何特殊说明或课程材料。您可以在 果实网 网络的课程详细信息页面上查找这些内容，或只需单击下面的链接。
             
             %{url}
             
             学无止境！
             
-            Canvas 网络
+            果实网 网络
         course_required_materials: "%{course} 的材料和说明"
     course_started: 
       email: 
         body: |-
             %{user} 您好，
             
-            谨此提请注意，您在 Canvas 网络上的课程 %{course} 今日开课。您现在可以登录 %{site} 并开始课程！
+            谨此提请注意，您在 果实网 网络上的课程 %{course} 今日开课。您现在可以登录 %{site} 并开始课程！
             
-            请不要忘了设置您的 Canvas 网络个人资料，这样该课程的其他人员可对您有所了解。您可以在 %{profile_url} 上更新您的个人资料。
+            请不要忘了设置您的 果实网 网络个人资料，这样该课程的其他人员可对您有所了解。您可以在 %{profile_url} 上更新您的个人资料。
             
             学无止境！
             
-            Canvas 网络
+            果实网 网络
         course_starts_today: 您的课程今日开课
     course_starts_in_week: 
       email: 
         body: |-
             %{user}，
             
-            课程即将开始！您在 Canvas 网络上注册的课程 %{course} 将于下周开课。我们了解您的激动心情，我们同样非常激动。
+            课程即将开始！您在 果实网 网络上注册的课程 %{course} 将于下周开课。我们了解您的激动心情，我们同样非常激动。
             
             您需要准备些什么？
             
-            如果您尚未创建 Canvas 网络个人资料，则可以登录 Canvas.net 进行设置。您的个人资料将有助于该课程的其他人员了解您。此外，您还可以在该网站上设置通知首选项。
+            如果您尚未创建 果实网 网络个人资料，则可以登录 果实网.net 进行设置。您的个人资料将有助于该课程的其他人员了解您。此外，您还可以在该网站上设置通知首选项。
             
             最后，您可以在此处查看课程所需的材料和任何说明：%{url}
             
             学无止境！
             
-            Canvas 网络
+            果实网 网络
         course_starts_next_week: 您的课程下周开课
     dialog: 
       title: 发送回复邮件
     email: 
-      footer: "您收到此电子邮件的原因是您使用 Canvas 参加了一个或多个课程。要更改或关闭电子邮件通知，请访问：⏎ %{url}"
+      footer: "您收到此电子邮件的原因是您使用 果实网 参加了一个或多个课程。要更改或关闭电子邮件通知，请访问：⏎ %{url}"
     enrollment_accepted: 
       email: 
         body_designer: "%{user} 刚刚接受了作为设计者参与课程 %{course} 的邀请。"
@@ -8557,7 +8557,7 @@ zh:
         body_teacher: "%{user} 刚刚接受了作为教师参与课程 %{course} 的邀请。"
         subject: "%{user} 接受了课程邀请"
       twitter: 
-        body: "Canvas 警报 - 已接受:%{user}，%{enrollment_type}，课程，%{course}"
+        body: "果实网 警报 - 已接受:%{user}，%{enrollment_type}，课程，%{course}"
     enrollment_invitation: 
       email: 
         body_designer: "我们邀请您作为设计者参与课程 %{course}。"
@@ -8615,7 +8615,7 @@ zh:
         body_teacher: "我们邀请您作为教师参与课程 %{course}。"
         subject: 课程邀请
       twitter: 
-        body: "Canvas 警报 - 已邀请:作为 %{enrollment_type} 参与课程"
+        body: "果实网 警报 - 已邀请:作为 %{enrollment_type} 参与课程"
     enrollment_notification: 
       email: 
         body_designer: "您已作为设计者注册课程 %{course}。"
@@ -8674,7 +8674,7 @@ zh:
         body_teacher: "您已作为教师注册课程 %{course}。"
         subject: 课程注册
       twitter: 
-        body: "Canvas 警报 - 已注册:作为 %{enrollment_type} 参与课程"
+        body: "果实网 警报 - 已注册:作为 %{enrollment_type} 参与课程"
     enrollment_registration: 
       email: 
         body_designer: "我们邀请您参与 %{website} 上的班级。该班级名为 %{course}，我们邀请您作为设计者参与。"
@@ -8682,14 +8682,14 @@ zh:
         body_student: "我们邀请您参与 %{website} 上的班级。该班级名为 %{course}，我们邀请您作为学生参与。"
         body_ta: "我们邀请您参与 %{website} 上的班级。该班级名为 %{course}，我们邀请您作为助教参与。"
         body_teacher: "我们邀请您参与 %{website} 上的班级。该班级名为 %{course}，我们邀请您作为教师参与。"
-        details: "您将需要向 Canvas 注册，然后才能参与班级。要开始使用，请在此处访问课程页面:"
+        details: "您将需要向 果实网 注册，然后才能参与班级。要开始使用，请在此处访问课程页面:"
         html: 
           body_designer: "该班级名为 %{course}，我们邀请您作为设计者参与。"
           body_observer: "该班级名为 %{course}，我们邀请您作为观察者参与。"
           body_student: "该班级名为 %{course}，我们邀请您作为学生参与。"
           body_ta: "该班级名为 %{course}，我们邀请您作为助教参与。"
           body_teacher: "该班级名为 %{course}，我们邀请您作为教师参与。"
-          details: "您需要在 Canvas 上注册，然后才能参与该班级。"
+          details: "您需要在 果实网 上注册，然后才能参与该班级。"
           email: 电子邮件
           link: 单击此处开始
           name: 姓名
@@ -8723,7 +8723,7 @@ zh:
         body_teacher: "我们邀请您参与 %{website} 上的班级。该班级名为 %{course}，我们邀请您作为教师参与。"
         subject: 课程邀请
       twitter: 
-        body: "Canvas 警报 - 已邀请:作为 %{enrollment_type} 参与课程"
+        body: "果实网 警报 - 已邀请:作为 %{enrollment_type} 参与课程"
     event_date_changed: 
       email: 
         email_body: "课程 %{course_name} 的活动 %{event_title} 已更改时间。时间现在为:"
@@ -8772,8 +8772,8 @@ zh:
           login_at_account: "%{login_email} at %{account_name}"
           login_managed_by_account: "此登录信息的证书通过 %{account_name} 进行管理"
           password_from_account: "系统管理员应当已随 %{account_name} 向您提供此次登录的密码，并且 Instructure 没有权限访问您的密码。如果您的密码无效，请联系系统管理员更改或验证您的密码。"
-          requested_password_reset: "您已请求确认登录到 Canvas 的密码。"
-          subject: "忘记密码:Canvas"
+          requested_password_reset: "您已请求确认登录到 果实网 的密码。"
+          subject: "忘记密码:果实网"
         labels: 
           associated_with_accounts: 此地址关联以下帐户
           change_password_at: 在以下位置更改此登录信息的密码
@@ -8781,8 +8781,8 @@ zh:
         login_at_account: "%{login_email} at %{account_name}"
         login_managed_by_account: "此登录信息的证书通过 %{account_name} 进行管理"
         password_from_account: "此登录信息的密码应由 %{account_name} 的系统管理员提供，并且 Instructure 没有权限访问您的密码。如果您的密码无效，请联系系统管理员有关更改或确认密码。"
-        requested_password_reset: "您已请求确认登录到 Canvas 的密码。"
-        subject: "忘记密码:Canvas"
+        requested_password_reset: "您已请求确认登录到 果实网 的密码。"
+        subject: "忘记密码:果实网"
     grade_weight_changed: 
       email: 
         grade_changed: "课程 %{course_name} 的评分政策已更改。"
@@ -8813,7 +8813,7 @@ zh:
           grades_based_on_percent: 评分基于每个作业小组的加权总计
           subject: 评分加权已更改
       twitter: 
-        grade_changed: "Canvas 警报 - 评分政策已更改: %{course_name}"
+        grade_changed: "果实网 警报 - 评分政策已更改: %{course_name}"
     group_assignment_submitted_late: 
       email: 
         body: "小组 %{group_name} 刚刚提交课程 %{course_name} 中 %{assignment_name} 的最近提交的作业。"
@@ -8833,7 +8833,7 @@ zh:
         body: "小组 %{group_name} 已提交课程 %{course_name} 中 %{assignment_name} 的最近提交的作业。"
         subject: "最近作业: %{group_name}，%{assignment_name}"
       twitter: 
-        subject: "Canvas 警报 - 最近小组作业:%{group_name}，%{assignment_name}"
+        subject: "果实网 警报 - 最近小组作业:%{group_name}，%{assignment_name}"
     group_membership_accepted: 
       email: 
         account_group: "帐户 %{account_name} 加入小组 %{group_name} 的请求已被接受。"
@@ -8861,8 +8861,8 @@ zh:
         course_group: "课程 %{course_name} 加入小组 %{group_name} 的请求已被接受。"
         subject: "小组成员资格已接受: %{group_name}"
       twitter: 
-        account_group: "Canvas 警报 - 小组成员资格已接受:%{group_name}（帐户 %{account_name}）。"
-        course_group: "Canvas 警报 - 小组成员资格已接受:%{group_name}（课程 %{course_name}）。"
+        account_group: "果实网 警报 - 小组成员资格已接受:%{group_name}（帐户 %{account_name}）。"
+        course_group: "果实网 警报 - 小组成员资格已接受:%{group_name}（课程 %{course_name}）。"
     group_membership_rejected: 
       email: 
         account_group: "帐户 %{account_name} 加入小组 %{group_name} 的请求已被拒绝。"
@@ -8889,8 +8889,8 @@ zh:
         course_group: "课程 %{course_name} 加入小组 %{group_name} 的请求已被拒绝。"
         subject: "%{group_name} 的小组成员资格已拒绝"
       twitter: 
-        account_group: "Canvas 警报 - 小组成员资格已拒绝:%{group_name}（帐户 %{account_name}）。"
-        course_group: "Canvas 警报 - 小组成员资格已拒绝:%{group_name}（课程 %{course_name}）。"
+        account_group: "果实网 警报 - 小组成员资格已拒绝:%{group_name}（帐户 %{account_name}）。"
+        course_group: "果实网 警报 - 小组成员资格已拒绝:%{group_name}（课程 %{course_name}）。"
     html_message: 
       html_not_exist: "此邮件的 HTML 版本尚未创建和发送"
     index: 
@@ -8903,10 +8903,10 @@ zh:
     merge_email_communication_channel: 
       email: 
         html: 
-          account_created: "已在 %{host} 上为您创建一个帐户，但您已有 Canvas 帐户。"
+          account_created: "已在 %{host} 上为您创建一个帐户，但您已有 果实网 帐户。"
           merge2: 如果您要合并它们，请*单击此处*
-          subject: "新 Canvas 帐户"
-        subject: "新 Canvas 帐户"
+          subject: "新 果实网 帐户"
+        subject: "新 果实网 帐户"
     message: 
       actions: 
         reply: 回复
@@ -8951,7 +8951,7 @@ zh:
         body: "已添加帐户 %{account} 的新管理员 %{user}"
         subject: 新帐户用户
       twitter: 
-        body: "Canvas 警报 - 新管理员:%{user}，%{account}"
+        body: "果实网 警报 - 新管理员:%{user}，%{account}"
     new_announcement: 
       email: 
         html: 
@@ -8966,7 +8966,7 @@ zh:
         details: "更多信息请访问 %{url}"
         subject: "新通告:%{title}，%{course}"
       twitter: 
-        body: "Canvas 警报 - 通告:%{title}，%{course}。"
+        body: "果实网 警报 - 通告:%{title}，%{course}。"
     new_context_group_membership: 
       email: 
         body_account: "您已被添加到帐户 %{account} 的新小组。小组名称为 %{group_name}。"
@@ -8993,8 +8993,8 @@ zh:
         body_course: "您已被添加到课程 %{course} 的新小组。小组名称为 %{group_name}。"
         subject: "%{course_or_account} 的新小组成员资格"
       twitter: 
-        body_account: "Canvas 警报 - 新小组:%{group} （帐户 %{account}）"
-        body_course: "Canvas 警报 - 新小组:%{group} （课程 %{course}）"
+        body_account: "果实网 警报 - 新小组:%{group} （帐户 %{account}）"
+        body_course: "果实网 警报 - 新小组:%{group} （课程 %{course}）"
     new_context_group_membership_invitation: 
       email: 
         body_account: "您已被邀请加入帐户 %{account} 的小组 %{group}。"
@@ -9020,8 +9020,8 @@ zh:
         body_course: "您已被邀请加入课程 %{course} 的小组 %{group}。"
         subject: "%{course_or_account} 的新小组成员资格"
       twitter: 
-        body_account: "Canvas 警报 - 邀请:%{group} （帐户 %{account}）"
-        body_course: "Canvas 警报 - 邀请:%{group}（课程 %{course}）。"
+        body_account: "果实网 警报 - 邀请:%{group} （帐户 %{account}）"
+        body_course: "果实网 警报 - 邀请:%{group}（课程 %{course}）。"
     new_course: 
       email: 
         body: "已添加帐户 %{account} 的课程 %{course}"
@@ -9052,7 +9052,7 @@ zh:
           teachers: 教师
         subject: 新课程
       twitter: 
-        body: "Canvas 警报 - 新课程:%{course}，%{account}"
+        body: "果实网 警报 - 新课程:%{course}，%{account}"
     new_discussion_entry: 
       email: 
         body: "%{user} 已发布有关 %{course} 话题 %{discussion_topic} 的新评论:"
@@ -9070,7 +9070,7 @@ zh:
       summary: 
         subject: "%{discussion_topic}: %{course} 的新评论"
       twitter: 
-        body: "Canvas 警报 - 评论:%{discussion_topic}，%{course}。"
+        body: "果实网 警报 - 评论:%{discussion_topic}，%{course}。"
     new_discussion_topic: 
       email: 
         body: "您可能会感兴趣的一个新讨论已经开始:"
@@ -9092,7 +9092,7 @@ zh:
       summary: 
         subject: "新讨论 - %{discussion_topic}: %{course}"
       twitter: 
-        subject: "Canvas 警报 - 主题:%{discussion_topic}，%{course}"
+        subject: "果实网 警报 - 主题:%{discussion_topic}，%{course}"
     new_event_created: 
       email: 
         body: "%{course_name} 有一个预定的新活动应该通知您:"
@@ -9123,7 +9123,7 @@ zh:
       twitter: 
         from_to_time: "从 %{start_date_time} 到 %{end_date_time}"
         no_time_set: 没有设置时间
-        subject: "Canvas 警报 - 活动:%{event_title}，%{course_name}"
+        subject: "果实网 警报 - 活动:%{event_title}，%{course_name}"
     new_file_added: 
       email: 
         body: "已添加课程 %{name} 的新文件:"
@@ -9141,7 +9141,7 @@ zh:
       summary: 
         subject: "添加的新文件: %{title}，%{name}"
       twitter: 
-        body: "Canvas 警报 - 新文件: %{title} (%{size})，%{name}:"
+        body: "果实网 警报 - 新文件: %{title} (%{size})，%{name}:"
     new_files_added: 
       email: 
         body: "已添加课程 %{name} 的 %{count} 个新文件:"
@@ -9162,7 +9162,7 @@ zh:
         link: 您可在此处进行查看
         subject: "添加了课程 %{name} 的 %{count} 个新文件:"
       twitter: 
-        body: "Canvas 警报 - %{name} 的 %{count} 个新文件"
+        body: "果实网 警报 - %{name} 的 %{count} 个新文件"
     new_student_organized_group: 
       email: 
         body_account: "已为帐户 %{account} 创建名为\"%{group_name}\"的新学生组织学习小组。第一位成员是 %{user}。"
@@ -9188,8 +9188,8 @@ zh:
         body_course: "已为课程 %{course} 创建名为\"%{group_name}\"的新学生组织小组。第一位成员是 %{user}。"
         subject: "%{course_or_account} 的新学习小组"
       twitter: 
-        body_account: "Canvas 警报 - 新小组:%{group_name} （帐户 %{account}）"
-        body_course: "Canvas 警报 - 新小组:%{group_name} （课程 %{course}）"
+        body_account: "果实网 警报 - 新小组:%{group_name} （帐户 %{account}）"
+        body_course: "果实网 警报 - 新小组:%{group_name} （课程 %{course}）"
     new_teacher_registration: 
       email: 
         body: "%{user} 刚刚在 %{website} 注册为教师。"
@@ -9213,7 +9213,7 @@ zh:
       sms: 
         body: "%{user} 刚刚在 %{website} 注册为教师。"
       summary: 
-        body: "%{user} 刚刚在 Canvas 注册为教师。"
+        body: "%{user} 刚刚在 果实网 注册为教师。"
         labels: 
           email: 电子邮件
           phone: 电话
@@ -9221,7 +9221,7 @@ zh:
           school_position: 学校位置
         subject: 新教师注册
       twitter: 
-        body: "Canvas 警报 - 新教师:%{user}，%{account}"
+        body: "果实网 警报 - 新教师:%{user}，%{account}"
     new_user: 
       email: 
         body: "刚刚注册帐户 %{account} 的新用户 %{user}"
@@ -9241,7 +9241,7 @@ zh:
         body: "刚刚注册帐户 %{account} 的新用户 %{user}"
         subject: 新用户
       twitter: 
-        body: "Canvas 警报 - 新用户:%{user}，%{account}"
+        body: "果实网 警报 - 新用户:%{user}，%{account}"
     page_locked: 此页面当前锁定。
     page_locked_at: "此页面锁定于 %{at}。"
     page_locked_module: "此页面是单元 *%{module}* 的一部分，尚未解锁。"
@@ -9249,13 +9249,13 @@ zh:
     page_unpublished_module: 此页面是未发布单元的一部分，尚未可用。
     pseudonym_registration: 
       email: 
-        body: "您已在 %{account} 注册 Canvas 帐户！您将需要完成配置过程，然后才能登录和开始使用 Canvas。"
+        body: "您已在 %{account} 注册 果实网 帐户！您将需要完成配置过程，然后才能登录和开始使用 果实网。"
         html: 
-          body: "您已注册 Canvas 帐户 %{account}！在登录并开始使用 Canvas 之前，您需要完成配置过程。"
+          body: "您已注册 果实网 帐户 %{account}！在登录并开始使用 果实网 之前，您需要完成配置过程。"
           link: 单击此处完成注册过程
-          subject: "完成注册:Canvas"
+          subject: "完成注册:果实网"
         link_message: "要完成注册过程，请访问以下 url:"
-        subject: "完成注册:Canvas"
+        subject: "完成注册:果实网"
     quiz_locked: 此测验当前锁定。
     quiz_locked_at: "此测验锁定于 %{at}。"
     quiz_locked_module: "此测验是单元 *%{module}* 的一部分，尚未解锁。"
@@ -9278,7 +9278,7 @@ zh:
         body: "已为您的测验 %{title} 完成了重新评分。"
         subject: "测验已重新计分：%{quiz}，%{context}"
       twitter: 
-        body: "Canvas 警报 - 测验已重新计分：%{quiz}"
+        body: "果实网 警报 - 测验已重新计分：%{quiz}"
     quiz_unpublished_module: 此测验是未发布单元的一部分，尚未可用。
     report_generated: 
       email: 
@@ -9310,7 +9310,7 @@ zh:
         body: "系统已提醒您评估: %{rubric}，%{context}:"
         subject: "评估提醒: %{rubric}，%{context}"
       twitter: 
-        tweet: "Canvas 警报 - 提醒:评估 %{rubric}，%{context}"
+        tweet: "果实网 警报 - 提醒:评估 %{rubric}，%{context}"
     rubric_association_created: 
       email: 
         body: "已创建针对 %{context} 的新测验:"
@@ -9329,26 +9329,26 @@ zh:
         body: "已创建针对 %{context} 的新测验:"
         subject: "新测验:%{title}，%{context}"
       twitter: 
-        tweet: "Canvas 警报 - 新测验:%{title}，%{context}。"
+        tweet: "果实网 警报 - 新测验:%{title}，%{context}。"
     self_enrollment_registration: 
       email: 
         body: |-
             您好，%{user}！
             
-            您已成功自行登记 Canvas Network 上的课程 %{course}！
+            您已成功自行登记 果实网 Network 上的课程 %{course}！
             
-            请不要忘了设置您的 Canvas 网络个人资料，这样该课程的其他人员可对您有所了解。您可以在 %{profile_url} 上更新您的个人资料！
+            请不要忘了设置您的 果实网 网络个人资料，这样该课程的其他人员可对您有所了解。您可以在 %{profile_url} 上更新您的个人资料！
             
             学无止境！
             
-            Canvas Network
+            果实网 网络课程
         html: 
           farewell: 学无止境！
           greetings: "您好，%{user}！"
-          profile_reminder: "请不要忘了设置您的 *Canvas 网络个人资料*，这样该课程的其他人员可对您有所了解。"
-          self_enrollment_confirmation: "您已成功自行登记 Canvas Network 上的课程 %{course}！"
+          profile_reminder: "请不要忘了设置您的 *果实网 网络个人资料*，这样该课程的其他人员可对您有所了解。"
+          self_enrollment_confirmation: "您已成功自行登记 果实网 课程 上的课程 %{course}！"
           self_enrollment_registration: "%{course} 的登记"
-          signature: "Canvas Network"
+          signature: "果实网 网络课程"
         self_enrollment_registration: "%{course} 的登记"
     send_form: 
       labels: 
@@ -9376,7 +9376,7 @@ zh:
         someone: 某人
         subject: "提交评论:%{user}，%{assignment}，%{context}"
       twitter: 
-        tweet: "Canvas 警报 - 评论:%{author}（%{assignment}，%{user}，%{context}）。"
+        tweet: "果实网 警报 - 评论:%{author}（%{assignment}，%{user}，%{context}）。"
     submission_comment_for_teacher: 
       email: 
         body: "%{author} 刚刚对 %{user} 的 %{assignment} 的提交文件进行了新评论"
@@ -9399,7 +9399,7 @@ zh:
         someone: 某人
         subject: "提交评论:%{user}，%{assignment}，%{context}"
       twitter: 
-        tweet: "Canvas 警报 - 评论:%{author}（%{assignment}，%{user}，%{context}）。"
+        tweet: "果实网 警报 - 评论:%{author}（%{assignment}，%{user}，%{context}）。"
     submission_grade_changed: 
       email: 
         body: "您的作业 %{assignment_title} 的评分已更改。"
@@ -9446,7 +9446,7 @@ zh:
         not_applicable: 不适用
         score: "分数:%{score}，满分 %{total} 分"
         score_pending: （待审阅）
-        tweet: "Canvas 警报 - 评分更改: %{date}"
+        tweet: "果实网 警报 - 评分更改: %{date}"
     submission_graded: 
       email: 
         body: "您的作业 %{assignment} 已计分。"
@@ -9493,7 +9493,7 @@ zh:
         not_applicable: 不适用
         score: "分数:%{score}，满分 %{total} 分"
         score_pending_review: （待审阅）
-        tweet: "Canvas 警报 - 已计分:%{assignment}，%{context}"
+        tweet: "果实网 警报 - 已计分:%{assignment}，%{context}"
     submission_needs_grading: 
       email: 
         body: "%{user_name} 已完成测验 %{quiz_title}，该测验需要手动评分。"
@@ -9521,25 +9521,25 @@ zh:
         subject: "提交的测验：%{quiz}，%{context}"
         submitted_date: "已提交：%{date}"
       twitter: 
-        body: "Canvas 警报 - 提交的测验：%{quiz}，%{user_name}"
+        body: "果实网 警报 - 提交的测验：%{quiz}，%{user_name}"
     summaries: 
       email: 
-        daily_body: "您已注册接收来自 Canvas 帐户的一些通知的每日报告。下面是 %{date} 的报告:"
+        daily_body: "您已注册接收来自 果实网 帐户的一些通知的每日报告。下面是 %{date} 的报告:"
         html: 
           click_to_preferences: 单击此处编辑您的通知首选项
-          daily_body: "您已注册从您的 Canvas 帐户接收某些通知的每日报告。下面是 %{date}的报告："
-          subject: "最近 Canvas 通知"
+          daily_body: "您已注册从您的 果实网 帐户接收某些通知的每日报告。下面是 %{date}的报告："
+          subject: "最近 果实网 通知"
           view: 单击查看
-          weekly_body: "您已注册从您的 Canvas 帐户接收某些通知的每周报告。下面是结束日期为 %{date}的一周的报告："
+          weekly_body: "您已注册从您的 果实网 帐户接收某些通知的每周报告。下面是结束日期为 %{date}的一周的报告："
         notifications_link: "您可通过访问以下页面更改通知设置:"
-        subject: "最近 Canvas 通知"
-        weekly_body: "您已注册接收来自 Canvas 帐户的一些通知的每周报告。下面是一周结束 %{date} 的报告:"
+        subject: "最近 果实网 通知"
+        weekly_body: "您已注册接收来自 果实网 帐户的一些通知的每周报告。下面是一周结束 %{date} 的报告:"
       facebook: 
-        new_notifications: "您已收到 #Canvas# 中的 *%{notification_count} 个新通知*。"
+        new_notifications: "您已收到 #果实网# 中的 *%{notification_count} 个新通知*。"
       sms: 
         notifications_sms: "%{notifications_count} 新通知，位于 %{url}"
       twitter: 
-        tweet: "Canvas 警报 - %{notification_count} 个新通知"
+        tweet: "果实网 警报 - %{notification_count} 个新通知"
     topic_locked: 此主题当前已锁定。
     topic_locked_at: "此主题锁定于 %{at}。"
     topic_locked_module: "此主题是单元 *%{module}* 的一部分，尚未解锁。"
@@ -9562,7 +9562,7 @@ zh:
       summary: 
         subject: "更新的维基页面:%{title}，%{user}"
       twitter: 
-        tweet: "Canvas 警报 - 页面更新:%{title}，%{user}。"
+        tweet: "果实网 警报 - 页面更新:%{title}，%{user}。"
     visit_modules_page: "*有关如何解锁此内容的信息，请访问课程单元页面。*"
     web_conference_invitation: 
       email: 
@@ -9582,7 +9582,7 @@ zh:
         body: "我们邀请您参与 %{name} 的网络会议 %{title}。"
         subject: "网络会议邀请: %{name}"
       twitter: 
-        tweet: "Canvas 警报 - 邀请:参加 %{title}，%{name}"
+        tweet: "果实网 警报 - 邀请:参加 %{title}，%{name}"
   migration: 
     announcement_type: 通告
     assignment_group_type: 作业小组
@@ -9674,7 +9674,7 @@ zh:
     submission_comments: 提交评论
     sure_you_want_to_mute: "是否确定要静音此作业?此作业静音时，学生将不会收到关于以下内容的新通知或无法看到:"
   name: 学术基准导入器
-  new_facebook_message: "您有来自 Canvas 的新消息"
+  new_facebook_message: "您有来自 果实网 的新消息"
   no_migration_file: 内容迁移需要文件
   not_a_number: 必须为正数
   not_applicable: 不适用
@@ -9817,7 +9817,7 @@ zh:
         ⏎
         &nbsp;⏎
         ⏎
-        如果您不希望新评论在 Canvas 收件箱中显示为“新”，请选中“将新提交评论标记为已读”
+        如果您不希望新评论在 果实网 收件箱中显示为“新”，请选中“将新提交评论标记为已读”
     submission_comment_display: 提交评论
     submission_new_as_read: 将新提交评论标记为已读。
   notification_preferences: 
@@ -9942,7 +9942,7 @@ zh:
       instructions: 
         main: 
           manage: 
-            description: "*成果是在此处创建的，以跟踪课程的掌握程度。要开始创建，请查看顶部的菜单栏。单击”新建“按钮，创建一个新的成果，或单击”新建组“按钮创建一个新的组，将您的成果放在其中。”查找“按钮将允许您使用您所在的州或学校创建的成果。在您创建和使用成果时，您将可以使用左侧的面板在成果中导航。您可以在不同的级别之间拖放成果以创建结构。* *更重要的是，Canvas 允许您将成果添加到您的评分标准，这样您就可以在对作业评分时评估自己的掌握程度。在您设置成果后，单击”管理评分标准“开始使用成果继续评分。*"
+            description: "*成果是在此处创建的，以跟踪课程的掌握程度。要开始创建，请查看顶部的菜单栏。单击”新建“按钮，创建一个新的成果，或单击”新建组“按钮创建一个新的组，将您的成果放在其中。”查找“按钮将允许您使用您所在的州或学校创建的成果。在您创建和使用成果时，您将可以使用左侧的面板在成果中导航。您可以在不同的级别之间拖放成果以创建结构."
             title: 设置成果
     mastery_error: "必须大于或等于 0"
     missing_outcome: 无法找到该学习成果
@@ -10071,7 +10071,7 @@ zh:
     exception: 抱歉，出现错误，请稍后重试。
   plugins: 
     academic_benchmark_importer: 
-      description: "此工具便于您将学术基准标准导入 Canvas。"
+      description: "此工具便于您将学术基准标准导入 果实网。"
     academic_benchmark_settings: 
       api_url_description: "（例如 %{url}）"
       common_core_guid: "（例如 %{guid}）"
@@ -10084,7 +10084,7 @@ zh:
       description: 选择帐户报告
       name: 帐户报告
     app_center: 
-      description: "App Center 用于在 Canvas 中跟踪/安装外部工具"
+      description: "App Center 用于在 果实网 中跟踪/安装外部工具"
       name: "App Center"
     app_center_settings: 
       description: "App Center 将出现在课程或帐户的设置页上的“应用程序”选项卡中。下面提供的 URL 应指向有效的 App Center 端点（例如，https://lti-examples.heroku.com -- 确保略去末尾斜杠）"
@@ -10101,7 +10101,7 @@ zh:
       no_copying_frozen: 不允许冻结将复制的作业。
     banner_grade_exchange_settings: 
       labels: 
-        canvas_source_identifier: "您的 Canvas 实例名称"
+        canvas_source_identifier: "您的 果实网 实例名称"
         sis_source_identifier: "您的 Banner 实例名称"
     big_blue_button: 
       description: "BigBlueButton 网络会议支持"
@@ -10173,7 +10173,7 @@ zh:
       sketchpad: SketchPad
       typewithme: TypeWith.me
     facebook: 
-      description: "Canvas Facebook 应用程序"
+      description: "果实网 Facebook 应用程序"
       name: Facebook
     facebook_settings: 
       description: |-
@@ -10182,23 +10182,23 @@ zh:
           正常工作:
           
           * **网站 -- 站点 URL:** 设置为 %{site_url}
-          * **网站 -- 站点域: ** 您的 Canvas 主站点的域。此项必须匹配站点 URL 设置
-          * **Facebook 集成 -- Canvas 页面:** 记下您的选择并在下面的表单中输入
-          * **Facebook 集成 -- Canvas URL:** 设置为 %{canvas_url}
-          * 确保已启用**高级 -- OAuth 2.0 for Canvas**
+          * **网站 -- 站点域: ** 您的 果实网 主站点的域。此项必须匹配站点 URL 设置
+          * **Facebook 集成 -- 果实网 页面:** 记下您的选择并在下面的表单中输入
+          * **Facebook 集成 -- 果实网 URL:** 设置为 %{canvas_url}
+          * 确保已启用**高级 -- OAuth 2.0 for 果实网**
           * 保存应用程序之后，记下应用程序 ID、API 密钥和应用程序密码
       domain_name: 域
       headers: 
         domain_settings: 域设置
       hints: 
-        canvas_domain: "此项是\"Canvas URL\"中指定的域"
-        canvas_name: "此项是\"Canvas 页面\"中指定的路径"
+        canvas_domain: "此项是\"果实网 URL\"中指定的域"
+        canvas_name: "此项是\"果实网 页面\"中指定的路径"
         disable_ssl: 仅用于本地测试
       labels: 
         api_key: "API 密钥"
         app_id: "应用程序 ID"
-        canvas_domain: "Canvas 域"
-        canvas_name: "Canvas 名称"
+        canvas_domain: "果实网 域"
+        canvas_name: "果实网 名称"
         disable_ssl: "禁用 SSL"
         secret: 应用程序密码
     google_docs: 
@@ -10228,7 +10228,7 @@ zh:
         default_email_domain: 默认电子邮件域
         email_preference: 电子邮件首选项
         lms_delivery_name: "LMS 交付名称"
-        map_sections_to_courses: "将 IMS 班级映射到 Canvas 课程"
+        map_sections_to_courses: "将 IMS 班级映射到 果实网 课程"
         section_end_days_adjustment: 班级结束日期调整
         section_name_selection: 班级名称选择
         section_start_days_adjustment: 班级开始日期调整
@@ -10238,8 +10238,8 @@ zh:
       author: 作者
       description: 说明
       name: 姓名
-      no_plugins: "没有安装 Canvas 插件"
-      page_title: "Canvas 插件"
+      no_plugins: "没有安装 果实网 插件"
+      page_title: "果实网 插件"
       tag: 标签
       version: 版本
       website: 网站
@@ -10253,7 +10253,7 @@ zh:
           您将需要 [Kaltura.com](%{kaltura_url}) 的帐户
           或 Kaltura 的自托管实例。
           
-          **注:** 一旦在 Canvas 内配置 Kaltura 后，
+          **注:** 一旦在 果实网 内配置 Kaltura 后，
           您需要转到 Kaltura 管理控制台并在\"设置 -> 
           集成设置\"下启用服务器通知， 
           通知 URL 为:
@@ -10263,7 +10263,7 @@ zh:
           然后选中\"通过服务器发送\"列中的\"添加条目\"和\"删除条目\"框。
       headers: 
         account_settings: 帐户设置
-        canvas_settings: "Canvas 设置"
+        canvas_settings: "果实网 设置"
         domain_settings: 域设置
         misc_settings: 杂项设置
         ui_conf_ids: "UI 配置 ID"
@@ -10385,7 +10385,7 @@ zh:
       description: |-
           如果机构不使用 WebCT 的“学习单元”（包括采用低于 4.0 版的 WebCT⏎
           的学校，当提供各个单元时），可通过将“课程内容”⏎
-          导入为 Canvas 单元而不是“学习单元”来改善课程迁移。至于内容单元，使用此页面可设置 WebCT 迁移器的默认行为。⏎
+          导入为 果实网 单元而不是“学习单元”来改善课程迁移。至于内容单元，使用此页面可设置 WebCT 迁移器的默认行为。⏎
           务必记住的一点是，当单个课程迁移保留⏎
           可选择的能力时，批量迁移器始终采用此处配置的值，而不能按迁移进行更改。
       labels: 
@@ -10479,8 +10479,8 @@ zh:
       updated_profile: 个人资料已成功更新
     please_select_an_option: 请选择选项
     profile: 
-      access_token_description: "访问许可证可用于允许其它应用程序代表您进行 API 调用。您还可以生成访问许可证和*使用 Canvas Open API* 启动您自己的集成。"
-      approved_integrations: "您可授权第三方应用程序代表您访问 Canvas 网站:"
+      access_token_description: "访问许可证可用于允许其它应用程序代表您进行 API 调用。您还可以生成访问许可证和*使用 果实网 Open API* 启动您自己的集成。"
+      approved_integrations: "您可授权第三方应用程序代表您访问 果实网 网站:"
       buttons: 
         add_picture_file: 添加文件
         authorize_google_docs: "授权 Google Docs 访问"
@@ -10495,17 +10495,17 @@ zh:
         select_image: 选择图像
         update_settings: 更新设置
       confirm_email_instructions: "在编辑个人资料之前，您需要确认电子邮件地址 (%{email})，方法是单击我们给您发送的电子邮件中的链接。如果您没有看到电子邮件，*单击以重新发送电子邮件*，然后确保检查您的垃圾邮件箱。"
-      delicious_description: "Delicious 是一个工具，可让您存储和与其他人分享您的书签。Canvas 的丰富内容编辑器可让您搜索 Delicious 标记，从而轻松地从 Canvas 内链接到您觉得有用的其它资源。"
-      diigo_description: "Diigo 是专为研究和教育人士量身打造的一款社交书签工具。Canvas 的丰富内容编辑器可让您搜索 Diigo 标记，从而轻松地从 Canvas 内链接到您觉得有用的其它资源。"
+      delicious_description: "Delicious 是一个工具，可让您存储和与其他人分享您的书签。果实网 的丰富内容编辑器可让您搜索 Delicious 标记，从而轻松地从 果实网 内链接到您觉得有用的其它资源。"
+      diigo_description: "Diigo 是专为研究和教育人士量身打造的一款社交书签工具。果实网 的丰富内容编辑器可让您搜索 Diigo 标记，从而轻松地从 果实网 内链接到您觉得有用的其它资源。"
       error_loading_token_details: 加载令牌详细信息时出错
-      facebook_description: "如果您有 Facebook 帐户，您可以安装 Canvas 应用程序并在个人资料中接收课程通知。您可以指定要接收哪些类型的通知以及多久发送一次。"
+      facebook_description: "如果您有 Facebook 帐户，您可以安装 果实网 应用程序并在个人资料中接收课程通知。您可以指定要接收哪些类型的通知以及多久发送一次。"
       feature_options: 功能选项
       full_token_warning: |-
           **立即复制此令牌**。一旦离开此页面，您将无法
           再检索完整的令牌，您将不得不重新生成令牌以获取一个新
           值。
       generate_access_token_description: |-
-          访问许可证是允许第三方应用程序代表您访问 Canvas
+          访问许可证是允许第三方应用程序代表您访问 果实网
           资源的功能。这些许可证通常根据需要自动
           为应用程序创建，但如果 [您正在部署新的或受限制的
           项目](%{documentation_url})，您可以恰好从此处生成该许可证。
@@ -10584,7 +10584,7 @@ zh:
         view_facebook_app: "查看 Facebook 应用程序"
         view_your_profile: 查看您的个人资料
       loading_token_details: 正在加载令牌详细信息...
-      no_approved_integrations: "第三方应用程序可以请求权限以代表您访问 Canvas 网站。当您开始授权应用程序后，您将看到它们在此处列出。"
+      no_approved_integrations: "第三方应用程序可以请求权限以代表您访问 果实网 网站。当您开始授权应用程序后，您将看到它们在此处列出。"
       no_language_preference: "系统默认值 (%{language})"
       no_registered_services: 没有注册的服务
       none: 无
@@ -10615,7 +10615,7 @@ zh:
           这些通知将作为直接消息让您自己发送给
           自己，并且将不会在公共流中出现。
       unknown_service: 未知
-      web_services: "通过将 Canvas 绑定到您已经使用的网络工具，它可以让您的生活轻松许多。单击\"其它服务\"中的任何服务，了解此项功能。"
+      web_services: "通过将 果实网 绑定到您已经使用的网络工具，它可以让您的生活轻松许多。单击\"其它服务\"中的任何服务，了解此项功能。"
     purpose_required: 需要填写用途
     resending: 正在重新发送...
     secondary_nav: 
@@ -10665,7 +10665,7 @@ zh:
         carrier: 运营商
         cell_number: 手机号码
         email_address: 电子邮件地址
-        enable_login_for_email: "我要使用此电子邮件地址登录 Canvas"
+        enable_login_for_email: "我要使用此电子邮件地址登录 果实网"
         sms_email: "SMS 电子邮件"
       links: 
         add_contact_method: 添加联系方式
@@ -10707,7 +10707,7 @@ zh:
     notifications: 
       privacy_notice: 
         ok: 确定
-        privacy_notice: "注意: 某些通知可能包含机密信息。如果选择使用您的机构提供的地址之外的电子邮件接收通知，可能会导致将敏感的 Canvas 课程和小组信息发送到机构系统外部。"
+        privacy_notice: "注意: 某些通知可能包含机密信息。如果选择使用您的机构提供的地址之外的电子邮件接收通知，可能会导致将敏感的 果实网 课程和小组信息发送到机构系统外部。"
         privacy_notice_title: 隐私权声明
   pseudonym: 
     errors: 
@@ -10734,19 +10734,19 @@ zh:
       invalid_otp: 验证码无效，请重试
       login_error: "在 %{institution} 登录时出现问题"
       login_errors: 
-        no_config_for_id: "Canvas 帐户没有具有该 ID 的身份验证配置"
+        no_config_for_id: "果实网 帐户没有具有该 ID 的身份验证配置"
         no_idp_set: 您登录的学校未在此帐户上配置。
-        unrecognized_idp: "Canvas 未识别您的身份提供程序"
+        unrecognized_idp: "果实网 未识别您的身份提供程序"
       logout_errors: 
-        no_idp_found: "Canvas 无法退出您的身份提供程序"
+        no_idp_found: "果实网 无法退出您的身份提供程序"
       max_attempts: 登录尝试失败次数过多。请稍后重试或联系您的系统管理员。
-      no_matching_user: "Canvas 没有以下用户的帐户: %{user}"
+      no_matching_user: "果实网 没有以下用户的帐户: %{user}"
       user_deleted: 该用户帐户已被删除。请联系您的系统管理员以重新激活您的帐户。
     mobile_login: 
       back_to_login: 返回登录
       buttons: 
         request_password: 请求密码
-      dont_know_password: 我不知道我的密码
+      dont_know_password: 忘记密码?
       login: 登录
       login_handle: "输入您的 %{login_handle_name}，我们将向您发送更改密码的链接。"
       password: 密码
@@ -10781,7 +10781,7 @@ zh:
         verify: 验证
       details: 
         mfa_enrollment: |-
-            除密码外，多重身份验证还要求您拥有物理设备，才能登录到 Canvas，因而提高了安全性。这可以是能生成验证码的设备，也可以是能接收短信的手机。用于 [iPhone](%{iphone_url}) 或
+            除密码外，多重身份验证还要求您拥有物理设备，才能登录到 果实网，因而提高了安全性。这可以是能生成验证码的设备，也可以是能接收短信的手机。用于 [iPhone](%{iphone_url}) 或
             [Android](%{android_url}) 的 Google Authenticator  应用程序的配置方法是扫描以下的 QR 代码。其它令牌的配置方法是输入密钥 **%{secret_key}**。
         mfa_required: 您需要设置多重身份验证。
         otp_on_device: 请输入您的令牌显示的验证码。
@@ -11929,7 +11929,7 @@ zh:
         started: 开始时间
         time_elapsed: 经过时间
         times_up: 时间到！提交结果
-      logged_out_of_canvas: "*您已注销 Canvas。*若要继续，请登录"
+      logged_out_of_canvas: "*您已注销 果实网。*若要继续，请登录"
       login_required: 需要登录
       minutes_count: 
         one: "%{count} 分钟"
@@ -12080,7 +12080,7 @@ zh:
       labels: 
         email: 电子邮件
         name: 姓名
-    welcome_to_canvas: "欢迎使用 Canvas！"
+    welcome_to_canvas: "欢迎使用 果实网！"
   retrieve_timeout: 无法检索配置，服务器响应超时
   role_override: 
     permission: 
@@ -12098,7 +12098,7 @@ zh:
       manage_announcements: 管理全局通告
       manage_assignments: 管理（添加/编辑/删除）作业和测验
       manage_calendar: 添加、编辑和删除课程表上的事件
-      manage_canvasnet_courses: "管理 Canvas 网络课程"
+      manage_canvasnet_courses: "管理 果实网 网络课程"
       manage_content: 管理所有其它课程内容
       manage_courses: 管理（添加/编辑/删除）课程
       manage_demos: 管理演示
@@ -12663,16 +12663,16 @@ zh:
       back_to_login: 返回登录
       buttons: 
         request_password: 请求密码
-      coenrollment_banner: "*Canvas 用户的父级?* **单击此处以获得帐户**"
+      coenrollment_banner: "*果实网 用户的父级?* **单击此处以获得帐户**"
       default_login_message: 在您的机构登录
-      dont_know_password: 我不知道我的密码
+      dont_know_password: 忘记了密码?
       labels: 
         password: 密码
         remember_me: 保持登录状态
       log_in: 登录
       login_at_account: "在 %{school_name} 登录"
       login_handle: "输入您的 %{login_handle_name}，我们将向您发送更改密码的链接。"
-      register_for_canvas: "*需要 Canvas 帐户?* **单击此处免费获取!**"
+      register_for_canvas: "*需要 果实网 帐户?* **单击此处免费获取!**"
     menu_assignment: 
       labels: 
         due: 截止时间
@@ -12744,9 +12744,9 @@ zh:
       links_title: 标题
       links_url: URL
       manage_settings: 管理注册服务
-      message_me: "在  Canvas 中向我发送消息"
+      message_me: "在  果实网 中向我发送消息"
       message_title: 消息
-      message_user_canvas: "在 Canvas 中向 %{user} 发送消息"
+      message_user_canvas: "在 果实网 中向 %{user} 发送消息"
       name: 姓名
       no_links: "%{name} 尚未添加任何链接"
       nothing_in_common: 你们没有共同之处
@@ -12924,7 +12924,7 @@ zh:
       grading_alt: 评分
       submission_comment: 提交评论
     terms_required: 
-      terms_have_changed: "*使用条款*已发生更改。请在继续使用 Canvas 之前花点时间查看这些条款。"
+      terms_have_changed: "*使用条款*已发生更改。请在继续使用 果实网 之前花点时间查看这些条款。"
       updated_terms_of_use: 更新的使用条款
     unauthorized: 
       headings: 
@@ -13107,7 +13107,7 @@ zh:
       date: 日期
       value: 值
     institution_suspended: 
-      body: "您学校的 Canvas 帐户已暂时挂起。请联系您的 Canvas 管理员。"
+      body: "您学校的 果实网 帐户已暂时挂起。请联系您的 果实网 管理员。"
       links: 
         logout: 登出
         stop_masquerading: "[停止仿冒]"
@@ -13432,7 +13432,7 @@ zh:
       alt_help_text: 说明要改进辅助功能的图像
       alt_text: "Alt 文本"
       attributes: 属性
-      canvas: Canvas
+      canvas: 果实网
       dimension_help_text: 保留长宽比
       dimensions: 尺寸
       flickr: Flickr
@@ -13468,7 +13468,7 @@ zh:
       first_bullet: 您更改答案之后，在更新问题前需要选择一个选项。
       got_it: 好的，我知道了
       second_bullet: 请确保您选择最合适的选项，因为学生的分数可能会受到影响。
-      third_bullet: "Canvas 将在您保存测验后对您的所有提交项重新评分，此过程可能要用几分钟时间。"
+      third_bullet: "果实网 将在您保存测验后对您的所有提交项重新评分，此过程可能要用几分钟时间。"
       try_later: 您现在可以为已经参加测验的学生设置重新评分可选功能。
   turnitin: 
     error_1007: 上传的文件过大。
@@ -13502,7 +13502,7 @@ zh:
       agree_to_terms_and_privacy_policy: 您同意*使用条款*并承认**隐私政策**。
       agree_to_terms_with_code_of_conduct: 您同意*使用条款*和**行为准则**。
   user_date_range_search: 
-    cant_be_blank: "Canvas 用户 ID 不能为空"
+    cant_be_blank: "果实网 用户 ID 不能为空"
     cant_come_before_from: “结束日期”不能早于“开始日期”
   user_lists: 
     add_n_users: 
@@ -13648,7 +13648,7 @@ zh:
     cc_prefs: 
       buttons: 
         configure: 配置通信首选项
-      comm_preferences_instructions: "既然您已注册 Canvas，您可能会想要配置随着课程的进展将收到哪些通知。Canvas 足够灵活，可让您选择想要的通知方式和通知哪些事件。您的课程中有事情发生时，您可以选择立即、每天或每周发送电子邮件或文本到您的手机。"
+      comm_preferences_instructions: "既然您已注册 果实网，您可能会想要配置随着课程的进展将收到哪些通知。果实网 足够灵活，可让您选择想要的通知方式和通知哪些事件。您的课程中有事情发生时，您可以选择立即、每天或每周发送电子邮件或文本到您的手机。"
       titles: 
         configure_com_prefs: 配置通信首选项
     confirms: 
@@ -13801,7 +13801,7 @@ zh:
         name_and_email: 姓名和电子邮件
       update_instructions: 您可以更新此用户的部分信息，但他们可以选择改回来。
     new: 
-      create_a_canvas_account: "创建一个 Canvas 帐户"
+      create_a_canvas_account: "创建一个 果实网 帐户"
       privacy_policy: 隐私政策
       terms_of_use: 使用条款
     no_deleting_sis_user: 您不能删除系统生成的用户
@@ -13823,11 +13823,11 @@ zh:
       almost_there: 您几乎已经...
       done_resending: 完成！收到消息可能需要几分钟。
       failed_resending: 请求失败。请重试。
-      invite_to_read: "我们邀请您观看 Canvas 的这一简要概览。您可能还会*了解 Canvas 如何帮助*位于 27 个国家/地区的学生们更接近演讲厅、教师和同学。"
+      invite_to_read: "我们邀请您观看 果实网 的这一简要概览。您可能还会*了解 果实网 如何帮助*位于 27 个国家/地区的学生们更接近演讲厅、教师和同学。"
       links: 
         download_pdf: "下载 PDF"
       need_flash: "您需要启用 Flash player 8+ 和 JavaScript 才能查看此视频。"
-      overview_video: "Canvas 的概览视频"
+      overview_video: "果实网 的概览视频"
       registration_complete: 注册完成
       resending: 正在重新发送...
       sent_email_paragraph: "我们已发送电子邮件到 %{email_address}。*单击该电子邮件中的链接以完成注册*。如果您没有看到电子邮件，**单击以重新发送电子邮件**，然后确保检查您的垃圾邮件箱。"
@@ -13885,16 +13885,16 @@ zh:
     welcome: 
       no_courses_message: 您没有任何课程，因此此页面现在不会非常精彩。一旦您创建或注册课程后，您将开始看到来自所有班级的会话。
       unpublished_courses_message: 您登记了一个或多个尚未开始的课程。当⏎这些课程可用时，您将在此处和顶部导航⏎看到有关它们的信息。同时，请根据需要登记⏎更多课程或设置您的概要信息。
-      welcome_to_happiness: "欢迎使用 Canvas!"
+      welcome_to_happiness: "欢迎使用 果实网!"
   validate: 
     is_required: 此字段为必填字段
   warnings: 
     test_install: 
-      periodic_message: "此 Canvas 安装仅用于测试，且将定期重置。"
-      title: "Canvas 测试安装"
+      periodic_message: "此 果实网 安装仅用于测试，且将定期重置。"
+      title: "果实网 测试安装"
       weekly_message: 
-        one: "此 Canvas 安装仅用于测试，且每 %{count} 周将重置。"
-        other: "此 Canvas 安装仅用于测试，且每 %{count} 周将重置。"
+        one: "此 果实网 安装仅用于测试，且每 %{count} 周将重置。"
+        other: "此 果实网 安装仅用于测试，且每 %{count} 周将重置。"
   web_conference: 
     default_name_for_courses: 课程网络会议
     default_name_for_groups: 小组网络会议

@@ -29,7 +29,7 @@ define([
       });
 
       ed.addButton('instructure_equation', {
-        title: '插入数学方程式',
+        title: 'Insert Math Equation',
         cmd: 'instructureEquation',
         image: url + '/img/button.gif'
       });

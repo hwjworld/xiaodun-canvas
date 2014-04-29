@@ -22,7 +22,7 @@ define([
 
       // Register buttons
       ed.addButton('instructure_image', {
-        title : htmlEscape(I18n.t('embed_image', '嵌入图像')),
+        title : htmlEscape(I18n.t('embed_image', 'Embed Image')),
         cmd : 'mceInstructureImage',
         image : url + '/img/button.gif'
       });

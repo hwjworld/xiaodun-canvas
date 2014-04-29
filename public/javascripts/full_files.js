@@ -137,12 +137,12 @@ define([
                 }
               }
               if(filesToUpload.length === 0) {
-                alert(I18n.t('messages.no_files_selected', "未选择有效的文件"));
+                alert(I18n.t('messages.no_files_selected', "No valid files were selected"));
                 return;
               }
               var unzip = false;
               if(filesToUpload.length == 1 && filesToUpload[0].type.match(/application\/(x-)?zip/)) {
-                unzip = confirm(I18n.t('prompts.extract_zip', "此文件为压缩文件。是否要提取其内容到此文件夹?"));
+                unzip = confirm(I18n.t('prompts.extract_zip', "This file is a zip file.  Do you want to extract its contents into this folder?"));
               }
               if(unzip) {
                 var file = filesToUpload[0];
@@ -162,7 +162,7 @@ define([
                 $progress.css('margin', '10px');
                 $progress.progressbar();
                 $dialog.dialog({
-                  title: I18n.t('titles.extracting', "正在提取文件到文件夹"),
+                  title: I18n.t('titles.extracting', "Extracting Files into Folder"),
                   close: function() {
                     $dialog.data('closed', true);
                     setTimeout(function() {
@@ -172,7 +172,7 @@ define([
                 });
                 
                 var importFailed = function(errors) {
-                  $dialog.text(I18n.t('errors.extracting', "解压缩 zip 文件时出现某些错误。请重试"));
+                  $dialog.text(I18n.t('errors.extracting', "There were errors extracting the zip file.  Please try again."));
                   var $ul = $("<ul/>");
                   for(var idx in errors) {
                     var error = errors[idx];
@@ -193,7 +193,7 @@ define([
                       importFailed(zfi.data.errors);
                     } else if(zfi && zfi.workflow_state == 'imported') {
                       $progress.progressbar('value', 100);
-                      $dialog.append(I18n.t('messages.extraction_complete', "提取完成！正在更新文件结构..."));
+                      $dialog.append(I18n.t('messages.extraction_complete', "Extraction complete!  Updating..."));
                       files.refreshContext(folder.context_string, function() {
                         $dialog.dialog('close');
                       });
@@ -201,7 +201,7 @@ define([
                       pollImport.blankCount = pollImport.blankCount || 0;
                       pollImport.blankCount++;
                       if(pollImport.blankCount > 30) {
-                        importFailed([I18n.t('errors.server_returned_invalid_status', "服务器停止返回有效状态")]);
+                        importFailed([I18n.t('errors.server_returned_invalid_status', "The server stopped returning a valid status")]);
                       } else {
                         setTimeout(function() { pollImport(zip_import_id) }, 2000);
                       }
@@ -216,7 +216,7 @@ define([
                     pollImport.errorCount = pollImport.errorCount || 0;
                     pollImport.errorCount++;
                     if(pollImport.errorCount > 5) {
-                      importFailed([I18n.t('errors.server_unresponsive', "服务器停止响应状态请求")]);
+                      importFailed([I18n.t('errors.server_unresponsive', "The server stopped responding to status requests")]);
                     } else {
                       setTimeout(function() { pollImport(zip_import_id) }, 2000);
                     }
@@ -231,7 +231,7 @@ define([
                     pollImport(zip_import_id);
                   },
                   error: function(data) {
-                    $dialog.text(I18n.t('errors.uploading_zip', "上传 zip 文件时出错。"));
+                    $dialog.text(I18n.t('errors.uploading_zip', "There were errors uploading the zip file."));
                   }
                 });
               } else {
@@ -271,7 +271,7 @@ define([
           if (data.duplicates && data.duplicates.length > 0) {
             var $dialog = $("#duplicate_filename_dialog");
             $dialog.find(".duplicate_filename_prompt").text(
-              I18n.t('prompts.duplicate_filenames', "此文件中已存在以下名称的文件。是否要替换它们，或者用独特的名称重命名新文件?"));
+              I18n.t('prompts.duplicate_filenames', "Files with the following names already exist in this folder. Do you want to replace them, or rename the new files with unique names?"));
 
             var duplicatesHtml = '';
             for (idx in data.duplicates) {
@@ -883,7 +883,7 @@ define([
                     .attr('href', folder_url);
 
             $content.find(".item_icon.draggable")
-                    .attr('title', I18n.t('titles.click_and_drag', '单击并拖动可将文件夹移动到其它文件夹'));
+                    .attr('title', I18n.t('titles.click_and_drag', 'Click and drag to move folder to another folder'));
           }
 
           $content.toggleClass('editable_folder_item', !!(!$item.hasClass('context') && 
@@ -970,7 +970,7 @@ define([
 
           if(data && data.currently_locked) {
             $content.find(".item_icon").attr({
-              alt: I18n.t('alts.locked_file', '已锁定文件'),
+              alt: I18n.t('alts.locked_file', 'Locked File'),
               src: $("#content_locked_icon").attr('src')
             });
           }
@@ -1324,7 +1324,7 @@ define([
       });
 
       $(".folder_item.ui-draggable").live('mouseover', function() {
-        $(this).find(".item_icon").attr('title', I18n.t('titles.drag_to_move', '拖动以移动到其它文件夹'));
+        $(this).find(".item_icon").attr('title', I18n.t('titles.drag_to_move', 'Drag to move to a different folder'));
       });
 
       // on hover of the swfupload link, manually set the underline on
@@ -1354,7 +1354,7 @@ define([
       $("#file_uploads_dialog_link").click(function(event) {
         event.preventDefault();
         $("#file_uploads").dialog({
-          title: I18n.t('titles.file_uplaods_queue', "文件上传队列")
+          title: I18n.t('titles.file_uplaods_queue', "File Uploads Queue")
         });
       });
 
@@ -1414,11 +1414,11 @@ define([
             if(node.hasClass('node')) {
               var folder_url = $.replaceTags($("." + data.context_string + "_folder_url").attr('href'), 'id', data.id);
               var cancelled = false;
-              var $no_content = $("<li class='message'>" + I18n.t('messages.folder_empty', "此文件夹中没有内容") + "</li>");
+              var $no_content = $("<li class='message'>" + I18n.t('messages.folder_empty', "Nothing in this Folder") + "</li>");
               if(node.hasClass('folder')) {
                 if(!data || !data.permissions || !data.permissions.read_contents) {
                   $files_content.find(".content_panel:last")
-                                .after("<li class='message'>" + I18n.t('messages.access_denied', "您无法阅读此文件夹的内容。") + "</li>");
+                                .after("<li class='message'>" + I18n.t('messages.access_denied', "You cannot read the contents of this folder.") + "</li>");
                   cancelled = true;
                 } else {
                   // add a control panel to the top for adding files, folders to this
@@ -1504,7 +1504,7 @@ define([
                   if(node.children("ul").children("li.node,li.leaf").length === 0 || (node.hasClass('folder') && !data.includes_files)) {
                     if(node.hasClass('folder') && !data.includes_files) {
                       $no_content.addClass('no_content');
-                      $no_content.text(I18n.t('messages.loading_files', "正在加载文件..."));
+                      $no_content.text(I18n.t('messages.loading_files', "Loading Files..."));
                       files.getFilesForFolder(data, function(data) {
                         if(data.files.length > 0) {
                           files.refreshView();
@@ -1665,13 +1665,13 @@ define([
           height: 410,
           buttons: [
             {
-              text: I18n.t('cancel', '取消'),
+              text: I18n.t('cancel', 'Cancel'),
               click: function() {
                 $("#edit_content_dialog").dialog('close');
               }
             },
             {
-              text: I18n.t('update_file', '更新文件'),
+              text: I18n.t('update_file', 'Update File'),
               click: submitFile,
               'class': 'btn-primary'
             }
@@ -1688,7 +1688,7 @@ define([
         $.ajax({
           dataType: 'json',
           error: function() {
-            $dialog.find(".loading_message").text(I18n.t('errors.loading_file', "加载文件内容出错。请重试。"));
+            $dialog.find(".loading_message").text(I18n.t('errors.loading_file', "Error Loading File Contents.  Please try again."));
           },
           success: function(data) {
             var body = data.body;
@@ -1732,12 +1732,12 @@ define([
         $dialog.find("button")
                .attr('disabled', false)
                .filter(".save_button")
-               .text(I18n.t('buttons.update_file', "更新文件"));
+               .text(I18n.t('buttons.update_file', "Update File"));
 
         $dialog.find("button")
                .attr('disabled', true)
                .filter(".save_button")
-               .text(I18n.t('messages.updating_file', "正在更新文件..."));
+               .text(I18n.t('messages.updating_file', "Updating File..."));
 
         var context_string = files.currentItemData().context_string;
         var $textarea = $dialog.find('textarea');
@@ -1759,7 +1759,7 @@ define([
             $dialog.find("button")
                    .attr('disabled', false)
                    .filter(".save_button")
-                   .text(I18n.t('buttons.update_file', "更新文件"));
+                   .text(I18n.t('buttons.update_file', "Update File"));
             files.updateFile(context_string, data);
             $dialog.dialog('close');
           },
@@ -1767,7 +1767,7 @@ define([
             $dialog.find("button")
                    .attr('disabled', false)
                    .filter(".save_button")
-                   .text(I18n.t('errors.update_file_failed', "更新文件失败，请重试"));
+                   .text(I18n.t('errors.update_file_failed', "Updating File Failed, please try again"));
           }
         });
       }
@@ -1828,7 +1828,7 @@ define([
         data = data || files.itemData($(this).parents("#folder_panel,#file_panel").data('node'));
         var item_type = $(this).parents(".folder_item").hasClass('file') ? 'file' : 'folder';
         $(this).parents(".folder_item").confirmDelete({
-          message: ($(this).parents(".folder_item").hasClass('folder') || $(this).hasClass('folder_url') ? I18n.t('prompts.delete_folder', "是否确定要删除此文件夹及其所有内容?") : I18n.t('prompts.delete_file', "是否确定要删除此文件夹及其所有内容?")),
+          message: ($(this).parents(".folder_item").hasClass('folder') || $(this).hasClass('folder_url') ? I18n.t('prompts.delete_folder', "Are you sure you want to delete this folder and all of its contents?") : I18n.t('prompts.delete_file', "Are you sure you want to delete this file?")),
           url: $(this).attr('href'),
           success: function() {
             if($files_structure.find(".file_" + data.id + ",.folder_" + data.id).filter(".active-node,.active-leaf").length > 0) {
@@ -2041,7 +2041,7 @@ define([
         $("#lock_item_dialog").dialog({
           modal: true,
           width: 350,
-          title: item_type == 'folder' ? I18n.t('titles.lock_folder', "锁定文件") : I18n.t('titles.lock_file', '锁定文件')
+          title: item_type == 'folder' ? I18n.t('titles.lock_folder', "Lock Folder") : I18n.t('titles.lock_file', 'Lock File')
         }).find('.datetime_field').datetime_field();;
       });
 
@@ -2153,7 +2153,7 @@ define([
           height: 22,
           cancelImg: '/images/blank.png',
           onInit: function() {
-            $add_file_link.text(I18n.t('links.add_files', "添加文件")).triggerHandler('show');
+            $add_file_link.text(I18n.t('links.add_files', "Add Files")).triggerHandler('show');
           },
           onSelect: fileUpload.swfFileQueue,
           onCancel: fileUpload.swfCancel,
@@ -2240,7 +2240,7 @@ define([
             var attachment = data.attachment;
             var context_code = $.underscore(attachment.context_type) + "_" + attachment.context_id;
             $file.find(".cancel_upload_link").hide().end()
-              .find(".status").text(I18n.t('messages.done_uploading', "完成上传"));
+              .find(".status").text(I18n.t('messages.done_uploading', "Done uploading"));
             $file.addClass('done');
             setTimeout(function() {
               $file.slideUp(function() {
@@ -2270,7 +2270,7 @@ define([
       if(count === 0 && errorCount == 0) {
         fileUpload.hideStatus();
         var $msg = $("#file_upload_blank").clone(true).removeAttr('id').addClass('finished_message').empty();
-        $msg.text("所有文件已完成上传");
+        $msg.text("Finished uploading all files");
         if(!$("#file_uploads .file_upload:visible:first").hasClass('finished_message')) {
           $("#file_uploads").prepend($msg);
           $msg.slideDown('fast');
@@ -2287,9 +2287,9 @@ define([
           });
         }, 5000);
       } else {
-        $("#file_uploads_dialog_link").text(I18n.t('messages.uploading_files', {one: "正在上传 %{count} 个文件...", other: "正在上传 %{count} 个文件..."}, { count: count}));
+        $("#file_uploads_dialog_link").text(I18n.t('messages.uploading_files', {one: "Uploading 1 File...", other: "Uploading %{count} Files..."}, { count: count}));
         if(count === 0) {
-          $("#file_uploads_dialog_link").text(I18n.t('messages.error_count', {one: "%{count} 个错误", other: "%{count} 个错误"}, { count: errorCount}));
+          $("#file_uploads_dialog_link").text(I18n.t('messages.error_count', {one: "1 Error", other: "%{count} Errors"}, { count: errorCount}));
         }
         fileUpload.showStatus();
       }
@@ -2343,7 +2343,7 @@ define([
     swfFileQueueReal: function(file) { //onSelect
       var $file = fileUpload.initFile(file);
       $file.data('folder', files.currentItemData());
-      $file.find(".status").text(I18n.t('messages.queued', "已排队"));
+      $file.find(".status").text(I18n.t('messages.queued', "Queued"));
       fileUpload.swfFiles.push(file);
       var folder = $file.data('folder');
       var post_params = {
@@ -2367,7 +2367,7 @@ define([
         $.flashError(
           data && data.base && data.base.match(/quota/) ?
           data.base :
-          I18n.t('upload_error', '上传您的文件时出错')
+          I18n.t('upload_error', 'There was an error uploading your file')
         );
         $("#file_swf").uploadify('cancel', file.id);
         $file.find(".cancel_upload_link").hide().end()
@@ -2387,7 +2387,7 @@ define([
     },
     swfCancel: function(file) { // onCancel
       var $file = fileUpload.initFile(file);
-      $("#file_uploads_dialog_link").text(I18n.t('errors.uploading', "上传出错"));
+      $("#file_uploads_dialog_link").text(I18n.t('errors.uploading', "Uploading Error"));
       $file.addClass('done');
       if(!$file.hasClass('errored') && !$file.hasClass('error_cancelled')) {
         $file.find(".cancel_upload_link").hide().end()
@@ -2413,10 +2413,10 @@ define([
         //if(cancelable) $("#file_swf").uploadify('cancel', file.id, true); //TODO: always suppress?
       }, 50);
       fileUpload.swfFiles = $.grep(fileUpload.swfFiles, function(f) { return f.id != file.id; });
-      $("#file_uploads_dialog_link").text(I18n.t('errors.uploading', "上传出错"));
+      $("#file_uploads_dialog_link").text(I18n.t('errors.uploading', "Uploading Error"));
       fileUpload.showStatus();
       $file.find(".cancel_upload_link").hide().end()
-        .find(".status").text(I18n.t('errors.failed_uploading', "上传失败: %{error_info}", {error_info: errorString}));
+        .find(".status").text(I18n.t('errors.failed_uploading', "Failed uploading: %{error_info}", {error_info: errorString}));
       $file.addClass('done').addClass('errored');
       fileUpload.swfFileQueueNext();
     },
@@ -2426,19 +2426,19 @@ define([
       if(file.upload_params) $("#file_swf").uploadify('settings', 'formData', file.upload_params);
       fileUpload.swfQueuedAndPendingFiles = $.grep(fileUpload.swfQueuedAndPendingFiles, function(f) { return f.id != file.id; });
       $file.find(".progress_bar").progressbar('value', 1);
-      $file.find(".status").text(I18n.t('messages.uploading', "正在上传"));
+      $file.find(".status").text(I18n.t('messages.uploading', "Uploading"));
     },
     swfFileProgress: function(file, bytesUploaded, bytesTotal, totalBytesUploaded, totalBytesTotal) { // onUploadProgress
       var $file = fileUpload.initFile(file);
-      $file.find(".status").text(I18n.t('messages.uploading', "正在上传"));
+      $file.find(".status").text(I18n.t('messages.uploading', "Uploading"));
       $file.find(".cancel_upload_link").showIf(totalBytesUploaded < totalBytesTotal);
       $file.find(".progress_bar").progressbar('value', 100 * totalBytesUploaded / totalBytesTotal);
     },
     s3Success: function(file) {
       var $file = fileUpload.initFile(file);
-        $file.find(".status").text(I18n.t('messages.finalizing', "完成"));
+        $file.find(".status").text(I18n.t('messages.finalizing', "Finalizing"));
         var errored = function() {
-          fileUpload.swfFileError(file, '', '', I18n.t('errors.unexpected_response', "未得到预期响应"));
+          fileUpload.swfFileError(file, '', '', I18n.t('errors.unexpected_response', "didn't get back expected response"));
         };
         $.ajaxJSON($file.data('success_url'), 'GET', {}, function(data) {
           if(data && data.attachment) {
@@ -2459,7 +2459,7 @@ define([
       }
       var $file = fileUpload.initFile(file);
       fileUpload.swfFiles = $.grep(fileUpload.swfFiles, function(f) { return f.id != file.id; });
-      $file.find(".status").text(I18n.t('messages.upload_complete', "完成上传"));
+      $file.find(".status").text(I18n.t('messages.upload_complete', "Done uploading"));
       $file.find(".cancel_upload_link").remove();
       $file.find(".progress_bar").progressbar('value', 100);
       $file.addClass('done');
@@ -2489,7 +2489,7 @@ define([
           return;
         }
       } else {
-        $file.find(".status").text(I18n.t('warnings.file_uploaded_without_response', "文件可能已上传，但服务器没有响应。请重新加载页面以确认"));
+        $file.find(".status").text(I18n.t('warnings.file_uploaded_without_response', "File may have uploaded, but the server failed to respond.  Reload the page to confirm."));
       }
       fileUpload.swfFileQueueNext();
     },

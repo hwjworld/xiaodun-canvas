@@ -209,8 +209,8 @@ define([
         id: answer.id,
         match_id: answer.match_id
       };
-      templateData.comments_header = I18n.beforeLabel('comments_on_answer', "评论，如果用户选择这个答案");
-      templateData.short_answer_header = I18n.beforeLabel('possible_answer', "可能的答案");
+      templateData.comments_header = I18n.beforeLabel('comments_on_answer', "Comments, if the user chooses this answer");
+      templateData.short_answer_header = I18n.beforeLabel('possible_answer', "Possible Answer");
 
       $answer.find(".comment_focus").attr('title', I18n.t('titles.click_to_enter_comments_on_answer', 'Click to enter comments for the student if they choose this answer'));
 
@@ -218,7 +218,7 @@ define([
         templateData.comments_header = I18n.beforeLabel('comments_on_question', "Comments for this question");
       } else if (question_type == "matching_question") {
         templateData.answer_match_left_html = answer.answer_match_left_html;
-        templateData.comments_header = I18n.beforeLabel('comments_on_wrong_match', "用户匹配错误时的评论");
+        templateData.comments_header = I18n.beforeLabel('comments_on_wrong_match', "Comments if the user gets this match wrong");
         $answer.find(".comment_focus").attr('title', I18n.t('titles.click_to_enter_comments_on_wrong_match', 'Click to enter comments for the student if they miss this match'));
       } else if (question_type == "missing_word_question") {
         templateData.short_answer_header = I18n.beforeLabel('answer_text', "Answer text");
@@ -631,7 +631,7 @@ define([
         $formQuestion.find(".question_comment").css('display', 'none').end()
           .find(".question_neutral_comment").css('display', '');
       }
-      $formQuestion.find(".question_header").text(I18n.t('question_colon', "问题:"));
+      $formQuestion.find(".question_header").text(I18n.t('question_colon', "Question:"));
       $formQuestion.addClass(question_type);
         $formQuestion.find(".question_points_holder").showIf(!$formQuestion.closest(".question_holder").hasClass('group') && question_type != 'text_only_question');
       $formQuestion.find("textarea.comments").each(function() {
@@ -662,10 +662,10 @@ define([
         var answerOptions = {
           question_type: "true_false_question",
           answer_type: "fixed_answer",
-          answer_text: I18n.t('true', "对")
+          answer_text: I18n.t('true', "True")
         };
         quiz.updateFormAnswer($formQuestion.find(".answer:first"), answerOptions);
-        answerOptions.answer_text = I18n.t('false', "错");
+        answerOptions.answer_text = I18n.t('false', "False");
         quiz.updateFormAnswer($formQuestion.find(".answer:last"), answerOptions);
         result.answer_type = "fixed_answer";
       } else if (question_type == 'short_answer_question') {
@@ -714,7 +714,7 @@ define([
         $formQuestion.removeClass('selectable');
         $formQuestion.find(".answers_header").hide().end()
           .find(".question_comment").css('display', 'none');
-        $formQuestion.find(".question_header").text(I18n.beforeLabel('message_text', "文本信息"));
+        $formQuestion.find(".question_header").text(I18n.beforeLabel('message_text', "Message Text"));
         $form.find(":input[name='question_points']").val(0);
         result.answer_type = "none";
         result.textValues = [];
@@ -1707,7 +1707,7 @@ define([
       event.preventDefault();
       $(this).parents(".question_holder").confirmDelete({
         url: $(this).parents(".question_holder").find(".update_question_url").attr('href'),
-        message: I18n.t('confirms.delete_question', "是否确定要删除此问题?"),
+        message: I18n.t('confirms.delete_question', "Are you sure you want to delete this question?"),
         success: function(data) {
           $(this).remove();
           quiz.updateDisplayComments();
@@ -1827,7 +1827,7 @@ define([
       quiz.showFormQuestion($form);
       $form.attr('action', $question.find(".update_question_url").attr('href'))
         .attr('method', 'POST')
-        .find('.submit_button').text(I18n.t('buttons.update_question', '更新问题'));
+        .find('.submit_button').text(I18n.t('buttons.update_question', 'Update Question'));
       $form.find(":input:visible:first").focus().select();
       $("html,body").scrollTo({top: $form.offset().top - 10, left: 0});
       setTimeout(function() {
@@ -2593,7 +2593,10 @@ define([
         data.answer_text = $answer.find("input[name='answer_text']:visible").val();
         data.answer_html = $answer.find(".answer_html").html();
         if (questionData.question_type == "true_false_question") {
-          data.answer_text = (i == 0) ? I18n.t('true', "True") : I18n.t('false', "False");
+          data.answer_text = $answer.find(".fixed_answer .answer_text").text();
+          if (data.answer_text.length == 0) {
+            data.answer_text = (i == 0) ? I18n.t('true', "True") : I18n.t('false', "False");
+          }
         }
         if ($answer.hasClass('correct_answer')) {
           data.answer_weight = 100;
@@ -3023,7 +3026,7 @@ define([
       if ($(this).closest('.group_top').length == 0) { return; }
       event.preventDefault();
       $(this).parents(".group_top").find(".collapse_link").addClass('hidden').end()
-        .find(".expand_link").removeClass('hidden');
+        .find(".expand_link").removeClass('hidden').focus();
       var $obj = $(this).parents(".group_top").next();
       while($obj.length > 0 && $obj.hasClass('question_holder')) {
         $obj.hide();
@@ -3032,7 +3035,7 @@ define([
     }).delegate(".expand_link", 'click', function(event) {
       if ($(this).closest('.group_top').length == 0) { return; }
       event.preventDefault();
-      $(this).parents(".group_top").find(".collapse_link").removeClass('hidden').end()
+      $(this).parents(".group_top").find(".collapse_link").removeClass('hidden').focus().end()
         .find(".expand_link").addClass('hidden');
       var $obj = $(this).parents(".group_top").next();
       while($obj.length > 0 && $obj.hasClass('question_holder')) {
@@ -3085,7 +3088,7 @@ define([
     $(".delete_quiz_link").click(function(event) {
       event.preventDefault();
       $(this).parents(".quiz").confirmDelete({
-        message: I18n.t('confirms.delete_quiz', "您确定要删除这个测试?"),
+        message: I18n.t('confirms.delete_quiz', "Are you sure you want to delete this quiz?"),
         url: $(this).attr('href'),
         success: function() { window.location.replace(ENV.QUIZZES_URL); }
       });
@@ -3132,7 +3135,7 @@ define([
       }
       // if there are not any options besides the default "<option class="shown_when_no_other_options_available" value='0'>[ Enter Answer Variables Above ]</option>" one
       if (!$select.find("option:not(.shown_when_no_other_options_available)").length) {
-        $select.append("<option class='shown_when_no_other_options_available' value='0'>" + I18n.t('enter_answer_variable_above', "[输入上面可能的答案]") + "</option>");
+        $select.append("<option class='shown_when_no_other_options_available' value='0'>" + I18n.t('enter_answer_variable_above', "[ Enter Answer Variables Above ]") + "</option>");
       }
       $select.find("option.to_be_removed").remove();
       $select.change();
@@ -3240,8 +3243,8 @@ define([
       var cnt = parseInt($question.find(".combination_count").val(), 10) || 10;
       if (cnt < 0) {
         cnt = 10;
-      } else if (cnt > maxCombinations) {
-        cnt = maxCombinations;
+      } else if (cnt > ENV.quiz_max_combination_count) {
+        cnt = ENV.quiz_max_combination_count;
       }
       $question.find(".combination_count").val(cnt);
       var succeeded = 0;

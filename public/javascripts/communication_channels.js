@@ -26,9 +26,9 @@ $(document).ready(function() {
   });
   $(".channel_list tr").hover(function() {
     if($(this).hasClass('unconfirmed')) {
-      var title =  I18n.t('titles.contact_not_confirmed', '此联系人尚未确认。请单击该地址了解详细信息') ;
+      var title =  I18n.t('titles.contact_not_confirmed', 'This contact has not been confirmed.  Click the address for more details') ;
       if($(this).closest(".email_channels").length > 0) {
-        title =  I18n.t('titles.email_not_confirmed', '此电子邮件尚未确认。请单击该地址了解详细信息') ;
+        title =  I18n.t('titles.email_not_confirmed', 'This email has not been confirmed.  Click the address for more details') ;
       }
       $(this).attr('title', title);
       $(this).find("a.path").parent().attr('title', title);
@@ -41,7 +41,7 @@ $(document).ready(function() {
     event.preventDefault();
     var view = "email";
     $("#communication_channels").show().dialog({
-      title:  I18n.t('titles.register_communication', "注册通信") ,
+      title:  I18n.t('titles.register_communication', "Register Communication") ,
       width: 600,
       resizable: false,
       modal: true,
@@ -85,7 +85,7 @@ $(document).ready(function() {
       var $channel = null;
       if(path) {
         $channel = $list.find(".channel.blank").clone(true).removeClass('blank');
-        $channel.find(".path").attr('title',  I18n.t('titles.unconfirmed_click_to_confirm', "未确认。单击以确认") );
+        $channel.find(".path").attr('title',  I18n.t('titles.unconfirmed_click_to_confirm', "Unconfirmed.  Click to confirm") );
         $channel.fillTemplateData({
           data: {path: path}
         });
@@ -150,9 +150,9 @@ $(document).ready(function() {
     event.preventDefault();
     var $channel = $(this).parents(".channel");
     if($channel.hasClass('unconfirmed')) {
-      var type = "email address", confirm_title =  I18n.t('titles.confirm_email_address', "确认电子邮件地址") ;
+      var type = "email address", confirm_title =  I18n.t('titles.confirm_email_address', "Confirm Email Address") ;
       if($(this).parents(".channel_list").hasClass('other_channels')) {
-        type = "sms number", confirm_title =  I18n.t('titles.confirm_sms_number', "确认 SMS 号码") ;
+        type = "sms number", confirm_title =  I18n.t('titles.confirm_sms_number', "Confirm SMS Number") ;
       }
       var $box = $("#confirm_communication_channel");
       if($channel.parents(".email_channels").length > 0) {
@@ -176,7 +176,7 @@ $(document).ready(function() {
       url = $.replaceTags(url, "pseudonym_id", data.pseudonym_id);
       url = $.replaceTags(url, "user_id", data.user_id);
       $box.find(".re_send_confirmation_link").attr('href', url)
-        .text( I18n.t('links.resend_confirmation', "重新发送确认") );
+        .text( I18n.t('links.resend_confirmation', "Re-Send Confirmation") );
       $box.fillFormData(data);
       $box.show().dialog({
         title: confirm_title,
@@ -196,7 +196,7 @@ $(document).ready(function() {
       $(this).attr('action', url);
     },
     beforeSubmit: function(data) {
-      $(this).find(".status_message").text( I18n.t('confirming_contact', "正在确认...") ).css('visibility', 'visible');
+      $(this).find(".status_message").text( I18n.t('confirming_contact', "Confirming...") ).css('visibility', 'visible');
     },
     success: function(data) {
       $(this).find(".status_message").css('visibility', 'hidden');
@@ -204,10 +204,10 @@ $(document).ready(function() {
       $("#channel_" + data.communication_channel.id).removeClass('unconfirmed');
       $(".channel.pseudonym_" + pseudonym_id).removeClass('unconfirmed');
       $("#confirm_communication_channel").dialog('close');
-      $.flashMessage( I18n.t('notices.contact_confirmed', "联系人已成功确认!") );
+      $.flashMessage( I18n.t('notices.contact_confirmed', "Contact successfully confirmed!") );
     },
     error: function(data) {
-      $(this).find(".status_message").text( I18n.t('errors.confirmation_failed', "确认失败。请重试。") );
+      $(this).find(".status_message").text( I18n.t('errors.confirmation_failed', "Confirmation failed.  Please try again.") );
     }
   });
   $(".channel_list .channel .default_link").click(function(event) {
@@ -226,11 +226,11 @@ $(document).ready(function() {
   $(".dialog .re_send_confirmation_link").click(function(event) {
     event.preventDefault();
     var $link = $(this);
-    $link.text( I18n.t('links.resending_confirmation', "正在重新发送...") );
+    $link.text( I18n.t('links.resending_confirmation', "Re-Sending...") );
     $.ajaxJSON($link.attr('href'), 'POST', {}, function(data) {
-      $link.text( I18n.t('links.resent_confirmation', "完成！收到消息可能需要几分钟。") );
+      $link.text( I18n.t('links.resent_confirmation', "Done! Message may take a few minutes.") );
     }, function(data) {
-      $link.text( I18n.t('links.resend_confirmation_failed', "请求失败。请重试。") );
+      $link.text( I18n.t('links.resend_confirmation_failed', "Request failed. Try again.") );
     });
   });
   $("#communication_channels .cancel_button").click(function(event) {

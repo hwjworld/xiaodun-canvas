@@ -214,7 +214,7 @@ define([
       $(this).find("button").attr('disabled', true).filter(".submit_button").text(I18n.t('buttons.generating_token', "Generating Token..."));
     },
     success: function(data) {
-      $(this).find("button").attr('disabled', false).filter(".submit_button").text(I18n.t('buttons.generate_token', "生成令牌"));
+      $(this).find("button").attr('disabled', false).filter(".submit_button").text(I18n.t('buttons.generate_token', "Generate Token"));
       $("#add_access_token_dialog").dialog('close');
       $("#no_approved_integrations").hide()
       $("#access_tokens_holder").show();
@@ -296,7 +296,7 @@ define([
   });
   $(".add_access_token_link").click(function(event) {
     event.preventDefault();
-    $("#access_token_form").find("button").attr('disabled', false).filter(".submit_button").text(I18n.t('buttons.generate_token', "生成令牌"));
+    $("#access_token_form").find("button").attr('disabled', false).filter(".submit_button").text(I18n.t('buttons.generate_token', "Generate Token"));
     $("#add_access_token_dialog").find(":input").val("").end()
     .dialog({
       width: 500,

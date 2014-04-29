@@ -11,7 +11,7 @@ require([
     $group.change(function(event) {
       if($(this).val() == "new") {
         $("#add_assignment_type").show().dialog({
-          title: I18n.t('titles.add_assignment_group', "添加作业小组"),
+          title: I18n.t('titles.add_assignment_group', "Add Assignment Group"),
           width: 300,
           height: "auto",
           autoSize: true,
@@ -42,10 +42,10 @@ require([
   $(document).ready(function() {
     $("#add_assignment_type_form").formSubmit({
       beforeSubmit: function(data) {
-        $(this).find("button").attr('disabled', true).filter(".add_button").text(I18n.t('messages.adding_group', "正在添加小组..."));
+        $(this).find("button").attr('disabled', true).filter(".add_button").text(I18n.t('messages.adding_group', "Adding Group..."));
       },
       success: function(data) {
-        $(this).find("button").attr('disabled', false).filter(".add_button").text(I18n.t('buttons.add_group', "添加小组"));
+        $(this).find("button").attr('disabled', false).filter(".add_button").text(I18n.t('buttons.add_group', "Add Group"));
         var group = data.assignment_group;
         var $group = $("#add_assignment_type_form").data('group_select');
         var $option = $(document.createElement('option'));
@@ -56,7 +56,7 @@ require([
       },
       error: function(data) {
         $(this).formErrors(data);
-        $(this).find("button").attr('disabled', false).filter(".add_button").text(I18n.t('errors.add_group_failed', "添加小组失败"));
+        $(this).find("button").attr('disabled', false).filter(".add_button").text(I18n.t('errors.add_group_failed', "Add Group Failed"));
       }
     });
     $("#add_assignment_type .cancel_button").click(function(event) {

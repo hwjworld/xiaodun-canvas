@@ -477,7 +477,7 @@ define([
     var $dialog = $("#media_comment_dialog");
     if($dialog.length == 0) {
       var $div = $("<div/>").attr('id', 'media_comment_dialog');
-      $div.text(I18n.t('messages.loading', "正在加载..."));
+      $div.text(I18n.t('messages.loading', "Loading..."));
       $div.dialog({
         title: I18n.t('titles.record_upload_media_comment', "Record/Upload Media Comment"),
         resizable: false,

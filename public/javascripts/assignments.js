@@ -147,7 +147,7 @@ define([
     if ( data.multiple_due_dates === "true" && id !== 'assignment_new' ) {
       var $dateInput = $form.find('.input-append');
       $dateInput.before($("<span class=vdd_no_edit>" +
-                           I18n.t('multiple_due_dates','截止时间：多个日期')+
+                           I18n.t('multiple_due_dates','Multiple Due Dates')+
                             "</span>"));
       $dateInput.hide();
       $form.find('.ui-datepicker-trigger').hide();
@@ -597,12 +597,12 @@ define([
           var rule_type = parts[0];
           var value = parts[1];
           if(rule_type == "drop_lowest") {
-            rules += htmlEscape(I18n.t('drop_lowest_scores', "去掉最低的 %{number} 分", {number: value})) + "<br/>";
+            rules += htmlEscape(I18n.t('drop_lowest_scores', "Drop the Lowest %{number} Scores", {number: value})) + "<br/>";
           } else if(rule_type == "drop_highest") {
-            rules += htmlEscape(I18n.t('drop_highest_scores', "去掉最高的 %{number} 分", {number: value})) + "<br/>";
+            rules += htmlEscape(I18n.t('drop_highest_scores', "Drop the Highest %{number} Scores", {number: value})) + "<br/>";
           } else if(rule_type == "never_drop") {
             var title = $("#assignment_" + value).find(".title").text();
-            rules += htmlEscape(I18n.t('never_drop_scores', "不删除 %{assignment_name}", {assignment_name: title})) + "<br/>";
+            rules += htmlEscape(I18n.t('never_drop_scores', "Never Drop %{assignment_name}", {assignment_name: title})) + "<br/>";
           }
         }
       });
@@ -637,10 +637,10 @@ define([
       if($("#group_new").length > 0 && $("#add_group_form").css('display') == "block") {
         return;
       }
-      $("#group_blank .header .name").text(I18n.t('other_assignments', "其它作业"));
+      $("#group_blank .header .name").text(I18n.t('other_assignments', "Other Assignments"));
       var $group = $("#group_blank").clone(true);
       $group.find(".assignment_list").empty();
-      $group.attr('id', "group_new").find(".header .name").text(I18n.t('group_name', "小组名称"));
+      $group.attr('id', "group_new").find(".header .name").text(I18n.t('group_name', "Group Name"));
       $("#groups").prepend($group.show());
       $group.find(".padding").show();
       var doWeighting = $("#class_weighting_policy").attr('checked');

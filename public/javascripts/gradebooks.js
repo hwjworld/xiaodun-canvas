@@ -105,7 +105,7 @@ define([
       }
     });
     if (!atLeastOnePersonExistsInThisSection) {
-      alert(I18n.t('alerts.no_students_in_section', "在该班级中找不到任何学生，请返回以显示所有班级。"));
+      alert(I18n.t('alerts.no_students_in_section', "Could not find any students in that section, falling back to showing all sections."));
       userSettings.contextRemove('grading_show_only_section');
       window.location.reload();
     }
@@ -170,7 +170,7 @@ define([
           var topRowHtml = $("#datagrid_top .assignment_title").map(function(){
             return "<div role='columnheader' id='th_" + $(this).parents('.assignment_header').attr('id') + "' tabindex='-1'>" + $(this).html() + "</div>";
           }).get().join("");
-          return "<div class='hidden-readable' role='row'><div role='columnheader' tabindex='-1'>" + I18n.t('student_name', "学生姓名") + "</div>" + topRowHtml +"</div>";
+          return "<div class='hidden-readable' role='row'><div role='columnheader' tabindex='-1'>" + I18n.t('student_name', "Student Name") + "</div>" + topRowHtml +"</div>";
         })
         .find(".row")
           .attr("role", "row")
@@ -208,12 +208,12 @@ define([
               });
             }
             if(grid.cell.hasClass('late')) {
-              showTooltip(I18n.t('tooltips.submitted_late', '此提交文件提交延迟'));
+              showTooltip(I18n.t('tooltips.submitted_late', 'This submission was submitted late'));
             } else if(grid.cell.hasClass('dropped')) {
-              showTooltip(I18n.t('tooltips.submission_dropped', '此提交文件不用于评分目的'));
+              showTooltip(I18n.t('tooltips.submission_dropped', 'This submission is dropped for grading purposes'));
             } else if(datagrid.columns[grid.cell.column].hidden) {
               var name = objectData(datagrid.cells['0,' + grid.cell.column]).title;
-              showTooltip(htmlEscape(name) + "<br/><span style='font-size: 0.9em;'>" + I18n.t('click_to_expand', "单击以展开") + "</span>", true)
+              showTooltip(htmlEscape(name) + "<br/><span style='font-size: 0.9em;'>" + I18n.t('click_to_expand', "Click to expand") + "</span>", true)
             }
           } else if(event && event.originalEvent && event.originalEvent.type && !event.originalEvent.type.match(/mouse/)) {
             grid.cell.find(".grade").focus().css('outline', 0);
@@ -363,7 +363,7 @@ define([
             }
           });
           if(idx === 0) {
-            alert(I18n.t('alerts.none_to_update', "无更新"));
+            alert(I18n.t('alerts.none_to_update', "None to Update"));
             return false;
           }
           return data;
@@ -398,7 +398,7 @@ define([
             
         if(!$td.hasClass('group_total') && !$td.hasClass('final_grade')) {
           if(object_data.submissions) {
-            addOption('info', I18n.t('assignment_details', '作业详细信息'), function() {
+            addOption('info', I18n.t('assignment_details', 'Assignment Details'), function() {
               var data = objectData($td),
                   $submissions = $(".student_assignment .assignment_" + data.assignment_id);
                   
@@ -436,13 +436,13 @@ define([
                   data: data
                 })
                 .dialog({
-                  title: I18n.beforeLabel('details', "详细信息") + " " + data.title
+                  title: I18n.beforeLabel('details', "Details") + " " + data.title
                 })
                 .find(".assignment_link").attr('href', data.url);
             });
           }
           if (speedGraderEnabled) {
-            addOption('newwin', I18n.t('speed_grader', '快速评分器'), function() {
+            addOption('newwin', I18n.t('speed_grader', 'SpeedGrader'), function() {
               window.location.href = extendedGradebookURL;
             });
           }
@@ -457,8 +457,8 @@ define([
             init: function(){
               this.isMuted = $parent.data('muted');
               this.label = this.isMuted ?
-                I18n.t('unmute_assignment', '取消屏蔽作业') :
-                I18n.t('mute_assignment', '屏蔽作业');
+                I18n.t('unmute_assignment', 'Unmute Assignment') :
+                I18n.t('mute_assignment', 'Mute Assignment');
             },
 
             onClick: function(e){
@@ -467,8 +467,8 @@ define([
             },
 
             showDialog: function(){
-              var cancelLabel = I18n.t('cancel_button', '取消'),
-                  muteLabel   = I18n.t('mute_assignment', '屏蔽作业'),
+              var cancelLabel = I18n.t('cancel_button', 'Cancel'),
+                  muteLabel   = I18n.t('mute_assignment', 'Mute Assignment'),
                   buttons     = {};
               buttons[muteLabel]   = $.proxy(function(){
                 this.updateStatus();
@@ -509,7 +509,7 @@ define([
             },
 
             muteAssignment: function(assignment){
-              var icon = $('<a />', { 'class': 'mute_icon', title: I18n.t('teacher_muted_title', '作业被屏蔽') }).
+              var icon = $('<a />', { 'class': 'mute_icon', title: I18n.t('teacher_muted_title', 'Assignment is muted') }).
                 append($('<img />', { src: '/images/sound_mute.png', alt: '' }));
 
               assignment.assignment
@@ -531,7 +531,7 @@ define([
 
           if(object_data.submissions) {
             if(!readOnlyGradebook) {
-              addOption('mail-closed', I18n.t('message_students_who', '给相关学生发送信息...'), function() {
+              addOption('mail-closed', I18n.t('message_students_who', 'Message Students Who...'), function() {
                 var data = objectData($td),
                     title = data.title,
                     $submissions = $("#datagrid_data .assignment_" + data.id);
@@ -561,10 +561,10 @@ define([
                   hasSubmission = false;
                 }
                 var options = [
-                  {text: I18n.t('students_who.havent_submitted_yet', "尚未提交")},
-                  {text: I18n.t("students_who.havent_been_graded", "尚未计分")},
-                  {text: I18n.t('students_who.scored_less_than', "分数低于"), cutoff: true},
-                  {text: I18n.t('students_who.scored_more_than', "分数高于"), cutoff: true}
+                  {text: I18n.t('students_who.havent_submitted_yet', "Haven't submitted yet")},
+                  {text: I18n.t("students_who.havent_been_graded", "Haven't been graded")},
+                  {text: I18n.t('students_who.scored_less_than', "Scored less than"), cutoff: true},
+                  {text: I18n.t('students_who.scored_more_than', "Scored more than"), cutoff: true}
                 ];
                 if (!hasSubmission) {
                   options.splice(0, 1)
@@ -579,13 +579,13 @@ define([
                   callback: function(selected, cutoff, students) {
                     students = $.grep(students, function($student, idx) {
                       var student = $student.user_data;
-                      if(selected == I18n.t('students_who.not_submitted_yet', "尚未提交")) {
+                      if(selected == I18n.t('students_who.not_submitted_yet', "Haven't submitted yet")) {
                         return !student.submitted_at;
-                      } else if (selected == I18n.t("students_who.havent_been_graded", "尚未计分")) {
+                      } else if (selected == I18n.t("students_who.havent_been_graded", "Haven't been graded")) {
                         return student.score === null;
-                      } else if(selected == I18n.t('students_who.scored_less_than', "分数低于")) {
+                      } else if(selected == I18n.t('students_who.scored_less_than', "Scored less than")) {
                         return student.score != null && student.score !== "" && cutoff != null && student.score < cutoff;
-                      } else if(selected == I18n.t('students_who.scored_more_than', "分数高于")) {
+                      } else if(selected == I18n.t('students_who.scored_more_than', "Scored more than")) {
                         return student.score != null && student.score !== "" && cutoff != null && student.score > cutoff;
                       }
                     });
@@ -593,19 +593,19 @@ define([
                   },
                   subjectCallback: function(selected, cutoff) {
                     cutoff = cutoff || '';
-                    if(selected == I18n.t('students_who.not_submitted_yet', "尚未提交")) {
-                      return I18n.t('students_who.no_submission_for', '%{assignment} 无提交', {assignment: data.title});
-                    } else if (selected == I18n.t("students_who.havent_been_graded", "尚未计分")) {
-                      return I18n.t('students_who.no_grade_for', '%{assignment} 无评分', {assignment: data.title});
-                    } else if(selected == I18n.t('students_who.scored_less_than', "分数低于")) {
-                      return I18n.t('students_who.scored_less_than_on', '%{cutoff}  的得分少于 %{assignment}', {assignment: data.title, cutoff: cutoff});
-                    } else if(selected == I18n.t('students_who.scored_more_than', "分数高于")) {
-                      return I18n.t('students_who.scored_more_than_on', ' %{cutoff} 的得分高于 %{assignment}', {assignment: data.title, cutoff: cutoff});
+                    if(selected == I18n.t('students_who.not_submitted_yet', "Haven't submitted yet")) {
+                      return I18n.t('students_who.no_submission_for', 'No submission for %{assignment}', {assignment: data.title});
+                    } else if (selected == I18n.t("students_who.havent_been_graded", "Haven't been graded")) {
+                      return I18n.t('students_who.no_grade_for', 'No grade for %{assignment}', {assignment: data.title});
+                    } else if(selected == I18n.t('students_who.scored_less_than', "Scored less than")) {
+                      return I18n.t('students_who.scored_less_than_on', 'Scored less than %{cutoff} on %{assignment}', {assignment: data.title, cutoff: cutoff});
+                    } else if(selected == I18n.t('students_who.scored_more_than', "Scored more than")) {
+                      return I18n.t('students_who.scored_more_than_on', 'Scored more than %{cutoff} on %{assignment}', {assignment: data.title, cutoff: cutoff});
                     }
                   }
                 });
               });
-              addOption('check', I18n.t('set_default_grade', '设置默认评分'), function() {
+              addOption('check', I18n.t('set_default_grade', 'Set Default Grade'), function() {
                 var data = objectData($td),
                     title = data.title;
                 
@@ -626,10 +626,10 @@ define([
                   open: function() {
                     $default_grade_form.find(".grading_box").focus();
                   }
-                }).dialog('option', 'title', I18n.t('default_grade_for_course', " %{assignment} 的默认评分", {'assignment': title}));
+                }).dialog('option', 'title', I18n.t('default_grade_for_course', "Default Grade for %{assignment}", {'assignment': title}));
               });
               if(columnData.grading_type != 'pass_fail' && columnData.points_possible) {
-                addOption('check', I18n.t('curve_grades', '曲线评分'), function() {
+                addOption('check', I18n.t('curve_grades', 'Curve Grades'), function() {
                   var data = objectData($td),
                       title = data.title;    
                   $curve_grade_dialog
@@ -644,7 +644,7 @@ define([
                       open: function() {
                         gradebook.curve();
                       }
-                    }).dialog('option', 'title', I18n.t('curve_grade_for_course', "%{assignment} 的曲线评分", {'assignment': title}));
+                    }).dialog('option', 'title', I18n.t('curve_grade_for_course', "Curve Grade for %{assignment}", {'assignment': title}));
                 });
               }
             }
@@ -660,24 +660,24 @@ define([
               });
             }
             if(data.submissions_downloads && data.submissions_downloads > 0 && !readOnlyGradebook) {
-              addOption('arrowthickstop-1-n', I18n.t('reupload_submissions', '重新上传提交文件'), function() {
+              addOption('arrowthickstop-1-n', I18n.t('reupload_submissions', 'Re-Upload Submissions'), function() {
                 var url = $("#re_upload_submissions_form").find(".re_upload_submissions_url").attr('href');
                 url = $.replaceTags(url, "assignment_id", data.assignment_id);
                 $("#re_upload_submissions_form").attr('action', url);
                 $("#re_upload_submissions_form").dialog({
-                  title: I18n.t('reupload_submission_files', "新上传提交文件"),
+                  title: I18n.t('reupload_submission_files', "Re-Upload Submission Files"),
                   width: 350
                 });
               });
             }
           }
         }
-        addOption('carat-1-w', I18n.t('hide_column', '隐藏列'), function() {
+        addOption('carat-1-w', I18n.t('hide_column', 'Hide Column'), function() {
           datagrid.toggleColumn(datagrid.position($cell).column);
         });
         if($td.hasClass('group_total')) {
           var type = $td.find(".assignment_title").text();
-          addOption('carat-1-w', htmlEscape(I18n.t('hide_all_things', '隐藏所有 %{things}', {'things': type})), function() {
+          addOption('carat-1-w', htmlEscape(I18n.t('hide_all_things', 'Hide All %{things}', {'things': type})), function() {
             var check_id = objectData($td).assignment_group_id;
             $(".outer_assignment_name").each(function() {
               var assignment = objectData($(this));
@@ -701,7 +701,7 @@ define([
           return false;
         } else if(!data.submissions_zip.match(/\.zip$/)) {
           $(this).formErrors({
-            submissions_zip: I18n.t('errors.upload_as_zip', "请以 .zip 形式上传文件")
+            submissions_zip: I18n.t('errors.upload_as_zip', "Please upload files as a .zip")
           });
           return false;
         }
@@ -997,7 +997,7 @@ define([
           getClump.errors = getClump.errors || 0;
           getClump.errors++;
           if(getClump.errors > 10) {
-            $("#loading_gradebook_status").text(I18n.t('errors.failed_to_load', "评分册加载失败，请尝试刷新页面"));
+            $("#loading_gradebook_status").text(I18n.t('errors.failed_to_load', "Gradebook failed to load, please try refreshing the page"));
           } else {
             setTimeout(function() { getClump(url); }, 50);
           }
@@ -1208,7 +1208,7 @@ define([
         options[label] = func;
       };
 
-      addOption('carat-2-e-w', I18n.t('sort_columns_by', '列排序依据...'), function() {
+      addOption('carat-2-e-w', I18n.t('sort_columns_by', 'Sort Columns By...'), function() {
         $(".sort_gradebook").each(function() {
           $(this).attr('disabled', false).text($(this).attr('title'));
         });
@@ -1219,7 +1219,7 @@ define([
         });
       });
 
-      addOption('carat-2-n-s', I18n.t('sort_rows_by', '行排序依据...'), function() {
+      addOption('carat-2-n-s', I18n.t('sort_rows_by', 'Sort Rows By...'), function() {
         $(".sort_gradebook").each(function() {
           $(this).attr('disabled', false).text($(this).attr('title'));
         });
@@ -1229,13 +1229,13 @@ define([
         });
       });
 
-      addOption('pencil', I18n.t('set_group_weights', '设置组权重'), function() {
+      addOption('pencil', I18n.t('set_group_weights', 'Set Group Weights'), function() {
         $("#groups_data").dialog({
-          title: I18n.t('titles.assignment_groups', "作业小组")
+          title: I18n.t('titles.assignment_groups', "Assignment Groups")
         }).show();
       });
 
-      addOption('clock', I18n.t('view_grading_history', '查看评分记录'), function() {
+      addOption('clock', I18n.t('view_grading_history', 'View Grading History'), function() {
         window.location.href = $(".gradebook_history_url").attr('href');
       });
 
@@ -1252,7 +1252,7 @@ define([
           resizable: false,
           buttons: {}
         };
-        dialogData['buttons'][I18n.t('buttons.upload_data', '上传数据')] = function() { $(this).submit(); };
+        dialogData['buttons'][I18n.t('buttons.upload_data', 'Upload Data')] = function() { $(this).submit(); };
         $("#upload_modal").dialog(dialogData).dialog('open');
       });
       
@@ -1269,8 +1269,8 @@ define([
       // handle showing only one section
       if (_.size(possibleSections) > 1) {
         var sectionToShowLabel = sectionToShow ? 
-          I18n.t('showing_section', '正在显示班级: %{section}', {'section': possibleSections[sectionToShow]}) :
-          I18n.t('showing_all_sections', ' 正在显示所有班级');
+          I18n.t('showing_section', 'Showing Section: %{section}', {'section': possibleSections[sectionToShow]}) : 
+          I18n.t('showing_all_sections', 'Showing All Sections');
         addOption('search', sectionToShowLabel, function() {
           var dialogData = {
             modal: true,
@@ -1344,8 +1344,8 @@ define([
     $('#content').delegate('.mute_icon', 'click.mute', function(e){
       var $el = $(e.currentTarget),
           $link = $el.siblings('a.assignment_link.assignment_title'),
-          cancelLabel = I18n.t('cancel_button', '取消'),
-          unmuteLabel = I18n.t('unmute_button', '取消屏蔽作业'),
+          cancelLabel = I18n.t('cancel_button', 'Cancel'),
+          unmuteLabel = I18n.t('unmute_button', 'Unmute Assignment'),
           buttons     = {},
           $modal      = $('#unmute_dialog'),
           $rows       = $('#datagrid_data .row, #datagrid_top .row'),
@@ -1744,7 +1744,7 @@ define([
       populateSubmissionInformation($submission, submission);
     } else {
       $("#loading_submission_details_dialog").dialog({
-        title: I18n.t('titles.loading', "正在加载...")
+        title: I18n.t('titles.loading', "Loading...")
       });
       var url = $("#loading_submission_details_dialog .submission_details_url").attr('href');
       url = $.replaceTags($.replaceTags(url, 'user_id', submission.user_id), 'assignment_id', submission.assignment_id);
