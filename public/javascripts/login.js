@@ -51,12 +51,12 @@ require([
       var success = true;
       if(!data.unique_id || data.unique_id.length < 1) {
         $(this).formErrors({
-          unique_id: I18n.t("invalid_login", 'Invalid login')
+          unique_id: I18n.t("invalid_login", '登录信息无效')
         });
         success = false;
       } else if(!data.password || data.password.length < 1) {
         $(this).formErrors({
-          password: I18n.t("invalid_password", 'Invalid password')
+          password: I18n.t("invalid_password", '密码无效')
         });
         success = false;
       }
