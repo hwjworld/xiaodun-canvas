@@ -72,6 +72,8 @@ en:
     tab_sub_accounts: Sub-Accounts
     tab_terms: Terms
     tab_users: Users
+    tab_avatar: User Avatars
+    tab_surveys: Account Surveys
     turnitin_pledge: "This assignment submission is my own, original work"
   account_authorization_config: 
     debug: 

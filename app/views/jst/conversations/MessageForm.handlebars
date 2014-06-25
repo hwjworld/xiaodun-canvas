@@ -9,7 +9,7 @@
         {{#if conversation}}
           {{{audience}}}
         {{else}}
-          {{#t "headings.new_message"}}New Message{{/t}}
+          {{#t "headings.new_message"}}新消息{{/t}}
         {{/if}}
       </span>
       {{#if addRecipientsEnabled}}
@@ -20,12 +20,12 @@
   <table>
     {{#unless conversation}}
     <tr class="recipient_info">
-      <th><label>{{#t "labels.to"}}To:{{/t}}</th>
+      <th><label>{{#t "labels.to"}}{{/t}}</th>
       <td><input type="text" name="recipients" data-finder_url="/conversations/find_recipients" class="recipients"></td>
     </tr>
     {{/unless}}
     <tr>
-      <th><label>{{#t "labels.message"}}Message:{{/t}}</label></th>
+      <th><label>{{#t "labels.message"}}{{/t}}</label></th>
       <td>
         <textarea name="body"
                   data-track-category="Compose Message"
@@ -54,7 +54,7 @@
             data-track-action="Edit"
             data-track-label="Faculty Journal"
             class="user_note"}}
-          {{#t "labels.add_to_faculty_journal"}}Add as a Faculty Journal entry{{/t}}
+            {{#t "labels.add_to_faculty_journal"}}添加为教师日志条目{{/t}}  
         </label>
       </td>
     </tr>
@@ -79,7 +79,7 @@
            data-track-category="Compose Message"
            data-track-action="Edit"
            data-track-label="Attach File"
-           title="{{#t "titles.add_attachment"}}Add an attachment{{/t}}">{{#t "links.add_attachment"}}Attach{{/t}}</a>
+           title="{{#t "titles.add_attachment"}}Add an attachment{{/t}}">{{#t "links.add_attachment"}}附件{{/t}}</a>
         {{#if mediaCommentsEnabled}}
           <a class="action_media_comment icon-media"
              href="#"
@@ -111,7 +111,7 @@
                     data-track-category="Compose Message"
                     data-track-action="Edit"
                     data-track-label="Send"
-                    class="btn btn-primary">{{#t "buttons.send_message"}}Send{{/t}}</button>
+                    class="btn btn-primary">{{#t "buttons.send_message"}}发送{{/t}}</button>
           {{/if}}
         </div>
       </td>

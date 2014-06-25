@@ -1153,13 +1153,13 @@ class Account < ActiveRecord::Base
       # In the meantime, we leave it as a service but expose it in the
       # "Features" (settings) portion of the account admin UI
       :avatars => {
-        :name => "User Avatars",
+        :name => t('#account.tab_avatar',"Avatars"), 
         :description => "",
         :default => false,
         :expose_to_ui => :setting
       },
       :account_survey_notifications => {
-        :name => "Account Surveys",
+        :name => t('#account.tab_surveys',"Account Surveys"), 
         :description => "",
         :default => false,
         :expose_to_ui => :setting,

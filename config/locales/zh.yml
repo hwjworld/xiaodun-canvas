@@ -72,6 +72,8 @@ zh:
     tab_sub_accounts: 子帐户
     tab_terms: 学期
     tab_users: 用户
+    tab_avatar: 头像
+    tab_surveys: 账户调查
     turnitin_pledge: 此作业是我原创的
   account_authorization_config: 
     debug: 
@@ -4001,8 +4003,8 @@ zh:
       labels: 
         add_to_faculty_journal: 添加为教师日志条目
         group_conversation: 这是小组会话。参与者将会看到所有人的回复
-        message: "消息:"
-        to: "发送至:"
+        message: ""
+        to: ""
       links: 
         add_attachment: 附件
         media_comment: 录制

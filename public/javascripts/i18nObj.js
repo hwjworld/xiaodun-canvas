@@ -11,7 +11,8 @@ define([
 var I18n = window.I18n = {};
 
 // Set default locale to english
-I18n.defaultLocale = "en";
+//I18n.defaultLocale = "en";
+I18n.defaultLocale = "zh";
 
 // Set default separator
 I18n.defaultSeparator = ".";
