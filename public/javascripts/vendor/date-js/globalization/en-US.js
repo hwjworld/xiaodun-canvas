@@ -6,18 +6,29 @@ Date.CultureInfo = {
     nativeName: "English (United States)",
     
     /* Day Name Strings */
+   /**
     dayNames: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
     abbreviatedDayNames: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
     shortestDayNames: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"],
     firstLetterDayNames: ["S", "M", "T", "W", "T", "F", "S"],
-    
-    /* Month Name Strings */
+   */ 
+    daynmes: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    abbreviatedDayNames: ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"],
+    shortestDayNames: ["周日", "周一", "周二", "周三", "周四", "周五", "周六"],
+    firstLetterDayNames: ["S", "M", "T", "W", "T", "F", "S"], /* Month Name Strings */
+
+   /**
     monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
     abbreviatedMonthNames: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+   */
+    monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    abbreviatedMonthNames: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
 
 	/* AM/PM Designators */
+     
     amDesignator: "AM",
     pmDesignator: "PM",
+   
 
     firstDayOfWeek: 0,
     twoDigitYearMax: 2029,

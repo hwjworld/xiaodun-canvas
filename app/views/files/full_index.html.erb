@@ -53,11 +53,11 @@
   </ul>
 </div>
 <% unless showing_all_contexts %>
-  <div style="float: left; font-size: 0.8em; margin-right: 1.0em;">
+  <!--div style="float: left; font-size: 0.8em; margin-right: 1.0em;">
     <%= t :storage_used, "Storage Used: %{size1} out of %{size2}",
           :size1 => "<span id=\"quota_used\">#{number_to_human_size(@quota_used)}</span>".html_safe,
           :size2 => "<span id=\"quota\">#{number_to_human_size(@quota)}</span>".html_safe %>
-  </div>
+  </div-->
 <% end %>
 <div style="float: right; font-size: 0.8em; margin-right: 1.0em;">
   <% if showing_all_contexts %>

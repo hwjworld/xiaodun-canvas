@@ -386,6 +386,8 @@ div.conversations > ul {
   display: none;
   > li {
     box-shadow: 0 3px 6px 3px rgba(0, 0, 0, 0.25);
+    margin-left: 0px;  /* csc */
+    margin-right: 0px;
   }
   > li.selected {
     background-color: #e5f3ff;

@@ -168,7 +168,9 @@ define([
         // else if it's something google docs preview can handle and we can get a public url to this document.
         function loadGooglePreview(){
           // this handles both ssl and plain http.
-          var googleDocPreviewUrl = '//docs.google.com/viewer?' + $.param({
+          //var googleDocPreviewUrl = '//docs.google.com/viewer?' + $.param({
+         // add form csc on 20140710  
+          var googleDocPreviewUrl = 'http://114.255.110.148:3000/viewer?' + $.param({
             embedded: true,
             url: opts.public_url
           });
