@@ -116,7 +116,7 @@ namespace :canvas do
     Rake::Task['js:generate'].invoke
 
     puts "--> Generating js localization bundles"
-   # Rake::Task['i18n:generate_js'].invoke
+    Rake::Task['i18n:generate_js'].invoke
 
     puts "--> Optimizing JavaScript [r.js]"
     Rake::Task['js:build'].invoke

@@ -37,7 +37,7 @@ define [
     #   called, which should get called when role is added or removed.
     # @api private
     renderHeader: -> 
-      @$el.find('thead tr').html "<th>Permissions</th>"
+      @$el.find('thead tr').html "<th></th>"
 
       @collection.each (role) => 
         roleHeaderView = new RoleHeaderView
