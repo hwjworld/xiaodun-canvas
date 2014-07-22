@@ -1053,9 +1053,9 @@ function CourseController(page) {
 
 	var aP = $(page).find('.mycourse_con ul').eq(0).find("p");//course_code
 	aP.eq(0).html("课程名称 ： "+window.course.nema+"");
-	aP.eq(0).html("课程代码 ： "+window.course.course_code+"");
-	aP.eq(0).html("开课时间 ： "+window.course.start_at+"");
-	aP.eq(0).html("结束时间 ： "+window.course.end_at+"");
+	aP.eq(1).html("课程代码 ： "+window.course.course_code+"");
+	aP.eq(2).html("开课时间 ： "+window.course.start_at+"");
+	aP.eq(3).html("结束时间 ： "+window.course.end_at+"");
 	//var ic = omyajax.getClickedCourseId();
 	//var oTitle = $(page).find('.app-title').eq(0).;
 	$(page).find('.app-title').eq(0).html(window.course.course_code+"");
