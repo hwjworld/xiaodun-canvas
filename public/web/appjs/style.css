@@ -1,0 +1,51 @@
+.mycourse_con {float:left; width:100%; margin-top:30px;}
+	.mycourse_con ul {margin:auto; width:85%; background:#ebebeb; padding:20px;}
+	.mycourse_con p {line-height:40px; font-size:12pt;}
+	.mycourse_con p.fb {font-weight:bold;}
+	.mycourse_con p.c1 {text-align:center; color:#ff8400;}
+	.mycourse_con p img {float:left; width:90px; height:90px; border:#FFFFFF solid 3px; margin-right:15px;}
+	.mycourse_con p.l25 {line-height:25px; font-size:11pt;}
+	.mycourse_con p.l45 {line-height:50px; font-size:12pt;}
+	.homework_con {float:left; width:100%; margin:30px 0;}
+.homework_con.m0 {margin:0;}
+	.homework_con.m30 {margin:0 0 30px 0;}
+	.homework_con ul {margin:auto; width:90%;}
+	.homework_con ul.p30 {padding:0 0 30px 0;}
+	.homework_con ul.b6 {border-bottom:#ebebeb solid 6px; padding-bottom:30px;}
+	.homework_con li {float:left; width:100%; line-height:35px; font-size:12pt;}
+	.homework_con li.p50 {padding-bottom:30px;}
+	.homework_con p {line-height:40px; font-size:12pt; padding:10px 0;}
+	.homework_con p.center {text-align:center;}
+	.homework_con p.bg {background:#ebebeb; padding:5px 0;}
+	.homework_con p span {padding-left:15px;}
+	.homework_con p.p0 {padding:10px 0 0 0;}
+	.homework_con .fenshu {width:20%; height:20px; border:#CCCCCC solid 1px; padding:10px; line-height:30px; font-size:12pt; color:#666666;}
+	.homework_con .input {width:95%; height:300px; border:#CCCCCC solid 1px; padding:10px; line-height:36px; font-size:12pt; color:#666666;}
+	.homework_con .inputh50 {width:95%; height:50px; border:#CCCCCC solid 1px; padding:10px; line-height:36px; font-size:12pt; color:#666666;}
+	.homework_con .input_web {width:95%; border:#CCCCCC solid 1px; padding:10px; line-height:36px; font-size:12pt; color:#666666; height:40px;}
+/*hfy*/
+	.homework_con .uphomework {background:#ff8400;-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius:5px; width:100%; height:35px; font-size:12pt; color:#FFFFFF; text-align:center; cursor:pointer; margin:0;    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    border: 1px solid #cc5100;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 0 0 rgba(0, 0, 0, 0);}
+	.app-mar{width:100%;}
+	.homework_con2{width:80%;margin:auto;}
+	.homework_con2 .uphomework {background:#ff8400;-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius:5px; width:100%; height:35px; font-size:12pt; color:#FFFFFF; text-align:center; cursor:pointer; margin:auto;    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0));
+    border: 1px solid #cc5100;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 0 0 rgba(0, 0, 0, 0);}
+/*hfy end*/
+	.homework_con .p10 {padding-left:10px;}
+.homework_teach {float:left; width:100%; background:#f7f7f7; margin:30px 0; font-size:12pt; line-height:36px; text-align:center;}
+	
+.mycourse {width:90%; margin:auto;}
+	.mycourse ul {float:left; width:100%; padding:30px 0;}
+	.mycourse ul.p0 {margin:30px 0 0 0; padding:0; background:#ebebeb; font-size:12pt; color:#ff8400; font-weight:bold; line-height:60px; text-align:center;}
+	.mycourse li {float:left; width:100%; border-bottom:#CCCCCC solid 1px; font-size:12pt; line-height:30px; color:#333333; padding:15px 0;}
+	.mycourse li a {color:#333333; text-decoration:none;}
+	.mycourse li .left {float:left; width:60%;}
+	.mycourse li .right {float:right; width:40%; text-align:right; color:#999999;}
+	.mycourse li .uphomework {background:#ff8400;-moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius:5px; width:90px; height:35px; font-size:12pt; color:#FFFFFF; text-align:center; cursor:pointer; border:#ffffff solid 1px; margin:0;}
+	.mycourse .l40 {line-height:40px; font-size:12pt;}
+.left{float: left;}
+/*hfy*/
+.right{float: right;padding-right:40px;}
+/*hfy end*/

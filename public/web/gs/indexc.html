@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>星空图</title>
+<link rel="stylesheet" type="text/css" href="./css/main.css" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+</style>
+</head>
+<body>
+<div class="content">
+	<div class="dashboard-header">
+		<div class="dashboard-nav"></div>
+		<div class="dashboard-title"><strong id="course_title" style="color:#000">&nbsp;&nbsp;&nbsp;&nbsp;加载课程...</strong><a class="drawer" href="#"></a></div>
+	</div>
+	<!--left-->
+	<div class="dashboard-drawer">
+		<!---scrollbar-->
+		<div class="dashboard-drawer-inner fancy-scrollbar">
+			<div>
+				<!--search-->
+				<div class="dashboard-filter">
+					<input id="txt1" type="text" placeholder="请输入要搜索的关键字" class="dashboard-filter-text ui-corner-all simple-input">
+				</div>
+				<!--sublist-->
+				<div class="exercise-sublist" id="left-ul">		
+					<a href="#"><div class="progress-item"><img src="img/map_star30.png" class="icon">正在加载课程目录...</div></a>
+				</div>
+			</div>
+			<!--map-->
+			<div id="map_canvas" class="map-canvas">正在加载谷歌地图中...</div>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="js/lib/jquery-1.11.0.min.js"></script>
+<!--  -->
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBS_iYLggPo95MkXWTUFvppK3l6o5Fx3AA&sensor=false"></script>
+<script src="./js/c.js"></script>  
+</body>
+</html>

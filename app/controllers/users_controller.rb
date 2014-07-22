@@ -296,7 +296,10 @@ class UsersController < ApplicationController
     end
   end
 
-  def user_dashboard
+ def user_dashboard
+    if mobile_device?
+    redirect_to 'http://114.255.110.150/web/appjs/app.html'
+     else
     check_incomplete_registration
     get_context
 
@@ -314,6 +317,7 @@ class UsersController < ApplicationController
     @announcements = AccountNotification.for_user_and_account(@current_user, @domain_root_account)
     @pending_invitations = @current_user.cached_current_enrollments(:include_enrollment_uuid => session[:enrollment_uuid]).select { |e| e.invited? }
     @stream_items = @current_user.try(:cached_recent_stream_items) || []
+    end
   end
 
   def cached_upcoming_events(user)
