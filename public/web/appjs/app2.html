@@ -4,17 +4,18 @@
 <title>人人教人人学</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link rel="stylesheet" href="app.min.css">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/app.min.css">
+<link rel="stylesheet" href="css/style.css">
 <style>
 /* TODO */
-footer{position:fixed;bottom:0;z-index:2100;}
+
 </style>
 </head>
 <body>
+<!--
 <div class="app-page" data-page="home">
 	<div class="app-topbar">
-		<div class="app-title">人人教人人学</div>
+		<div class="app-title">果实网</div>
 	</div>
 	<div class="app-content">
 		<div class="app-section">
@@ -26,6 +27,7 @@ footer{position:fixed;bottom:0;z-index:2100;}
 		</div>
 	</div>
 </div>
+-->
 <!-- level-1 -->
 <div class="app-page" data-page="courses">
 	<div class="app-topbar">
@@ -33,6 +35,11 @@ footer{position:fixed;bottom:0;z-index:2100;}
 		<div class="app-title">我的课程</div>
 	</div>
 	<div class="app-content">
+    	<div class="app-banner">
+            <span class="banner-text">欢迎来到果实网</span>
+            <span class="banner-text2"> 人人教人人学</span>
+            <img src="img/header_bg.jpg" style="width:100%;" alt=""/>
+        </div>	
 		<ul class="app-list">
 		<!--label class="learning">正在学习</label-->
 			<li class="app-button" data-target="course" api="1">我的课程1<img class="app-arrow" src="img/arrow_03.gif"  alt=""/></li>
@@ -136,13 +143,13 @@ footer{position:fixed;bottom:0;z-index:2100;}
 		<div class="homework_teach"><strong>个人简历</strong></div>
 		<div class="homework_con m30">
 			<ul>
-				<p class="p50">
+				<li class="p50">
 					果实，硕士，毕业于河南大学艺术学院，第十一届全国人大代表，现任河南理工大学音乐学院副院长，副教授。主持参与河南省教育厅“十一五”教育规划课题和人文社会科学项目并获二等奖；主编、参编教材3部；2008—2009学年被评为河南理工大学优秀教师；2009、2010年两次参加校级教学竞赛并荣获一等奖。
-				</p>
+				</li>
 				<!-- p><input type="button" class="uphomework" value="退出" /></p -->
 			</ul>
 		</div>
-		<div class="app-title" align="center"> <a href="http://114.255.110.150/logout">退出登录</a></div>
+		<div class="homework_teach"><strong><a href="http://114.255.110.150/logout">退出登录</a></strong></div>
 	</div>
 </div>
 <!-- level-1 end-->
@@ -306,13 +313,82 @@ footer{position:fixed;bottom:0;z-index:2100;}
 </div>
 <!-- message-2 end -->
 <footer>
+	<div class="courseBtn"><span class="icon"></span>课程</div>
+	<div class="operationBtn"><span class="icon"></span>作业</div>
+	<div class="achievementBtn"><span class="icon"></span>成果</div>
+	<div class="messBtn"><span class="icon"></span>消息</div>
+	<div class="inforBtn"><span class="icon"></span>资料</div>
 </footer>
-<script src="zepto.js"></script>
-<script src="app.respond.js"></script>
-<script src="app.min.js"></script>
+<script src="js/zepto.min.js"></script>
+<script src="js/app.respond.js"></script>
+<script src="js/app.min.js"></script>
 <script src="js/myapp2.js"></script>
 <script>
+$(function(){
+	$("footer div").eq(0).bind("click",function(){
+		App.load("courses");
+		fixedH();
+		//window.user = {"type":0}
+		//window.ajaxhttp = "http://0.0.0.0:3000";
+		//getUserType();		
+	});
+	$("footer div").eq(1).bind("click",function(){
+		//App.load("");
+		App.load(""+window.homeworkType+"");
+		fixedH();
+	});
+	$("footer div").eq(2).bind("click",function(){
+		App.load("achievements");
+		fixedH();
+	});
+	$("footer div").eq(3).bind("click",function(){
+		//App.load("messages");
+		omyajax.getMessages(window.ajaxhttp, omyajax);
+		fixedH();
+	});
+	$("footer div").eq(4).bind("click",function(){
+		getUserInfo();
+		//App.load("");
+	});
+	var h = $(".app-scrollable").height();
+	//alert(h);
+	function fixedH(){
+		setTimeout(function(){
+			$(".app-scrollable").css("height",h-56);
+			//h = $(".app-scrollable").height();alert(h);
+		},1000);
+	}
+	fixedH();
+	function fixedBtn(){
+		//var aIcon = document.getElementsByTagName("footer")[0].getElementsByTagName("span");
+		//alert(aIcon.length);
+		var aIcon = $(".icon");
+		var a = aIcon.eq(0).css("margin-left");
+		var n = a.split("p")[0];
+		n = n-13;
+		for(var i=0;i<aIcon.length;i++){
 
+			//var w = aIcon[i].style.width;//alert(w);
+			//alert(aIcon[i].style.marginLeft);
+			//aIcon[i].style.marginLeft = aIcon[i].style.marginLeft - 12;
+			//alert(aIcon.eq(0).width());
+			//alert(aIcon.eq(0).css("margin-left"));
+			//var a = aIcon.eq(i).css("margin-left");
+			//a = a-95;alert(a);
+			aIcon.eq(i).css("margin-left", n);
+		}
+
+		/*
+		$("footer span").each(function(index){
+			var l = $(this).offset().left();
+			var w = $(this).width();
+			$(this).offset().left(l-w/2);alert("l: "+l+", w: "+w);
+
+		});
+*/
+	}
+	fixedBtn();
+});
 </script>
 </body>
 </html>

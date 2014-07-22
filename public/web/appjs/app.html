@@ -8,7 +8,9 @@
 <link rel="stylesheet" href="style.css">
 <style>
 /* TODO */
-footer{position:fixed;bottom:0;z-index:2100;}
+footer{position:fixed;bottom:0;z-index:2100; height:54px; width:100%; border-top:1px solid #ccc; background:#fff;}
+.app-page{ margin-bottom: 0px;}
+.app-content{ margin-bottom: -60px;}
 </style>
 </head>
 <body>
@@ -17,8 +19,13 @@ footer{position:fixed;bottom:0;z-index:2100;}
 		<div class="app-title">果实网</div>
 	</div>
 	<div class="app-content">
+    	<div class="app-banner">
+            <span class="banner-text">欢迎来到果实网</span>
+            <span class="banner-text2"> 人人教人人学</span>
+            <img src="img/header_bg.jpg" style="width:100%;" alt=""/>
+        </div>
 		<div class="app-section">
-			<div class="app-button" data-target="courses">我的课程<img class="app-arrow" src="img/arrow_03.gif"  alt=""/></div>
+  		  <div class="app-button" data-target="courses">我的课程<img class="app-arrow" src="img/arrow_03.gif"  alt=""/></div>
 			<div class="app-button" data-target="homeworks" id="homeworkType">我的作业<img class="app-arrow" src="img/arrow_03.gif" alt=""/></div>
 			<div class="app-button" data-target="achievements">学习成果<img class="app-arrow" src="img/arrow_03.gif"  alt=""/></div>
 			<div class="app-button" data-target="messages">站内消息<img class="app-arrow" src="img/arrow_03.gif" alt=""/></div>
@@ -104,12 +111,30 @@ footer{position:fixed;bottom:0;z-index:2100;}
 	</div>
 	<div class="app-content">
 		<ul class="app-list">
-			<li class="app-button" data-target="message"><img class="app-person" src="img/img.jpg" alt=""/><h2>刘大海 计算机辅助翻译原理与实践</h2><p>明天的课还上吗？</p><img class="app-arrow" src="img/arrow_03.gif"  alt=""/></li>
-			<li class="app-button" data-target="message"><img class="app-person" src="img/img.jpg"  alt=""/><h2>刘大海 计算机辅助翻译原理与实践</h2><p>明天的课还上吗？</p><img class="app-arrow" src="img/arrow_03.gif"  alt=""/></li>
-			<li class="app-button" data-target="message"><img class="app-person" src="img/img.jpg"  alt=""/><h2>刘大海 计算机辅助翻译原理与实践</h2><p>明天的课还上吗？</p><img class="app-arrow" src="img/arrow_03.gif"  alt=""/></li>
-			<li class="app-button" data-target="message"><img class="app-person" src="img/img.jpg"  alt=""/><h2>刘大海 计算机辅助翻译原理与实践</h2><p>明天的课还上吗？</p><img class="app-arrow" src="img/arrow_03.gif"  alt=""/></li>
-			<li class="app-button" data-target="message"><img class="app-person" src="img/img.jpg"  alt=""/><h2>刘大海 计算机辅助翻译原理与实践</h2><p>明天的课还上吗？</p><img class="app-arrow" src="img/arrow_03.gif"  alt=""/></li>
-			<li class="app-button" data-target="message"><img class="app-person" src="img/img.jpg"  alt=""/><h2>刘大海 计算机辅助翻译原理与实践</h2><p>明天的课还上吗？</p><img class="app-arrow" src="img/arrow_03.gif"  alt=""/></li>
+			<li class="app-button" data-target="message">
+            	<div class="app-button-left"><img class="app-person" src="img/img.jpg" alt=""/><h2>刘大海 计算机辅助翻译原理与实践</h2><p>明天的课还上吗？</p></div>
+                <img class="app-arrow" src="img/arrow_03.gif"  alt=""/>
+            </li>
+			<li class="app-button" data-target="message">
+            	<div class="app-button-left"><img class="app-person" src="img/img.jpg" alt=""/><h2>刘大海 计算机辅助翻译原理与实践</h2><p>明天的课还上吗？</p></div>
+                <img class="app-arrow" src="img/arrow_03.gif"  alt=""/>
+            </li>
+			<li class="app-button" data-target="message">
+            	<div class="app-button-left"><img class="app-person" src="img/img.jpg" alt=""/><h2>刘大海 计算机辅助翻译原理与实践</h2><p>明天的课还上吗？</p></div>
+                <img class="app-arrow" src="img/arrow_03.gif"  alt=""/>
+            </li>
+			<li class="app-button" data-target="message">
+            	<div class="app-button-left"><img class="app-person" src="img/img.jpg" alt=""/><h2>刘大海 计算机辅助翻译原理与实践</h2><p>明天的课还上吗？</p></div>
+                <img class="app-arrow" src="img/arrow_03.gif"  alt=""/>
+            </li>
+			<li class="app-button" data-target="message">
+            	<div class="app-button-left"><img class="app-person" src="img/img.jpg" alt=""/><h2>刘大海 计算机辅助翻译原理与实践</h2><p>明天的课还上吗？</p></div>
+                <img class="app-arrow" src="img/arrow_03.gif"  alt=""/>
+            </li>
+			<li class="app-button" data-target="message">
+            	<div class="app-button-left"><img class="app-person" src="img/img.jpg" alt=""/><h2>刘大海 计算机辅助翻译原理与实践</h2><p>明天的课还上吗？</p></div>
+                <img class="app-arrow" src="img/arrow_03.gif"  alt=""/>
+            </li>
 		</ul>
 	</div>
 </div>
@@ -131,12 +156,13 @@ footer{position:fixed;bottom:0;z-index:2100;}
 		<div class="homework_teach"><strong>个人简历</strong></div>
 		<div class="homework_con m30">
 			<ul>
-				<li class="p50">
+				<p class="p50">
 					果实，硕士，毕业于河南大学艺术学院，第十一届全国人大代表，现任河南理工大学音乐学院副院长，副教授。主持参与河南省教育厅“十一五”教育规划课题和人文社会科学项目并获二等奖；主编、参编教材3部；2008—2009学年被评为河南理工大学优秀教师；2009、2010年两次参加校级教学竞赛并荣获一等奖。
-				</li>
+				</p>
 				<p><input type="button" class="uphomework" value="退出" /></p>
 			</ul>
 		</div>
+		<div class="homework_teach" align="center"> <strong><a href="http://192.168.1.188/logout">退出登录</a></strong></div>
 	</div>
 </div>
 <!-- level-1 end-->
@@ -201,6 +227,7 @@ footer{position:fixed;bottom:0;z-index:2100;}
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;值得一提的是，技术型翻译公司的业务增长率远远超过非技术型的公司。在2012年和未来的几年内，这个趋势仍将持续。<br>
 二、语言服务行业的市场需求将发生显著的结构性变化<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;语言服务行业市场规模增长的同时，市场结构也在发生着显著的变化。以下这些变化值得关注：<br></p>
+	<div class="but_mar"><input type="button" class="uphomework" value="下一页" /></div>
 	</div>
 </div>
 <!-- course-3 end -->
@@ -216,7 +243,6 @@ footer{position:fixed;bottom:0;z-index:2100;}
 			<li>提交方式： 文本框输入，网站URL，文件上传（PC端）</li>
 			<li>计算机的工作原理是什么？请在截止时间之前提交</li>
 			<li class="app-button" data-target="documentwork">1. 文本框提交作业<img class="app-arrow" src="img/arrow_03.gif"  alt=""/></li>
-			<li class="app-button" data-target="urlwork">2. 网页URL提交作业<img class="app-arrow" src="img/arrow_03.gif"  alt=""/></li>
 		</ul>
 	</div>
 </div>
@@ -237,18 +263,11 @@ footer{position:fixed;bottom:0;z-index:2100;}
 	</div>
 	<div class="app-content">
     	<div class="app-mar">
-		<p class="homework_con2"><input type="button" class="uphomework" value="文本提交" /></p>
-        </div>
-	</div>
-</div>
-<div class="app-page" data-page="urlwork">
-	<div class="app-topbar">
-		<div class="app-button left" data-back data-autotitle></div>
-		<div class="app-title">网页URL提交作业</div>
-	</div>
-	<div class="app-content">
-		<div class="app-mar">
-			<p class="homework_con2"><input type="button" class="uphomework" value="文本提交" /></p>
+		<p class="homework_con2">
+        	<span class="con2_title">提交内容：</span>
+            <textarea class="con2_text"></textarea>
+        	<input type="button" class="uphomework" value="文本提交" />
+        </p>
         </div>
 	</div>
 </div>
@@ -260,25 +279,35 @@ footer{position:fixed;bottom:0;z-index:2100;}
 		<div class="app-title">xx的信息</div>
 	</div>
 	<div class="app-content">
-		<textarea class="app-input"></textarea>
-		<ul class="app-list">
-			<li>信息1</li>
-			<li>信息2</li>
-			<li>信息3</li>
-			<li>信息4</li>
-			<li>信息5</li>
-			<li>信息6</li>
-		</ul>
+    	<div class="homework_con2">
+            <span class="con3_title">李青青：</span>
+            <textarea class="con3_text"></textarea>
+            <input type="button" class="uphomework" value="发送" />
+            <ul class="app-list t_mar">
+                <li><img class="app-person" src="img/img.jpg" alt=""/><p>看着那份番茄加牛肉还是什么来着直留口水。</p></li>
+                <li><img class="app-person" src="img/img.jpg" alt=""/><p>看着那份番茄加牛肉还是什么来着直留口水。</p></li>
+                <li><img class="app-person" src="img/img.jpg" alt=""/><p>看着那份番茄加牛肉还是什么来着直留口水。</p></li>
+                <li><img class="app-person" src="img/img.jpg" alt=""/><p>看着那份番茄加牛肉还是什么来着直留口水。</p></li>
+                <li><img class="app-person" src="img/img.jpg" alt=""/><p>看着那份番茄加牛肉还是什么来着直留口水。</p></li>
+                <li><img class="app-person" src="img/img.jpg" alt=""/><p>看着那份番茄加牛肉还是什么来着直留口水。</p></li>
+            </ul>
+        </div>
 	</div>
 </div>
 <!-- message-1 end -->
 
 <footer>
-abc
+	<div class="app-btmbar">
+   	  	<a class="app-course"><span class="course-icon"></span>课程</a>
+        <a class="app-operation"><span class="operation-icon"></span>作业</a>
+        <a class="app-achievement"><span class="achievement-icon"></span>成果</a>
+        <a class="app-infor"><span class="infor-icon"></span>消息</a>
+        <a class="app-per-infor"><span class="per-infor-icon"></span>资料</a>
+    </div>
 </footer>
-<script src="zepto.js"></script>
+<script src="zepto.min.js"></script>
 <script src="app.respond.js"></script>
-<script src="app.min.js"></script>
+<script src="app.js"></script>
 <script src="myapp.js"></script>
 <script>
 

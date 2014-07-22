@@ -26,7 +26,7 @@ var omyajax = {
 				alert("success!"+data);
 			},
 			err = function(){
-				alert("error!");
+				//alert("error!");
 			},
 			callback = function(){
 				alert("finish!");
@@ -57,7 +57,7 @@ var omyajax = {
 			alert("success!");
 		},
 		err = function(){
-			alert("error!");
+			//alert("error!");
 		},
 		callback = function(){
 			alert("finish!");
@@ -85,8 +85,14 @@ var omyajax = {
 		suc = function(data){
 			var json = _this.sliceJSON(data);//alert(json);
 			window.profile = json;
+			//window.fotourl = json
 			//_this.setUserId(json.id);//alert(window.userId);
 			App.load("profile");
+			setTimeout(function(){
+				var h = $(".app-scrollable").height();
+				$(".app-scrollable").css("height",h-56);
+				//h = $(".app-scrollable").height();alert(h);
+			},1000);
 			//alert("success!");
 		},
 		err = function(){
@@ -183,7 +189,7 @@ var omyajax = {
 	 *	通过接口取出 课程信息列表
 	 *  return json
 	 */
-	getCoursesList: function (ajaxhttp, _this, getUserType){
+	getCoursesList: function (ajaxhttp, _this, getUserType, obj){
 		console.log("getCoursesList");
 		//var userId = _this.getUserId();
 		var url = ajaxhttp + "/api/v1/courses";//:"+userId+"",
@@ -203,6 +209,33 @@ var omyajax = {
 					if(window.user.type=="StudentEnrollment") window.homeworkType="homeworks"//$("#homeworkType").attr("data-target", "homeworks")
 					else if(window.user.type=="TeacherEnrollment") window.homeworkType="teacherhomeworks"//$("#homeworkType").attr("data-target", "teacherhomeworks")
 					else window.homeworkType="homeworks"//$("#homeworkType").attr("data-target", "homeworks")
+				
+
+
+	var appList = obj.find('.app-list').eq(0);
+	appList.empty();//alert(2);
+	if(window.courses){
+		//alert(1);
+		for(var i=0;i<window.courses.length;i++){
+			appList.append("<li class='app-button' data-target='course' courseid='"+
+				window.courses[i].id+"'>"+window.courses[i].name+"</li>");
+		};
+	};
+	//console.log("CoursesController done!");
+	//this.onShow(appList);
+	obj.find('.app-list .app-button').on('click', function (){
+		//alert($(this).attr("courseid"));
+		//jump to other page
+		omyajax.setClickedCourseId($(this).attr("courseid"));
+		omyajax.getCourseById(window.ajaxhttp, omyajax);
+		//App.load('clazz');
+		console.log("to get classes by courceId:"+$(this).attr("courseid")+" was clicked!");
+    });
+
+
+
+
+
 				}
 				//alert(json.enrollments[0].role);
 				//alert("success!");
@@ -210,7 +243,7 @@ var omyajax = {
 				//_this.getAllResults(ajaxhttp, _this);
 			},
 			err = function(){
-				alert("error!");
+				//alert("error!");
 			},
 			callback = function(){
 				alert("finish!");
@@ -242,7 +275,7 @@ var omyajax = {
 				//alert("success!");
 			},
 			err = function(){
-				alert("error!");
+				//alert("error!");
 			},
 			callback = function(){
 				alert("finish!");
@@ -286,7 +319,7 @@ var omyajax = {
 				//alert("success!");
 			},
 			err = function(){
-				alert("error!");
+				//alert("error!");
 			},
 			callback = function(){
 				alert("finish!");
@@ -317,7 +350,7 @@ var omyajax = {
 				//alert("success!");
 			},
 			err = function(){
-				alert("error!");
+				//alert("error!");
 			},
 			callback = function(){
 				alert("finish!");
@@ -349,7 +382,7 @@ var omyajax = {
 				//alert("success!");
 			},
 			err = function(){
-				alert("error!");
+				//alert("error!");
 			},
 			callback = function(){
 				alert("finish!");
@@ -373,7 +406,7 @@ var omyajax = {
 				//alert("success!");
 			},
 			err = function(){
-				alert("error!");
+				//alert("error!");
 			},
 			callback = function(){
 				alert("finish!");
@@ -407,7 +440,7 @@ var omyajax = {
 				//alert("success!");
 			},
 			err = function(){
-				alert("error!");
+				//alert("error!");
 			},
 			callback = function(){
 					alert("finish!");
@@ -438,7 +471,7 @@ var omyajax = {
 				//alert("success!");
 			},
 			err = function(){
-				alert("error!");
+				//alert("error!");
 			},
 			callback = function(){
 				alert("finish!");
@@ -465,7 +498,7 @@ var omyajax = {
 				alert("success!");
 			},
 			err = function(){
-				alert("error!");
+				//alert("error!");
 			},
 			callback = function(){
 				alert("finish!");
@@ -491,7 +524,7 @@ var omyajax = {
 				alert("success!");
 			},
 			err = function(){
-					alert("error!");
+					//alert("error!");
 			},
 			callback = function(){
 				alert("finish!");
@@ -570,7 +603,7 @@ var omyajax = {
 				alert("success!");
 			},
 			err = function(){
-				alert("error!");
+				//alert("error!");
 			},
 			callback = function(){
 				alert("finish!");
@@ -603,7 +636,7 @@ var omyajax = {
 				//alert("success!");
 			},
 			err = function(){
-				//alert("error!");
+				////alert("error!");
 			},
 			callback = function(){
 				alert("finish!");
@@ -701,7 +734,7 @@ var omyajax = {
 				//alert("success!");
 			},
 			err = function(){
-				alert("error!");
+				//alert("error!");
 			},
 			callback = function(){
 				alert("finish!");
@@ -730,9 +763,16 @@ var omyajax = {
 				//window.submissions = json;
 				obj.empty();//alert(1);
 				var html;//window.homework
+				//alert(1);
 				for(var i=0;i<json.length;i++){
-					html = "<li id='"+json[i].id+"' user_id='"+json[i].user_id+"'>"+
+					html = ""+
+						"<li  class='app-button' id='"+json[i].id+"' user_id='"+json[i].user_id+"'>"+
+						"<img class='app-person'  scr='"+json[i].submission_user_info.avatar_image_url+"' alt=''\/>"+
+
+						json[i].submission_user_info.display_name+
 						json[i].user_id+" ,time:"+json[i].submitted_at+
+
+						
 						"<\/li>";
 					obj.append(html);html="";
 				}; 
@@ -747,7 +787,7 @@ var omyajax = {
 				//alert("success!");
 			},
 			err = function(){
-				alert("error!");
+				//alert("error!");
 			},
 			callback = function(){
 				alert("finish!");
@@ -782,7 +822,7 @@ var omyajax = {
 				//alert("success!");
 			},
 			err = function(){
-				alert("error!");
+				////alert("error!");
 			},
 			callback = function(){
 				alert("finish!");
@@ -810,7 +850,7 @@ var omyajax = {
 				alert("sendAssignmentById success!");
 			},
 			err = function(){
-				alert("sendAssignmentById error!");
+				//alert("sendAssignmentById error!");
 			},
 			callback = function(){
 				alert("sendAssignmentById finish!");
@@ -835,7 +875,8 @@ var omyajax = {
 					//alert('成功了：'+oAjax.responseText);
 					fnSucc(oAjax.responseText);
 				}else{
-					//alert('失败了');
+					alert('请重新登录!');
+					window.location.href = "http://114.255.110.150/login";
 					if(fnFaild){
 						fnFaild();
 					}
@@ -868,14 +909,19 @@ var omyajax = {
 			oHead.appendChild(oS);
 	},
 	sliceJSON: function(str){
-		//alert(1);
-		var _str = str.split(";"); 
-		//alert(_str[1]);
-		//var json = JSON.parse(eval('(' + _str[1] + ')')[0]); 
-		//var json = _str[1];
-		var json =eval('('+ _str[1]+ ')');
+		//alert(1);  {"status":"not_found","message":"The specified resource does not exist."}
+		var json;
+		if(str.indexOf(";")>0){
+			var _str = str.split(";"); 
+			json = eval('('+ _str[1]+ ')');
+			return json;
+		}else{
+			json = JSON.parse(str);
+			alert("请重新登录!");
+			window.location.href = "http://114.255.110.150/login";
+		}
 		//alert(json[0].id);
-		return json;
+		//return json;
 	},
 	sliceJSON2: function(str){
 		//alert(1);
@@ -894,12 +940,12 @@ var omyajax = {
 
 //omyajax.alt();
 //omyajax.getTodoList("11", omyajax);
-/* Home Page */
+/* Home Page 
 App.controller('home', HomeController);
 function HomeController(page){
 	// get user info
 	window.user = {"type":0}
-	window.ajaxhttp = "http://114.255.110.150";
+	window.ajaxhttp = "http://0.0.0.0:3000";
 	getUserType();
 	$(page).find('.app-button').eq(0)
 		.on('click', function () {
@@ -929,16 +975,7 @@ function HomeController(page){
 		.on('click', function () {
 			getUserInfo();
 			console.log('5button profile was clicked!');
-		});		
-		
-};
-function getUserType(){
-	omyajax.getCoursesList(window.ajaxhttp, omyajax, 1);
-	//alert(courses);
-};
-function getUserInfo(){
-	omyajax.getUserInfo(window.ajaxhttp, omyajax);
-	//alert(courses);
+		});	
 };
 HomeController.prototype.onShow = function (){
 	//0 is student
@@ -947,6 +984,16 @@ HomeController.prototype.onShow = function (){
 
 	//console.log('HomeController onShow');
 };
+*/
+function getUserType(obj){
+	omyajax.getCoursesList(window.ajaxhttp, omyajax, 1, obj);
+	//alert(courses);
+};
+function getUserInfo(){
+	omyajax.getUserInfo(window.ajaxhttp, omyajax);
+	//alert(courses);
+};
+
 
 /* CoursesController */
 App.controller('courses', CoursesController);
@@ -960,10 +1007,14 @@ function CoursesController(page) {
 	 */
 
 	//omyajax.
-	
+	// get user info
+	window.user = {"type":0}
+	window.ajaxhttp = "http://114.255.110.150";
+	getUserType($(page));	
 	//this.courses = [{"id":0},{"id":1}];alert(this.courses.length);
 	//this.courses = window.courses;//omyajax.getCoursesList(window.ajaxhttp, omyajax);
 	//alert(this.courses.length);
+	/*
 	var appList = $(page).find('.app-list').eq(0);
 	appList.empty();//alert(2);
 	if(window.courses){
@@ -983,7 +1034,7 @@ function CoursesController(page) {
 		//App.load('clazz');
 		console.log("to get classes by courceId:"+$(this).attr("courseid")+" was clicked!");
     });
-
+	*/
 	//console.log("CoursesController done!");
 };
 CoursesController.prototype.onShow = function (){
@@ -1001,10 +1052,11 @@ function CourseController(page) {
 	this.course = window.course;
 
 	var aP = $(page).find('.mycourse_con ul').eq(0).find("p");//course_code
-	aP.eq(0).html("课程名称 ： "+window.course.name+"");
-	aP.eq(1).html("课程代码 ： "+window.course.course_code+"");
-	aP.eq(2).html("开始时间 ： "+window.course.start_at+"");
-	aP.eq(3).html("结束时间 ： "+window.course.end_at+"");
+	aP.eq(0).html("课程名称 ： "+window.course.nema+"");
+	aP.eq(0).html("课程代码 ： "+window.course.course_code+"");
+	aP.eq(0).html("开课时间 ： "+window.course.start_at+"");
+	aP.eq(0).html("结束时间 ： "+window.course.end_at+"");
+
 	//var ic = omyajax.getClickedCourseId();
 	//var oTitle = $(page).find('.app-title').eq(0).;
 	$(page).find('.app-title').eq(0).html(window.course.course_code+"");
@@ -1149,6 +1201,7 @@ function HomeworkController(page){
 				"authenticity_token": window.token
 			},function(data){
 				alert("提交成功!");
+				App.load("homeworks");
 			}
 		);
 		
@@ -1277,9 +1330,9 @@ function TeacherworkDetailController(page){
 				"submission[posted_grade]": score,
 				"authenticity_token": window.token
 			},
-			contentType: 'application/json',
 			success: function(data){
 				alert("提交成功!");
+				App.load("teacherwork");
 			}
 		});
 		
@@ -1484,6 +1537,7 @@ function SendMessageController(page){
 				"authenticity_token": window.token
 			},function(data){
 				alert("发送成功!");
+				App.load("message");
 			}
 		);
 
@@ -1503,6 +1557,9 @@ function ProfileController(page){
 	// this runs whenever a 'home' page is loaded
 	// 'page' is the HTML app-page element
 	var oTitle = $(page).find('.mycourse_con').first();
+
+	$(page).find("img").eq(0).attr("src", window.profile.avatar_url)
+
 	$('strong',oTitle ).first().html(this.profile.sortable_name); // = this.profile.sortable_name;
 	$('span',oTitle ).first().html(this.profile.primary_email); // = this.profile.primary_email;
 	$(page).find('.homework_con p').first().html(this.profile.bio); // = this.profile.primary_email;
@@ -1534,7 +1591,7 @@ try {
 	window.homeworksR=0;
 	App.restore();
 } catch (err) {
-	App.load('home', function () {
+	App.load('courses', function () {
 	  // done!
 	  console.log("home done err!");
 	});
