@@ -1052,7 +1052,7 @@ function CourseController(page) {
 	this.course = window.course;
 
 	var aP = $(page).find('.mycourse_con ul').eq(0).find("p");//course_code
-	aP.eq(0).html("课程名称 ： "+window.course.nema+"");
+	aP.eq(0).html("课程名称 ： "+window.course.name+"");
 	aP.eq(1).html("课程代码 ： "+window.course.course_code+"");
 	aP.eq(2).html("开课时间 ： "+window.course.start_at+"");
 	aP.eq(3).html("结束时间 ： "+window.course.end_at+"");
