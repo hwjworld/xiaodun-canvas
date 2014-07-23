@@ -14,7 +14,7 @@
 /.yardoc/
 /app/coffeescripts/ember/*/main.coffee
 /app/views/info/styleguide.html.erb
-# /config/*.yml
+/config/*.yml
 /vendor/
 /config/build.js
 /config/environments/*-local.rb
