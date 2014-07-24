@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>My App</title>
+<title>人人教人人学</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <link rel="stylesheet" href="css/app.min.css">
 <link rel="stylesheet" href="css/style.css">
 <style>
 /* TODO */
-
+/*hfy*/
+.app-btmbar{margin-top:10px; color: #666; height:44px; width: 100%;}
+.app-btmbar a{ display:block;height:44px; margin-top:-10px; padding-top:7px;}
+.app-btmbar .active{ background-color: #ffae00; background }
+.app-home{float:left;width:16%;height:44px; text-align:center;font-size:13px;}
+.home-icon{ margin:auto;width:25px; height:24px; background:url(img/icon_03.gif) 0 0 no-repeat; display:block; cursor:pointer;}
+.home-icon:hover{ margin:auto;width:25px; height:24px; background:url(img/icon_03.gif) 0 -24px no-repeat; display:block;}
+.app-course{float:left;width:20%;height:44px;text-align:center;font-size:13px;}
+.course-icon{ margin:auto; width:24px; height:24px; background:url(img/icon_05.gif) 0 0 no-repeat; display:block; cursor:pointer;}
+.course-icon:hover{ margin:auto; width:24px; height:24px; background:url(img/icon_05.gif) 0 -24px no-repeat; display:block;}
+.app-operation{float:left;width:20%;height:44px;text-align:center;font-size:13px;}
+.operation-icon{margin:auto; width:24px; height:24px; background:url(img/icon_07.gif) 0 0 no-repeat; display:block; cursor:pointer;}
+.operation-icon:hover{margin:auto; width:24px; height:24px; background:url(img/icon_07.gif) 0 -24px no-repeat; display:block;}
+.app-achievement{float:left;width:20%;height:44px;text-align:center;font-size:13px;}
+.achievement-icon{ margin:auto; width:23px; height:24px; background:url(img/icon_09.gif) 0 0 no-repeat; display:block; cursor:pointer;}
+.achievement-icon:hover{ margin:auto; width:23px; height:24px; background:url(img/icon_09.gif) 0 -24px no-repeat; display:block;}
+.app-infor{float:left;width:20%;height:44px;text-align:center;font-size:13px;}
+.infor-icon{margin:auto; width:27px; height:24px; background:url(img/icon_11.gif) 0 0 no-repeat; display:block; cursor:pointer;}
+.infor-icon:hover{margin:auto; width:27px; height:24px; background:url(img/icon_11.gif) 0 -24px no-repeat; display:block;}
+.app-per-infor{float:left;width:20%;height:44px;text-align:center;font-size:13px;}
+.per-infor-icon{margin:auto; width:24px; height:24px; background:url(img/icon_13.gif) 0 0 no-repeat; display:block; cursor:pointer;}
+.per-infor-icon:hover{margin:auto; width:24px; height:24px; background:url(img/icon_13.gif) 0 -24px no-repeat; display:block; cursor:pointer;}
+/*hfy end*/
 </style>
 </head>
 <body>
@@ -143,9 +165,9 @@
 		<div class="homework_teach"><strong>个人简历</strong></div>
 		<div class="homework_con m30">
 			<ul>
-				<li class="p50">
+				<p class="p50">
 					果实，硕士，毕业于河南大学艺术学院，第十一届全国人大代表，现任河南理工大学音乐学院副院长，副教授。主持参与河南省教育厅“十一五”教育规划课题和人文社会科学项目并获二等奖；主编、参编教材3部；2008—2009学年被评为河南理工大学优秀教师；2009、2010年两次参加校级教学竞赛并荣获一等奖。
-				</li>
+				</p>
 				<!-- p><input type="button" class="uphomework" value="退出" /></p -->
 			</ul>
 		</div>
@@ -306,89 +328,93 @@
 	</div>
 	<div class="app-content">
 		<ul class="app-list">
-			<li><textarea id="content" class="app-input"></textarea></li>
+			<li><span>请输入本文</span><textarea id="content" class="app-input">
+				
+			</textarea></li>
 			<li id="commit">发送</li>
 		</ul>
 	</div>
 </div>
 <!-- message-2 end -->
 <footer>
-	<div class="courseBtn"><span class="icon"></span>课程</div>
-	<div class="operationBtn"><span class="icon"></span>作业</div>
-	<div class="achievementBtn"><span class="icon"></span>成果</div>
-	<div class="messBtn"><span class="icon"></span>消息</div>
-	<div class="inforBtn"><span class="icon"></span>资料</div>
+	<div class="app-btmbar">
+   	  	<a class="app-course active"><span class="course-icon"></span>课程</a>
+        <a class="app-operation"><span class="operation-icon"></span>作业</a>
+        <a class="app-achievement"><span class="achievement-icon"></span>成果</a>
+        <a class="app-infor"><span class="infor-icon"></span>消息</a>
+        <a class="app-per-infor"><span class="per-infor-icon"></span>资料</a>
+    </div>
 </footer>
 <script src="js/zepto.min.js"></script>
 <script src="js/app.respond.js"></script>
 <script src="js/app.min.js"></script>
 <script src="js/myapp2.js"></script>
 <script>
+
 $(function(){
-	$("footer div").eq(0).bind("click",function(){
+	var moduleNow = 0;
+	$("footer a").eq(0).bind("click",function(){//alert(0);
+		if(moduleNow!=0){
+			$("footer a").eq(0).addClass("active");
+			$("footer a").eq(moduleNow).removeClass("active");
+			moduleNow = 0;
+		}
 		App.load("courses");
 		fixedH();
 		//window.user = {"type":0}
 		//window.ajaxhttp = "http://0.0.0.0:3000";
 		//getUserType();		
 	});
-	$("footer div").eq(1).bind("click",function(){
+	$("footer a").eq(1).bind("click",function(){//alert(1);
+		if(moduleNow!=1){
+			$("footer a").eq(1).addClass("active");
+			$("footer a").eq(moduleNow).removeClass("active");
+			moduleNow = 1;
+		}	
 		//App.load("");
 		App.load(""+window.homeworkType+"");
 		fixedH();
 	});
-	$("footer div").eq(2).bind("click",function(){
+	$("footer a").eq(2).bind("click",function(){//alert(2);
+		if(moduleNow!=2){
+			$("footer a").eq(2).addClass("active");
+			$("footer a").eq(moduleNow).removeClass("active");
+			moduleNow = 2;
+		}	
 		App.load("achievements");
 		fixedH();
 	});
-	$("footer div").eq(3).bind("click",function(){
+	$("footer a").eq(3).bind("click",function(){//alert(3);
+		if(moduleNow!=3){
+			$("footer a").eq(3).addClass("active");
+			$("footer a").eq(moduleNow).removeClass("active");
+			moduleNow = 3;
+		}	
 		//App.load("messages");
 		omyajax.getMessages(window.ajaxhttp, omyajax);
 		fixedH();
 	});
-	$("footer div").eq(4).bind("click",function(){
+	$("footer a").eq(4).bind("click",function(){//alert(4);
+		if(moduleNow!=4){
+			$("footer a").eq(4).addClass("active");
+			$("footer a").eq(moduleNow).removeClass("active");
+			moduleNow = 4;
+		}	
 		getUserInfo();
 		//App.load("");
 	});
-	var h = $(".app-scrollable").height();
-	//alert(h);
-	function fixedH(){
-		setTimeout(function(){
-			$(".app-scrollable").css("height",h-56);
-			//h = $(".app-scrollable").height();alert(h);
-		},1000);
-	}
-	fixedH();
-	function fixedBtn(){
-		//var aIcon = document.getElementsByTagName("footer")[0].getElementsByTagName("span");
-		//alert(aIcon.length);
-		var aIcon = $(".icon");
-		var a = aIcon.eq(0).css("margin-left");
-		var n = a.split("p")[0];
-		n = n-13;
-		for(var i=0;i<aIcon.length;i++){
-
-			//var w = aIcon[i].style.width;//alert(w);
-			//alert(aIcon[i].style.marginLeft);
-			//aIcon[i].style.marginLeft = aIcon[i].style.marginLeft - 12;
-			//alert(aIcon.eq(0).width());
-			//alert(aIcon.eq(0).css("margin-left"));
-			//var a = aIcon.eq(i).css("margin-left");
-			//a = a-95;alert(a);
-			aIcon.eq(i).css("margin-left", n);
-		}
-
-		/*
-		$("footer span").each(function(index){
-			var l = $(this).offset().left();
-			var w = $(this).width();
-			$(this).offset().left(l-w/2);alert("l: "+l+", w: "+w);
-
+	
+	$("footer a").each(function(index){
+		var _index = index;
+		$(this).attr("index", _index);
+		$(this).bind("click",function(){
+			
 		});
-*/
-	}
-	fixedBtn();
+		
+	});
+	
 });
+
 </script>
 </body>
 </html>

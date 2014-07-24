@@ -53,14 +53,14 @@ var omyajax = {
 		},
 		suc = function(data){
 			var json = data;
-			alert(json);
-			alert("success!");
+			//alert(json);
+			//alert("success!");
 		},
 		err = function(){
 			//alert("error!");
 		},
 		callback = function(){
-			alert("finish!");
+			//alert("finish!");
 		};
     
 		//返回一个长度为一的数组
@@ -85,7 +85,6 @@ var omyajax = {
 		suc = function(data){
 			var json = _this.sliceJSON(data);//alert(json);
 			window.profile = json;
-			//window.fotourl = json
 			//_this.setUserId(json.id);//alert(window.userId);
 			App.load("profile");
 			setTimeout(function(){
@@ -96,10 +95,10 @@ var omyajax = {
 			//alert("success!");
 		},
 		err = function(){
-			alert("getUserInfo error!");
+			alert("加载用户信息异常!");
 		},
 		callback = function(){
-			alert("finish!");
+			//alert("finish!");
 		};
 		//返回一个长度为一的数组
 		_this.doAjax(url, suc, err, 10000);
@@ -109,7 +108,6 @@ var omyajax = {
 		window.userId = userId;
 	},	
 	getUserId: function(){
-		
 		return window.userId;
 	},
 	setCourseId: function(json){
@@ -119,7 +117,6 @@ var omyajax = {
 		window.courseId = arr;
 	},	
 	getCourseId: function(){
-		
 		return window.courseId;
 	},
 	setCourseInfos: function(json){
@@ -210,32 +207,26 @@ var omyajax = {
 					else if(window.user.type=="TeacherEnrollment") window.homeworkType="teacherhomeworks"//$("#homeworkType").attr("data-target", "teacherhomeworks")
 					else window.homeworkType="homeworks"//$("#homeworkType").attr("data-target", "homeworks")
 				
-
-
-	var appList = obj.find('.app-list').eq(0);
-	appList.empty();//alert(2);
-	if(window.courses){
-		//alert(1);
-		for(var i=0;i<window.courses.length;i++){
-			appList.append("<li class='app-button' data-target='course' courseid='"+
-				window.courses[i].id+"'>"+window.courses[i].name+"</li>");
-		};
-	};
-	//console.log("CoursesController done!");
-	//this.onShow(appList);
-	obj.find('.app-list .app-button').on('click', function (){
-		//alert($(this).attr("courseid"));
-		//jump to other page
-		omyajax.setClickedCourseId($(this).attr("courseid"));
-		omyajax.getCourseById(window.ajaxhttp, omyajax);
-		//App.load('clazz');
-		console.log("to get classes by courceId:"+$(this).attr("courseid")+" was clicked!");
-    });
-
-
-
-
-
+					var appList = obj.find('.app-list').eq(0);
+					appList.empty();//alert(2);
+					if(window.courses){
+						//alert(1);
+						for(var i=0;i<window.courses.length;i++){
+							appList.append("<li class='app-button' data-target='course' courseid='"+
+								window.courses[i].id+"'>"+window.courses[i].name+"</li>");
+						};
+						appList.append("<li class='app-button'><li class='app-button'></li><li class='app-button'></li>");
+					};
+					//console.log("CoursesController done!");
+					//this.onShow(appList);
+					obj.find('.app-list .app-button').on('click', function (){
+						//alert($(this).attr("courseid"));
+						//jump to other page
+						omyajax.setClickedCourseId($(this).attr("courseid"));
+						omyajax.getCourseById(window.ajaxhttp, omyajax);
+						//App.load('clazz');
+						console.log("to get classes by courceId:"+$(this).attr("courseid")+" was clicked!");
+				    });
 				}
 				//alert(json.enrollments[0].role);
 				//alert("success!");
@@ -278,7 +269,7 @@ var omyajax = {
 				//alert("error!");
 			},
 			callback = function(){
-				alert("finish!");
+				//alert("finish!");
 			};
 		_this.doAjax(url, suc, err, 10000);
 	},
@@ -315,14 +306,15 @@ var omyajax = {
 					_this.getItemsList(window.ajaxhttp, _this);
 					//console.log('1button was clicked!');
 				});
-
+				appList.append("<li class='app-button'><li class='app-button'></li><li class='app-button'></li>");
+					
 				//alert("success!");
 			},
 			err = function(){
 				//alert("error!");
 			},
 			callback = function(){
-				alert("finish!");
+				//alert("finish!");
 			};
 		_this.doAjax(url, suc, err, 10000);
 	},
@@ -353,7 +345,7 @@ var omyajax = {
 				//alert("error!");
 			},
 			callback = function(){
-				alert("finish!");
+				//alert("finish!");
 			};
 			
 		_this.doAjax(url, suc, err, 10000);
@@ -385,7 +377,7 @@ var omyajax = {
 				//alert("error!");
 			},
 			callback = function(){
-				alert("finish!");
+				//alert("finish!");
 			};
 		_this.doAjax(url, suc, err, 10000);
 	},
@@ -409,7 +401,7 @@ var omyajax = {
 				//alert("error!");
 			},
 			callback = function(){
-				alert("finish!");
+				//alert("finish!");
 			};
 		_this.doAjax(url, suc, err, 10000);
 	},
@@ -443,7 +435,7 @@ var omyajax = {
 				//alert("error!");
 			},
 			callback = function(){
-					alert("finish!");
+				//alert("finish!");
 			};	
 		_this.doAjax(url, suc, err, 10000);
 	},
@@ -474,7 +466,7 @@ var omyajax = {
 				//alert("error!");
 			},
 			callback = function(){
-				alert("finish!");
+				//alert("finish!");
 			};
 		//alert(url); 2
 		_this.doAjax(url, suc, err, 10000);
@@ -494,14 +486,14 @@ var omyajax = {
 			data = {
 				
 			},
-			suc = function(){
-				alert("success!");
+			suc = function(data){
+				//alert("success!");
 			},
 			err = function(){
 				//alert("error!");
 			},
 			callback = function(){
-				alert("finish!");
+				//alert("finish!");
 			};
 				
 		var json = doAjax(url, type, dataType, data, suc, err, callback);
@@ -521,13 +513,13 @@ var omyajax = {
 				
 			},
 			suc = function(){
-				alert("success!");
+				//alert("success!");
 			},
 			err = function(){
-					//alert("error!");
+				//alert("error!");
 			},
 			callback = function(){
-				alert("finish!");
+				//alert("finish!");
 			};
 				
 		var json = doAjax(url, type, dataType, data, suc, err, callback);
@@ -573,14 +565,15 @@ var omyajax = {
 						_this.getTestInfo(window.ajaxhttp, _this, _o, courseId, id);
 					}
 				});
+				appList.append("<li class='app-button'><li class='app-button'></li><li class='app-button'></li>");
 				//_this.getTestInfo(window.ajaxhttp, _this,);
 				//alert("success!");
 			},
 			err = function(){
-					alert("ajax error!");
+				//alert("ajax error!");
 			},
 			callback = function(){
-					alert("finish!");
+				//alert("finish!");
 			};
 			_this.doAjax(url, suc, err, 10000);
 	},
@@ -600,13 +593,13 @@ var omyajax = {
 				
 			},
 			suc = function(){
-				alert("success!");
+				//alert("success!");
 			},
 			err = function(){
 				//alert("error!");
 			},
 			callback = function(){
-				alert("finish!");
+				//alert("finish!");
 			};
 				
 		_this.doAjax(url, suc, err, 10000);
@@ -636,10 +629,10 @@ var omyajax = {
 				//alert("success!");
 			},
 			err = function(){
-				////alert("error!");
+				//alert("error!");
 			},
 			callback = function(){
-				alert("finish!");
+				//alert("finish!");
 			};
 				
 		_this.doAjax(url, suc, err, 10000);
@@ -669,7 +662,10 @@ var omyajax = {
 				var appList = obj.find("label").eq(index);
 				//insert the infos into assignments page
 				var html = "";
+				var nData = new Date();
+
 				for(var j=0;j<json.length;j++){
+					console.log("nData: "+nData+" , lock_at :"+json[j].lock_at);
 					html += "<li id='"+json[j].id+"' cid='"+id+"' liindx = '"+index+"' class='app-button' data-target='teacherwork'>"+
 							"<span class='left'>"+json[j].name+"<\/span>"+
 							"<span class='right'>截止时间："+json[j].lock_at+"<\/span><\/li>";
@@ -692,16 +688,16 @@ var omyajax = {
 							_this.getAssignment(window.ajaxhttp, _this, courseId, id);
 						});
 					}
-				});				
-
+				});
+				appList.append("<li class='app-button'><li class='app-button'></li><li class='app-button'></li>");
+				
 			},
 			err = function(){
-				alert("ajax error!");
+				//alert("getAssignments ajax error!");
 			},
 			callback = function(){
-				alert("finish!");
-			};
-					
+				//alert("finish!");
+			};	
 			_this.doAjax(url, suc, err, 10000);
 	},	
 
@@ -737,7 +733,7 @@ var omyajax = {
 				//alert("error!");
 			},
 			callback = function(){
-				alert("finish!");
+				//alert("finish!");
 			};
 				
 		_this.doAjax(url, suc, err, 10000);
@@ -768,11 +764,8 @@ var omyajax = {
 					html = ""+
 						"<li  class='app-button' id='"+json[i].id+"' user_id='"+json[i].user_id+"'>"+
 						"<img class='app-person'  scr='"+json[i].submission_user_info.avatar_image_url+"' alt=''\/>"+
-
 						json[i].submission_user_info.display_name+
 						json[i].user_id+" ,time:"+json[i].submitted_at+
-
-						
 						"<\/li>";
 					obj.append(html);html="";
 				}; 
@@ -784,13 +777,14 @@ var omyajax = {
 					//alert("userId: "+userId);
 					_this.getSubmission(window.ajaxhttp, _this, courseId, id, userId);
 				});
+				appList.append("<li class='app-button'><li class='app-button'></li><li class='app-button'></li>");
 				//alert("success!");
 			},
 			err = function(){
 				//alert("error!");
 			},
 			callback = function(){
-				alert("finish!");
+				//alert("finish!");
 			};
 				
 		_this.doAjax(url, suc, err, 10000);
@@ -825,7 +819,7 @@ var omyajax = {
 				////alert("error!");
 			},
 			callback = function(){
-				alert("finish!");
+				//alert("finish!");
 			};
 				
 		_this.doAjax(url, suc, err, 10000);
@@ -847,13 +841,13 @@ var omyajax = {
 			data = {
 			},
 			suc = function(){
-				alert("sendAssignmentById success!");
+				//alert("sendAssignmentById success!");
 			},
 			err = function(){
 				//alert("sendAssignmentById error!");
 			},
 			callback = function(){
-				alert("sendAssignmentById finish!");
+				//alert("sendAssignmentById finish!");
 			};
 				
 		//_this.doAjax(url, suc, err, 10000);
@@ -875,11 +869,13 @@ var omyajax = {
 					//alert('成功了：'+oAjax.responseText);
 					fnSucc(oAjax.responseText);
 				}else{
+					/*
 					alert('请重新登录!');
-					window.location.href = "http://114.255.110.150/login";
+					window.location.href = "http://0.0.0.0:3000/login";
 					if(fnFaild){
 						fnFaild();
 					}
+					*/
 				};clearTimeout(timer);
 			}
 		};
@@ -918,7 +914,7 @@ var omyajax = {
 		}else{
 			json = JSON.parse(str);
 			alert("请重新登录!");
-			window.location.href = "http://114.255.110.150/login";
+			window.location.href = "http://0.0.0.0:3000/login";
 		}
 		//alert(json[0].id);
 		//return json;
@@ -994,11 +990,12 @@ function getUserInfo(){
 	//alert(courses);
 };
 
-
 /* CoursesController */
 App.controller('courses', CoursesController);
 function CoursesController(page) {
 	//alert("courses");
+	//alert(1);
+	$(page).find(".app-topbar .left").hide();
 	/*
 	 * 1. get recourse. ex: omyajax.getTodoList(window.ajaxhttp, omyajax);
 	 * 2. set recourse. 
@@ -1009,7 +1006,7 @@ function CoursesController(page) {
 	//omyajax.
 	// get user info
 	window.user = {"type":0}
-	window.ajaxhttp = "http://114.255.110.150";
+	window.ajaxhttp = "http://0.0.0.0:3000";
 	getUserType($(page));	
 	//this.courses = [{"id":0},{"id":1}];alert(this.courses.length);
 	//this.courses = window.courses;//omyajax.getCoursesList(window.ajaxhttp, omyajax);
@@ -1095,7 +1092,8 @@ function ClassController(page) {
 		//alert($(this).attr("id"));
 		omyajax.getItemsById(window.ajaxhttp, omyajax);
 		//console.log('1button was clicked!');
-	});	
+	});
+	
 	//console.log("ClassController done!");
 };
 ClassController.prototype.onShow = function (appList){
@@ -1118,7 +1116,6 @@ PointController.prototype.onShow = function (){
 	//console.log('PointController onShow');
 };
 
-
 /* HomeworksController */
 App.controller('homeworks', HomeworksController);
 function HomeworksController(page){
@@ -1134,6 +1131,7 @@ function HomeworksController(page){
 		html="";
 				
 	}
+	appList.append("<li class='app-button'><li class='app-button'></li><li class='app-button'></li>");
 	appList.find('label').each(function(index){
 		var _i = index;
 		appList.find('label').eq(_i).bind('click', function (){
@@ -1234,6 +1232,7 @@ function THomeworksController(page){
 		appList.append(html);html="";
 				
 	}
+	appList.append("<li class='app-button'><li class='app-button'></li><li class='app-button'></li>");
 	appList.find('label').each(function(index){
 		var _i = index;
 		appList.find('label').eq(_i).bind('click', function (){
@@ -1280,8 +1279,7 @@ function TeacherworkController(page){
 		var id = window.homework.tid;
 		omyajax.getSubmissions(window.ajaxhttp, omyajax, courseId, id, appList);
 	});
-
-
+	appList.append("<li class='app-button'><li class='app-button'></li><li class='app-button'></li>");
 	/*
 	for(var i=0;i<window.courseInfos.length;i++){
 		html = "<label clicked='0' index='"+i+"' id='"+window.courseInfos[i].id+"'>"+window.courseInfos[i].name+"<\/label>";//
@@ -1335,8 +1333,6 @@ function TeacherworkDetailController(page){
 			}
 		});
 		
-
-
 		/*
 		$.post(url, {
 				"comment[text_comment]": comment,
@@ -1383,6 +1379,7 @@ function AchievementsController(page){
 		//alert(window.courseInfos[i].assignments.length)//console.log(1);
 		appList.append(html);html="";
 	}
+	appList.append("<li class='app-button'><li class='app-button'></li><li class='app-button'></li>");
 	appList.find('label').each(function(index){
 		var _i = index;
 		appList.find('label').eq(_i).bind('click', function (){
@@ -1463,6 +1460,7 @@ function MessagesController(page){
 		"");
 	};
 	appList.find("li").on("click", function(){
+		window.conversationId = $(this).attr("id");
 		omyajax.setMessageId($(this).attr("id"));
 		omyajax.getSBsMessagesById(window.ajaxhttp, omyajax);
 	});
@@ -1516,6 +1514,7 @@ function SBsMessageController(page){
 		window.sentToPersonId = id;//alert(id);
 		App.load("sendmessage");
 	});
+	appList.append("<li class='app-button'><li class='app-button'></li><li class='app-button'></li>");
 	//this.onShow();	
 	//console.log("MessagesController done!");
 };
@@ -1526,16 +1525,19 @@ SBsMessageController.prototype.onShow = function () {
 /* SBsMessageController */
 App.controller('sendmessage', SendMessageController);
 function SendMessageController(page){
-	$(page).find(".app-title").eq(0).html("向"+window.sentToPersonName+"发送信息")
+	$(page).find(".app-title").eq(0).html("向"+window.sentToPersonName+"发送信息");
+	$(page).find("textarea").bind("click", function(){$(page).find(".app-list span").hide();});
 	$(page).find("#commit").bind("click", function(){
+		//alert(1);
 		var data = $(page).find("#content").val();
-		var url = window.ajaxhttp + "/api/v1/conversations/"+window.sentToPersonId+"/add_message";
-
+		var url = window.ajaxhttp + "/api/v1/conversations/"+window.conversationId+"/add_message";
+		console.log("id: "+window.conversationId+", data: "+data+", token: "+window.token);
+		//alert(1);
 		$.post(url, {
 				"body": data,
 				"authenticity_token": window.token
 			},function(data){
-				alert("发送成功!");
+				alert("发送消息成功!");
 				App.load("message");
 			}
 		);
@@ -1556,9 +1558,7 @@ function ProfileController(page){
 	// this runs whenever a 'home' page is loaded
 	// 'page' is the HTML app-page element
 	var oTitle = $(page).find('.mycourse_con').first();
-
 	$(page).find("img").eq(0).attr("src", window.profile.avatar_url)
-
 	$('strong',oTitle ).first().html(this.profile.sortable_name); // = this.profile.sortable_name;
 	$('span',oTitle ).first().html(this.profile.primary_email); // = this.profile.primary_email;
 	$(page).find('.homework_con p').first().html(this.profile.bio); // = this.profile.primary_email;
