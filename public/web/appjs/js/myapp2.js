@@ -914,7 +914,7 @@ var omyajax = {
 		}else{
 			json = JSON.parse(str);
 			alert("请重新登录!");
-			window.location.href = "http://0.0.0.0:3000/login";
+			window.location.href = "114.255.110.150/login";
 		}
 		//alert(json[0].id);
 		//return json;
@@ -1006,7 +1006,7 @@ function CoursesController(page) {
 	//omyajax.
 	// get user info
 	window.user = {"type":0}
-	window.ajaxhttp = "http://0.0.0.0:3000";
+	window.ajaxhttp = "http://114.255.110.150";
 	getUserType($(page));	
 	//this.courses = [{"id":0},{"id":1}];alert(this.courses.length);
 	//this.courses = window.courses;//omyajax.getCoursesList(window.ajaxhttp, omyajax);
