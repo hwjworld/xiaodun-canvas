@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>人人教人人学</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" href="css/app.min.css">
+<link rel="stylesheet" href="css/style.css">
+<style>
+/* TODO */
+/*hfy*/
+.app-btmbar{margin-top:10px; color: #666; height:44px; width: 100%;}
+.app-btmbar a{ display:block;height:44px; margin-top:-10px; padding-top:7px;}
+.app-btmbar .active{ background-color: #ffae00; background }
+.app-home{float:left;width:16%;height:44px; text-align:center;font-size:13px;}
+.home-icon{ margin:auto;width:25px; height:24px; background:url(img/icon_03.gif) 0 0 no-repeat; display:block; cursor:pointer;}
+.home-icon:hover{ margin:auto;width:25px; height:24px; background:url(img/icon_03.gif) 0 -24px no-repeat; display:block;}
+.app-course{float:left;width:20%;height:44px;text-align:center;font-size:13px;}
+.course-icon{ margin:auto; width:24px; height:24px; background:url(img/icon_05.gif) 0 0 no-repeat; display:block; cursor:pointer;}
+.course-icon:hover{ margin:auto; width:24px; height:24px; background:url(img/icon_05.gif) 0 -24px no-repeat; display:block;}
+.app-operation{float:left;width:20%;height:44px;text-align:center;font-size:13px;}
+.operation-icon{margin:auto; width:24px; height:24px; background:url(img/icon_07.gif) 0 0 no-repeat; display:block; cursor:pointer;}
+.operation-icon:hover{margin:auto; width:24px; height:24px; background:url(img/icon_07.gif) 0 -24px no-repeat; display:block;}
+.app-achievement{float:left;width:20%;height:44px;text-align:center;font-size:13px;}
+.achievement-icon{ margin:auto; width:23px; height:24px; background:url(img/icon_09.gif) 0 0 no-repeat; display:block; cursor:pointer;}
+.achievement-icon:hover{ margin:auto; width:23px; height:24px; background:url(img/icon_09.gif) 0 -24px no-repeat; display:block;}
+.app-infor{float:left;width:20%;height:44px;text-align:center;font-size:13px;}
+.infor-icon{margin:auto; width:27px; height:24px; background:url(img/icon_11.gif) 0 0 no-repeat; display:block; cursor:pointer;}
+.infor-icon:hover{margin:auto; width:27px; height:24px; background:url(img/icon_11.gif) 0 -24px no-repeat; display:block;}
+.app-per-infor{float:left;width:20%;height:44px;text-align:center;font-size:13px;}
+.per-infor-icon{margin:auto; width:24px; height:24px; background:url(img/icon_13.gif) 0 0 no-repeat; display:block; cursor:pointer;}
+.per-infor-icon:hover{margin:auto; width:24px; height:24px; background:url(img/icon_13.gif) 0 -24px no-repeat; display:block; cursor:pointer;}
+/*hfy end*/
+
+.ti{ 
+	background-color:#e8eaef!important;
+	border:0!important;
+}
+.app-list{box-shadow:0;}
+.label-title{
+	font-size:1.5em!important;
+	height: 1.5em!important;
+	padding:0.25em;
+}
+</style>
+</head>
+<body>
+<!--
+<div class="app-page" data-page="home">
+	<div class="app-topbar">
+		<div class="app-title">果实网</div>
+	</div>
+	<div class="app-content">
+		<div class="app-section">
+			<div class="app-button" data-target="courses">我的课程<img class="app-arrow" src="img/arrow_03.gif"  alt=""/></div>
+			<div class="app-button" id="homeworkType">我的作业<img class="app-arrow" src="img/arrow_03.gif" alt=""/></div>
+			<div class="app-button">学习成果<img class="app-arrow" src="img/arrow_03.gif"  alt=""/></div>
+			<div class="app-button">站内消息<img class="app-arrow" src="img/arrow_03.gif" alt=""/></div>
+			<div class="app-button">个人资料<img class="app-arrow" src="img/arrow_03.gif" alt=""/></div>
+		</div>
+	</div>
+</div>
+-->
+<!-- level-1 -->
+<div class="app-page" data-page="courses">
+	<div class="app-topbar">
+		<div class="app-button left" data-back data-autotitle></div>
+		<div class="app-title">我的课程</div>
+	</div>
+	<div class="app-content">
+    	<div class="app-banner">
+            <span class="banner-text">欢迎来到果实网</span>
+            <span class="banner-text2"> 人人教人人学</span>
+            <img src="img/header_bg.jpg" style="width:100%;" alt=""/>
+        </div>	
+		<ul class="app-list">
+		<label class="label-title">正在学习</label>
+			<li class="ti"></li>
+			<li class="ti"></li>
+			<li class="ti"></li>
+		</ul>
+	</div>
+</div>
+<div id="homeworks" class="app-page" data-page="homeworks">
+	<div class="app-topbar">
+		<div class="app-button left" data-back data-autotitle></div>
+		<div class="app-title">我的作业</div>
+	</div>
+	<div class="app-content">
+		<ul class="app-list">
+		</ul>
+	</div>
+</div>
+<div class="app-page" data-page="teacherhomeworks">
+	<div class="app-topbar">
+		<div class="app-button left" data-back data-autotitle></div>
+		<div class="app-title">我的作业</div>
+	</div>
+	<div class="app-content">
+		<ul class="app-list">
+		</ul>
+	</div>
+</div>
+<div id="achievements" class="app-page" data-page="achievements">
+	<div class="app-topbar">
+		<div class="app-button left" data-back data-autotitle></div>
+		<div class="app-title">学习成果</div>
+	</div>
+	<div class="app-content">
+		<ul class="app-list">
+		</ul>
+	</div>
+</div>
+<div class="app-page messages" data-page="messages">
+	<div class="app-topbar">
+		<div class="app-button left" data-back data-autotitle></div>
+		<div class="app-title">站内消息</div>
+	</div>
+	<div class="app-content">
+		<ul class="app-list">
+		</ul>
+	</div>
+</div>
+<div class="app-page" data-page="profile">
+	<div class="app-topbar">
+		<div class="app-button left" data-back data-autotitle></div>
+		<div class="app-title">个人资料</div>
+	</div>
+	<div class="app-content">
+		<div class="mycourse_con">
+			<ul>
+				<p class="l45">
+					<img src="img/img.jpg" />
+					<strong>刘大海</strong><br />
+					<span>liudahai@guoshi.com</span>
+				</p>
+			</ul>
+		</div>
+		<div class="homework_teach"><strong>个人简历</strong></div>
+		<div class="homework_con m30">
+			<ul>
+				<p class="p50">
+				</p>
+				<!-- p><input type="button" class="uphomework" value="退出" /></p -->
+			</ul>
+		</div>
+		<div class="homework_teach"><strong><a href="http://114.255.110.150/logout">退出登录</a></strong></div>
+		<ul class="app-list">
+			<li class="ti"></li><li class="ti"></li><li class="ti"></li>
+		</ul>
+	</div>
+
+</div>
+<!-- level-1 end-->
+
+<!-- course-1 -->
+<div class="app-page" data-page="course">
+	<div class="app-topbar">
+		<div class="app-button left" data-back data-autotitle></div>
+		<div class="app-title">xx课程</div>
+	</div>
+	<div class="app-content">
+		<div class="mycourse_con">
+			<ul>
+				<p></p>
+				<p>课程代码 ： 01718330X</p>
+				<p>开课时间 ： 2014-05-31</p>
+				<p>结束时间 ： 2014-06-31</p>
+			</ul>
+		</div>		
+		<ul class="app-list">
+			<li class="app-button" data-target="clazz" api="1">开始学习</li>
+		</ul>
+	</div>
+</div>
+<!-- course-1 end -->
+<!-- course-2 -->
+<div class="app-page" data-page="clazz">
+	<div class="app-topbar">
+		<div class="app-button left" data-back data-autotitle></div>
+		<div class="app-title">第x课</div>
+	</div>
+	<div class="app-content">
+		<ul class="app-list">
+		</ul>
+	</div>
+</div>
+<!-- course-2 end -->
+<!-- course-3 -->
+<div class="app-page" data-page="point">
+	<div class="app-topbar">
+		<div class="app-button left" data-back data-autotitle></div>
+		<div class="app-title">第x课</div>
+	</div>
+	<div class="app-content">
+	<h2 class="app-cur-title">第一课 新时代的语言</h2>
+    <p class="app-cur-text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2012年及未来几年语言服务行业的发展趋势
+	不管我们是否做好准备，2012年已经来临。今年全球经济形势将是严峻的，很多行业都面临着前所未有的困难。以翻译和本地化服务为主的语言服务行业会怎样呢？语言服务行业将有哪些值得关注的发展趋势呢？通过在语言服务行业多年的实践和观察，结合行业相关研究机构的研究成果，笔者认为在未来几年内，语言服务行业将有以下十大发展趋势值得我们关注。<br>
+	一、 语言服务行业的市场整体仍将保持较快速度发展<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;著名的语言服务行业市场调查公司 Common Sense Advisory （以下简称CSA）的最新调查显示，在连续多年保持了10%以上的年增长率之后， 2010-2011年全球语言服务行业市场总规模的增长率只有7.41%，市场规模达到314.38亿美元（CSA，2011：11-13）。但是，针对语言服务行业的主要需求或发包行业的调查显示，关键的几个垂直行业都在增加语言服务方面的采购投入。制造业、金融保险和医疗卫生领域共增长了25%。软件和相关服务领域增长了18%。美国语言服务行业协会（Association of Language Companies, ALC）2011年发布的调查报告显示，接受调查的美国公司营业收入比上年度平均增长12.4% (ALC，2011：15) 。<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;所以，尽管全球经济形势很严峻，语言服务行业仍将能够保持较快速度发展。CSA预测，到2014年，全球语言服务市场规模将达到389亿美元。<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;值得一提的是，技术型翻译公司的业务增长率远远超过非技术型的公司。在2012年和未来的几年内，这个趋势仍将持续。<br>
+	二、语言服务行业的市场需求将发生显著的结构性变化<br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;语言服务行业市场规模增长的同时，市场结构也在发生着显著的变化。以下这些变化值得关注：
+	<br></p>
+	
+		<ul class="app-list">
+			<li class="ti"></li>
+			<li class="ti"></li>
+			<li class="ti"></li>
+		</ul>
+	</div>
+</div>
+<!-- course-3 end -->
+<!-- homework-1 -->
+<div class="app-page" data-page="homework">
+	<div class="app-topbar">
+		<div class="app-button left" data-back data-autotitle></div>
+		<div class="app-title">我的作业</div>
+	</div>
+	<div class="app-content">
+		<ul class="app-list">
+			<!--li>总分：100分                                 截止时间： 2014-06-31</li>
+			<li>提交方式： 文本框输入，网站URL，文件上传（PC端）</li>
+			<li>计算机的工作原理是什么？请在截止时间之前提交</li>
+			<li class="app-button" data-target="documentwork">1. 文本框提交作业<img class="app-arrow" src="img/arrow_03.gif"  alt=""/></li>
+			<li class="app-button" data-target="urlwork">2. 网页URL提交作业<img class="app-arrow" src="img/arrow_03.gif"  alt=""/></li-->
+
+			
+		</ul>
+	</div>
+</div>
+<div class="app-page" data-page="teacherwork">
+	<div class="app-topbar">
+		<div class="app-button left" data-back data-autotitle></div>
+		<div class="app-title">学员作业列表</div>
+	</div>
+	<div class="app-content">
+		<ul class="app-list">
+			<li>提交1</li>
+		</ul>
+	</div>
+</div>
+<div class="app-page" data-page="teacherworkdetail">
+	<div class="app-topbar">
+		<div class="app-button left" data-back data-autotitle></div>
+		<div class="app-title">学员作业</div>
+	</div>
+	<div class="app-content">
+		<ul class="app-list">
+			<li>作业1</li>
+		</ul>
+	</div>
+</div>
+<!-- homework-2 end -->
+<!-- homework-2 end -->
+<div class="app-page" data-page="documentwork">
+	<div class="app-topbar">
+		<div class="app-button left" data-back data-autotitle></div>
+		<div class="app-title">文本框提交作业</div>
+	</div>
+	<div class="app-content">
+    	<div class="app-mar">
+		<p class="homework_con2"><input type="button" class="uphomework" value="文本提交" /></p>
+        </div>
+	</div>
+</div>
+<!--
+<div class="app-page" data-page="urlwork">
+	<div class="app-topbar">
+		<div class="app-button left" data-back data-autotitle></div>
+		<div class="app-title">网页URL提交作业</div>
+	</div>
+	<div class="app-content">
+		<div class="app-mar">
+			<p class="homework_con2"><input type="button" class="uphomework" value="文本提交" /></p>
+        </div>
+	</div>
+</div>
+ homework-2 end -->
+<!-- message-1 -->
+<div class="app-page" data-page="message">
+	<div class="app-topbar">
+		<div class="app-button left" data-back data-autotitle></div>
+		<div class="app-title">信息列表</div>
+	</div>
+	<div class="app-content">
+		<ul class="app-list">
+		</ul>
+	</div>
+</div>
+<!-- message-1 end -->
+<!-- message-2 -->
+<div class="app-page" data-page="sendmessage">
+	<div class="app-topbar">
+		<div class="app-button left" data-back data-autotitle></div>
+		<div class="app-title">向xx发送信息</div>
+	</div>
+	<div class="app-content">
+		<ul class="app-list">
+			<li><span>请输入本文</span><textarea id="content" class="app-input">
+				
+			</textarea></li>
+			<li id="commit">发送</li>
+		</ul>
+	</div>
+</div>
+<!-- message-2 end -->
+<footer>
+	<div class="app-btmbar">
+   	  	<a class="app-course active"><span class="course-icon"></span>课程</a>
+        <a class="app-operation"><span class="operation-icon"></span>作业</a>
+        <a class="app-achievement"><span class="achievement-icon"></span>成果</a>
+        <a class="app-infor"><span class="infor-icon"></span>消息</a>
+        <a class="app-per-infor"><span class="per-infor-icon"></span>资料</a>
+    </div>
+</footer>
+<script src="js/zepto.min.js"></script>
+<script src="js/app.respond.js"></script>
+<script src="js/app.min.js"></script>
+<script src="js/myapp2.js"></script>
+<script>
+$(function(){
+	var moduleNow = 0;
+	$("footer a").eq(0).bind("click",function(){//alert(0);
+		if(moduleNow!=0){
+			$("footer a").eq(0).addClass("active");
+			$("footer a").eq(moduleNow).removeClass("active");
+			moduleNow = 0;
+		}
+		App.load("courses");
+		//window.user = {"type":0}
+		//window.ajaxhttp = "http://0.0.0.0:3000";
+		//getUserType();		
+	});
+	$("footer a").eq(1).bind("click",function(){//alert(1);
+		if(moduleNow!=1){
+			$("footer a").eq(1).addClass("active");
+			$("footer a").eq(moduleNow).removeClass("active");
+			moduleNow = 1;
+		}	
+		//App.load("");
+		App.load(""+window.homeworkType+"");
+	});
+	$("footer a").eq(2).bind("click",function(){//alert(2);
+		if(moduleNow!=2){
+			$("footer a").eq(2).addClass("active");
+			$("footer a").eq(moduleNow).removeClass("active");
+			moduleNow = 2;
+		}	
+		App.load("achievements");
+	});
+	$("footer a").eq(3).bind("click",function(){//alert(3);
+		if(moduleNow!=3){
+			$("footer a").eq(3).addClass("active");
+			$("footer a").eq(moduleNow).removeClass("active");
+			moduleNow = 3;
+		}	
+		//App.load("messages");
+		omyajax.getMessages(window.ajaxhttp, omyajax);
+	});
+	$("footer a").eq(4).bind("click",function(){//alert(4);
+		if(moduleNow!=4){
+			$("footer a").eq(4).addClass("active");
+			$("footer a").eq(moduleNow).removeClass("active");
+			moduleNow = 4;
+		}	
+		getUserInfo();
+		//App.load("");
+	});
+});
+</script>
+</body>
+</html>
