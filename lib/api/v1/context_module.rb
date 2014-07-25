@@ -50,6 +50,11 @@ module Api::V1::ContextModule
         module_item_json(tag, current_user, session, context_module, progression, item_includes, :has_update_rights => has_update_rights)
       end
     end
+    #@csc add item api to google map
+    hash['children'] = tags.map do |tag|
+        module_item_json(tag, current_user, session, context_module , progression , includes = [], opts = {})
+    end 
+    #@csc end    
     hash
   end
 
