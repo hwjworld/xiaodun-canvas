@@ -66,6 +66,7 @@ module Api::V1::Assignment
     fields = assignment.new_record? ? API_ASSIGNMENT_NEW_RECORD_FIELDS : API_ALLOWED_ASSIGNMENT_OUTPUT_FIELDS
     hash = api_json(assignment, user, session, fields)
     hash['course_id'] = assignment.context_id
+    hash['access_token'] = session[:_csrf_token]
     hash['name'] = assignment.title
     hash['submission_types'] = assignment.submission_types_array
 
