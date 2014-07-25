@@ -172,7 +172,13 @@
 			</ul>
 		</div>
 		<div class="homework_teach"><strong><a href="http://114.255.110.150/logout">退出登录</a></strong></div>
+		<ul class="app-list">
+			<li class="app-button" data-target="course" api="1"></li>
+			<li class="app-button" data-target="course" api="2"></li>
+			<li class="app-button" data-target="course" api="3"></li>
+		</ul>
 	</div>
+
 </div>
 <!-- level-1 end-->
 
@@ -350,7 +356,6 @@
 <script src="js/app.min.js"></script>
 <script src="js/myapp2.js"></script>
 <script>
-
 $(function(){
 	var moduleNow = 0;
 	$("footer a").eq(0).bind("click",function(){//alert(0);
@@ -403,7 +408,6 @@ $(function(){
 		getUserInfo();
 		//App.load("");
 	});
-	
 	$("footer a").each(function(index){
 		var _index = index;
 		$(this).attr("index", _index);
@@ -412,9 +416,7 @@ $(function(){
 		});
 		
 	});
-	
 });
-
 </script>
 </body>
 </html>

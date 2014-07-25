@@ -23,13 +23,13 @@ var omyajax = {
 					
 			},
 			suc = function(data){
-				alert("success!"+data);
+				//alert("success!"+data);
 			},
 			err = function(){
 				//alert("error!");
 			},
 			callback = function(){
-				alert("finish!");
+				//alert("finish!");
 			};
 			
 		//返回一个长度为一的数组
@@ -237,7 +237,7 @@ var omyajax = {
 				//alert("error!");
 			},
 			callback = function(){
-				alert("finish!");
+				//alert("finish!");
 			};
 		//alert(url);	
 		//返回一个长度为一的数组
@@ -393,7 +393,6 @@ var omyajax = {
 				var json = _this.sliceJSON2(data);
 				//alert(json);
 				//rex iframe
-
 				obj.after(json.body);
 				//alert("success!");
 			},
@@ -914,7 +913,7 @@ var omyajax = {
 		}else{
 			json = JSON.parse(str);
 			alert("请重新登录!");
-			window.location.href = "114.255.110.150/login";
+			window.location.href = "http://114.255.110.150/login";
 		}
 		//alert(json[0].id);
 		//return json;
@@ -932,7 +931,6 @@ var omyajax = {
 	}
 	
 };
-
 
 //omyajax.alt();
 //omyajax.getTodoList("11", omyajax);
@@ -1119,6 +1117,7 @@ PointController.prototype.onShow = function (){
 /* HomeworksController */
 App.controller('homeworks', HomeworksController);
 function HomeworksController(page){
+	$(page).find(".app-topbar .left").hide();
 	//alert("homeworks");
 	//omyajax.
 	var appList = $(page).find('.app-list').eq(0);
@@ -1128,10 +1127,11 @@ function HomeworksController(page){
 		html = "<label clicked='0' index='"+i+"' id='"+window.courseInfos[i].id+"'>"+window.courseInfos[i].name+"<\/label>";//
 		//alert(window.courseInfos[i].assignments.length)//console.log(1);
 		appList.append(html);
-		html="";
-				
+		html="";		
 	}
-	appList.append("<li class='app-button'><li class='app-button'></li><li class='app-button'></li>");
+
+	//appList.append("<li class='app-button'><li class='app-button'></li><li class='app-button'></li>");
+
 	appList.find('label').each(function(index){
 		var _i = index;
 		appList.find('label').eq(_i).bind('click', function (){
@@ -1232,7 +1232,7 @@ function THomeworksController(page){
 		appList.append(html);html="";
 				
 	}
-	appList.append("<li class='app-button'><li class='app-button'></li><li class='app-button'></li>");
+	//appList.append("<li class='app-button'><li class='app-button'></li><li class='app-button'></li>");
 	appList.find('label').each(function(index){
 		var _i = index;
 		appList.find('label').eq(_i).bind('click', function (){
@@ -1369,6 +1369,7 @@ TeacherworkDetailController.prototype.onShow = function () {
 /* AchievementsController */
 App.controller('achievements', AchievementsController);
 function AchievementsController(page){
+	$(page).find(".app-topbar .left").hide();
 	//alert("achievements");
 	//this.achievements = {};
 	var appList = $(page).find('.app-list').eq(0);
@@ -1379,7 +1380,9 @@ function AchievementsController(page){
 		//alert(window.courseInfos[i].assignments.length)//console.log(1);
 		appList.append(html);html="";
 	}
+
 	appList.append("<li class='app-button'><li class='app-button'></li><li class='app-button'></li>");
+
 	appList.find('label').each(function(index){
 		var _i = index;
 		appList.find('label').eq(_i).bind('click', function (){
@@ -1444,6 +1447,7 @@ AchievementsController.prototype.onShow = function () {
 /* MessagesController */
 App.controller('messages', MessagesController);
 function MessagesController(page){
+	$(page).find(".app-topbar .left").hide();
 	//alert("messages");
 	//omyajax.
 	this.messages = window.messages;
@@ -1464,6 +1468,8 @@ function MessagesController(page){
 		omyajax.setMessageId($(this).attr("id"));
 		omyajax.getSBsMessagesById(window.ajaxhttp, omyajax);
 	});
+
+	appList.append("<li class='app-button'><li class='app-button'></li><li class='app-button'></li>");
 	//this.onShow();	
 	//console.log("MessagesController done!");
 };
@@ -1514,7 +1520,9 @@ function SBsMessageController(page){
 		window.sentToPersonId = id;//alert(id);
 		App.load("sendmessage");
 	});
+
 	appList.append("<li class='app-button'><li class='app-button'></li><li class='app-button'></li>");
+
 	//this.onShow();	
 	//console.log("MessagesController done!");
 };
@@ -1547,6 +1555,7 @@ function SendMessageController(page){
 /* InfosController */
 App.controller('profile', ProfileController);
 function ProfileController(page){
+	$(page).find(".app-topbar .left").hide();
 	//alert("info"); 
 	// /api/v1/users/:user_id/profile
 	if(!window.profile) window.profile = {};
