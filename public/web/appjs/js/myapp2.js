@@ -872,8 +872,8 @@ var omyajax = {
 				}else if(oAjax.status==401){
 					//alert('成功了：'+oAjax.responseText);
 					alert('请重新登录!');
-					//window.location.href = "http://114.255.110.150/login";
-					//fnSucc(oAjax.responseText);
+					window.location.href = "http://114.255.110.150/login";
+					fnSucc(oAjax.responseText);
 				}else{
 					/*
 					alert('请重新登录!');
