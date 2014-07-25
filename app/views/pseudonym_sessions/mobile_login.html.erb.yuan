@@ -1,4 +1,5 @@
 <%= form_for :pseudonym_session, :url => login_path, :html => {:id => "login_form", :class => "front face", :novalidate => 'novalidate'} do |f| %>
+
   <input class="input-block-level" <%= 'type=email' if @login_handle_is_email %> name="pseudonym_session[unique_id]" value="<%= params[:pseudonym_session].try(:[], :unique_id) %>" placeholder="<%= @login_handle_name %>">
   <input class="input-block-level" type="password" name="pseudonym_session[password]" placeholder="<%= t :password, "Password" %>">
   <% if request.post? && flash[:error] %>
