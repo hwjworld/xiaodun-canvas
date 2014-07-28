@@ -872,12 +872,12 @@ var omyajax = {
 				}else if(oAjax.status==401){
 					//alert('成功了：'+oAjax.responseText);
 					alert('请重新登录!');
-					window.location.href = "http://114.255.110.150/login";
-					fnSucc(oAjax.responseText);
+					//window.location.href = "http://0.0.0.0:3000/login";
+					//fnSucc(oAjax.responseText);
 				}else{
 					/*
 					alert('请重新登录!');
-					window.location.href = "http://114.255.110.150/login";
+					window.location.href = "http://0.0.0.0:3000/login";
 					if(fnFaild){
 						fnFaild();
 					}
@@ -920,7 +920,7 @@ var omyajax = {
 		}else{
 			//json = JSON.parse(str);
 			//alert("请重新登录!");
-			//window.location.href = "http://114.255.110.150/login";
+			//window.location.href = "http://0.0.0.0:3000/login";
 		}
 		//alert(json[0].id);
 		//return json;
@@ -946,7 +946,7 @@ App.controller('home', HomeController);
 function HomeController(page){
 	// get user info
 	window.user = {"type":0}
-	window.ajaxhttp = "http://114.255.110.150";
+	window.ajaxhttp = "http://0.0.0.0:3000";
 	getUserType();
 	$(page).find('.app-button').eq(0)
 		.on('click', function () {
