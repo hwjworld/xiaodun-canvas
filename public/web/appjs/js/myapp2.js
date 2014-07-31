@@ -548,7 +548,7 @@ var omyajax = {
 				//insert the infos into achievements page
 				var html = "";
 				for(var j=0;j<json.length;j++){
-					if(json.[j].published){
+					if(json[j].published){
 						html += "<li id='"+json[j].id+"' liindx = '"+_i+"'><h2>"+json[j].title+"<\/h2>"+
 							"<p><span class='app-f'>类型：计分测验<\/span>"+
 							"<span class='app-f'>总分："+json[j].points_possible+"分<\/span>"+
