@@ -540,8 +540,7 @@ var omyajax = {
 		var url = ajaxhttp + "/api/v1/courses/"+courseId+"/quizzes",
 			type = "",
 			dataType = "",
-			data = {
-			},
+			data = {},
 			suc = function(data){
 				var json = _this.sliceJSON(data);
 				//alert(json);
@@ -549,11 +548,14 @@ var omyajax = {
 				//insert the infos into achievements page
 				var html = "";
 				for(var j=0;j<json.length;j++){
-					html += "<li id='"+json[j].id+"' liindx = '"+_i+"'><h2>"+json[j].title+"<\/h2>"+
-						"<p><span class='app-f'>类型：计分测验<\/span>"+
-						"<span class='app-f'>总分："+json[j].points_possible+"分<\/span>"+
-						"<span class='app-f'>得分：0分<\/span>"+
-						"<\/p><\/li>";
+					if(json.[j].published){
+						html += "<li id='"+json[j].id+"' liindx = '"+_i+"'><h2>"+json[j].title+"<\/h2>"+
+							"<p><span class='app-f'>类型：计分测验<\/span>"+
+							"<span class='app-f'>总分："+json[j].points_possible+"分<\/span>"+
+							"<span class='app-f'>得分：0分<\/span>"+
+							"<\/p><\/li>";
+					}
+
 				}
 				appList.after(html);html = "";
 				//alert(obj.find("li").length);
@@ -914,7 +916,7 @@ var omyajax = {
 		//alert(1);  {"status":"not_found","message":"The specified resource does not exist."}
 		var json;
 		if(str.indexOf(";")>0){
-			var _str = str.split(";"); 
+			var _str = str.split("hile(1);"); 
 			json = eval('('+ _str[1]+ ')');
 			return json;
 		}else{
@@ -1012,6 +1014,7 @@ function CoursesController(page) {
 	// get user info
 	window.user = {"type":0}
 	window.ajaxhttp = "http://114.255.110.150";
+	//window.ajaxhttp = "http://0.0.0.0:3000";
 	getUserType($(page));	
 	//this.courses = [{"id":0},{"id":1}];alert(this.courses.length);
 	//this.courses = window.courses;//omyajax.getCoursesList(window.ajaxhttp, omyajax);
