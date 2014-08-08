@@ -786,7 +786,7 @@ function CoursesController(page) {
 	window.ajaxhttp = "http://114.255.110.150";
 	//window.ajaxhttp = "http://0.0.0.0:3000";
 	omyajax.getUserIdByAjax(window.ajaxhttp, omyajax);
-	//getUserType($(page));	
+	getUserType($(page));	
 };
 CoursesController.prototype.onShow = function (){
 	//console.log('CoursesController onShow');

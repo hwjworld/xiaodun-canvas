@@ -15,6 +15,12 @@
 # You should have received a copy of the GNU Affero General Public License along
 # with this program. If not, see <http://www.gnu.org/licenses/>.
 #
+require 'net/http'
+require 'uri'
+require "openssl"
+require "base64"
+require 'nokogiri'
+require 'active_support/core_ext/hash'
 
 class PseudonymSessionsController < ApplicationController
   protect_from_forgery :except => [:create, :destroy, :saml_consume, :oauth2_token, :oauth2_logout, :cas_logout]
@@ -698,4 +704,116 @@ class PseudonymSessionsController < ApplicationController
 
     session.delete(:oauth2)
   end
+
+    def guoshi_login
+
+    puts "================passport============="
+    passport = "wdWHlhepmVOMhqb9YWkNWEJSb6AtQ01ZUtLv1nOYuvuAREJ0RU3tDB4o4TNBJhzICrkh0Uu7y6vNHuCKOPFuKs3oUFuZg91vbc7O/JzhjSzIWLYYrHgDYxnEkFPdiegnQcRid3dZMoipGmzDL254Dhx4MAAz9waY42QAwCedfOU+zCLcYwVymZVZhaAm5UeWddxEPq0Q391QL1sJv9dBWd3VLuRwe69gH5YtPu910SgR8c2rFZTH46Zhbyhbow8htD3H8cLbFoM="
+    puts passport
+    puts "================passport============="  	
+    puts "====params[:pseudonym_session]======"
+    puts params
+    def des_encrypt(str)
+        cipher = OpenSSL::Cipher::Cipher.new("des-ecb")
+
+        cipher.encrypt
+        cipher.key = 'SSOFOUNDER'
+        # cipher.random_iv
+        # cipher.iv = IV
+
+        en_str = cipher.update(str)
+        en_str << cipher.final
+
+        return Base64.encode64(en_str)
+    end
+
+    def des_decrypt(enscrypt_str)
+        cipher = OpenSSL::Cipher::Cipher.new("des-ecb")
+
+        cipher.decrypt
+        cipher.key = 'SSOFOUNDER'
+        # cipher.random_iv
+        # cipher.iv = IV
+
+        cipher.update(Base64.decode64(enscrypt_str)) + cipher.final
+        # des_str << cipher.final
+    end
+
+    if !passport.nil?
+    	passport_des = des_decrypt(passport)
+    	de_passport_arr= passport_des.split("#")
+    	username, certificate = de_passport_arr[0], de_passport_arr[3]
+
+        uri = URI('http://passport.guoshi.com/mp/proxyValidateuser?input=' + certificate)
+        info = Hash.new()
+        Net::HTTP.start(uri.host, uri.port) do |http|
+           request = Net::HTTP::Get.new uri.request_uri
+           response = http.request request # Net::HTTPResponse object
+           info = response.body
+
+           de_info = des_decrypt(info)
+
+           doc = Nokogiri::XML(de_info)
+           info = Hash.from_xml(doc.to_s)    # need require 'active_support/core_ext/hash'
+        end     
+    end
+    #des_email = info['SSOUSER']['email']
+    des_password = info['SSOUSER']['password']
+    puts "====des_password===fb8d8526b856fba2bd6c06fc7c772dfa=="
+    #des_username = info['SSOUSER']['username']
+    unique_id = "1000@888.com"
+    username = "1000"
+    @ps = Pseudonym.custom_find_by_unique_id(unique_id)
+
+    if @ps.nil?
+    	puts "==unique_id is null===="
+    	us = User.new
+        us.name = username
+        us.workflow_state = "registered"
+        us.save
+        user_id = us.id
+        @user = us
+
+        p = Pseudonym.new
+        p.unique_id = unique_id
+        p.user_id = user_id
+        p.save
+
+        cs = CommunicationChannel.new
+        cs.user_id = user_id
+        cs.path = unique_id
+        cs.workflow_state = "active"
+        cs.save
+
+        @pseudonym = Pseudonym.find_by_id(p.id)
+        @cc = @pseudonym.user.communication_channels.find_by_confirmation_code(cs.confirmation_code)
+        @pseudonym.require_password = true
+        @pseudonym.password = des_password
+        @pseudonym.password_confirmation = des_password
+        @pseudonym.save
+          
+        @cc.set_confirmation_code(true)
+        @cc.confirm
+        @cc.save
+        @pseudonym.user.register
+          
+        @pseudonym_session = PseudonymSession.new(@pseudonym, true)
+        successful_login(@user, @pseudonym)
+    else
+        @user = User.find_by_id(@ps.user_id)
+        @pseudonym_session = PseudonymSession.new(@ps, true)
+        @pseudonym_session.remote_ip = request.remote_ip
+        found = @pseudonym_session.save
+        if found
+          if mobile_device?
+            successful_login1(@user, @ps)
+          else
+            successful_login(@user, @ps)
+          end
+        else
+          unsuccessful_login t('errors.invalid_credentials', "Incorrect username and/or password")
+        end
+    end       	
+  end
+
 end
