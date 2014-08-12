@@ -174,14 +174,121 @@ var omyajax = {
 	getCourseById: function (ajaxhttp, _this){
 		console.log("getCourseList");
 		var courseId = _this.getClickedCourseId();//_this.getCourseId();
-		var url = ajaxhttp + "/api/v1/courses/"+courseId,
+		var url = ajaxhttp + "/api/v1/courses/"+courseId+"?include[]=term‍",
 			type = "get",
 			dataType = "json",
 			data = { },
 			suc = function(data){
 				var json = _this.sliceJSON(data);
 				window.course = json;
-				App.load('course');				
+				var isGood = true;
+				if(json.term‍){
+					var date = new Date();
+					if(json.term‍.start_at){
+						var startAt = json.term‍.start_at;
+						var startAtDate = startAt.split("T")[0].split("-");
+						var startAtYear = parseInt(startAtDate[0], 10);
+						var startAtMonth = parseInt(startAtDate[1], 10);
+						var startAtDay = parseInt(startAtDate[2], 10);
+
+						startAtDate = startAt.split("T")[1].split("Z")[0].split(":");
+						var startHour = parseInt(startAtDate[0], 10);
+						var startMin = parseInt(startAtDate[1], 10);
+						var startSec = parseInt(startAtDate[2], 10);
+
+						if(startAtYear>date.getFullYear()){
+							isGood = false;
+							alert("课程未开始!");
+						}else if(startAtYear==date.getFullYear()){
+							if(startAtMonth>date.getMonth()+1){
+								isGood = false;
+								alert("课程未开始!");
+							}else if(startAtMonth==date.getMonth()+1){
+								if(startAtDay>date.getDate()){
+									isGood = false;
+									alert("课程未开始!");
+								}
+
+								else if(startAtDay==date.getDate()){
+									if(startHour>date.getHours()){
+										isGood = false;
+										alert("课程未开始!");
+									}
+									else if(startHour==date.getHours()){
+										if(startMin>date.getMinutes()){
+											isGood = false;
+											alert("课程未开始!");
+										}
+										else if(startMin==date.getMinutes()){
+											if(startSec>date.getSeconds()){
+												isGood = false;
+												alert("课程未开始!");
+											}
+											else if(startSec==date.getSeconds()){
+												isGood = false;
+												alert("课程未开始!");
+											}
+										}
+									}
+								}
+							}
+						}
+
+					}else if(json.term‍.end_at){
+						var endAt = json.term‍.end_at;
+						var endAtDate = endAt.split("T")[0].split("-");
+						var endAtYear = parseInt(endAtDate[0], 10);
+						var endAtMonth = parseInt(endAtDate[1], 10);
+						var endAtDay = parseInt(endAtDate[2], 10);
+
+						endAtDate = endAt.split("T")[1].split("Z")[0].split(":");
+						var endHour = parseInt(endAtDate[0], 10);
+						var endtMin = parseInt(endAtDate[1], 10);
+						var endSec = parseInt(endAtDate[2], 10);
+
+						if(endAtYear<date.getFullYear()){
+							isGood = false;
+							alert("课程已结束!");
+						}else if(endAtYear==date.getFullYear()){
+							if(endAtMonth<date.getMonth()+1){
+								isGood = false;
+								alert("课程已结束!");
+							}else if(endAtMonth==date.getMonth()+1){
+								if(endAtDay<date.getDate()){
+									isGood = false;
+									alert("课程已结束!");
+								}
+
+								else if(endAtDay==date.getDate()){
+									if(endHour<date.getHours()){
+										isGood = false;
+										alert("课程已结束!");
+									}
+									else if(endHour==date.getHours()){
+										if(endtMin<date.getMinutes()){
+											isGood = false;
+											alert("课程已结束!");
+										}
+										else if(endtMin==date.getMinutes()){
+											if(endSec<date.getSeconds()){
+												isGood = false;
+												alert("课程已结束!");
+											}
+											else if(endSec==date.getSeconds()){
+												isGood = false;
+												alert("课程已结束!");
+											}
+										}
+									}
+								}
+
+							}
+						}
+
+					}
+				}
+				if(isGood){App.load('course');}
+								
 				//alert("success!");
 			},
 			err = function(){ },
