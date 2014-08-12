@@ -16,7 +16,8 @@ var omyajax = {
 			},
 			suc = function(data){
 				var json = _this.sliceJSON(data);
-				window.course = json;	
+				window.course = json;
+				//alert(json);
 				_this.writeTitle(json);
 				//alert(JSON.stringify(json));	
 				//alert("success!");
@@ -40,7 +41,7 @@ var omyajax = {
 				*/
 			},
 			err = function(){
-				alert("error!");
+				alert("getCourseById error!");
 			},
 			callback = function(){
 				//alert("finish!");
@@ -67,7 +68,7 @@ var omyajax = {
 				//alert("success!");
 			},
 			err = function(){
-				alert("error!");
+				alert("getClassesList error!");
 			},
 			callback = function(){
 				//alert("finish!");
@@ -142,7 +143,7 @@ var omyajax = {
 		//alert(json[0].id);
 		return json;
 	},
-	writeTitle: function(course){
+	writeTitle: function(course){ 
 		$("#course_title").empty().html("&nbsp;&nbsp;&nbsp;&nbsp;"+course.name);
 	}	
 };
@@ -202,6 +203,7 @@ function course2aMenu(course, _courseTitle){
 		oMenu.name = _courseTitle.name, 
 		oMenu._x = 0, 
 		oMenu._y = 0, 
+		oMenu.completed = true,
 		aMenu.push(oMenu);
 		/*
 		function recursion(objs, fid, fx, fy){
@@ -264,11 +266,13 @@ function course2aMenu(course, _courseTitle){
 				var _id = _fid.concat(index);//alert(_id);
 				oMenu._id = _id.join("-").substr(2);
 				oMenu.name = oMenu._id + _this.title&&_this.title||_this.name;//console.log(oMenu.name);
-
+				if(_this.requirements_met.length>0) oMenu.completed = true //_this.completion_requirement.completed;
+				else oMenu.completed = false
 				oMenu._y = 2;
 				oMenu._x = -i*2;
 				
 				aLine.push([new google.maps.LatLng(fx, fy), new google.maps.LatLng(oMenu._x, oMenu._y)]);
+
 				aMenu.push(oMenu);
 				console.log("id: "+ oMenu._id +" name: "+oMenu.name+"  layerX: "+layerX+"  _x: "+oMenu._x+" _y: "+oMenu._y);
 				
@@ -288,6 +292,7 @@ function course2aMenu(course, _courseTitle){
 						oMenu._x = -i*2;					
 						
 						aLine.push([new google.maps.LatLng(-i*2, 2), new google.maps.LatLng(oMenu._x, oMenu._y)]);
+
 						aMenu.push(oMenu);	
 						console.log("id: "+ oMenu._id +" name: "+oMenu.name+"  layerX: "+layerX+"  _x: "+oMenu._x+" _y: "+oMenu._y);
 					}
@@ -341,6 +346,7 @@ function drawMakers(aMakers, map){
 	};
 	delete _aMakers, _map;
 };
+
 function drawMultiMakers(aMakers, map, zoomLevel){
 	FastMarkerOverlayInit();
 	var _aMakers = aMakers, _map = map, fastMarkers = [];
@@ -356,22 +362,32 @@ function drawMultiMakers(aMakers, map, zoomLevel){
         html.push("<a href='", _aMakers[i]._id, "' data-id='", _aMakers[i]._title, "' class='",
             getDivClassNameByZoomLevel(zoomLevel), "-a' rel='popover' data-content='Practice exercises on:<P><strong>",
             _aMakers[i]._title, "</strong></p>'>");
-			if(zoomLevel==6){
-				iconClass = 6,iconUrl = "./img/star-30-1.png";
+			if(zoomLevel==5){
+				iconClass = 5;
+				if(_aMakers[i].completed) iconUrl = "./img/star-10-1.png"
+				else iconUrl = "./img/star-10.png"
+				//latlng = new google.maps.LatLng(_aMakers[i]._x+0.3, _aMakers[i]._y-0.3);console.log("LatLngX: "+_aMakers[i]._x+" LatLngY:"+_aMakers[i]._y);
+				//html.push("<div class='node-text'>", _aMakers[i].name, "</div>");
+				html.push("<img class='node-icon' src='", iconUrl, "'>");
+			}else if(zoomLevel==6){
+				iconClass = 6;
+				if(_aMakers[i].completed) iconUrl = "./img/star-30-1.png"
+				else iconUrl = "./img/star-30.png"
+				
+				//iconUrl = "./img/star-30-1.png";
 				//latlng = new google.maps.LatLng(_aMakers[i]._x+0.3, _aMakers[i]._y-0.3);console.log("LatLngX: "+_aMakers[i]._x+" LatLngY:"+_aMakers[i]._y);
 				html.push("<img class='node-icon' src='", iconUrl, "'>");
 				html.push("<div class='node-text'>", _aMakers[i]._id, _aMakers[i].name, "</div>");
 				//alert(_aMakers[i]._title);
 			}else if(zoomLevel==7){
-				iconClass = 7,iconUrl = "./img/star-50-1.png";
+				iconClass = 7;
+				if(_aMakers[i].completed) iconUrl = "./img/star-50-1.png"
+				else iconUrl = "./img/star-50.png"
+				
+				//iconUrl = "./img/star-50-1.png";
 				//latlng = new google.maps.LatLng(_aMakers[i]._x+0.3, _aMakers[i]._y-0.3);console.log("LatLngX: "+_aMakers[i]._x+" LatLngY:"+_aMakers[i]._y);
 				html.push("<img class='node-icon' src='", iconUrl, "'>");
 				html.push("<div class='node-text'>", _aMakers[i]._id, _aMakers[i].name, "</div>");
-			}else if(zoomLevel==5){
-				iconClass = 5,iconUrl = "./img/star-10-1.png";
-				//latlng = new google.maps.LatLng(_aMakers[i]._x+0.3, _aMakers[i]._y-0.3);console.log("LatLngX: "+_aMakers[i]._x+" LatLngY:"+_aMakers[i]._y);
-				//html.push("<div class='node-text'>", _aMakers[i].name, "</div>");
-				html.push("<img class='node-icon' src='", iconUrl, "'>");
 			}
         html.push("<div class='node-icon ", iconClass, "'></div>");
 		html.push("</a>");
@@ -384,6 +400,7 @@ function drawMultiMakers(aMakers, map, zoomLevel){
 	//alert(makers[0].divClassName);
 	delete _aMakers, _map;
 };
+
 function changeMakers(prezoomLevel) {
 	var _zoomLevel = map.getZoom();
     var i = markers.length;
@@ -394,6 +411,7 @@ function changeMakers(prezoomLevel) {
     };
 	zoomLevel = _zoomLevel;console.log(zoomLevel);
 };
+
 function getDivClassNameByZoomLevel(zoomLevel){
 	var divClassName;
 	switch(zoomLevel){
@@ -423,12 +441,13 @@ function checkCourse(){
 	};
 };
 
-var ss = window.location.href;alert(ss);
+var ss = window.location.href;
+//alert(ss);
 ss = ss.substr(ss.indexOf("=")+1,ss.length-1);
 window.courseId = ss;
 
 $(document).ready(function(){
-
+	//alert(1);
     var center = new google.maps.LatLng(0, 0);
 	var mapOptions = {
         zoom: 6,center: center,mapTypeControl: false,streetViewControl: false,//scrollwheel: false,
@@ -440,14 +459,15 @@ $(document).ready(function(){
     // add the new map types to map.mapTypes
     for (key in mapTypes) {map.mapTypes.set(key, new google.maps.ImageMapType(mapTypes[key]));};
 /*   */
-	
+	//alert(2);
 	//get makerdata
 	var courseId = window.courseId, 
-		ajaxhttp = "http://192.168.1.188",
+		//ajaxhttp = "http://192.168.1.188",
+		ajaxhttp = "http://114.255.110.150",
 		resource = {}, aMenu = [], aMakers = [];
 
 	getResourcesByAjax(courseId, ajaxhttp);
-
+	//alert(3);
 	var timer = setInterval(function(){
 		if(window.course&&window.classesList){
 			clearInterval(timer);
@@ -456,9 +476,14 @@ $(document).ready(function(){
 			aMenu = resource.aMenu;//alert(resource.aMenu);
 			createMenu(aMenu);
 
+
+			var a;
 			for(var i=0;i<aLine.length;i++){
 				//alert(i);
-				var a = new google.maps.Polyline({ path: aLine[i], geodesic: true, strokeColor: '#CCC', strokeOpacity: 1.0, strokeWeight: 2 });
+				//alert(aMenu[i].completed);
+				if(aMenu[i+1].completed==true) a = new google.maps.Polyline({ path: aLine[i], geodesic: true, strokeColor: '#135', strokeOpacity: 1.0, strokeWeight: 2 })
+				else a = new google.maps.Polyline({ path: aLine[i], geodesic: true, strokeColor: '#ccc', strokeOpacity: 1.0, strokeWeight: 2 })
+				
 				a.setMap(map);
 			};
 			map.setMapTypeId('sky');
@@ -470,7 +495,6 @@ $(document).ready(function(){
 			});					
 		};	
 	},1000);
-
 
 	//boardScroll();
 	// filter the points

@@ -33,6 +33,7 @@ module Api::V1::ContextModule
     if progression
       hash['state'] = progression.workflow_state
       hash['completed_at'] = progression.completed_at
+      hash['requirements_met'] = progression.requirements_met
     end
     has_update_rights = context_module.grants_right?(current_user, :update)
     hash['published'] = context_module.active? if has_update_rights

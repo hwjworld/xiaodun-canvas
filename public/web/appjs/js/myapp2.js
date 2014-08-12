@@ -134,10 +134,10 @@ var omyajax = {
 					_this.setCourseInfos(json);
 					window.user.type = json[0].enrollments[0].role;
 
-					if(window.user.type=="StudentEnrollment") window.homeworkType="homeworks"//$("#homeworkType").attr("data-target", "homeworks")
-					else if(window.user.type=="TeacherEnrollment") window.homeworkType="teacherhomeworks"//$("#homeworkType").attr("data-target", "teacherhomeworks")
-					else window.homeworkType="homeworks"//$("#homeworkType").attr("data-target", "homeworks")
-				
+					if(window.user.type=="StudentEnrollment") {window.homeworkType="homeworks";window.userType=0;}//$("#homeworkType").attr("data-target", "homeworks")
+					else if(window.user.type=="TeacherEnrollment") {window.homeworkType="teacherhomeworks";window.userType=1;}//$("#homeworkType").attr("data-target", "teacherhomeworks")
+					else {window.homeworkType="homeworks";window.userType=0;}//$("#homeworkType").attr("data-target", "homeworks")
+					//alert(window.userType);
 					var appList = obj.find('.app-list').eq(0);
 					appList.empty();//alert(2);
 					if(window.courses){
@@ -188,7 +188,6 @@ var omyajax = {
 			callback = function(){ };
 		_this.doAjax(url, suc, err, 10000);
 	},
-
 	/*
 	 *  GET	
 	 *  /api/v1/courses/:course_id/modules
@@ -223,7 +222,6 @@ var omyajax = {
 			callback = function(){ };
 		_this.doAjax(url, suc, err, 10000);
 	},
-
 	/*
 	 *  GET	
 	 *  /api/v1/courses/:course_id/modules/:module_id/items
@@ -275,7 +273,6 @@ var omyajax = {
 			callback = function(){ };
 		_this.doAjax(url, suc, err, 10000);
 	},
-
 	getItemsBody: function (_this, url, obj){
 		console.log("getCourseList");	
 		var type = "get",
@@ -435,7 +432,6 @@ var omyajax = {
 			callback = function(){ };
 		_this.doAjax(url, suc, err, 10000);
 	},
-
 	/*
 	 *  GET	
 	 *  /api/v1/outcomes/:id
@@ -453,7 +449,6 @@ var omyajax = {
 			callback = function(){ };
 		_this.doAjax(url, suc, err, 10000);
 	},
-
 	/*
 	 *  GET	
 	 *  /api/v1/courses/:course_id/quizzes/:quiz_id/submissions
@@ -566,7 +561,7 @@ var omyajax = {
 	 *  return json
 	 */
 	getAssignment: function (ajaxhttp, _this, courseId, id){
-		console.log("getTestInfo");
+		console.log("getAssignment");
 		//var courseId = _this.getCourseId();
 		//var id = window.id;
 		var url = ajaxhttp + "/api/v1/courses/"+courseId+"/assignments/"+id+"",
@@ -597,7 +592,7 @@ var omyajax = {
 	 *  return json
 	 */
 	getSubmissions: function (ajaxhttp, _this, courseId, id, obj){
-		console.log("getTestInfo");
+		console.log("getSubmissions");
 		//var courseId = _this.getCourseId();
 		//var id = window.id;
 		var url = ajaxhttp + "/api/v1/courses/"+courseId+"/assignments/"+id+"/submissions/",
@@ -627,7 +622,7 @@ var omyajax = {
 					//alert("userId: "+userId);
 					_this.getSubmission(window.ajaxhttp, _this, courseId, id, userId);
 				});
-				appList.append("<li class='ti'><li class='ti'></li><li class='ti'></li>");
+				obj.append("<li class='ti'><li class='ti'></li><li class='ti'></li>");
 				//alert("success!");
 			},
 			err = function(){ },
@@ -641,7 +636,7 @@ var omyajax = {
 	 *  return json
 	 */
 	getSubmission: function (ajaxhttp, _this, courseId, id, userId){
-		console.log("getTestInfo");
+		console.log("getSubmission");
 		//var courseId = _this.getCourseId();
 		//var id = window.id;
 		var url = ajaxhttp + "/api/v1/courses/"+courseId+"/assignments/"+id+"/submissions/"+userId,
@@ -669,7 +664,7 @@ var omyajax = {
 	 *  
 	 */
 	sendAssignmentById: function (ajaxhttp, _this, courseId, assignmentId, data){
-		console.log("getTestInfo");
+		console.log("sendAssignmentById");
 		//var courseId = _this.getCourseId();
 		//var id = window.id;
 		var url = ajaxhttp + "/api/v1/courses/"+courseId+"/assignments/"+assignmentId+"/submissions",
