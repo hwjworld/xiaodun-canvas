@@ -463,6 +463,7 @@ $(document).ready(function(){
 	//get makerdata
 	var courseId = window.courseId, 
 		//ajaxhttp = "http://192.168.1.188",
+		//ajaxhttp = "http://0.0.0.0:3000",
 		ajaxhttp = "http://114.255.110.150",
 		resource = {}, aMenu = [], aMakers = [];
 
