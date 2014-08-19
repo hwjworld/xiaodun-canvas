@@ -351,7 +351,7 @@ zh:
         view_messages: 查看通知
       admin_tools_cumb: 管理工具
       auth_logging_content_pane: 
-        auth_logging: 用户登录/登出活动
+        auth_logging: 用户登录/退出活动
       auth_logging_search_results: 
         activity: 活动
         date: 日期
@@ -2175,7 +2175,7 @@ zh:
       new_attendance_column: 新参与列
   auth_logging: 
     login: 登录
-    logout: 登出
+    logout: 退出
   bb_display: "Blackboard 学习"
   bb_file_description: "Blackboard 6/7/8/9 export .zip 文件"
   bb_name: "Blackboard 转换器"
@@ -2751,12 +2751,12 @@ zh:
   canvas_cartridge_name: "人人教人人学 Cartridge 导入器"
   canvas_revision_unknown: 未知
   cc: 
-    by: "CC Attribution"
-    by_nc: "CC Attribution Non-Commercial"
-    by_nc_nd: "CC Attribution Non-Commercial No Derivatives"
-    by_nc_sa: "CC Attribution Non-Commercial Share Alike"
-    by_nd: "CC Attribution No Derivatives"
-    by_sa: "CC Attribution Share Alike"
+    by: "创作共用署名"
+    by_nc: "创作共用署名-非商业性"
+    by_nc_nd: "创作共用署名-非商业性-禁止演绎"
+    by_nc_sa: "创作共用署名-非商业性-相同方式共享"
+    by_nd: "创作共用署名-禁止演绎"
+    by_sa: "创作共用署名-相同方式共享"
     private: 私有（版权保护）
     public_domain: 公共域
   change_points_possible_to_match_rubric_dialog: 
@@ -4711,6 +4711,8 @@ zh:
         assignments: 此视图显示本课程的**作业列表**，即将到来和近期的作业显示在顶部。
         confirm_unenroll: 是否确定要取消注册此课程?您将不再能够看到课程清单或与教师直接沟通，并且在您的通信流和通知中不再看到课程事件。
         custom_page: 您可以**设计自己的课程主页**，在其中包含您喜欢的任何链接、图像或富媒体。
+        modules: |-
+            你可以组织你的 **课程单元或班级**, 每个班级都有文件,作业,页面等等.  你也可以自定义模块的标准和条件,前提是模块解锁之前
         recent_activity_dashboard: "**最近活动仪表板**让参加者能看到此课程最近的谈话、公告、讨论和互动。它很类似于用户在第一次登录时看到的仪表板，但只显示此特定课程的内容。"
         syllabus: "**大纲视图**允许您编写有关课程期望的说明或通过链接、图像方式等介绍课程。还显示涵盖所有作业和课程事件的日历视图。"
       draft_state: 
@@ -9923,7 +9925,7 @@ zh:
       edit_criterion_rating_title: "编辑 \"%{description\" 标准等级"
       insert_criterion_rating: 插入标准等级
       insert_rating: 插入
-      points: 得分
+      points: 总分
       pts: 得分
       rating_description: 标准等级说明
     dont_import: 此小组不能导入。
@@ -12637,7 +12639,7 @@ zh:
       links: 
         inbox: 收件箱
         log_in: 登录
-        logout: 登出
+        logout: 退出
         settings: 设置
         sign_up_as_teacher: 作为教师注册
       masquerading: 
@@ -13115,7 +13117,7 @@ zh:
     institution_suspended: 
       body: "您学校的 人人教人人学 帐户已暂时挂起。请联系您的 人人教人人学 管理员。"
       links: 
-        logout: 登出
+        logout: 退出
         stop_masquerading: "[停止仿冒]"
       page_title: 机构已挂起
     links: 
