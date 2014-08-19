@@ -430,8 +430,8 @@ function getDivClassNameByZoomLevel(zoomLevel){
 			break;
 		default: divClassName = 'marker-middle';
 			break;
-	};
-	return divClassName;
+		};
+		return divClassName;
 };
 
 /* mysky.js */
