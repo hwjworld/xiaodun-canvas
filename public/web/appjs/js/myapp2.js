@@ -801,7 +801,7 @@ var omyajax = {
 				}else if(oAjax.status==401){
 					//alert('成功了：'+oAjax.responseText);
 					alert('请重新登录!');
-					window.location.href = "http://114.255.110.150/login";
+					//window.location.href = "http://0.0.0.0:3000/login";
 					//fnSucc(oAjax.responseText);
 				}else{
 					/*
@@ -884,9 +884,8 @@ function CoursesController(page) {
 
 	//omyajax.
 	// get user info
-	window.user = {"type":0} //
+	window.user = {"type":0} //window.ajaxhttp = "http://114.255.110.150";
 	window.ajaxhttp = "http://114.255.110.150";
-	//window.ajaxhttp = "http://0.0.0.0:3000";
 	omyajax.getUserIdByAjax(window.ajaxhttp, omyajax);
 	getUserType($(page));	
 };
@@ -1064,6 +1063,12 @@ function HomeworkController(page){
 	appList.append(html);html="";
 
 	$(page).find("#commit").bind("click", function(){
+		postHomework();
+		$(page).find("#commit").unbind().bind("click", function(){
+			alert("正在提交!");
+		});
+	});
+	function postHomework(){
 		var data = $("#text").val();
 		console.log("data:"+data);
 		//omyajax
@@ -1071,7 +1076,7 @@ function HomeworkController(page){
 		var assignmentId = omyajax.getClickedAssignmentId();
 		var url = window.ajaxhttp + "/api/v1/courses/"+courseId+"/assignments/"+assignmentId+"/submissions";
 		
-		alert(window.token);
+		//alert(window.token);
 		//a/pi/v1/courses/:course_id/assignments/:id
 		$.post(url, {
 				"comment[text_comment]": data,
@@ -1091,7 +1096,7 @@ function HomeworkController(page){
     		"media_recording" => ["media_comment_id", "media_comment_type"],
   		}
 		*/
-	});
+	}
 	appList.append("<li class='ti'><li class='ti'></li><li class='ti'></li>");	
 	//console.log("HomeworkController done!");
 };
