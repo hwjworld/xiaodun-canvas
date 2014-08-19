@@ -333,6 +333,13 @@ class ContextModule < ActiveRecord::Base
       added_item.indent = params[:indent] || 0
       added_item.workflow_state = workflow_state
       added_item.save
+ 
+      # add for google map api by csc
+      @context_module = @context.context_modules.not_deleted.find(added_item.context_module_id)
+      @context_module.completion_requirements << {:id=>added_item.id, :type=>"must_view", :min_score=>0, :max_score=>nil}
+      @context_module.save
+      # end
+
       added_item
     end
   end
