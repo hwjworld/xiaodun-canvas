@@ -283,7 +283,14 @@ function course2aMenu(course, _courseTitle){
 						var _this = _o[j],
 							oMenu = {},
 							index = parseInt(j)+1;//alert(_fid);
-						
+
+						//alert(_this.completion_requirement.length);
+                        if(_this.completion_requirement.completed){
+                        	alert("_this.completion_requirement.length: "+_this.completion_requirement+"_this.completion_requirement.completed: "+_this.completion_requirement.completed);
+                        
+                        	oMenu.completed = true //_this.completion_requirement.completed;
+                        }else {oMenu.completed = false}
+							
 						var _id = _fid.concat(index);//alert(_id);
 						oMenu._id = _id.join("-").substr(2);
 						oMenu.name = oMenu._id + _this.title&&_this.title||_this.name;//console.log(oMenu.name);
@@ -462,9 +469,9 @@ $(document).ready(function(){
 	//alert(2);
 	//get makerdata
 	var courseId = window.courseId, 
+	    ajaxhttp = "http://114.255.110.150",
 		//ajaxhttp = "http://192.168.1.188",
 		//ajaxhttp = "http://0.0.0.0:3000",
-		ajaxhttp = "http://114.255.110.150",
 		resource = {}, aMenu = [], aMakers = [];
 
 	getResourcesByAjax(courseId, ajaxhttp);
@@ -480,11 +487,13 @@ $(document).ready(function(){
 
 			var a;
 			for(var i=0;i<aLine.length;i++){
-				//alert(i);
-				//alert(aMenu[i].completed);
-				if(aMenu[i+1].completed==true) a = new google.maps.Polyline({ path: aLine[i], geodesic: true, strokeColor: '#135', strokeOpacity: 1.0, strokeWeight: 2 })
-				else a = new google.maps.Polyline({ path: aLine[i], geodesic: true, strokeColor: '#ccc', strokeOpacity: 1.0, strokeWeight: 2 })
-				
+				//alert(i); alert(aMenu[i+1].completed);
+
+				if(aMenu[i+1].completed) {
+					a = new google.maps.Polyline({ path: aLine[i], geodesic: true, strokeColor: '#135', strokeOpacity: 1.0, strokeWeight: 2 });
+				}else {
+					a = new google.maps.Polyline({ path: aLine[i], geodesic: true, strokeColor: '#ccc', strokeOpacity: 1.0, strokeWeight: 2 })
+				}
 				a.setMap(map);
 			};
 			map.setMapTypeId('sky');

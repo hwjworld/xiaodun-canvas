@@ -15,7 +15,7 @@
     <%= t('headings.course_modules', %{Course Modules}) %>
   </h2>
   <div class="context-modules-main-toolbar">
-    <button class="btn btn-small"><a href="/web/gs/indexc.html?id=<%= @context.id %>" target=_blank>星空图<%= @context.id %></a></button>
+    <button class="btn btn-small"><a href="/web/gs/indexc.html?id=<%= @context.id %>" target=_blank>星空图</a></button>
   </div>
   <% if can_do(@context, @current_user, :manage_content) %>
     <div class="context-modules-main-toolbar">
