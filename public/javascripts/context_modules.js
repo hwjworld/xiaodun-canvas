@@ -437,7 +437,7 @@ define([
         var $progression = $("#current_user_progression_list .progression_" + id);
         var data = $progression.getTemplateData({textValues: ['context_module_id', 'workflow_state', 'requirements_met', 'collapsed', 'current_position']});
         var $module = $("#context_module_" + data.context_module_id);
-        $module.toggleClass('completed', data.workflow_state == 'completed');
+        $module.toggleClass('已经完成', data.workflow_state == 'completed');
         var progression_state = data.workflow_state
         //if(progression_state == "unlocked" || progression_state == "started") { progression_state = "in progress"; }
         if(progression_state == "unlocked" || progression_state == "started") { progression_state = "进行中"; }

@@ -284,12 +284,12 @@ function course2aMenu(course, _courseTitle){
 							oMenu = {},
 							index = parseInt(j)+1;//alert(_fid);
 
-						//alert(_this.completion_requirement.length);
-                        if(_this.completion_requirement.completed){
-                        	alert("_this.completion_requirement.length: "+_this.completion_requirement+"_this.completion_requirement.completed: "+_this.completion_requirement.completed);
-                        
-                        	oMenu.completed = true //_this.completion_requirement.completed;
-                        }else {oMenu.completed = false}
+						if(_this.completion_requirement){
+                        	if(_this.completion_requirement.completed){
+                        		//alert("_this.completion_requirement.length: "+_this.completion_requirement+"_this.completion_requirement.completed: "+_this.completion_requirement.completed);
+                        		oMenu.completed = true //_this.completion_requirement.completed;
+                        	}else {oMenu.completed = false}
+						}else {oMenu.completed = false}
 							
 						var _id = _fid.concat(index);//alert(_id);
 						oMenu._id = _id.join("-").substr(2);
