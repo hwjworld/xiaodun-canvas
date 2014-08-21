@@ -270,7 +270,7 @@ function course2aMenu(course, _courseTitle){
 				else oMenu.completed = false
 				oMenu._y = 2;
 				oMenu._x = -i*2;
-				
+				oMenu.htmlUrl = "#";
 				aLine.push([new google.maps.LatLng(fx, fy), new google.maps.LatLng(oMenu._x, oMenu._y)]);
 
 				aMenu.push(oMenu);
@@ -284,15 +284,17 @@ function course2aMenu(course, _courseTitle){
 							oMenu = {},
 							index = parseInt(j)+1;//alert(_fid);
 
+						//alert(_this.completion_requirement.length);
 						if(_this.completion_requirement){
                         	if(_this.completion_requirement.completed){
                         		//alert("_this.completion_requirement.length: "+_this.completion_requirement+"_this.completion_requirement.completed: "+_this.completion_requirement.completed);
+                        
                         		oMenu.completed = true //_this.completion_requirement.completed;
                         	}else {oMenu.completed = false}
 						}else {oMenu.completed = false}
-							
 						var _id = _fid.concat(index);//alert(_id);
 						oMenu._id = _id.join("-").substr(2);
+						oMenu.htmlUrl = _this.html_url;
 						oMenu.name = oMenu._id + _this.title&&_this.title||_this.name;//console.log(oMenu.name);
 						
 						oMenu._y = j*2+4;
@@ -325,7 +327,7 @@ function createMenu(aMenu){
 	oUl.innerHTML = '';
 	if(a<1)return;
 	function board(obj){
-		var board = "<a href\='\#' name='"+obj._title + obj.name+"'><div class='progress-item'><img src\='./\img/\map_star30.png' class\='icon'><span>" 
+		var board = "<a href\="+_aMenu.htmlUrl+" name='"+obj._title + obj.name+"'><div class='progress-item'><img src\='./\img/\map_star30.png' class\='icon'><span>" 
 		//+ obj._title 
 		//+ obj._c + obj._s 
 		+ obj._id
@@ -366,7 +368,7 @@ function drawMultiMakers(aMakers, map, zoomLevel){
 		var n = 1;
 		//n = 1-(i/(_aMakers.length*10));//alert(n);
 		var latlng = new google.maps.LatLng((_aMakers[i]._x+0.25)*(n), _aMakers[i]._y-0.25);console.log("LatLngX: "+_aMakers[i]._x+" LatLngY:"+_aMakers[i]._y);
-        html.push("<a href='", _aMakers[i]._id, "' data-id='", _aMakers[i]._title, "' class='",
+        html.push("<a href='", _aMakers[i].htmlUrl, "' data-id='", _aMakers[i]._title, "' class='",
             getDivClassNameByZoomLevel(zoomLevel), "-a' rel='popover' data-content='Practice exercises on:<P><strong>",
             _aMakers[i]._title, "</strong></p>'>");
 			if(zoomLevel==5){
@@ -469,7 +471,7 @@ $(document).ready(function(){
 	//alert(2);
 	//get makerdata
 	var courseId = window.courseId, 
-	    ajaxhttp = "http://114.255.110.150",
+	    ajaxhttp = "http://114.255.110.150"
 		//ajaxhttp = "http://192.168.1.188",
 		//ajaxhttp = "http://0.0.0.0:3000",
 		resource = {}, aMenu = [], aMakers = [];
