@@ -6,7 +6,6 @@ var omyajax = {
 		var _ajaxhttp = ajaxhttp;
 		_this.getTodoList(_ajaxhttp, _this);
 	},
-	
 	/* ******************  一、个人信息  ******************************* */
 	/*
 	 *  GET	
@@ -19,24 +18,12 @@ var omyajax = {
 		var url = ajaxhttp + "/api/v1/users/self/todo",
 			type = "get",
 			dataType = "json",
-			data = {
-					
-			},
-			suc = function(data){
-				//alert("success!"+data);
-			},
-			err = function(){
-				//alert("error!");
-			},
-			callback = function(){
-				//alert("finish!");
-			};
-			
-		//返回一个长度为一的数组
-		var json = _this.doAjax(url, suc, err, 1000);
-		return sliceJSON(json);
+			data = { },
+			suc = function(data){ },
+			err = function(){ },
+			callback = function(){ };
+		_this.doAjax(url, suc, err, 10000);
 	},
-
 	/* 
 	 *  GET 
 	 * /api/v1/users/activity_stream
@@ -46,28 +33,16 @@ var omyajax = {
 	getNotices: function (ajaxhttp, _this){
 		console.log("getUserList");
 		var url = ajaxhttp + "/api/v1/users/activity_stream",
-		type = "get",
-		dataType = "json",
-		data = {
-    
-		},
-		suc = function(data){
-			var json = data;
-			//alert(json);
-			//alert("success!");
-		},
-		err = function(){
-			//alert("error!");
-		},
-		callback = function(){
-			//alert("finish!");
-		};
-    
-		//返回一个长度为一的数组
+			type = "get",
+			dataType = "json",
+			data = { },
+			suc = function(data){
+				var json = data;
+			},
+			err = function(){ },
+			callback = function(){ };
 		_this.doAjax(url, suc, err, 10000);
-		//return sliceJSON(json);
 	},
-
 	/* 
 	 *  GET 
      *  /api/v1/users/self/profile
@@ -80,47 +55,37 @@ var omyajax = {
 		var url = ajaxhttp + "/api/v1/users/self/profile",
 		type = "get",
 		dataType = "json",
-		data = {
-		},
+		data = { },
 		suc = function(data){
 			var json = _this.sliceJSON(data);//alert(json);
 			window.profile = json;
 			//_this.setUserId(json.id);//alert(window.userId);
 			App.load("profile");
-			/*
-			setTimeout(function(){
-				var h = $(".app-scrollable").height();
-				$(".app-scrollable").css("height",h-56);
-				//h = $(".app-scrollable").height();alert(h);
-			},1000);
-			*/
-			//alert("success!");
 		},
-		err = function(){
-			alert("加载用户信息异常!");
-		},
-		callback = function(){
-			//alert("finish!");
-		};
-		//返回一个长度为一的数组
+		err = function(){ alert("加载用户信息异常!"); },
+		callback = function(){ };
 		_this.doAjax(url, suc, err, 10000);
-		//return sliceJSON(json);
 	},
-	setUserId: function(userId){
-		window.userId = userId;
-	},	
-	getUserId: function(){
-		return window.userId;
+	getUserIdByAjax: function(ajaxhttp, _this){
+		console.log("getUserIdByAjax");
+		var url = ajaxhttp + "/api/v1/users/self/profile",type = "get",dataType = "json",data = { },err = function(){ alert("加载用户信息异常!"); },
+			suc = function(data){
+			var json = _this.sliceJSON(data);//alert(json);
+			//window.profile = json;
+			_this.setUserId(json.id);//alert(window.userId);
+			//App.load("profile");
+		},callback = function(){ };
+		_this.doAjax(url, suc, err, 10000);
 	},
+	setUserId: function(userId){ window.userId = userId; },	
+	getUserId: function(){ return window.userId; },
 	setCourseId: function(json){
 		var _json = json;
 		var arr = new Array(_json.length);
 		for(var i=0;i<_json.length;i++){arr[i]=_json[i].id;};
 		window.courseId = arr;
 	},	
-	getCourseId: function(){
-		return window.courseId;
-	},
+	getCourseId: function(){ return window.courseId; },
 	setCourseInfos: function(json){
 		var _json = json;
 		var arr = new Array(_json.length);
@@ -132,54 +97,20 @@ var omyajax = {
 		};
 		window.courseInfos = arr;//alert(window.courseInfos[0].name);
 	},
-	getClickedCourseId: function(){
-		return window.clickedCourseId;
-	},	
-	setClickedCourseId: function(clickedCourseId){
-		window.clickedCourseId = clickedCourseId;
-	},
-	setClickedModuleId: function(moduleId){
-		//alert(moduleId);
-		window.moduleId = moduleId;
-	},	
-	getClickedModuleId: function(){
-		return window.moduleId;
-	},
-	setClickedItemId: function(itemId){
-		//alert(moduleId);
-		window.itemId = itemId;
-	},	
-	getClickedItemId: function(){
-		return window.itemId;
-	},
-	setMessageId: function(messageId){
-		//alert(moduleId);
-		window.messageId = messageId;
-	},	
-	getMessageId: function(){
-		return window.messageId;
-	},
-	setClickedAssignmentId: function(assignmentId){
-		//alert(moduleId);
-		window.assignmentId = assignmentId;
-	},	
-	getClickedAssignmentId: function(){
-		return window.assignmentId;
-	},
-	setClickedUserId: function(userId){
-		//alert(moduleId);
-		window.userId = userId;
-	},	
-	getClickedUserId: function(){
-		return window.userId;
-	},
-	setClickedQuizId: function(quizId){
-		//alert(moduleId);
-		window.quizId = quizId;
-	},	
-	getClickedQuizId: function(){
-		return window.quizId;
-	},
+	getClickedCourseId: function(){ return window.clickedCourseId; },	
+	setClickedCourseId: function(clickedCourseId){ window.clickedCourseId = clickedCourseId; },
+	setClickedModuleId: function(moduleId){ window.moduleId = moduleId; },	
+	getClickedModuleId: function(){ return window.moduleId; },
+	setClickedItemId: function(itemId){ window.itemId = itemId; },	
+	getClickedItemId: function(){ return window.itemId; },
+	setMessageId: function(messageId){ window.messageId = messageId; },	
+	getMessageId: function(){ return window.messageId; },
+	setClickedAssignmentId: function(assignmentId){ window.assignmentId = assignmentId; },	
+	getClickedAssignmentId: function(){ return window.assignmentId; },
+	setClickedUserId: function(userId){ window.userId = userId; },	
+	getClickedUserId: function(){ return window.userId; },
+	setClickedQuizId: function(quizId){ window.quizId = quizId; },	
+	getClickedQuizId: function(){ return window.quizId; },
 
 /* ******************  二. 课程学习接口  ******************************* */
 	/*
@@ -189,13 +120,11 @@ var omyajax = {
 	 *  return json
 	 */
 	getCoursesList: function (ajaxhttp, _this, getUserType, obj){
-		console.log("getCoursesList");
-		//var userId = _this.getUserId();
+		console.log("getCoursesList"); //var userId = _this.getUserId();
 		var url = ajaxhttp + "/api/v1/courses";//:"+userId+"",
 			type = "get",
 			dataType = "json",
-			data = {
-			},
+			data = { },
 			suc = function(data){
 				var json = _this.sliceJSON(data);
 				//alert(json.id);
@@ -205,10 +134,10 @@ var omyajax = {
 					_this.setCourseInfos(json);
 					window.user.type = json[0].enrollments[0].role;
 
-					if(window.user.type=="StudentEnrollment") window.homeworkType="homeworks"//$("#homeworkType").attr("data-target", "homeworks")
-					else if(window.user.type=="TeacherEnrollment") window.homeworkType="teacherhomeworks"//$("#homeworkType").attr("data-target", "teacherhomeworks")
-					else window.homeworkType="homeworks"//$("#homeworkType").attr("data-target", "homeworks")
-				
+					if(window.user.type=="StudentEnrollment") {window.homeworkType="homeworks";window.userType=0;}//$("#homeworkType").attr("data-target", "homeworks")
+					else if(window.user.type=="TeacherEnrollment") {window.homeworkType="teacherhomeworks";window.userType=1;}//$("#homeworkType").attr("data-target", "teacherhomeworks")
+					else {window.homeworkType="homeworks";window.userType=0;}//$("#homeworkType").attr("data-target", "homeworks")
+					//alert(window.userType);
 					var appList = obj.find('.app-list').eq(0);
 					appList.empty();//alert(2);
 					if(window.courses){
@@ -231,22 +160,11 @@ var omyajax = {
 				    });
 				}
 				//alert(json.enrollments[0].role);
-				//alert("success!");
-				//return json;
-				//_this.getAllResults(ajaxhttp, _this);
 			},
-			err = function(){
-				//alert("error!");
-			},
-			callback = function(){
-				//alert("finish!");
-			};
-		//alert(url);	
-		//返回一个长度为一的数组
+			err = function(){ },
+			callback = function(){ };
 		_this.doAjax(url, suc, err, 10000);
-		//return sliceJSON(json);
 	},
-	
 	/* 
 	 *  GET 
 	 *  /api/v1/courses/:id
@@ -256,26 +174,127 @@ var omyajax = {
 	getCourseById: function (ajaxhttp, _this){
 		console.log("getCourseList");
 		var courseId = _this.getClickedCourseId();//_this.getCourseId();
-		var url = ajaxhttp + "/api/v1/courses/"+courseId,
+		var url = ajaxhttp + "/api/v1/courses/"+courseId+"?include[]=term‍",
 			type = "get",
 			dataType = "json",
-			data = {
-			},
+			data = { },
 			suc = function(data){
 				var json = _this.sliceJSON(data);
 				window.course = json;
-				App.load('course');				
+				var isGood = true;
+				if(json.term‍){
+					var date = new Date();
+					if(json.term‍.start_at){
+						var startAt = json.term‍.start_at;
+						var startAtDate = startAt.split("T")[0].split("-");
+						var startAtYear = parseInt(startAtDate[0], 10);
+						var startAtMonth = parseInt(startAtDate[1], 10);
+						var startAtDay = parseInt(startAtDate[2], 10);
+
+						startAtDate = startAt.split("T")[1].split("Z")[0].split(":");
+						var startHour = parseInt(startAtDate[0], 10);
+						var startMin = parseInt(startAtDate[1], 10);
+						var startSec = parseInt(startAtDate[2], 10);
+
+						if(startAtYear>date.getFullYear()){
+							isGood = false;
+							alert("课程未开始!");
+						}else if(startAtYear==date.getFullYear()){
+							if(startAtMonth>date.getMonth()+1){
+								isGood = false;
+								alert("课程未开始!");
+							}else if(startAtMonth==date.getMonth()+1){
+								if(startAtDay>date.getDate()){
+									isGood = false;
+									alert("课程未开始!");
+								}
+
+								else if(startAtDay==date.getDate()){
+									if(startHour>date.getHours()){
+										isGood = false;
+										alert("课程未开始!");
+									}
+									else if(startHour==date.getHours()){
+										if(startMin>date.getMinutes()){
+											isGood = false;
+											alert("课程未开始!");
+										}
+										else if(startMin==date.getMinutes()){
+											if(startSec>date.getSeconds()){
+												isGood = false;
+												alert("课程未开始!");
+											}
+											else if(startSec==date.getSeconds()){
+												isGood = false;
+												alert("课程未开始!");
+											}
+										}
+									}
+								}
+							}
+						}
+
+					}else if(json.term‍.end_at){
+						var endAt = json.term‍.end_at;
+						var endAtDate = endAt.split("T")[0].split("-");
+						var endAtYear = parseInt(endAtDate[0], 10);
+						var endAtMonth = parseInt(endAtDate[1], 10);
+						var endAtDay = parseInt(endAtDate[2], 10);
+
+						endAtDate = endAt.split("T")[1].split("Z")[0].split(":");
+						var endHour = parseInt(endAtDate[0], 10);
+						var endtMin = parseInt(endAtDate[1], 10);
+						var endSec = parseInt(endAtDate[2], 10);
+
+						if(endAtYear<date.getFullYear()){
+							isGood = false;
+							alert("课程已结束!");
+						}else if(endAtYear==date.getFullYear()){
+							if(endAtMonth<date.getMonth()+1){
+								isGood = false;
+								alert("课程已结束!");
+							}else if(endAtMonth==date.getMonth()+1){
+								if(endAtDay<date.getDate()){
+									isGood = false;
+									alert("课程已结束!");
+								}
+
+								else if(endAtDay==date.getDate()){
+									if(endHour<date.getHours()){
+										isGood = false;
+										alert("课程已结束!");
+									}
+									else if(endHour==date.getHours()){
+										if(endtMin<date.getMinutes()){
+											isGood = false;
+											alert("课程已结束!");
+										}
+										else if(endtMin==date.getMinutes()){
+											if(endSec<date.getSeconds()){
+												isGood = false;
+												alert("课程已结束!");
+											}
+											else if(endSec==date.getSeconds()){
+												isGood = false;
+												alert("课程已结束!");
+											}
+										}
+									}
+								}
+
+							}
+						}
+
+					}
+				}
+				if(isGood){App.load('course');}
+								
 				//alert("success!");
 			},
-			err = function(){
-				//alert("error!");
-			},
-			callback = function(){
-				//alert("finish!");
-			};
+			err = function(){ },
+			callback = function(){ };
 		_this.doAjax(url, suc, err, 10000);
 	},
-
 	/*
 	 *  GET	
 	 *  /api/v1/courses/:course_id/modules
@@ -288,12 +307,9 @@ var omyajax = {
 		var url = ajaxhttp + "/api/v1/courses/"+courseId+"/modules",
 			type = "get",
 			dataType = "json",
-			data = {
-			},
+			data = { },
 			suc = function(data){
 				var json = _this.sliceJSON(data);
-				//window.classesList = json;
-				//App.load('clazz');
 				var appList = obj;
 				appList.empty();
 				for(var i=0;i<json.length;i++){
@@ -303,24 +319,16 @@ var omyajax = {
 						"</li>");
 				};
 				appList.find("li").on('click', function () {
-					_this.setClickedModuleId($(this).attr("id"));
-					//alert($(this).attr("id"));
-					_this.getItemsList(window.ajaxhttp, _this);
-					//console.log('1button was clicked!');
+					_this.setClickedModuleId($(this).attr("id")); //alert($(this).attr("id"));
+					_this.getItemsList(window.ajaxhttp, _this); //console.log('1button was clicked!');
 				});
 				appList.append("<li class='ti'><li class='ti'></li><li class='ti'></li>");
-					
 				//alert("success!");
 			},
-			err = function(){
-				//alert("error!");
-			},
-			callback = function(){
-				//alert("finish!");
-			};
+			err = function(){ },
+			callback = function(){ };
 		_this.doAjax(url, suc, err, 10000);
 	},
-
 	/*
 	 *  GET	
 	 *  /api/v1/courses/:course_id/modules/:module_id/items
@@ -334,8 +342,7 @@ var omyajax = {
 		var url = ajaxhttp + "/api/v1/courses/"+courseId+"/modules/"+moduleId+"/items",
 			type = "get",
 			dataType = "json",
-			data = {
-			},
+			data = {  },
 			suc = function(data){
 				var json = _this.sliceJSON(data);
 				window.clazz = json;
@@ -343,13 +350,8 @@ var omyajax = {
 				App.load("clazz");
 				//alert("success!");
 			},
-			err = function(){
-				//alert("error!");
-			},
-			callback = function(){
-				//alert("finish!");
-			};
-			
+			err = function(){ },
+			callback = function(){ };
 		_this.doAjax(url, suc, err, 10000);
 	},
 	/* 
@@ -366,8 +368,7 @@ var omyajax = {
 		var url = ajaxhttp + "/api/v1/courses/"+courseId+"/modules/"+moduleId+"/items/"+itemId+"",
 			type = "get",
 			dataType = "json",
-			data = {
-			},
+			data = { },
 			suc = function(data){
 				var json = _this.sliceJSON(data);
 				//alert(json);
@@ -375,35 +376,24 @@ var omyajax = {
 				App.load("point");
 				//alert("success!");
 			},
-			err = function(){
-				//alert("error!");
-			},
-			callback = function(){
-				//alert("finish!");
-			};
+			err = function(){ },
+			callback = function(){ };
 		_this.doAjax(url, suc, err, 10000);
 	},
-
 	getItemsBody: function (_this, url, obj){
 		console.log("getCourseList");	
 		var type = "get",
 			dataType = "json",
-			data = {
-			},
+			data = { },
 			suc = function(data){
 				//alert(data);
 				var json = _this.sliceJSON2(data);
 				//alert(json);
 				//rex iframe
 				obj.after(json.body);
-				//alert("success!");
 			},
-			err = function(){
-				//alert("error!");
-			},
-			callback = function(){
-				//alert("finish!");
-			};
+			err = function(){ },
+			callback = function(){ };
 		_this.doAjax(url, suc, err, 10000);
 	},
 
@@ -418,29 +408,17 @@ var omyajax = {
 		var url = ajaxhttp + "/api/v1/conversations",
 			type = "get",
 			dataType = "json",
-			data = {
-			},
-			suc = function(data){
-				//alert(data);
-				var json = _this.sliceJSON(data);
-				//alert(json);
+			data = { },
+			suc = function(data){ //alert(data);
+				var json = _this.sliceJSON(data); //alert(json);
 				window.messages = json;
-				//var page = $(".messages").eq(0);
-				//var appList = $(".app-list", page).eq(0);
-				//appList.append()
-
+				//var page = $(".messages").eq(0); //var appList = $(".app-list", page).eq(0); //appList.append()
 				App.load("messages");
-				//alert("success!");
 			},
-			err = function(){
-				//alert("error!");
-			},
-			callback = function(){
-				//alert("finish!");
-			};	
+			err = function(){ },
+			callback = function(){ };	
 		_this.doAjax(url, suc, err, 10000);
 	},
-
 	/*
 	 *  GET	
 	 *  /api/v1/conversations/:id
@@ -452,27 +430,20 @@ var omyajax = {
 		var url = ajaxhttp + "/api/v1/conversations/"+messageId, 
 			type = "get",
 			dataType = "json",
-			data = {
-			},
+			data = { },
 			suc = function(data){//alert(data);
 				var json = _this.sliceJSON2(data);
 				//alert(json.participants);
 				window.message = json;//alert(json);
 				window.token = json.access_token;
-				console.log(window.token);
+				console.log("Message get token: "+window.token);
 				App.load("message");
 				//alert("success!");
 			},
-			err = function(){
-				//alert("error!");
-			},
-			callback = function(){
-				//alert("finish!");
-			};
-		//alert(url); 2
+			err = function(){ },
+			callback = function(){ };
 		_this.doAjax(url, suc, err, 10000);
 	},
-
 	/*
 	 *  GET	
 	 *  /api/v1/conversations/find_recipients
@@ -484,22 +455,12 @@ var omyajax = {
 		var url = ajaxhttp + "/api/v1/conversations/find_recipients",
 			type = "get",
 			dataType = "json",
-			data = {
-				
-			},
-			suc = function(data){
-				//alert("success!");
-			},
-			err = function(){
-				//alert("error!");
-			},
-			callback = function(){
-				//alert("finish!");
-			};
-				
-		var json = doAjax(url, type, dataType, data, suc, err, callback);
+			data = { },
+			suc = function(data){ },
+			err = function(){ },
+			callback = function(){ };
+		//doAjax(url, type, dataType, data, suc, err, callback);
 	},
-
 	/*
 	 *  POST	
 	 *  /api/v1/conversations
@@ -510,22 +471,12 @@ var omyajax = {
 		var url = ajaxhttp + "/api/v1/conversations",
 			type = "post",
 			dataType = "",
-			data = {
-				
-			},
-			suc = function(){
-				//alert("success!");
-			},
-			err = function(){
-				//alert("error!");
-			},
-			callback = function(){
-				//alert("finish!");
-			};
-				
-		var json = doAjax(url, type, dataType, data, suc, err, callback);
+			data = { },
+			suc = function(){ },
+			err = function(){ },
+			callback = function(){ };
+		//doAjax(url, type, dataType, data, suc, err, callback);
 	},
-
 
 /* ******************  四. 学习成果  ******************************* */
 	/*
@@ -540,45 +491,54 @@ var omyajax = {
 		var url = ajaxhttp + "/api/v1/courses/"+courseId+"/quizzes",
 			type = "",
 			dataType = "",
-			data = {
-			},
+			data = {},
 			suc = function(data){
 				var json = _this.sliceJSON(data);
+				//alert(json.length);//alert(1);
 				//alert(json);
 				var appList = obj.find("label").eq(_i);
-				//insert the infos into achievements page
-				var html = "";
-				for(var j=0;j<json.length;j++){
-					html += "<li id='"+json[j].id+"' liindx = '"+_i+"'><h2>"+json[j].title+"<\/h2>"+
-						"<p><span class='app-f'>类型：计分测验<\/span>"+
-						"<span class='app-f'>总分："+json[j].points_possible+"分<\/span>"+
-						"<span class='app-f'>得分：0分<\/span>"+
-						"<\/p><\/li>";
-				}
-				appList.after(html);html = "";
-				//alert(obj.find("li").length);
-				obj.find("li").each(function(index){
-					//alert(index);
-					//var this = $(this);
-					var _o = obj.find("li").eq(index);
-					if(_o.attr("liindx")==_i){
-						var id = _o.attr("id");
-						_this.getTestInfo(window.ajaxhttp, _this, _o, courseId, id);
+				if(json.length>0){
+					//insert the infos into achievements page
+					var html = "", count = 0;
+					for(var j=0;j<json.length;j++){
+						if(json[j].published){
+							html += "<li id='"+json[j].id+"' liindx = '"+_i+"'><h2>"+json[j].title+"<\/h2>"+
+								"<p><span class='app-f'>类型：计分测验<\/span>"+
+								"<span class='app-f'>总分："+json[j].points_possible+"分<\/span>"+
+								"<span class='app-f'>得分：0分<\/span>"+
+								"<\/p><\/li>";
+							count++;
+						}
+						
 					}
-				});
+					appList.after(html);html = "";
+					//alert(obj.find("li").length);
+					obj.find("li").each(function(index){
+						//alert(index);
+						//var this = $(this);
+						var _o = obj.find("li").eq(index);
+						if(_o.attr("liindx")==_i){
+							var id = _o.attr("id");
+							_this.getTestInfo(window.ajaxhttp, _this, _o, courseId, id);
+						}
+					});
+					//alert("count: "+count);
+					if(count == 0){
+						alert("该课程尚无成果！");
+						obj.find("label").eq(_i).attr("res","none");
+					}
+				}else{ 
+					alert("该课程尚无成果！"); 
+					obj.find("label").eq(_i).attr("res","none");
+				}
 				//appList.append("<li class='ti'><li class='ti'></li><li class='ti'></li>");
 				//_this.getTestInfo(window.ajaxhttp, _this,);
 				//alert("success!");
 			},
-			err = function(){
-				//alert("ajax error!");
-			},
-			callback = function(){
-				//alert("finish!");
-			};
-			_this.doAjax(url, suc, err, 10000);
+			err = function(){ },
+			callback = function(){ };
+		_this.doAjax(url, suc, err, 10000);
 	},
-
 	/*
 	 *  GET	
 	 *  /api/v1/outcomes/:id
@@ -590,22 +550,12 @@ var omyajax = {
 		var url = ajaxhttp + "/api/v1/outcomes/:id",
 			type = "",
 			dataType = "",
-			data = {
-				
-			},
-			suc = function(){
-				//alert("success!");
-			},
-			err = function(){
-				//alert("error!");
-			},
-			callback = function(){
-				//alert("finish!");
-			};
-				
+			data = {},
+			suc = function(){ },
+			err = function(){ },
+			callback = function(){ };
 		_this.doAjax(url, suc, err, 10000);
 	},
-
 	/*
 	 *  GET	
 	 *  /api/v1/courses/:course_id/quizzes/:quiz_id/submissions
@@ -618,8 +568,7 @@ var omyajax = {
 		var url = ajaxhttp + "/api/v1/courses/"+courseId+"/quizzes/"+quizId+"/submissions",
 			type = "",
 			dataType = "",
-			data = {
-			},
+			data = { },
 			suc = function(data){
 				//kept_score
 				var json = _this.sliceJSON(data);
@@ -629,16 +578,10 @@ var omyajax = {
 				else obj.find("span").last().html("未完成");
 				//alert("success!");
 			},
-			err = function(){
-				//alert("error!");
-			},
-			callback = function(){
-				//alert("finish!");
-			};
-				
+			err = function(){ },
+			callback = function(){ };	
 		_this.doAjax(url, suc, err, 10000);
 	},
-
 
 /* ******************  五. 作业评分  ******************************* */
 	/* 
@@ -661,47 +604,63 @@ var omyajax = {
 
 				//alert(json.length);
 				var appList = obj.find("label").eq(index);
+				if(json.length>0){
 				//insert the infos into assignments page
-				var html = "";
-				var nData = new Date();
+					var html = "";
+					var nData = new Date();
 
-				for(var j=0;j<json.length;j++){
-					console.log("nData: "+nData+" , lock_at :"+json[j].lock_at);
-					html += "<li id='"+json[j].id+"' cid='"+id+"' liindx = '"+index+"' class='app-button' data-target='teacherwork'>"+
-							"<span class='left'>"+json[j].name+"<\/span>"+
-							"<span class='right'>截止时间："+json[j].lock_at+"<\/span><\/li>";
-				}
-				//alert(html);
-				//$(html).insertAfter(appList);html = "";
-				appList.after(html);html = "";
-				obj.find("li").each(function(index){
-					//alert(index);
-					var _o = obj.find("li").eq(index);
-					if(_o.attr("liindx")==_i){
-						var id = _o.attr("id");
-						var courseId = _o.attr("cid");
-						_o.bind("click",function(){
-							//alert("courseId: "+courseId+",id: "+id);
-							var assignmentId = _o.attr("id");
-							//var assignmentId = _o.attr("id");
-							_this.setClickedCourseId(courseId);
-							_this.setClickedAssignmentId(assignmentId);
-							_this.getAssignment(window.ajaxhttp, _this, courseId, id);
-						});
+					for(var j=0;j<json.length;j++){
+						console.log("nData: "+nData+" , due_at :"+json[j].due_at);
+						html += "<li id='"+json[j].id+"' cid='"+id+"' liindx = '"+index+"' class='app-button' data-target='teacherwork'>"+
+								"<span class='left'>"+json[j].name+"<\/span>";
+						//alert(json[j].due_at);
+						if(json[j].due_at) html += "<span class='right'>截止时间："+json[j].due_at+"<\/span><\/li>"
+						else html += "<span class='right'>截止时间：无<\/span><\/li>"
 					}
-				});
-				//appList.append("<li class='ti'><li class='ti'></li><li class='ti'></li>");
-				
-			},
-			err = function(){
-				//alert("getAssignments ajax error!");
-			},
-			callback = function(){
-				//alert("finish!");
-			};	
-			_this.doAjax(url, suc, err, 10000);
-	},	
+					//alert(html);
+					//$(html).insertAfter(appList);html = "";
+					appList.after(html);html = "";
+					obj.find("li").each(function(index){
+						//alert(index);
+						var _o = obj.find("li").eq(index);
+						if(_o.attr("liindx")==_i){
+							var id = _o.attr("id");
+							var courseId = _o.attr("cid");
+							_o.bind("click",function(){
+								if(json[index].locked_for_user){
+									alert("该作业已关闭！");
+								}else if(json[index].submission_types.length<1){
+									alert("该作业无法在移动端提交！");
+								}else{
+									var canSubmitByMobi = 0;
+									for(var i=0;i<json[index].submission_types.length;i++){
+										if(json[index].submission_types[i]=="online_text_entry") canSubmitByMobi = 1
+									}
+									if(canSubmitByMobi <1 ) alert("该作业无法在移动端提交！");
+									else{
+										//alert("courseId: "+courseId+",id: "+id);
+										var assignmentId = _o.attr("id");
+										//var assignmentId = _o.attr("id");
+										_this.setClickedCourseId(courseId);
+										_this.setClickedAssignmentId(assignmentId);
+										_this.getAssignment(window.ajaxhttp, _this, courseId, id);
+									}
+									
+								}
 
+							});
+						}
+					});
+				}else{ 
+					alert("该课程尚未发布作业！");
+					obj.find("label").eq(_i).attr("res","none");
+				}
+				//appList.append("<li class='ti'><li class='ti'></li><li class='ti'></li>");
+			},
+			err = function(){ },
+			callback = function(){ };	
+		_this.doAjax(url, suc, err, 10000);
+	},	
 	/* 
 	 *  GET 
 	 * /api/v1/courses/:course_id/assignments/:id
@@ -709,37 +668,30 @@ var omyajax = {
 	 *  return json
 	 */
 	getAssignment: function (ajaxhttp, _this, courseId, id){
-		console.log("getTestInfo");
+		console.log("getAssignment");
 		//var courseId = _this.getCourseId();
 		//var id = window.id;
 		var url = ajaxhttp + "/api/v1/courses/"+courseId+"/assignments/"+id+"",
 			type = "",
 			dataType = "",
-			data = {
-			},
+			data = { },
 			suc = function(data){//alert(data);
 				var json = _this.sliceJSON2(data);//alert(json);
 				window.homework = json;
 				window.homework.courseId = courseId
 				window.homework.tid = id;
 				window.token = json.access_token;
-				console.log(window.token);				
+				console.log("getAssignment: "+window.token);				
 				//alert(window.user.type);
 				if(window.user.type=="StudentEnrollment") App.load("homework");//$("#homeworkType").attr("data-target", "homeworks")
 				else if(window.user.type=="TeacherEnrollment") App.load("teacherwork");//$("#homeworkType").attr("data-target", "teacherhomeworks")
 				else App.load("homework");
 				//alert("success!");
 			},
-			err = function(){
-				//alert("error!");
-			},
-			callback = function(){
-				//alert("finish!");
-			};
-				
+			err = function(){ },
+			callback = function(){ };		
 		_this.doAjax(url, suc, err, 10000);
 	},
-
 	/* 
 	 *  GET 
 	 * /api/v1/courses/:course_id/assignments/:id/submissions/
@@ -747,14 +699,13 @@ var omyajax = {
 	 *  return json
 	 */
 	getSubmissions: function (ajaxhttp, _this, courseId, id, obj){
-		console.log("getTestInfo");
+		console.log("getSubmissions");
 		//var courseId = _this.getCourseId();
 		//var id = window.id;
 		var url = ajaxhttp + "/api/v1/courses/"+courseId+"/assignments/"+id+"/submissions/",
 			type = "",
 			dataType = "",
-			data = {
-			},
+			data = { },
 			suc = function(data){//alert(data);
 				var json = _this.sliceJSON(data);//alert(json);
 				//window.submissions = json;
@@ -764,13 +715,13 @@ var omyajax = {
 				for(var i=0;i<json.length;i++){
 					html = ""+
 						"<li  class='app-button' id='"+json[i].id+"' user_id='"+json[i].user_id+"'>"+
-						"<img class='app-person'  scr='"+json[i].submission_user_info.avatar_image_url+"' alt=''\/>"+
+						"<img class='app-person'  scr='"+json[i].submission_user_info.avatar_url+"' alt=''\/>"+
 						json[i].submission_user_info.display_name+
 						json[i].user_id+" ,time:"+json[i].submitted_at+
 						"<\/li>";
 					obj.append(html);html="";
-				}; 
-				obj.find('li').on('click', function () {
+				};
+				obj.find('li').on('click', function (){
 					var userId = $(this).attr("user_id");
 					var quizId = $(this).attr("id");
 					_this.setClickedUserId(userId);
@@ -778,19 +729,13 @@ var omyajax = {
 					//alert("userId: "+userId);
 					_this.getSubmission(window.ajaxhttp, _this, courseId, id, userId);
 				});
-				appList.append("<li class='ti'><li class='ti'></li><li class='ti'></li>");
+				obj.append("<li class='ti'><li class='ti'></li><li class='ti'></li>");
 				//alert("success!");
 			},
-			err = function(){
-				//alert("error!");
-			},
-			callback = function(){
-				//alert("finish!");
-			};
-				
+			err = function(){ },
+			callback = function(){ };		
 		_this.doAjax(url, suc, err, 10000);
 	},	
-
 	/* 
 	 *  GET 
 	 * /api/v1/courses/:course_id/assignments/:id/submissions/
@@ -798,34 +743,27 @@ var omyajax = {
 	 *  return json
 	 */
 	getSubmission: function (ajaxhttp, _this, courseId, id, userId){
-		console.log("getTestInfo");
+		console.log("getSubmission");
 		//var courseId = _this.getCourseId();
 		//var id = window.id;
 		var url = ajaxhttp + "/api/v1/courses/"+courseId+"/assignments/"+id+"/submissions/"+userId,
 			type = "",
 			dataType = "",
-			data = {
-			},
+			data = { },
 			suc = function(data){//alert(data);
 				var json = _this.sliceJSON(data);//alert(json);
 				window.submission = json;
 				window.token = json.access_token;
 				window.assignmentId = id;
 				window.assignmentUid = json.user_id;
-				console.log(window.token);
+				console.log("getSubmission: "+window.token);
 				App.load("teacherworkdetail");
 				//alert("success!");
 			},
-			err = function(){
-				////alert("error!");
-			},
-			callback = function(){
-				//alert("finish!");
-			};
-				
+			err = function(){ },
+			callback = function(){ };	
 		_this.doAjax(url, suc, err, 10000);
 	},
-
 	/* 
 	 *  POST 
 	 * /api/v1/courses/:course_id/assignments/:assignment_id/submissions
@@ -833,27 +771,18 @@ var omyajax = {
 	 *  
 	 */
 	sendAssignmentById: function (ajaxhttp, _this, courseId, assignmentId, data){
-		console.log("getTestInfo");
+		console.log("sendAssignmentById");
 		//var courseId = _this.getCourseId();
 		//var id = window.id;
 		var url = ajaxhttp + "/api/v1/courses/"+courseId+"/assignments/"+assignmentId+"/submissions",
 			type = "pose",
 			dataType = "json",
-			data = {
-			},
-			suc = function(){
-				//alert("sendAssignmentById success!");
-			},
-			err = function(){
-				//alert("sendAssignmentById error!");
-			},
-			callback = function(){
-				//alert("sendAssignmentById finish!");
-			};
-				
+			data = { },
+			suc = function(){ },
+			err = function(){ },
+			callback = function(){ };		
 		//_this.doAjax(url, suc, err, 10000);
 	},
-
 	doAjax: function (url, fnSucc, fnFaild, time){
 		//1.创建Ajax对象
 		if(window.XMLHttpRequest){ var oAjax=new XMLHttpRequest();}
@@ -872,15 +801,13 @@ var omyajax = {
 				}else if(oAjax.status==401){
 					//alert('成功了：'+oAjax.responseText);
 					alert('请重新登录!');
-					window.location.href = "http://114.255.110.150/login";
+					//window.location.href = "http://0.0.0.0:3000/login";
 					//fnSucc(oAjax.responseText);
 				}else{
 					/*
 					alert('请重新登录!');
 					window.location.href = "http://0.0.0.0:3000/login";
-					if(fnFaild){
-						fnFaild();
-					}
+					if(fnFaild){ fnFaild(); }
 					*/
 				};clearTimeout(timer);
 			}
@@ -914,7 +841,7 @@ var omyajax = {
 		//alert(1);  {"status":"not_found","message":"The specified resource does not exist."}
 		var json;
 		if(str.indexOf(";")>0){
-			var _str = str.split(";"); 
+			var _str = str.split("hile(1);"); 
 			json = eval('('+ _str[1]+ ')');
 			return json;
 		}else{
@@ -939,61 +866,8 @@ var omyajax = {
 	
 };
 
-//omyajax.alt();
-//omyajax.getTodoList("11", omyajax);
-/* Home Page 
-App.controller('home', HomeController);
-function HomeController(page){
-	// get user info
-	window.user = {"type":0}
-	window.ajaxhttp = "http://0.0.0.0:3000";
-	getUserType();
-	$(page).find('.app-button').eq(0)
-		.on('click', function () {
-			console.log('1button was clicked!');
-		});
-	$(page).find('.app-button').eq(1)
-		.on('click', function () {
-			App.load(""+window.homeworkType+"");
-			//window.achievements = new Array(window.courseInfos.length);
-			//omyajax.getAssignments(window.ajaxhttp, omyajax);			
-			console.log('2button achievements was clicked!');
-		});		
-	$(page).find('.app-button').eq(2)
-		.on('click', function () {
-			//achievements
-			App.load("achievements");
-			//window.achievements = new Array(window.courseInfos.length);
-			//omyajax.getAllResults(window.ajaxhttp, omyajax);
-			console.log('3button achievements was clicked!');
-		});		
-	$(page).find('.app-button').eq(3)
-		.on('click', function () {
-			omyajax.getMessages(window.ajaxhttp, omyajax);
-			console.log('4button messages was clicked!');
-		});		
-	$(page).find('.app-button').eq(4)
-		.on('click', function () {
-			getUserInfo();
-			console.log('5button profile was clicked!');
-		});	
-};
-HomeController.prototype.onShow = function (){
-	//0 is student
-	//1 is teacher
-	//alert(window.user.type);
-
-	//console.log('HomeController onShow');
-};
-*/
-function getUserType(obj){
-	omyajax.getCoursesList(window.ajaxhttp, omyajax, 1, obj);
-	//alert(courses);
-};
-function getUserInfo(){
-	omyajax.getUserInfo(window.ajaxhttp, omyajax);
-	//alert(courses);
-};
+function getUserType(obj){ omyajax.getCoursesList(window.ajaxhttp, omyajax, 1, obj); };
+function getUserInfo(){ omyajax.getUserInfo(window.ajaxhttp, omyajax); };
 
 /* CoursesController */
 App.controller('courses', CoursesController);
@@ -1010,41 +884,12 @@ function CoursesController(page) {
 
 	//omyajax.
 	// get user info
-	window.user = {"type":0}
+	window.user = {"type":0} //window.ajaxhttp = "http://114.255.110.150";
 	window.ajaxhttp = "http://114.255.110.150";
-	//window.ajaxhttp = "http://192.168.1.188";
+	omyajax.getUserIdByAjax(window.ajaxhttp, omyajax);
 	getUserType($(page));	
-	//this.courses = [{"id":0},{"id":1}];alert(this.courses.length);
-	//this.courses = window.courses;//omyajax.getCoursesList(window.ajaxhttp, omyajax);
-	//alert(this.courses.length);
-	/*
-	var appList = $(page).find('.app-list').eq(0);
-	appList.empty();//alert(2);
-	if(window.courses){
-		//alert(1);
-		for(var i=0;i<window.courses.length;i++){
-			appList.append("<li class='app-button' data-target='course' courseid='"+
-				window.courses[i].id+"'>"+window.courses[i].name+"</li>");
-		};
-	};
-	//console.log("CoursesController done!");
-	//this.onShow(appList);
-	$(page).find('.app-list .app-button').on('click', function (){
-		//alert($(this).attr("courseid"));
-		//jump to other page
-		omyajax.setClickedCourseId($(this).attr("courseid"));
-		omyajax.getCourseById(window.ajaxhttp, omyajax);
-		//App.load('clazz');
-		console.log("to get classes by courceId:"+$(this).attr("courseid")+" was clicked!");
-    });
-	*/
-	//console.log("CoursesController done!");
 };
 CoursesController.prototype.onShow = function (){
-	//$('ul').append('<li>new list item</li>');  <li class="app-button" data-target="course">我的课程1</li>
-	//App._Pages(window, document, Clickable, Scrollable, App, App._Utils, App._Events, App._Metrics, App._Scroll);
-	//App.restore();
-	//console.log(this.courses);
 	//console.log('CoursesController onShow');
 };
 
@@ -1053,12 +898,13 @@ function CourseController(page) {
 	//alert("messages");
 	//omyajax.
 	this.course = window.course;
-	$(page).find(".app-topbar .left").html("返回");
+    
+    $(page).find(".app-topbar .left").html("返回");
 	var aP = $(page).find('.mycourse_con ul').eq(0).find("p");//course_code
 	aP.eq(0).html("课程名称 ： "+window.course.name+"");
 	aP.eq(1).html("课程代码 ： "+window.course.course_code+"");
-	aP.eq(2).html("开课时间 ： "+window.course.start_at+"");
-	aP.eq(3).html("结束时间 ： "+window.course.end_at+"");
+	if(window.course.start_at){aP.eq(2).html("开课时间 ： "+window.course.start_at+"");}else{aP.eq(3).html("尚未开课");}
+	if(window.course.end_at){aP.eq(3).html("结束时间 ： "+window.course.end_at+"");}else{aP.eq(3).html("");}
 	//var ic = omyajax.getClickedCourseId();
 	//var oTitle = $(page).find('.app-title').eq(0).;
 	$(page).find('.app-title').eq(0).html(window.course.course_code+"");
@@ -1073,9 +919,7 @@ function CourseController(page) {
 		//App.load('point');
 		console.log('to get classes by courceId was clicked!');
     });
-
     appList.append("<li class='ti'><li class='ti'></li><li class='ti'></li>");
-    //alert(1);
 	//console.log("CourseController done!");
 };
 CourseController.prototype.onShow = function (appList){
@@ -1098,19 +942,17 @@ function ClassController(page) {
 			"</li>");
 	};
 	appList.find("li").on('click', function () {
-		omyajax.setClickedItemId($(this).attr("id"));
-		//alert($(this).attr("id"));
-		omyajax.getItemsById(window.ajaxhttp, omyajax);
-		//console.log('1button was clicked!');
+		omyajax.setClickedItemId($(this).attr("id")); //alert($(this).attr("id"));
+		omyajax.getItemsById(window.ajaxhttp, omyajax); //console.log('1button was clicked!');
 	});
 
 	appList.append("<li class='ti'><li class='ti'></li><li class='ti'></li>");
-    //alert(1);	
 	//console.log("ClassController done!");
 };
 ClassController.prototype.onShow = function (appList){
 	//console.log('ClassController onShow');
 };
+
 App.controller('point', PointController)
 function PointController(page) {
 	console.log(window.items.title);
@@ -1146,7 +988,6 @@ function HomeworksController(page){
 		appList.append(html);
 		html="";		
 	}
-
 	//appList.append("<li class='ti'><li class='ti'></li><li class='ti'></li>");
 
 	appList.find('label').each(function(index){
@@ -1154,6 +995,8 @@ function HomeworksController(page){
 		appList.find('label').eq(_i).bind('click', function (){
 			var clicked = $(this).attr("clicked");
 			var index = $(this).attr("index");
+			var res = appList.find("label").eq(_i).attr("res");
+			if(res=="none"){alert("该课程尚未发布作业！");};
 			if(clicked=="0"){
 				var id = $(this).attr("id");
 				omyajax.getAssignments(window.ajaxhttp, omyajax, id, index, $(page));
@@ -1190,20 +1033,45 @@ function HomeworksController(page){
 HomeworksController.prototype.onShow = function () {
 	console.log('HomeworksController onShow');
 };
+
 App.controller('homework', HomeworkController);
 function HomeworkController(page){
 	//alert("homeworks");
 	//omyajax.   window.homework
-	$(page).find(".app-topbar .left").html("返回");
+	//alert(window.homework.submission_types.length);
+
+	/*
+	if(window.homework.submission_types.length<1) {alert("该作业无法在移动端提交！");App.load("homeworks")}
+	else{
+		var canSubmitByMobi = 0;
+		for(var i=0;i<window.homework.submission_types.length;i++){
+			if(window.homework.submission_types[i]=="online_text_entry") canSubmitByMobi = 1
+		}
+		if(canSubmitByMobi <1 ) alert("该作业无法在移动端提交！");App.load("homeworks")
+	}
+	*/
+    $(page).find(".app-topbar .left").html("返回");
 	var appList = $(page).find('.app-list').eq(0);
-	var html = "<li>总分："+window.homework.points_possible+"分                                 "+
-				"截止时间： "+window.homework.due_at+"<\/li>"+
-				"<li>提交方式： 文本框输入，网站URL，文件上传（PC端）<\/li>"+window.homework.description+
-				"<li><textarea id='text' class='app-input'><\/textarea><\/li>"+
-				"<li class='app-button' id='commit'>提交<\/li>";
+	var html = "";
+	if(window.homework.points_possible) html += "<li>总分："+window.homework.points_possible+"分"
+		else html += "<li>总分： 无 &nbsp;&nbsp;"
+	if(window.homework.due_at) html += "截止时间： "+window.homework.due_at+"<\/li>"
+		else html += "截止时间： 无"
+	if(window.homework.description) html += "<li>提交方式： 文本框输入<\/li>"+window.homework.description
+		else html += "<li>提交方式： 文本框输入<\/li>"
+
+	html += "<li><textarea id='text' class='app-input'><\/textarea><\/li>"+
+			"<li class='app-button' id='commit'>提交<\/li>";
+
 	appList.append(html);html="";
-	//alert(1);
+
 	$(page).find("#commit").bind("click", function(){
+		postHomework();
+		$(page).find("#commit").unbind().bind("click", function(){
+			alert("正在提交!");
+		});
+	});
+	function postHomework(){
 		var data = $("#text").val();
 		console.log("data:"+data);
 		//omyajax
@@ -1211,6 +1079,7 @@ function HomeworkController(page){
 		var assignmentId = omyajax.getClickedAssignmentId();
 		var url = window.ajaxhttp + "/api/v1/courses/"+courseId+"/assignments/"+assignmentId+"/submissions";
 		
+		//alert(window.token);
 		//a/pi/v1/courses/:course_id/assignments/:id
 		$.post(url, {
 				"comment[text_comment]": data,
@@ -1222,7 +1091,6 @@ function HomeworkController(page){
 				App.load("homeworks");
 			}
 		);
-		
 		/*
 		API_SUBMISSION_TYPES = {
     		"online_text_entry" => ["body"],
@@ -1231,16 +1099,12 @@ function HomeworkController(page){
     		"media_recording" => ["media_comment_id", "media_comment_type"],
   		}
 		*/
-	});
-
-	appList.append("<li class='ti'><li class='ti'></li><li class='ti'></li>");
-
-	//alert(2);
-	//this.onShow();	
-	console.log("HomeworkController done!");
+	}
+	appList.append("<li class='ti'><li class='ti'></li><li class='ti'></li>");	
+	//console.log("HomeworkController done!");
 };
 HomeworkController.prototype.onShow = function () {
-	console.log('HomeworksController onShow');
+	//console.log('HomeworksController onShow');
 };
 /* THomeworksController */
 App.controller('teacherhomeworks', HomeworksController);
@@ -1252,7 +1116,8 @@ function THomeworksController(page){
 	appList.empty();//alert(1);
 	var html;
 	for(var i=0;i<window.courseInfos.length;i++){
-		html = "<label class='label-title' clicked='0' index='"+i+"' id='"+window.courseInfos[i].id+"'>"+window.courseInfos[i].name+"<\/label>";//
+		html = "<label class='label-title' clicked='0' index='"+i+"' id='"+
+				window.courseInfos[i].id+"'>"+window.courseInfos[i].name+"<\/label>";//
 		//alert(window.courseInfos[i].assignments.length)//console.log(1);
 		appList.append(html);html="";
 				
@@ -1278,19 +1143,15 @@ function THomeworksController(page){
 					if($(this).attr("liindx")==index)$(this).show();
 				});
 				$(this).attr("clicked", 1);
-			}else{
-				alert("ckicked error");
 			}
+			else{ alert("ckicked error"); }
 		});		
 	});
-	//this.onShow();	
-
 	appList.append("<li class='ti'><li class='ti'></li><li class='ti'></li>");
-	
-	console.log("THomeworksController done!");
+	//console.log("THomeworksController done!");
 };
 THomeworksController.prototype.onShow = function () {
-	console.log('HomeworksController onShow');
+	//console.log('HomeworksController onShow');
 };
 
 App.controller('teacherwork', TeacherworkController);
@@ -1316,10 +1177,10 @@ function TeacherworkController(page){
 	}
 	*/
 	//this.onShow();
-	console.log("THomeworksController done!");
+	//console.log("THomeworksController done!");
 };
 TeacherworkController.prototype.onShow = function () {
-	console.log('HomeworksController onShow');
+	//console.log('HomeworksController onShow');
 };
 
 App.controller('teacherworkdetail', TeacherworkDetailController);
@@ -1362,38 +1223,11 @@ function TeacherworkDetailController(page){
 				App.load("teacherwork");
 			}
 		});
-		
-		/*
-		$.post(url, {
-				"comment[text_comment]": comment,
-				"submission[posted_grade]": score,
-				"authenticity_token": window.token
-			},function(data){
-				alert("提交成功!");
-			}
-		);
-		*/
-
-		//var courseId = window.homework.courseId;
-		//var id = window.homework.tid;
-		//omyajax.getSubmissions(window.ajaxhttp, omyajax, courseId, id, appList);
 	});
-
-	/*
-	$.ajax({
-		type: 'POST',
-		url: '/projects',
-		// post payload:
-		data:
-			JSON.stringify({ name: 'Zepto.js' }),
-		contentType: 'application/json'
-	});
-
-	*/
-	console.log("TeacherworkDetailController done!");
+	//console.log("TeacherworkDetailController done!");
 };
 TeacherworkDetailController.prototype.onShow = function () {
-	console.log('TeacherworkDetailController onShow');
+	//console.log('TeacherworkDetailController onShow');
 };
 
 /* AchievementsController */
@@ -1418,6 +1252,8 @@ function AchievementsController(page){
 		appList.find('label').eq(_i).bind('click', function (){
 			var clicked = $(this).attr("clicked");
 			var index = $(this).attr("index");
+			var res = appList.find("label").eq(_i).attr("res");
+			if(res=="none"){alert("该课程尚未发布作业！");};
 			if(clicked=="0"){
 				var id = $(this).attr("id");
 				omyajax.getAllResults(window.ajaxhttp, omyajax, id, index,$(page));
@@ -1438,40 +1274,11 @@ function AchievementsController(page){
 			}
 		});		
 	});
-	/*
-	var timer = setInterval(function(){
-		console.log(window.achievementsR);
-		if(window.achievementsR==1){
-			clearInterval(timer);
-			var html;
-			var _wc = window.courseInfos;
-			var a;
-			for(var i=0;i<_wc.length;i++){
-				console.log("i: "+i,", name: "+_wc[i].name,", achievements: "+_wc[i].achievements);
-
-				html = "<label>"+_wc[i].name+"<\/label>";
-				//alert(window.courseInfos[i].achievements);
-				//alert(i);
-				
-				a = _wc[i].achievements;
-				console.log(a);
-				//for(var x=0;x<7000000000;x++){}
-				//alert(1);
-				for(var j=0;j<a.length;j++){
-					html += "<li><h2>"+a[j].title+"<\/h2>"+
-						"<p><span class='app-f'>类型：计分测验<\/span><span class='app-f'>总分：100分<\/span>"+
-						"<span class='app-f'>得分：80分<\/span><\/p><\/li>";
-				}
-				appList.append(html);html="";
-			}
-		}
-	}, 100);
-	*/
 	//this.onShow();	
 	//console.log("AchievementsController done!");
 };
 AchievementsController.prototype.onShow = function () {	
-	console.log('AchievementsController onShow');
+	//console.log('AchievementsController onShow');
 };
 
 /* MessagesController */
@@ -1504,7 +1311,7 @@ function MessagesController(page){
 	//console.log("MessagesController done!");
 };
 MessagesController.prototype.onShow = function () {
-	console.log('MessagesController onShow');
+	//console.log('MessagesController onShow');
 };
 
 /* SBsMessageController */
@@ -1524,15 +1331,13 @@ function SBsMessageController(page){
 			"<img class='app-person' src='"+this.message.avatar_url+"' alt=''\/>"+
 			"<h2 id='"+this.message.messages[i].author_id+"'>"+this.message.messages[i].author_id+"<\/h2>"+
 			"<p>"+this.message.messages[i].body+"<\/p>"+
-			"<img class='app-arrow' src='img\/arrow_03.gif'  alt=''\/><\/li>"+
+			//"<img class='app-arrow' src='img\/arrow_03.gif'  alt=''\/><\/li>"+
 		"");
 	};
 	var aH2 = appList.find("h2");//alert(aH2.length);
 	for(var i=0;i<aH2.length;i++){
 		var id = aH2.eq(i).attr("id");//alert(id);
-		//alert("participants[0].length:"+this.message.participants[0].length);
-		//alert(this.message.participants[0].id);
-		//alert(this.message.participants[0].id);
+		//alert("participants[0].length:"+this.message.participants[0].length); //alert(this.message.participants[0].id); //alert(this.message.participants[0].id);
 		for(var j=0;j<this.message.participants.length;j++){
 			//alert("h2-id: "+id+", id: "+this.message.participants[j].id);
 			if(id==this.message.participants[j].id+""){
@@ -1548,12 +1353,12 @@ function SBsMessageController(page){
 		var name = $(this).find("h2").html();//alert(name);
 		var id = $(this).find("h2").attr("id");
 		window.sentToPersonName = name;
-		window.sentToPersonId = id;//alert(id);
-		App.load("sendmessage");
+		window.sentToPersonId = id;//alert("sentToPersonId: "+id+", userId:"+window.userId);
+		if(window.sentToPersonId == window.userId) alert("不可向自己发送消息！")
+		else App.load("sendmessage");
 	});
 
 	appList.append("<li class='ti'><li class='ti'></li><li class='ti'></li>");
-
 	//this.onShow();	
 	//console.log("MessagesController done!");
 };
@@ -1578,7 +1383,8 @@ function SendMessageController(page){
 				"authenticity_token": window.token
 			},function(data){
 				alert("发送消息成功!");
-				App.load("message");
+				omyajax.getSBsMessagesById(window.ajaxhttp, omyajax);
+				//App.load("message");
 			}
 		);
 
@@ -1614,25 +1420,11 @@ function ProfileController(page){
 	//this.onShow();
 	//console.log("profile done!");
 }
-
 ProfileController.prototype.onShow = function (){
 	if(!window.profile.id) console.log("get profile err");
 	else{
 		// set infos on page
 	}
-	//console.log(this.profile);
-	//console.log('InfosController onShow');
-	// maybe destory info
 };
-try {
-	window.indx=0;
-	window.achievementsR=0;
-	window.indx2=0;
-	window.homeworksR=0;
-	App.restore();
-} catch (err) {
-	App.load('courses', function () {
-	  // done!
-	  console.log("home done err!");
-	});
-}
+try { App.restore();} 
+catch (err) { App.load('courses', function () { console.log("home done err!"); }); }

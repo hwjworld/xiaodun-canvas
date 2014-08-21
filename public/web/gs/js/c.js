@@ -202,7 +202,8 @@ function course2aMenu(course, _courseTitle){
 		oMenu._id = "", 
 		oMenu.name = _courseTitle.name, 
 		oMenu._x = 0, 
-		oMenu._y = 0, 
+		oMenu._y = 0,
+		oMenu.htmlUrl = "http://192.168.1.188/courses/" + window.courseId,
 		oMenu.completed = true,
 		aMenu.push(oMenu);
 		/*
@@ -270,7 +271,7 @@ function course2aMenu(course, _courseTitle){
 				else oMenu.completed = false
 				oMenu._y = 2;
 				oMenu._x = -i*2;
-				oMenu.htmlUrl = "#";
+				oMenu.htmlUrl = "http://192.168.1.188/courses/" + window.courseId,
 				aLine.push([new google.maps.LatLng(fx, fy), new google.maps.LatLng(oMenu._x, oMenu._y)]);
 
 				aMenu.push(oMenu);
@@ -295,8 +296,8 @@ function course2aMenu(course, _courseTitle){
 						var _id = _fid.concat(index);//alert(_id);
 						oMenu._id = _id.join("-").substr(2);
 						oMenu.htmlUrl = _this.html_url;
-						oMenu.name = oMenu._id + _this.title&&_this.title||_this.name;//console.log(oMenu.name);
-						
+						//oMenu.name = oMenu._id + _this.title&&_this.title||_this.name;//console.log(oMenu.name);
+						oMenu.name = _this.title&&_this.title||_this.name;//console.log(oMenu.name);
 						oMenu._y = j*2+4;
 						oMenu._x = -i*2;					
 						
@@ -327,15 +328,26 @@ function createMenu(aMenu){
 	oUl.innerHTML = '';
 	if(a<1)return;
 	function board(obj){
-		var board = "<a href\="+_aMenu.htmlUrl+" name='"+obj._title + obj.name+"'><div class='progress-item'><img src\='./\img/\map_star30.png' class\='icon'><span>" 
-		//+ obj._title 
-		//+ obj._c + obj._s 
-		+ obj._id
-		+ obj.name 
-		+ "<\/span><\/div><\/a>";
+		if(obj.completed){
+			var board = "<a href\="+obj.htmlUrl+" name='"+obj._title + obj.name+"'><div class='progress-item'><img src\='./\img/\star-30-1.png' class\='icon'><span>" 
+				//+ obj._title 
+				//+ obj._c + obj._s 
+				//+ obj._id
+				+ obj.name 
+				+ "<\/span><\/div><\/a>";
+		}else{
+			var board = "<a href\="+obj.htmlUrl+" name='"+obj._title + obj.name+"'><div class='progress-item'><img src\='./\img/\map_star30.png' class\='icon'><span>" 
+				//+ obj._title 
+				//+ obj._c + obj._s 
+				//+ obj._id
+				+ obj.name 
+				+ "<\/span><\/div><\/a>";
+		}
+		
 		//alert(obj._title);
 		return board;
 	};
+
 	for(var i=0;i<_aMenu.length;i++){
 		var oLi=document.createElement('div');
 		oLi.name = _aMenu[i].name;//alert(oLi.name);
@@ -386,7 +398,7 @@ function drawMultiMakers(aMakers, map, zoomLevel){
 				//iconUrl = "./img/star-30-1.png";
 				//latlng = new google.maps.LatLng(_aMakers[i]._x+0.3, _aMakers[i]._y-0.3);console.log("LatLngX: "+_aMakers[i]._x+" LatLngY:"+_aMakers[i]._y);
 				html.push("<img class='node-icon' src='", iconUrl, "'>");
-				html.push("<div class='node-text'>", _aMakers[i]._id, _aMakers[i].name, "</div>");
+				html.push("<div class='node-text'>", _aMakers[i].name, "</div>");
 				//alert(_aMakers[i]._title);
 			}else if(zoomLevel==7){
 				iconClass = 7;
@@ -396,7 +408,7 @@ function drawMultiMakers(aMakers, map, zoomLevel){
 				//iconUrl = "./img/star-50-1.png";
 				//latlng = new google.maps.LatLng(_aMakers[i]._x+0.3, _aMakers[i]._y-0.3);console.log("LatLngX: "+_aMakers[i]._x+" LatLngY:"+_aMakers[i]._y);
 				html.push("<img class='node-icon' src='", iconUrl, "'>");
-				html.push("<div class='node-text'>", _aMakers[i]._id, _aMakers[i].name, "</div>");
+				html.push("<div class='node-text'>", _aMakers[i].name, "</div>");
 			}
         html.push("<div class='node-icon ", iconClass, "'></div>");
 		html.push("</a>");
@@ -471,9 +483,8 @@ $(document).ready(function(){
 	//alert(2);
 	//get makerdata
 	var courseId = window.courseId, 
-	    ajaxhttp = "http://114.255.110.150"
 		//ajaxhttp = "http://192.168.1.188",
-		//ajaxhttp = "http://0.0.0.0:3000",
+		ajaxhttp = "http://114.255.110.150",
 		resource = {}, aMenu = [], aMakers = [];
 
 	getResourcesByAjax(courseId, ajaxhttp);
