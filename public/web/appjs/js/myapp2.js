@@ -715,7 +715,7 @@ var omyajax = {
 				for(var i=0;i<json.length;i++){
 					html = ""+
 						"<li  class='app-button' id='"+json[i].id+"' user_id='"+json[i].user_id+"'>"+
-						"<img class='app-person'  scr='"+json[i].submission_user_info.avatar_url+"' alt=''\/>"+
+						"<img class='app-person'  scr='"+json[i].submission_user_info.avatar_image_url+"' alt=''\/>"+
 						json[i].submission_user_info.display_name+
 						json[i].user_id+" ,time:"+json[i].submitted_at+
 						"<\/li>";
@@ -800,7 +800,7 @@ var omyajax = {
 					fnSucc(oAjax.responseText);
 				}else if(oAjax.status==401){
 					//alert('成功了：'+oAjax.responseText);
-					alert('请重新登录!');
+					//alert('请重新登录!');
 					//window.location.href = "http://0.0.0.0:3000/login";
 					//fnSucc(oAjax.responseText);
 				}else{

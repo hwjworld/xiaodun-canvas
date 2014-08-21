@@ -37,6 +37,8 @@ module Api::V1::Submission
       end
     end
     hash[:access_token] = session[:_csrf_token]
+    hash[:submission_user_info] = user_display_json(submission.user, submission.context)
+    
     if includes.include?("submission_comments")
       hash['submission_comments'] = submission.comments_for(@current_user).map do |sc|
         sc_hash = sc.as_json(
