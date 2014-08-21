@@ -439,7 +439,10 @@ define([
         var $module = $("#context_module_" + data.context_module_id);
         $module.toggleClass('completed', data.workflow_state == 'completed');
         var progression_state = data.workflow_state
-        if(progression_state == "unlocked" || progression_state == "started") { progression_state = "in progress"; }
+        //if(progression_state == "unlocked" || progression_state == "started") { progression_state = "in progress"; }
+        if(progression_state == "unlocked" || progression_state == "started") { progression_state = "进行中"; }
+        if (progression_state == "completed") {progression_state = "已经完成";}
+
         if (progression_state == "completed" && !$module.find(".progression_requirement").length) {
           // this means that there were no requirements so even though the workflow_state says completed, dont show "completed" because there really wasnt anything to complete
           progression_state = "";
@@ -1186,21 +1189,21 @@ define([
         var $row = $("#student_progression_dialog .module_" + moduleData.id);
         
         moduleData.progress = $studentWithProgressions.find(".progression_" + moduleData.id + ":first").getTemplateData({textValues: ['workflow_state']}).workflow_state;
-        moduleData.progress = moduleData.progress || "no information";
+        moduleData.progress = moduleData.progress || "无信息";
         var type = "nothing";
         if(moduleData.progress == "unlocked") {
           type = "in_progress";
-          moduleData.progress = "in progress";
+          moduleData.progress = "进行中";
         } else if(moduleData.progress == "started") {
           type = "in_progress";
-          moduleData.progress = "in progress";
+          moduleData.progress = "进行中";
         } else if(moduleData.progress == "completed") {
           type = "completed";
         } else if(moduleData.progress == "locked") {
           type = "locked";
         }
         $row.find(".still_need_completing").empty();
-        if(moduleData.progress == "in progress") {
+        if(moduleData.progress == "进行中") {
           var $requirements = $("#context_module_" + moduleData.id + " .context_module_item.progression_requirement");
           var progression = $studentWithProgressions.find(".progression_" + moduleData.id).data('progression');
           var unfulfilled = [];

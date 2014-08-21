@@ -1324,8 +1324,8 @@ zh:
       delete: 删除
       loading: 正在加载...
       lock_for_comments: 锁定以发表评论
-      make_an_announcement: 进行通告
-      make_an_announcement_caps: 进行通告
+      make_an_announcement: 发布通告
+      make_an_announcement_caps: 发布通告
       make_sure_all_search_terms_are_spelled_correctly: 确保所有的搜索词拼写正确。
       rss_feed: "RSS 信息源"
       search_title_body_or_author: 搜索标题、正文或作者
