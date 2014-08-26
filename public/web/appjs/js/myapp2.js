@@ -717,7 +717,7 @@ var omyajax = {
 						"<li  class='app-button' id='"+json[i].id+"' user_id='"+json[i].user_id+"'>"+
 						"<img class='app-person'  src='"+json[i].submission_user_info.avatar_image_url+"' alt=''\/>"+
 						json[i].submission_user_info.display_name+
-						" ,提交时间:"+json[i].submitted_at+
+						json[i].user_id+"提交时间:"+json[i].submitted_at+
 						"<\/li>";
 					obj.append(html);html="";
 				};
