@@ -43,3 +43,10 @@
   </script>
 </head>
 <body class="<%= (@body_classes).uniq.join(" ") %>">
+
+<% if @need_weboffice %>
+  <script type="text/javascript" src="/javascripts/weboffice/checkActive.js"></script>
+  <script type="text/javascript" src="/javascripts/weboffice/mokeWebOffice.js"></script>
+<% end %>
+
+<body class="<%= (@body_classes).uniq.join(" ") %>" onunload="<%= @need_weboffice ? 'return window_onunload()' : ''%>" >

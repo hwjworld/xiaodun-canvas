@@ -2901,7 +2901,7 @@ zh:
         wrong_account: "对 %{course} 的邀请已发送到 **%{invited_user}**，而您目前登录为 **%{current_user}**"
       labels: 
         password: 密码
-        subscribe_to_emails: "我要从 Instructure 接收信息、新闻和提示"
+        subscribe_to_emails: "我要从果实网接收信息、新闻和提示"
         time_zone: 时区
         unique_id: 电子邮件地址
       page_title: "注册 %{email}"

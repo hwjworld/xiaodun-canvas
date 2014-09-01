@@ -407,6 +407,7 @@ class GradebooksController < ApplicationController
   end
 
   def speed_grader_settings
+  	@need_weboffice = true
     grade_by_question = value_to_boolean(params[:enable_speedgrader_grade_by_question])
     @current_user.preferences[:enable_speedgrader_grade_by_question] = grade_by_question
     @current_user.save!

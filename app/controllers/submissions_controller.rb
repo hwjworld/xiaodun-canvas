@@ -174,7 +174,12 @@ class SubmissionsController < ApplicationController
                                             @assignment.quiz.id, quiz_params)
             }
           else
-            format.html { render :action => "show_preview" }
+          	 if @submission.submission_type == "online_text_entry" || @submissions.submission_types == "online_url"
+          		format.html { render :action => "show_preview.html"}
+             else		
+          	   @need_weboffice = true   # add for weboffice by csc
+               format.html { render :action => "show_preview_doc.html" }
+             end  
           end
         elsif params[:download]
           if params[:comment_id]

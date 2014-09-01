@@ -1,0 +1,279 @@
+
+/****************************************************
+*
+*	在装载完Weboffice(执行<object>...</object>)
+*	控件后执行 "WebOffice1_NotifyCtrlReady"方法
+*
+****************************************************/
+	//WebOffice1_NotifyCtrlReady();
+/****************************************************
+*
+*		控件初始化WebOffice方法
+*
+****************************************************/
+function NotifyCtrlReady()
+{
+	var dicId    = $("#resourceid").val();
+	var fileType = $("#resourceFileType").val();
+	var ctx      = $("#webRoot").val();
+	var filepath = $("#ctxContentFilePath").val();
+	var isAuth   = $("#isAuth").val();
+	var createBy = $("#resourcecreateByid").val();
+	var member   = $("#memberId").val();
+	var userName = $("#memberRealName").val();
+	
+	
+	
+	document.all.WebOffice1.OptionFlag |=0xff7f ;
+	var sFileType = fileType;//doc,xls,ppt,wps
+	
+	if(isAuth)
+	{	
+		document.all.WebOffice1.HideMenuItem(0x10+0x20+0x2000);
+		if (dicId != "") {
+			document.all.WebOffice1.LoadOriginalFile(ctx+filepath, sFileType);
+			document.all.WebOffice1.ShowRevisions(1);//显示修订
+			//=========================================
+			try{
+				//不是当前用户直接进入修订模式
+				if(createBy!=member)
+				{
+					//开始进行修订
+					document.all.WebOffice1.SetCurrUserName(userName);
+					document.all.WebOffice1.SetTrackRevisions(1);
+				}else{
+					document.all.WebOffice1.UnProtectDoc('');
+					document.all.WebOffice1.SetTrackRevisions(0);
+				}
+			}catch(e){
+				alert("异常\r\nError:"+e+"\r\nError Code:"+e.number+"\r\nError Des:"+e.description);
+			}
+			
+		}else {
+			// 新建文档
+			document.all.WebOffice1.LoadOriginalFile("", "doc");
+		}
+	}else{
+		document.all.WebOffice1.HideMenuItem(0x01+0x02+0x10+0x04+0x20+0x2000);
+		
+		// 新建文档
+		document.all.WebOffice1.LoadOriginalFile("", "doc");
+		if (dicId != "") {
+			document.all.WebOffice1.LoadOriginalFile(ctx+filepath, sFileType);
+			try{
+				//初始化不允许编辑
+				document.all.WebOffice1.ProtectDoc(1,2,'');
+				document.all.WebOffice1.ShowRevisions(1);	//显示修订
+			}catch(e){
+				//alert("异常\r\nError:"+e+"\r\nError Code:"+e.number+"\r\nError Des:"+e.description);
+			}		
+		}
+	}
+	if(dicId !=""){
+		//加载修订信息
+		//=========================================
+		var vCount;
+		vCount = document.all.WebOffice1.GetRevCount(); 
+		var vOpt = 0;
+		var vDate;
+		for(var i=1; i<= vCount; i++){
+			vOpt = document.all.WebOffice1.GetRevInfo(i,2);
+			if("1" == vOpt){
+				vOpt = "补充";
+			}else if("2" == vOpt){
+				vOpt = "删除";
+			}else{
+				vOpt = "未知操作";
+			}
+			vDate = new String(document.all.WebOffice1.GetRevInfo(i,1));
+
+			 var title = document.all.WebOffice1.GetRevInfo(i,0) + "\r\n:" + vOpt + "教案内容:" + document.all.WebOffice1.GetRevInfo(i,3);
+			
+			$("#prepare").append("<h1 class=\"center\" title=\""+ title +"\">" + vDate + "</h1>"); 
+		}
+	}
+	
+}
+function WebOffice1_NotifyCtrlReady(dicId,fileType,filepath,ctx,isAuth,createBy,member,userName) {
+	document.all.WebOffice1.OptionFlag |=0xff7f ;
+	var sFileType = fileType;//doc,xls,ppt,wps
+
+	if(isAuth)
+	{	
+		document.all.WebOffice1.HideMenuItem(0x10+0x20+0x2000);
+		if (dicId != "") {
+			document.all.WebOffice1.LoadOriginalFile(ctx+filepath, sFileType);
+			document.all.WebOffice1.ShowRevisions(1);//显示修订
+			//=========================================
+			try{
+				//不是当前用户直接进入修订模式
+				if(createBy!=member)
+				{
+					//开始进行修订
+					document.all.WebOffice1.SetCurrUserName(userName);
+					document.all.WebOffice1.SetTrackRevisions(1);
+				}else{
+					document.all.WebOffice1.UnProtectDoc('');
+					document.all.WebOffice1.SetTrackRevisions(0);
+				}
+			}catch(e){
+				alert("异常\r\nError:"+e+"\r\nError Code:"+e.number+"\r\nError Des:"+e.description);
+			}
+			
+		}else {
+			// 新建文档
+			document.all.WebOffice1.LoadOriginalFile("", "doc");
+		}
+	}else{
+		document.all.WebOffice1.HideMenuItem(0x01+0x02+0x10+0x04+0x20+0x2000);
+		
+		// 新建文档
+		document.all.WebOffice1.LoadOriginalFile("", "doc");
+		if (dicId != "") {
+			document.all.WebOffice1.LoadOriginalFile(ctx+filepath, sFileType);
+			try{
+				//初始化不允许编辑
+				document.all.WebOffice1.ProtectDoc(1,2,'');
+				document.all.WebOffice1.ShowRevisions(1);	//显示修订
+			}catch(e){
+				//alert("异常\r\nError:"+e+"\r\nError Code:"+e.number+"\r\nError Des:"+e.description);
+			}		
+		}
+	}
+	if(dicId !=""){
+		//加载修订信息
+		//=========================================
+		var vCount;
+		vCount = document.all.WebOffice1.GetRevCount(); 
+		var vOpt = 0;
+		var vDate;
+		for(var i=1; i<= vCount; i++){
+			vOpt = document.all.WebOffice1.GetRevInfo(i,2);
+			if("1" == vOpt){
+				vOpt = "补充";
+			}else if("2" == vOpt){
+				vOpt = "删除";
+			}else{
+				vOpt = "未知操作";
+			}
+			vDate = new String(document.all.WebOffice1.GetRevInfo(i,1));
+
+			 var title = document.all.WebOffice1.GetRevInfo(i,0) + "\r\n:" + vOpt + "教案内容:" + document.all.WebOffice1.GetRevInfo(i,3);
+			
+			$("#prepare").append("<h1 class=\"center\" title=\""+ title +"\">" + vDate + "</h1>"); 
+		}
+	}
+}
+// ---------------------== 关闭页面时调用此函数，关闭文件 ==---------------------- //
+function window_onunload() {
+	document.all.WebOffice1.Close();
+}
+
+// -----------------------------== 保存文档 ==------------------------------------ //
+function newSave() {
+	document.all.WebOffice1.Save();
+}
+// -----------------------------== 另存为文档 ==------------------------------------ //
+function SaveAsTo() {
+	document.all.WebOffice1.ShowDialog(84);
+}
+//监听工具栏的事件
+function WebOffice1_NotifyToolBarClick(iIndex){
+	if(iIndex==32772){
+		document.all.WebOffice1.lEventRet = 0;
+		var url = $("#submitUrl").val();
+		var oldTitle = $("#oldTitle").val();
+		var updateStatus = $("#updateStatus").val();
+		
+		if(updateStatus==0)
+		{
+			oldTitle="";
+		}
+		
+		SaveDoc(url,oldTitle,updateStatus);
+	}
+}
+//ff chrome
+function NotifyToolBarClick(iIndex){
+	
+	if(iIndex==32772){
+		document.all.WebOffice1.lEventRet = 0;
+		var url = $("#submitUrl").val();
+		var oldTitle = $("#oldTitle").val();
+		var updateStatus = $("#updateStatus").val();
+		
+		if(updateStatus==0)
+		{
+			oldTitle="";
+		}
+		
+		SaveDoc(url,oldTitle,updateStatus);
+	}
+}
+// -----------------------------== 上传文档 ==------------------------------------ //
+function SaveDoc(url,oldTitle,update) {
+	try{
+		var returnValue;
+		var isSaved = document.all.WebOffice1.IsSaved();
+		
+		if(update==0){ //新建
+		
+			var title =$.trim($("#title").val());
+			
+			if(title==''){
+				alert("标题不可为空");
+				$("#title").focus();
+				return false;
+			}
+			if(title.length>64 || title.length<2)
+			{
+				alert("标题长度为2~64");
+				return false;
+			}
+
+			if(isSaved!=0 && title==oldTitle)
+			{
+				alert("您没有做任何修改!");
+				return ;
+			}
+		}else{
+			if(isSaved!=0){
+				alert("您没有做任何修改!");
+				return ;
+			}
+		}
+		document.all.WebOffice1.HttpInit();			//初始化Http引擎
+		
+		// 添加相应的Post元素 
+		
+		if(update==0){ 
+			document.all.WebOffice1.HttpAddPostString("title", escape($("#title").val()));
+		}else{
+			//修改
+			document.all.WebOffice1.HttpAddPostString("id", $("#resourceId").val());
+		}
+		document.all.WebOffice1.HttpAddPostString("mokeStepId", $("#mokeStepId").val());
+		document.all.WebOffice1.HttpAddPostString("mokeId", $("#mokeId").val());
+		document.all.WebOffice1.HttpAddPostString("sorts", $("#sorts").val());
+		document.all.WebOffice1.HttpAddPostString("memberId", $("#memberId").val());
+	
+		
+		document.all.WebOffice1.HttpAddPostCurrFile("myfiles","");		// 上传文件
+		
+		var returnValue = document.all.WebOffice1.HttpPost(url);	// 判断上传是否成功
+		
+		var resultData = $.parseJSON(returnValue);
+		if(resultData.status=='2'){
+			alert("协同修改教案成功");
+			if(update==0){
+				window.location.href="/f/moke/mokeStep/mokeStepResourceAndInfo?mokeId=" + $("#mokeId").val() + "&step=" + $("#step").val() + "&sorts=" + $("#sorts").val() ;
+			}
+		}else{
+			alert("协同修改教案失败");
+		}
+		
+		
+	}catch(e){
+		alert("异常\r\nError:"+e+"\r\nError Code:"+e.number+"\r\nError Des:"+e.description);
+	}
+}
