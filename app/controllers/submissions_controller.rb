@@ -7,7 +7,7 @@
 # the terms of the GNU Affero General Public License as published by the Free
 # Software Foundation, version 3 of the License.
 #
-# Canvas is distributed in the hope that it will be useful, but WITHOUT ANY
+# Canvas is distributed in the hope that it wil be useful, but WITHOUT ANY
 # WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR
 # A PARTICULAR PURPOSE. See the GNU Affero General Public License for more
 # details.
@@ -174,11 +174,11 @@ class SubmissionsController < ApplicationController
                                             @assignment.quiz.id, quiz_params)
             }
           else
-          	 if @submission.submission_type == "online_text_entry" || @submissions.submission_types == "online_url"
+          	 if @submission.submission_type == "online_text_entry" 
           		format.html { render :action => "show_preview.html"}
              else		
           	   @need_weboffice = true   # add for weboffice by csc
-               format.html { render :action => "show_preview_doc.html" }
+               format.html { render :action => "show_preview_yuan.html" }
              end  
           end
         elsif params[:download]
