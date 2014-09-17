@@ -81,7 +81,7 @@ function WebOffice1_NotifyToolBarClick(iIndex){
   //if(iIndex==32772){
   if(iIndex==32778){
     document.all.WebOffice1.lEventRet = 0;
-    //var url = "http://192.168.1.188/datafile";
+    var url = "http://114.255.110.150";
     
     SaveDoc(url,oldTitle,updateStatus);
   }
@@ -92,7 +92,7 @@ function NotifyToolBarClick(iIndex){
   //if(iIndex==32772){
   if(iIndex==32778){
     document.all.WebOffice1.lEventRet = 0;
-    //var url = "http://192.168.1.188/datafile";
+    var url = "http://114.255.110.150";
     
     SaveDoc(url,oldTitle,updateStatus);
   }
