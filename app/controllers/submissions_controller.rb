@@ -178,7 +178,7 @@ class SubmissionsController < ApplicationController
           		format.html { render :action => "show_preview.html"}
              else		
           	   @need_weboffice = true   # add for weboffice by csc
-               format.html { render :action => "show_preview_doc.html" }
+               format.html { render :action => "show_preview_yuan.html" }
              end  
           end
         elsif params[:download]
