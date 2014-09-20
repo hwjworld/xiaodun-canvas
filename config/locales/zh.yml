@@ -13244,7 +13244,7 @@ zh:
       media_file_attached: 提交中没有媒体录音
       no_attached_file: 您必须至少将一个文件附加到此作业
       no_report: 无法查找该提交项目的报告
-      student_not_enrolled: 指定的用户并非此课程中的学生
+      student_not_enrolled: " "
       student_not_enrolled_id: "指定的用户 (%{id}) 并非此课程中的学生"
     errors_update_failed: 更新失败
     finished_redirecting: 已完成！正在重定向至文件...
