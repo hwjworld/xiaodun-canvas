@@ -203,7 +203,7 @@ function course2aMenu(course, _courseTitle){
 		oMenu.name = _courseTitle.name, 
 		oMenu._x = 0, 
 		oMenu._y = 0,
-		oMenu.htmlUrl = "http://192.168.1.188/courses/" + window.courseId,
+		oMenu.htmlUrl = "http://114.255.110.150/courses/" + window.courseId,
 		oMenu.completed = true,
 		aMenu.push(oMenu);
 		/*
