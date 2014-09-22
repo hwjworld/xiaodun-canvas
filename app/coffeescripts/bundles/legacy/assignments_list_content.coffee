@@ -45,7 +45,7 @@ require [
         $assignment.addClass "group_assignment_submitted"  if submission and submission.submitted_at
         $assignment.addClass "group_assignment_overdue"  if due and (not submission or not submission.submitted_at) and due < now
     #.find(".more_info_link").show().end()
-    $("#groups_for_student .assignment_group").find(".more_info").hide().end().find(".more_info_brief").showIf($("#group_weighting_scheme").text() is "percent").append " of final grade"
+    $("#groups_for_student .assignment_group").find(".more_info").hide().end().find(".more_info_brief").showIf($("#group_weighting_scheme").text() is "percent").append " "
     $(".show_groups_link,.hide_groups_link").click (event) ->
       event.preventDefault()
       if $(this).hasClass("show_groups_link") and not $("#groups_for_student").hasClass("populated")

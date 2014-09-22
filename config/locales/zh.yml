@@ -5944,7 +5944,7 @@ zh:
       all: 全部
       app_headder: 外部应用程序
       external_tools_note: "应用程序是向 人人教人人学 添加新功能的简单方式。这些功能可添加到帐户中的各个课程或所有课程。配置完毕后，您可以通过课程模块与其链接，并为测验工具创建作业。"
-      external_tools_references: "单击*此处*查看适用于 人人教人人学 的某些 LTI 工具。您还可以在**此处**查看有关 LTI 工具的 人人教人人学 社区主题"
+      external_tools_references: "单击*此处*查看适用于 人人教人人学 的某些 LTI 工具."
       installed: 已安装
       not_installed: 未安装
       search_filter: 按姓名过滤
