@@ -81,8 +81,8 @@
           <td><%= link_to @context.root_account.name, account_url(@context.root_account.id)  %></td>
       <% end %>
       </tr><tr>
-        <td class="form-label"><%= f.blabel :account_id, :en => "Department" %></td>
-        <td>
+        <!--td class="form-label"><%= f.blabel :account_id, :en => "Department" %></td-->
+        <!--td>
           <span class="course_form">
             <% if can_do(@context.root_account, @current_user, :manage_courses) %>
               <% if @context.root_account.all_accounts.count > 500 %>
@@ -107,7 +107,7 @@
               <%= @context.account.name %>
             <% end %>
           </span>
-        </td>
+        </td-->
       </tr><tr>
         <td class="form-label"><%= f.blabel :enrollment_term_id, :en => "Term" %></td>
         <td>
@@ -154,11 +154,6 @@
             <% no_language = t(:no_language_preference, "Not set (user-configurable, defaults to %{language})", :language => available_locales[infer_locale(:context => @context.account)]) %>
             <%= f.select :locale, [[no_language, nil]] + available_locales.invert.sort, {:selected => @context.locale}, {:class => 'locale'} %>
             <%= render :partial => 'shared/locale_warning' %>
-            <p> <%= mt :transifex_message, <<-TEXT, :transifex_url => "https://www.transifex.com/projects/p/canvas-lms/"
-Join the [Canvas Translation Community](%{transifex_url})
-TEXT
-            %>
-            </p>
           </div>
           <span class="course_info locale"><%= @context.locale ? available_locales[@context.locale] : no_language %></span>
           <div class="aside palign">
