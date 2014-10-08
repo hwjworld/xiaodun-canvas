@@ -170,7 +170,7 @@ define([
           // this handles both ssl and plain http.
           //var googleDocPreviewUrl = '//docs.google.com/viewer?' + $.param({
          // add form csc on 20140710  
-          var googleDocPreviewUrl = 'http://114.255.110.56/viewer?' + $.param({
+          var googleDocPreviewUrl = 'http://114.255.110.148:3000/viewer?' + $.param({
             embedded: true,
             url: opts.public_url
           });
