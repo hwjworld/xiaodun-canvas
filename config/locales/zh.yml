@@ -4624,7 +4624,7 @@ zh:
         conclude_at: 结束
         course_code: 课程代码
         course_lock_all_announcements: 禁止评论通告
-        course_name: 姓名
+        course_name: 课程名称
         course_section_name: 新增班级
         course_visibility: 可见性
         enrollment_term_id: 学期

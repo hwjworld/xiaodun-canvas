@@ -42,7 +42,7 @@ We use jQuery UI button set
 .ui-buttonset {
   margin-right: 7px;
   .ui-button {
-    margin-left: 0;
+    margin-left: 600px;  // change 0 to 600px from csc
     margin-right: -5px;
 
     // get rid of rounded borders except on left-most and right-most edges
