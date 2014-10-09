@@ -101,6 +101,7 @@
       </span>
     </td>
   </tr>
+  <!-->
   <% if @domain_root_account == Account.default %>
     <tr>
       <td colspan="2">
@@ -113,6 +114,7 @@
       </td>
     </tr>
   <% end %>
+  <-->
   <% if !@password_pseudonyms.empty? %>
   <tr class="edit_data_row select_change_password_row" style="display: none;">
     <td><%= before_label(:password, "Password") %></td>
