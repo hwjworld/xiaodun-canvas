@@ -101,20 +101,6 @@
       </span>
     </td>
   </tr>
-  <!-->
-  <% if @domain_root_account == Account.default %>
-    <tr>
-      <td colspan="2">
-        <div class="edit_data">
-          <label for="user_subscribe_to_emails" class="checkbox">
-            <%= f.check_box :subscribe_to_emails %>
-            <%= t(:subscribe_to_emails, "I want to receive information, news and tips from Instructure") %>
-          </label>
-        </div>
-      </td>
-    </tr>
-  <% end %>
-  <-->
   <% if !@password_pseudonyms.empty? %>
   <tr class="edit_data_row select_change_password_row" style="display: none;">
     <td><%= before_label(:password, "Password") %></td>
