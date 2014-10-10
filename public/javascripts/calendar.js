@@ -643,12 +643,12 @@ define([
     }
     var title_time = event.start_time_formatted || "";
     if(event.start_time_string && event.start_time_string != event.end_time_string) {
-      title_time += " to " + (event.end_time_formatted || "");
+      title_time += " 到 " + (event.end_time_formatted || "");
     }
     event_title = event.title;
     event_title += (title_time ? " - " + title_time : "");
     if(data.assignment && title_time) {
-      event_title = "due: " + event_title;
+      event_title = "截止: " + event_title;
     }
     $event.find(".calendar_event_text").attr('title', event_title).show();
     if($("#" + groupId).length > 0) {
@@ -698,7 +698,7 @@ define([
       date = Date.parse(date_string);
       data.time_string = $.dateString(date);
     } else {
-      data.time_string = "No Date Set";
+      data.time_string = "没有时间设置";
       data.date = "";
     }
     $box.data('current_event', $event).data('current_day', $day);
@@ -721,13 +721,13 @@ define([
     }
     if(data.event_type == "assignment" || data.start_time == data.end_time) {
       if(data.all_day == 'true' && data.event_type == 'assignment') {
-        data.time_string = data.start_date_string + " at " + data.start_time_string;
+        data.time_string = data.start_date_string + " " + data.start_time_string;
       } else if(data.start_time) {
         var date_string = $.dateString(date);
-        data.time_string = date_string + " at " + data.start_time_string;
+        data.time_string = date_string + " " + data.start_time_string;
       }
       if(data.event_type == 'assignment' && data.time_string) {
-        data.time_string = "due: " + data.time_string;
+        data.time_string = "截止: " + data.time_string;
       }
     }
     data.description = $event.data('description');
@@ -822,7 +822,7 @@ define([
     var startDate = Date.parse(data.date + " " + data.start_time) || Date.parse(data.date); 
     var endDate = Date.parse(data.date + " " + data.end_time) || Date.parse(data.date);
     if(startDate) {
-      data.date = startDate.toString('MMM d, yyyy');
+      data.date = startDate.toString('yyyy-MMM-dd');
       data.due_at = $.datetime.clean(startDate);
       if(data.start_time_string) {
         data.start_time = startDate.toString('h:mmtt').toLowerCase();
@@ -1647,7 +1647,7 @@ define([
         var date = Date.parse(data.month + " " + data.year) || new Date();
         if(date.getMonth() == currentDate.getMonth() && date.getFullYear() == currentDate.getFullYear()) {
         } else {
-          var date_string = $.datepicker.formatDate('mm/dd/yy', date);
+          var date_string = $.datepicker.formatDate('yy/mm/dd', date);
           changeCalendarMonth($(".calendar_month"), date_string);
           changeCalendarMonth($(".calendar_container").find(".mini_month"), date_string);
         }

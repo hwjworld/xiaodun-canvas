@@ -22,7 +22,7 @@ Date.CultureInfo = {
     abbreviatedMonthNames: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
    */
     monthNames: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-    abbreviatedMonthNames: ["1月", "2月", "3月", "4月", "5月", "6月", "7月", "8月", "9月", "10月", "11月", "12月"],
+    abbreviatedMonthNames: ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12"],
 
 	/* AM/PM Designators */
      
@@ -50,11 +50,12 @@ Date.CultureInfo = {
      * determine the expected order of the date elements in the
      * string being parsed.
      */
-    dateElementOrder: "mdy",
+    dateElementOrder: "ymd",
     
     /* Standard date and time format patterns */
+    /*
     formatPatterns: {
-        shortDate: "M/d/yyyy",
+        shortDate: "M/d/yyyy",    
         longDate: "dddd, MMMM dd, yyyy",
         shortTime: "h:mm tt",
         longTime: "h:mm:ss tt",
@@ -64,6 +65,20 @@ Date.CultureInfo = {
         rfc1123: "ddd, dd MMM yyyy HH:mm:ss GMT",
         monthDay: "MMMM dd",
         yearMonth: "MMMM, yyyy"
+    },
+    */
+
+    formatPatterns: {
+        shortDate: "yyyy-MM-dd",    
+        longDate: "dddd, yyyy, MMM	M dd",
+        shortTime: "h:mm tt",
+        longTime: "h:mm:ss tt",
+        fullDateTime: "dddd, yyyy-MMMM-dd h:mm:ss tt",
+        sortableDateTime: "yyyy-MM-ddTHH:mm:ss",
+        universalSortableDateTime: "yyyy-MM-dd HH:mm:ssZ",
+        rfc1123: "ddd, dd MMM yyyy HH:mm:ss GMT",
+        monthDay: "MMMM-dd",
+        yearMonth: "yyyy-MMMM"
     },
 
     /**

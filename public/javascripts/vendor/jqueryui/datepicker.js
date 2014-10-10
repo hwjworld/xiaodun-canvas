@@ -45,14 +45,14 @@ function Datepicker() {
 		prevText: 'Prev', // Display text for previous month link
 		nextText: 'Next', // Display text for next month link
 		currentText: 'Today', // Display text for current month link
-		monthNames: ['January','February','March','April','May','June',
-			'July','August','September','October','November','December'], // Names of months for drop-down and formatting
+		monthNames: ['01','02','03','04','05','06',
+			'07','08','09','10','11','12'], // Names of months for drop-down and formatting
 		monthNamesShort: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'], // For formatting
 		dayNames: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], // For formatting
 		dayNamesShort: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'], // For formatting
-		dayNamesMin: ['Su','Mo','Tu','We','Th','Fr','Sa'], // Column headings for days starting at Sunday
+		dayNamesMin: ['日','一','二','三','四','五','六'], // Column headings for days starting at Sunday
 		weekHeader: 'Wk', // Column header for week of the year
-		dateFormat: 'mm/dd/yy', // See format options on parseDate
+		dateFormat: 'yy/mm/dd', // See format options on parseDate
 		firstDay: 0, // The first day of the week, Sun = 0, Mon = 1, ...
 		isRTL: false, // True if right-to-left language, false if left-to-right
 		showMonthAfterYear: false, // True if the year select precedes month, false for month then year
@@ -1618,24 +1618,7 @@ $.extend(Datepicker.prototype, {
 		var showMonthAfterYear = this._get(inst, 'showMonthAfterYear');
 		var html = '<div class="ui-datepicker-title">';
 		var monthHtml = '';
-		// month selection
-		if (secondary || !changeMonth)
-			monthHtml += '<span class="ui-datepicker-month">' + monthNames[drawMonth] + '</span>';
-		else {
-			var inMinYear = (minDate && minDate.getFullYear() == drawYear);
-			var inMaxYear = (maxDate && maxDate.getFullYear() == drawYear);
-			monthHtml += '<select class="ui-datepicker-month" data-handler="selectMonth" data-event="change">';
-			for (var month = 0; month < 12; month++) {
-				if ((!inMinYear || month >= minDate.getMonth()) &&
-						(!inMaxYear || month <= maxDate.getMonth()))
-					monthHtml += '<option value="' + month + '"' +
-						(month == drawMonth ? ' selected="selected"' : '') +
-						'>' + monthNamesShort[month] + '</option>';
-			}
-			monthHtml += '</select>';
-		}
-		if (!showMonthAfterYear)
-			html += monthHtml + (secondary || !(changeMonth && changeYear) ? '&#xa0;' : '');
+
 		// year selection
 		if ( !inst.yearshtml ) {
 			inst.yearshtml = '';
@@ -1669,8 +1652,28 @@ $.extend(Datepicker.prototype, {
 		}
 		html += this._get(inst, 'yearSuffix');
 		if (showMonthAfterYear)
-			html += (secondary || !(changeMonth && changeYear) ? '&#xa0;' : '') + monthHtml;
+			html += (secondary || !(changeYear && changeMonth) ? '&#xa0;' : '') + monthHtml;
 		html += '</div>'; // Close datepicker_header
+
+		// month selection
+		if (secondary || !changeMonth)
+			monthHtml += '<span class="ui-datepicker-month">' + monthNames[drawMonth] + '</span>';
+		else {
+			var inMinYear = (minDate && minDate.getFullYear() == drawYear);
+			var inMaxYear = (maxDate && maxDate.getFullYear() == drawYear);
+			monthHtml += '<select class="ui-datepicker-month" data-handler="selectMonth" data-event="change">';
+			for (var month = 0; month < 12; month++) {
+				if ((!inMinYear || month >= minDate.getMonth()) &&
+						(!inMaxYear || month <= maxDate.getMonth()))
+					monthHtml += '<option value="' + month + '"' +
+						(month == drawMonth ? ' selected="selected"' : '') +
+						'>' + monthNamesShort[month] + '</option>';
+			}
+			monthHtml += '</select>';
+		}
+		if (!showMonthAfterYear)
+			html += monthHtml + (secondary || !(changeYear && changeMonth ) ? '&#xa0;' : '');
+		
 		return html;
 	},
 

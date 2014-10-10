@@ -98,8 +98,8 @@
         <span style="display: none;" class="month_number"><%= @current.month %></span>
         <a href="#" class="prev_month_link no-hover"><%= image_tag "arrow_left.png", :alt => t('alts.previous', "Previous") %></a>
         <span id="month_and_year">
+          <span class="year_number"><%= @current.year %></span>年
           <span class="month_name"><%= I18n.t('date.month_names')[current.month] %></span>
-          <span class="year_number"><%= @current.year %></span>
         </span>
         <a href="#" class="next_month_link no-hover"><%= image_tag "arrow_right.png", :alt => t('alts.next', "Next") %></a>
         <a href="#" class="refresh_calendar_link"><%= image_tag "ajax-reload.gif", :class => "static" %><%= image_tag "ajax-reload-animated.gif", :class => "animated", :style => "display: none;" %></a>

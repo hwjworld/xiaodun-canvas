@@ -43,7 +43,7 @@ var speakMessage = function ($this, message) {
 };
 
   $.parseDateTime = function(date, time) {
-    var date = $.datepicker.parseDate('mm/dd/yy', date);
+    var date = $.datepicker.parseDate('yy/mm/dd', date);
     if(time) {
       var times = time.split(":");
       var hr = parseInt(times[0], 10);
@@ -255,7 +255,7 @@ var speakMessage = function ($this, message) {
     return date && (date.getFullYear() == today.getFullYear());
   };
   $.dateString = function(date) {
-    return (date && (date.toString($.thisYear(date) ? 'MMM d' : 'MMM d, yyyy'))) || "";
+    return (date && (date.toString($.thisYear(date) ? 'yyyy-MMM-dd' : 'yyyy-MMM-dd'))) || "";
   };
   $.timeString = function(date) {
     return (date && date.toString('h:mmtt').toLowerCase()) || "";
@@ -290,8 +290,8 @@ var speakMessage = function ($this, message) {
   $.fn.parseFromISO = $.parseFromISO;
 
   $.datetime = {};
-  $.datetime.shortFormat = "MMM d, yyyy";
-  $.datetime.defaultFormat = "MMM d, yyyy h:mmtt";
+  $.datetime.shortFormat = "yyyy-MMM-dd";
+  $.datetime.defaultFormat = "yyyy-MMM-dd h:mmtt";
   $.datetime.sortableFormat = "yyyy-MM-ddTHH:mm:ss";
   $.datetime.parse = function(text, /* optional */ intermediate_format) {
     return Date.parse((text || "").toString(intermediate_format).replace(/ (at|by)/, ""))
@@ -468,7 +468,7 @@ var speakMessage = function ($this, message) {
         var datepickerOptions = {
           timePicker: (!options.dateOnly),
           constrainInput: false,
-          dateFormat: 'M d, yy',
+          dateFormat: 'yy-MM-dd',
           showOn: 'button',
           buttonText: '<i class="icon-calendar-month"></i>',
           buttonImageOnly: false
@@ -502,13 +502,13 @@ var speakMessage = function ($this, message) {
             $this.data('hiddenInput').val(d);
           }
           if(!options.timeOnly && !options.dateOnly && (d.getHours() || d.getMinutes() || options.alwaysShowTime)) {
-            text = d.toString('ddd MMM d, yyyy h:mmtt');
+            text = d.toString('ddd yyyy-MMM-dd h:mmtt');
             $this
               .data('time-hour', d.toString('h'))
               .data('time-minute', d.toString('mm'))
               .data('time-ampm', d.toString('tt').toLowerCase());
           } else if(!options.timeOnly) {
-            text = d.toString('ddd MMM d, yyyy');
+            text = d.toString('ddd, yyyy-MMM-dd');
           } else {
             text = d.toString('h:mmtt').toLowerCase();
           }
