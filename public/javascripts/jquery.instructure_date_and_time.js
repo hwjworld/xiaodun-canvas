@@ -255,7 +255,7 @@ var speakMessage = function ($this, message) {
     return date && (date.getFullYear() == today.getFullYear());
   };
   $.dateString = function(date) {
-    return (date && (date.toString($.thisYear(date) ? 'yyyy-MMM-dd' : 'yyyy-MMM-dd'))) || "";
+    return (date && (date.toString($.thisYear(date) ? 'yyyy-MM-dd' : 'yyyy-MM-dd'))) || "";
   };
   $.timeString = function(date) {
     return (date && date.toString('h:mmtt').toLowerCase()) || "";

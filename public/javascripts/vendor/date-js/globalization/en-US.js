@@ -70,7 +70,7 @@ Date.CultureInfo = {
 
     formatPatterns: {
         shortDate: "yyyy-MM-dd",    
-        longDate: "dddd, yyyy, MMM	M dd",
+        longDate: "dddd, yyyy-MMM-dd",
         shortTime: "h:mm tt",
         longTime: "h:mm:ss tt",
         fullDateTime: "dddd, yyyy-MMMM-dd h:mm:ss tt",

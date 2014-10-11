@@ -206,7 +206,7 @@
                   <% end %>
                 <% else %>
                   <% if @topic.delayed_post_at %>
-                    <%= t 'topic_locked', 'This topic will not be visible to users until *%{date}*', :date => datetime_string(@topic.delayed_post_at) %>
+                    <%= t 'topic_locked_until', 'This topic will not be visible to users until *%{date}*', :date => datetime_string(@topic.delayed_post_at) %>
                   <% else %>
                     <%= t 'topic_not_visible', 'This topic is not visible to users' %>
                   <% end %>
