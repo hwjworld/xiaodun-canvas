@@ -16,14 +16,6 @@
             <%= f.text_field :name, :class => "input-xlarge" %>
           </div>
         </div>
-      <% if term && can_do(@root_account, @current_user, :manage_sis) %>
-        <div class="control-group edit_term">
-          <label class="control-label" for="enrollment_term_sis_source_id"><%= t :sis_source_id, 'SIS ID:' %></label>
-          <div class="controls">
-            <%= f.text_field :sis_source_id, :class => "input-xlarge" %>
-          </div>
-        </div>
-      <% end %>
       <div class="edit_term edit_term_buttons">
         <button class="btn button-secondary cancel_button" type="button"><%= t '#buttons.cancel', "Cancel" %></button>
         <button class="btn btn-primary submit_button" type="submit"><%= term ? t('buttons.update', "Update Term") : t('buttons.add', "Add Term") %></button>
