@@ -5,11 +5,7 @@
       <span class="name"><%= term.name rescue nbsp %></span>
     </div>
     <div class="show_term" style="font-size: 0.8em;">
-      <% if term && (term.sis_source_id && can_do(term.root_account, @current_user, :read_sis) || can_do(term.root_account, @current_user, :manage_sis)) %>
-        <div style="font-size: 0.8em;">
-          <%= before_label :sis_id, "SIS ID" %> <span class="sis_source_id"><%= term.sis_source_id %></span>
-        </div>
-      <% end %>
+      <!--remove sis_source_id from here-->
       <%= term && t(:course_count, "Course", :count => term.courses.active.count) %><br/>
       <%= term && t(:user_count, "User", :count => term.users_count) %>
     </div>
