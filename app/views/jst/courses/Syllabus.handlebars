@@ -45,7 +45,7 @@
             <td class="dates{{#unless last}} not_last{{/unless}}">
               {{#if start_at}}
                 {{#if due_at}}
-                  due by {{tTimeHours due_at}}
+                  截止 {{tTimeHours due_at}}
                 {{else}}
                   {{tTimeHours start_at}}
                   {{#unless same_time}}

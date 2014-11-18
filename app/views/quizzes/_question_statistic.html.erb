@@ -15,7 +15,7 @@
             <div style="float: right;" style="width: 1px; height: 100px;"></div>
             <div class="clear"></div>
           </div>
-          <div class="question_attempts"><%= pluralize(question[:responses], 'attempt') %></div>
+          <div class="question_attempts"><%= pluralize(question[:responses], '提交') %></div>
           <div class="question_text user_content">
             <%= user_content(question[:question_text]) %>
           </div>
