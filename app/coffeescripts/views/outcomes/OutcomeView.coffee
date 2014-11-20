@@ -125,14 +125,14 @@ define [
           @readyForm()
         when 'add'
           @$el.html outcomeFormTemplate _.extend data,
-            points_possible: 5
-            mastery_points: 3
+            points_possible: 100
+            mastery_points: 60
             ratings: [
               description: I18n.t("criteria.exceeds_expectations", "Exceeds Expectations")
-              points: 5
+              points: 100
             ,
               description: I18n.t("criteria.meets_expectations", "Meets Expectations")
-              points: 3
+              points: 60
             ,
               description: I18n.t("criteria.does_not_meet_expectations", "Does Not Meet Expectations")
               points: 0]

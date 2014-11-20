@@ -271,7 +271,7 @@ function course2aMenu(course, _courseTitle){
 				else oMenu.completed = false
 				oMenu._y = 2;
 				oMenu._x = -i*2;
-				oMenu.htmlUrl = "http://192.168.1.188/courses/" + window.courseId,
+				oMenu.htmlUrl = "http://114.255.110.150/courses/" + window.courseId,
 				aLine.push([new google.maps.LatLng(fx, fy), new google.maps.LatLng(oMenu._x, oMenu._y)]);
 
 				aMenu.push(oMenu);
