@@ -1018,8 +1018,8 @@ function CoursesController(page) {
 	//omyajax.
 	// get user info
 	window.user = {"type":0}
-	//window.ajaxhttp = "http://114.255.110.150";
-	window.ajaxhttp = "http://0.0.0.0:3000";
+	window.ajaxhttp = "http://119.90.15.157";
+	//window.ajaxhttp = "http://0.0.0.0:3000";
 	getUserType($(page));	
 	//this.courses = [{"id":0},{"id":1}];alert(this.courses.length);
 	//this.courses = window.courses;//omyajax.getCoursesList(window.ajaxhttp, omyajax);

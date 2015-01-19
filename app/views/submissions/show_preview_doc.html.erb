@@ -1,9 +1,9 @@
 <% @submission.attachments.each do |attachment| %>
    <% preview_url = context_url(@context, :context_assignment_submission_url, @assignment.id, @submission.user_id, :download => attachment.id) %>
   
-<% doc_url = URI.parse('http://114.255.110.150/软件回归测试过程自动化管理方法的研究与实现.doc') %>
+<% doc_url = URI.parse('http://119.90.15.157/软件回归测试过程自动化管理方法的研究与实现.doc') %>
 <!--<input type="hidden" id="filepath" value="http://192.168.1.52:3000<%= context_url(@context, :context_assignment_submission_url, @assignment.id, @submission.user_id, :download => attachment.id) %>"/>-->
-   <input type="hidden" id="filepath" value="http://114.255.110.150/软件回归测试过程自动化管理方法的研究与实现.doc"/>
+   <input type="hidden" id="filepath" value="http://119.90.15.157/软件回归测试过程自动化管理方法的研究与实现.doc"/>
    <input type="hidden" id="sFileType" value="doc"/>
 <% end %>
 <SCRIPT language=javascript event=NotifyCtrlReady for=WebOffice1>

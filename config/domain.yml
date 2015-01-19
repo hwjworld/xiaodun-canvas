@@ -5,7 +5,7 @@ development:
   domain: "localhost:3000"
 
 production:
-  domain: 114.255.110.150
+  domain: 119.90.15.157
   # whether this instance of canvas is served over ssl (https) or not
   # defaults to true for production, false for test/development
   ssl: false

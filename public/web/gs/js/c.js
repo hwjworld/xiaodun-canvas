@@ -203,7 +203,7 @@ function course2aMenu(course, _courseTitle){
 		oMenu.name = _courseTitle.name, 
 		oMenu._x = 0, 
 		oMenu._y = 0,
-		oMenu.htmlUrl = "http://114.255.110.150/courses/" + window.courseId,
+		oMenu.htmlUrl = "http://119.90.15.157/courses/" + window.courseId,
 		oMenu.completed = true,
 		aMenu.push(oMenu);
 		/*
@@ -271,7 +271,7 @@ function course2aMenu(course, _courseTitle){
 				else oMenu.completed = false
 				oMenu._y = 2;
 				oMenu._x = -i*2;
-				oMenu.htmlUrl = "http://114.255.110.150/courses/" + window.courseId,
+				oMenu.htmlUrl = "http://119.90.15.157/courses/" + window.courseId,
 				aLine.push([new google.maps.LatLng(fx, fy), new google.maps.LatLng(oMenu._x, oMenu._y)]);
 
 				aMenu.push(oMenu);
@@ -484,7 +484,7 @@ $(document).ready(function(){
 	//get makerdata
 	var courseId = window.courseId, 
 		//ajaxhttp = "http://192.168.1.188",
-		ajaxhttp = "http://114.255.110.150",
+		ajaxhttp = "http://119.90.15.157",
 		resource = {}, aMenu = [], aMakers = [];
 
 	getResourcesByAjax(courseId, ajaxhttp);

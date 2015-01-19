@@ -1486,7 +1486,7 @@ zh:
       assignment_name: 作业名称
       labels: 
         due: "截止时间:"
-        points: "得分:"
+        points: "总分:"
         quiz_points: 测验得分
         type: 类型
       links: 
@@ -1769,7 +1769,7 @@ zh:
         not_graded: 未计分
         pass_fail: 完成/未完成
         percent: 百分比
-        points: 得分
+        points: 总分
       view_grading_levels: 查看评分级别
     group_category_selector: 
       grade_group_students_individually: 分别为每位学生指定评分
@@ -1946,7 +1946,7 @@ zh:
       no_due_date: 无截止时间
       no_points: 无
       no_submission: 无任何内容
-      points: 得分
+      points: 总分
       submission_types: 文件类型
       submitting: 提交
       turnitin: Turnitin
@@ -11182,7 +11182,7 @@ zh:
         add_questions_to_group: 添加问题到测验组
         group_name: 小组名称
         group_pick_count: 挑选
-        group_points: 得分
+        group_points: 总分
       links: 
         clear_all_banks: 全部清除
         manage_question_banks: 管理课程题库
@@ -11262,7 +11262,7 @@ zh:
         answers: 答案
         distractors: 其它匹配可能（错误选项）
         missing_word_after: 答案后转至的文本
-        points: 得分
+        points: 总分
         question: 问题
       links: 
         add_another_answer: 添加其它答案
@@ -11643,7 +11643,7 @@ zh:
       headers: 
         available: 可用
         due: 截止时间
-        points: 得分
+        points: 总分
         questions: 问题
         time_limit: 时间限制
       multiple_due_dates: 多个截止时间
@@ -11703,7 +11703,7 @@ zh:
       multiple_attempts: 多次尝试
       no_time_limit: 无时间限制
       one_question_at_a_time: 一次一个问题
-      points: 得分
+      points: 总分
       quiz_type: 测验类型
       require_lockdown_browser: "需要 Respondus LockDown Browser"
       require_lockdown_browser_for_results: 查看测验结果时需要
@@ -12789,7 +12789,7 @@ zh:
         rubric_title: 部分评分标准说明
       headers: 
         criteria: 标准
-        points: 得分
+        points: 总分
         ratings: 等级
       labels: 
         custom_rating: 评估学生时，我会撰写自由格式的评论

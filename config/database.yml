@@ -27,7 +27,7 @@ development:
 production:
   adapter: postgresql
   encoding: utf8
-  database: canvas_production
+  database: x_production
   host: localhost
   username: canvas
   password: canvas
@@ -35,7 +35,7 @@ production:
   queue:
     adapter: postgresql
     encoding: utf8
-    database: canvas_queue_production
+    database: x_queue_production
     host: localhost
     username: canvas
     password: canvas

@@ -9,7 +9,7 @@
    servers:
    - localhost
 #   - redis://172.30.3.2:6379
-#    - 114.255.110.150
+#    - 119.90.15.157
 #   # list of redis servers to use in the ring
 #   - redis://172.30.3.2:6379
 #   - redis://redis02

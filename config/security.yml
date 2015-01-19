@@ -1,9 +1,9 @@
 ---
 production:
   encryption_key: !binary |-
-    Yzc1YjE4ODI1MzM1M2FiNDA3NDM1NjY3YWMzNDkxNGIwZjU3MzcwNDZhNjMw
-    NjgyNjkzYzRmNzVlMTA0ZDQ2NjZlNzdkMjkzNTE0MGZhNjc3MWJiZGZiMGE3
-    Y2VjZDI4NWQ0YzYyYjBmYjdiYzY4NzY5N2VkN2Q5MGZjNzIyMzg=
+    YjExMDJlODlmY2ZjNGJkMzMzMDRhODNlMmI0NzY1MTk4NjkxOGEzMzdjM2Qx
+    ZWViOGUwMmI2NTNhODNkNjAxNGJiZGQ0YWFmOTdkOGNlNWQwNTE4YWUyNmRl
+    MTQ3NDQ5NTZiODIxOWY1NjRiM2RhZWQyYzRkYWYwNzBlNzgyM2M=
 development:
   encryption_key: facdd3a131ddd8988b14f6e4e01039c93cfa0160
 test:

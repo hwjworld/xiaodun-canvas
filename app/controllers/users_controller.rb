@@ -298,7 +298,7 @@ class UsersController < ApplicationController
 
  def user_dashboard
     if mobile_device?
-    redirect_to 'http://114.255.110.150/web/appjs/app2.html'
+    redirect_to 'http://119.90.15.157/web/appjs/app2.html'
      else
     check_incomplete_registration
     get_context

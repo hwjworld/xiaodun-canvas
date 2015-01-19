@@ -884,8 +884,8 @@ function CoursesController(page) {
 
 	//omyajax.
 	// get user info
-	window.user = {"type":0} //window.ajaxhttp = "http://114.255.110.150";
-	window.ajaxhttp = "http://114.255.110.150";
+	window.user = {"type":0} //window.ajaxhttp = "http://119.90.15.157";
+	window.ajaxhttp = "http://119.90.15.157";
 	omyajax.getUserIdByAjax(window.ajaxhttp, omyajax);
 	getUserType($(page));	
 };
