@@ -189,6 +189,10 @@ routes.draw do
   # There are some helper methods like the before_filter :get_context in application_controller
   # and the application_helper method :context_url to make retrieving
   # these contexts, and also generating context-specific urls, easier.
+
+  #add course_list api for guoshiwang  
+  match 'courses_list' => 'courses#courses_list', :as => :courses_list, :via => :get
+
   resources :courses do
     # DEPRECATED
     match 'self_enrollment/:self_enrollment' => 'courses#self_enrollment', :as => :self_enrollment, :via => :get

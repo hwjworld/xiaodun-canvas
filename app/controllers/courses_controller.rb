@@ -231,6 +231,46 @@ class CoursesController < ApplicationController
     end
   end
 
+def courses_list
+  name = ''
+  if !params[:name].nil?
+      name = params[:name]
+  else
+      name = 'nulluser'
+  end    
+
+  user = User.find_by_name(name)
+  if !user.nil?
+     ens = Enrollment.find_all_by_user_id(user.id)
+  else
+     ens = []
+  end     
+  #ens = Enrollment.find(:all,:conditions=>["user_id=?",user_id ])
+  course_lsit = []
+  course_l = []
+  length = ens.length-1
+  for i in 0..length do  
+      course_l << Course.find_by_id(ens[i].course_id)  
+      course_context = {
+        'account_id'=> course_l[i].account_id,
+        'course_code'=> course_l[i].course_code,
+        'default_view'=> course_l[i].default_view,
+        'id'=> course_l[i].id,
+        'name'=> course_l[i].name,
+        'start_at'=> course_l[i].start_at,
+        'updated_at'=> course_l[i].updated_at,
+        'enrollment'=> ens[i].type,
+        'public_description'=> course_l[i].public_description,
+        "storage_quota_mb"=> 500,
+        'apply_assignment_group_weights' => true,
+        'hide_final_grades' => false,
+        'workflow_state' => course_l[i].workflow_state
+      }
+      course_lsit << course_context
+  end
+
+  render :json => (JSON.pretty_generate course_lsit)
+end 
   # @API Create a new course
   # Create a new course
   #
