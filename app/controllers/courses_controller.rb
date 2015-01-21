@@ -238,13 +238,16 @@ def courses_list
   else
       email = 'nulluser'
   end    
+  print "======email===="
   unique_id = email
+  print "============unique_id===="
+  print unique_id
   ps = Pseudonym.find_by_unique_id(unique_id)
   if !ps.nil?
      ens = Enrollment.find_all_by_user_id(ps.user_id)
   else
      ens = []
-  end     
+  end    
   #ens = Enrollment.find(:all,:conditions=>["user_id=?",user_id ])
   course_lsit = []
   course_l = []
