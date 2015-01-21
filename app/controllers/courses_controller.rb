@@ -232,16 +232,16 @@ class CoursesController < ApplicationController
   end
 
 def courses_list
-  name = ''
-  if !params[:name].nil?
-      name = params[:name]
+  email = ''
+  if !params[:email].nil?
+      email = params[:email]
   else
-      name = 'nulluser'
+      email = 'nulluser'
   end    
-
-  user = User.find_by_name(name)
-  if !user.nil?
-     ens = Enrollment.find_all_by_user_id(user.id)
+  unique_id = email
+  ps = Pseudonym.find_by_unique_id(unique_id)
+  if !ps.nil?
+     ens = Enrollment.find_all_by_user_id(ps.user_id)
   else
      ens = []
   end     
