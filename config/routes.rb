@@ -191,7 +191,7 @@ routes.draw do
   # these contexts, and also generating context-specific urls, easier.
 
   #add course_list api for guoshiwang  
-  match 'courses_list' => 'courses#courses_list', :as => :courses_list, :via => :get
+  match 'api/v1/courses_list' => 'courses#courses_list', :as => :courses_list, :via => :get
 
   resources :courses do
     # DEPRECATED

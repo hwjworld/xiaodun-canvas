@@ -256,6 +256,7 @@ def courses_list
         'course_code'=> course_l[i].course_code,
         'default_view'=> course_l[i].default_view,
         'id'=> course_l[i].id,
+        'user_id'=> ens[i].user_id,
         'name'=> course_l[i].name,
         'start_at'=> course_l[i].start_at,
         'updated_at'=> course_l[i].updated_at,
